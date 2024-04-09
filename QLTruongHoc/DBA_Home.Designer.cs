@@ -63,8 +63,10 @@ namespace QLTruongHoc
             tablesViewsTab = new TabPage();
             SysPrivilegesPage = new TabPage();
             auditPage = new TabPage();
+            sysPrivs1 = new SysPrivs();
             tabControl1.SuspendLayout();
             UsersRolesPage.SuspendLayout();
+            SysPrivilegesPage.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -121,7 +123,7 @@ namespace QLTruongHoc
             RolesPage.Margin = new Padding(4, 5, 4, 5);
             RolesPage.Name = "RolesPage";
             RolesPage.Padding = new Padding(4, 5, 4, 5);
-            RolesPage.Size = new Size(1816, 1084);
+            RolesPage.Size = new Size(1816, 1012);
             RolesPage.TabIndex = 1;
             RolesPage.Text = "Roles";
             RolesPage.UseVisualStyleBackColor = true;
@@ -132,7 +134,7 @@ namespace QLTruongHoc
             privilegesPage.Margin = new Padding(4, 5, 4, 5);
             privilegesPage.Name = "privilegesPage";
             privilegesPage.Padding = new Padding(4, 5, 4, 5);
-            privilegesPage.Size = new Size(1816, 1084);
+            privilegesPage.Size = new Size(1816, 1012);
             privilegesPage.TabIndex = 2;
             privilegesPage.Text = "Privileges";
             privilegesPage.UseVisualStyleBackColor = true;
@@ -143,18 +145,19 @@ namespace QLTruongHoc
             tablesViewsTab.Margin = new Padding(4, 5, 4, 5);
             tablesViewsTab.Name = "tablesViewsTab";
             tablesViewsTab.Padding = new Padding(4, 5, 4, 5);
-            tablesViewsTab.Size = new Size(1816, 1084);
+            tablesViewsTab.Size = new Size(1816, 1012);
             tablesViewsTab.TabIndex = 3;
             tablesViewsTab.Text = "Tables & Views";
             tablesViewsTab.UseVisualStyleBackColor = true;
             // 
             // SysPrivilegesPage
             // 
+            SysPrivilegesPage.Controls.Add(sysPrivs1);
             SysPrivilegesPage.Location = new Point(4, 34);
             SysPrivilegesPage.Margin = new Padding(4, 5, 4, 5);
             SysPrivilegesPage.Name = "SysPrivilegesPage";
             SysPrivilegesPage.Padding = new Padding(4, 5, 4, 5);
-            SysPrivilegesPage.Size = new Size(1816, 1084);
+            SysPrivilegesPage.Size = new Size(1816, 1012);
             SysPrivilegesPage.TabIndex = 4;
             SysPrivilegesPage.Text = "System Privileges";
             SysPrivilegesPage.UseVisualStyleBackColor = true;
@@ -165,10 +168,19 @@ namespace QLTruongHoc
             auditPage.Margin = new Padding(4, 5, 4, 5);
             auditPage.Name = "auditPage";
             auditPage.Padding = new Padding(4, 5, 4, 5);
-            auditPage.Size = new Size(1816, 1084);
+            auditPage.Size = new Size(1816, 1012);
             auditPage.TabIndex = 5;
             auditPage.Text = "Audit";
             auditPage.UseVisualStyleBackColor = true;
+            // 
+            // sysPrivs1
+            // 
+            sysPrivs1.Location = new Point(-4, 0);
+            sysPrivs1.Margin = new Padding(4, 5, 4, 5);
+            sysPrivs1.Name = "sysPrivs1";
+            sysPrivs1.Padding = new Padding(4, 5, 4, 5);
+            sysPrivs1.Size = new Size(2724, 1518);
+            sysPrivs1.TabIndex = 0;
             // 
             // DBA_Home
             // 
@@ -180,11 +192,12 @@ namespace QLTruongHoc
             MaximizeBox = false;
             Name = "DBA_Home";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "QLTH";
+            Text = "QUẢN LÝ TRƯỜNG HỌC";
             FormClosed += Home_Closed;
             Load += Form1_Load;
             tabControl1.ResumeLayout(false);
             UsersRolesPage.ResumeLayout(false);
+            SysPrivilegesPage.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -199,5 +212,6 @@ namespace QLTruongHoc
         private TabPage SysPrivilegesPage;
         private TabPage auditPage;
         private UseransRole useransRole1;
+        private SysPrivs sysPrivs1;
     }
 }

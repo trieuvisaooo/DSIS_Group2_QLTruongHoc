@@ -32,5 +32,6 @@ namespace QLTruongHoc
         {
             Application.Exit();
         }
+
     }
 }
