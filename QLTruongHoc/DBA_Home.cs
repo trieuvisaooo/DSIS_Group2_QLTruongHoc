@@ -26,5 +26,11 @@ namespace QLTruongHoc
         {
 
         }
+
+
+        private void Home_Closed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

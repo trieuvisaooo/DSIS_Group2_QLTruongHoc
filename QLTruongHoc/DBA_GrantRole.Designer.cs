@@ -39,56 +39,60 @@
             // role_txt
             // 
             role_txt.AutoSize = true;
-            role_txt.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 163);
+            role_txt.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 163);
             role_txt.Location = new Point(31, 51);
             role_txt.Name = "role_txt";
-            role_txt.Size = new Size(142, 28);
+            role_txt.Size = new Size(51, 28);
             role_txt.TabIndex = 0;
-            role_txt.Text = "Role muốn cấp";
+            role_txt.Text = "Role";
             role_txt.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 163);
+            label1.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 163);
             label1.Location = new Point(31, 133);
             label1.Name = "label1";
-            label1.Size = new Size(173, 28);
+            label1.Size = new Size(87, 28);
             label1.TabIndex = 1;
-            label1.Text = "Cấp cho User/Role";
+            label1.Text = "Grant to";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // role_txtbox
             // 
-            role_txtbox.Location = new Point(225, 51);
+            role_txtbox.Location = new Point(179, 51);
             role_txtbox.Name = "role_txtbox";
-            role_txtbox.Size = new Size(212, 31);
+            role_txtbox.Size = new Size(258, 31);
             role_txtbox.TabIndex = 2;
             // 
             // userOrrole_txtbox
             // 
-            userOrrole_txtbox.Location = new Point(225, 133);
+            userOrrole_txtbox.Location = new Point(179, 133);
             userOrrole_txtbox.Name = "userOrrole_txtbox";
-            userOrrole_txtbox.Size = new Size(212, 31);
+            userOrrole_txtbox.Size = new Size(258, 31);
             userOrrole_txtbox.TabIndex = 3;
             // 
             // grant_btn
             // 
-            grant_btn.Location = new Point(225, 217);
+            grant_btn.BackColor = SystemColors.ActiveCaption;
+            grant_btn.Font = new Font("Book Antiqua", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            grant_btn.Location = new Point(179, 217);
             grant_btn.Name = "grant_btn";
             grant_btn.Size = new Size(112, 34);
             grant_btn.TabIndex = 4;
-            grant_btn.Text = "Cấp role";
-            grant_btn.UseVisualStyleBackColor = true;
+            grant_btn.Text = "Grant Role";
+            grant_btn.UseVisualStyleBackColor = false;
             // 
             // exit_btn
             // 
-            exit_btn.Location = new Point(437, 217);
+            exit_btn.BackColor = Color.IndianRed;
+            exit_btn.Font = new Font("Book Antiqua", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            exit_btn.Location = new Point(434, 217);
             exit_btn.Name = "exit_btn";
             exit_btn.Size = new Size(112, 34);
             exit_btn.TabIndex = 5;
-            exit_btn.Text = "Thoát";
-            exit_btn.UseVisualStyleBackColor = true;
+            exit_btn.Text = "Cancel";
+            exit_btn.UseVisualStyleBackColor = false;
             // 
             // DBA_GrantRole
             // 

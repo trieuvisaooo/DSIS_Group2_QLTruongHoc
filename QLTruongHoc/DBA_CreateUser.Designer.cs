@@ -40,9 +40,10 @@
             // 
             button1.BackColor = Color.IndianRed;
             button1.Font = new Font("Book Antiqua", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(428, 271);
+            button1.Location = new Point(535, 339);
+            button1.Margin = new Padding(4, 4, 4, 4);
             button1.Name = "button1";
-            button1.Size = new Size(103, 39);
+            button1.Size = new Size(129, 49);
             button1.TabIndex = 11;
             button1.Text = "Cancel";
             button1.UseVisualStyleBackColor = false;
@@ -51,9 +52,10 @@
             // 
             Submit.BackColor = SystemColors.ActiveCaption;
             Submit.Font = new Font("Book Antiqua", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Submit.Location = new Point(298, 271);
+            Submit.Location = new Point(372, 339);
+            Submit.Margin = new Padding(4, 4, 4, 4);
             Submit.Name = "Submit";
-            Submit.Size = new Size(112, 39);
+            Submit.Size = new Size(140, 49);
             Submit.TabIndex = 10;
             Submit.Text = "Submit";
             Submit.UseVisualStyleBackColor = false;
@@ -61,50 +63,55 @@
             // passbox
             // 
             passbox.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            passbox.Location = new Point(252, 184);
+            passbox.Location = new Point(315, 230);
+            passbox.Margin = new Padding(4, 4, 4, 4);
             passbox.Name = "passbox";
-            passbox.Size = new Size(369, 43);
+            passbox.Size = new Size(460, 51);
             passbox.TabIndex = 9;
             // 
             // userbox
             // 
             userbox.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            userbox.Location = new Point(252, 84);
+            userbox.Location = new Point(315, 105);
+            userbox.Margin = new Padding(4, 4, 4, 4);
             userbox.Name = "userbox";
-            userbox.Size = new Size(369, 43);
+            userbox.Size = new Size(460, 51);
             userbox.TabIndex = 8;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Sitka Text", 16.1999989F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label2.Location = new Point(81, 184);
+            label2.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label2.Location = new Point(101, 233);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(149, 39);
+            label2.Size = new Size(165, 45);
             label2.TabIndex = 7;
             label2.Text = "Password:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Sitka Text", 16.1999989F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(81, 84);
+            label1.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label1.Location = new Point(101, 108);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(85, 39);
+            label1.Size = new Size(95, 45);
             label1.TabIndex = 6;
             label1.Text = "User:";
             // 
             // DBA_CreateUser
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(782, 353);
+            ClientSize = new Size(978, 441);
             Controls.Add(button1);
             Controls.Add(Submit);
             Controls.Add(passbox);
             Controls.Add(userbox);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "DBA_CreateUser";
             Text = "DBA_CreateUser";
             ResumeLayout(false);

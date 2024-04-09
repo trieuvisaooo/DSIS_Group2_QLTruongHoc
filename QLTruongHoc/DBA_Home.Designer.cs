@@ -56,13 +56,13 @@ namespace QLTruongHoc
         {
             tabControl1 = new TabControl();
             UsersRolesPage = new TabPage();
+            useransRole1 = new UseransRole();
             button1 = new Button();
             RolesPage = new TabPage();
             privilegesPage = new TabPage();
             tablesViewsTab = new TabPage();
             SysPrivilegesPage = new TabPage();
             auditPage = new TabPage();
-            useransRole1 = new UseransRole();
             tabControl1.SuspendLayout();
             UsersRolesPage.SuspendLayout();
             SuspendLayout();
@@ -77,28 +77,39 @@ namespace QLTruongHoc
             tabControl1.Controls.Add(auditPage);
             tabControl1.Dock = DockStyle.Fill;
             tabControl1.Location = new Point(0, 0);
+            tabControl1.Margin = new Padding(4, 5, 4, 5);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1277, 673);
+            tabControl1.Size = new Size(1824, 1050);
             tabControl1.TabIndex = 0;
             // 
             // UsersRolesPage
             // 
             UsersRolesPage.Controls.Add(useransRole1);
             UsersRolesPage.Controls.Add(button1);
-            UsersRolesPage.Location = new Point(4, 24);
+            UsersRolesPage.Location = new Point(4, 34);
+            UsersRolesPage.Margin = new Padding(4, 5, 4, 5);
             UsersRolesPage.Name = "UsersRolesPage";
-            UsersRolesPage.Padding = new Padding(3);
-            UsersRolesPage.Size = new Size(1269, 645);
+            UsersRolesPage.Padding = new Padding(4, 5, 4, 5);
+            UsersRolesPage.Size = new Size(1816, 1012);
             UsersRolesPage.TabIndex = 0;
             UsersRolesPage.Text = "Users & Roles";
             UsersRolesPage.UseVisualStyleBackColor = true;
             // 
+            // useransRole1
+            // 
+            useransRole1.Location = new Point(0, 8);
+            useransRole1.Margin = new Padding(4, 3, 4, 3);
+            useransRole1.Name = "useransRole1";
+            useransRole1.Size = new Size(1801, 1033);
+            useransRole1.TabIndex = 1;
+            // 
             // button1
             // 
-            button1.Location = new Point(1191, 619);
+            button1.Location = new Point(1701, 1032);
+            button1.Margin = new Padding(4, 5, 4, 5);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
+            button1.Size = new Size(107, 38);
             button1.TabIndex = 0;
             button1.Text = "Sign Out";
             button1.UseVisualStyleBackColor = true;
@@ -106,72 +117,71 @@ namespace QLTruongHoc
             // 
             // RolesPage
             // 
-            RolesPage.Location = new Point(4, 24);
+            RolesPage.Location = new Point(4, 34);
+            RolesPage.Margin = new Padding(4, 5, 4, 5);
             RolesPage.Name = "RolesPage";
-            RolesPage.Padding = new Padding(3);
-            RolesPage.Size = new Size(1269, 645);
+            RolesPage.Padding = new Padding(4, 5, 4, 5);
+            RolesPage.Size = new Size(1816, 1084);
             RolesPage.TabIndex = 1;
             RolesPage.Text = "Roles";
             RolesPage.UseVisualStyleBackColor = true;
             // 
             // privilegesPage
             // 
-            privilegesPage.Location = new Point(4, 24);
+            privilegesPage.Location = new Point(4, 34);
+            privilegesPage.Margin = new Padding(4, 5, 4, 5);
             privilegesPage.Name = "privilegesPage";
-            privilegesPage.Padding = new Padding(3);
-            privilegesPage.Size = new Size(1269, 645);
+            privilegesPage.Padding = new Padding(4, 5, 4, 5);
+            privilegesPage.Size = new Size(1816, 1084);
             privilegesPage.TabIndex = 2;
             privilegesPage.Text = "Privileges";
             privilegesPage.UseVisualStyleBackColor = true;
             // 
             // tablesViewsTab
             // 
-            tablesViewsTab.Location = new Point(4, 24);
+            tablesViewsTab.Location = new Point(4, 34);
+            tablesViewsTab.Margin = new Padding(4, 5, 4, 5);
             tablesViewsTab.Name = "tablesViewsTab";
-            tablesViewsTab.Padding = new Padding(3);
-            tablesViewsTab.Size = new Size(1269, 645);
+            tablesViewsTab.Padding = new Padding(4, 5, 4, 5);
+            tablesViewsTab.Size = new Size(1816, 1084);
             tablesViewsTab.TabIndex = 3;
             tablesViewsTab.Text = "Tables & Views";
             tablesViewsTab.UseVisualStyleBackColor = true;
             // 
             // SysPrivilegesPage
             // 
-            SysPrivilegesPage.Location = new Point(4, 24);
+            SysPrivilegesPage.Location = new Point(4, 34);
+            SysPrivilegesPage.Margin = new Padding(4, 5, 4, 5);
             SysPrivilegesPage.Name = "SysPrivilegesPage";
-            SysPrivilegesPage.Padding = new Padding(3);
-            SysPrivilegesPage.Size = new Size(1269, 645);
+            SysPrivilegesPage.Padding = new Padding(4, 5, 4, 5);
+            SysPrivilegesPage.Size = new Size(1816, 1084);
             SysPrivilegesPage.TabIndex = 4;
             SysPrivilegesPage.Text = "System Privileges";
             SysPrivilegesPage.UseVisualStyleBackColor = true;
             // 
             // auditPage
             // 
-            auditPage.Location = new Point(4, 24);
+            auditPage.Location = new Point(4, 34);
+            auditPage.Margin = new Padding(4, 5, 4, 5);
             auditPage.Name = "auditPage";
-            auditPage.Padding = new Padding(3);
-            auditPage.Size = new Size(1269, 645);
+            auditPage.Padding = new Padding(4, 5, 4, 5);
+            auditPage.Size = new Size(1816, 1084);
             auditPage.TabIndex = 5;
             auditPage.Text = "Audit";
             auditPage.UseVisualStyleBackColor = true;
             // 
-            // useransRole1
-            // 
-            useransRole1.Location = new Point(0, 5);
-            useransRole1.Margin = new Padding(3, 2, 3, 2);
-            useransRole1.Name = "useransRole1";
-            useransRole1.Size = new Size(1261, 620);
-            useransRole1.TabIndex = 1;
-            // 
             // DBA_Home
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1277, 673);
+            ClientSize = new Size(1824, 1050);
             Controls.Add(tabControl1);
+            Margin = new Padding(4, 5, 4, 5);
             MaximizeBox = false;
             Name = "DBA_Home";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "QLTH";
+            FormClosed += Home_Closed;
             Load += Form1_Load;
             tabControl1.ResumeLayout(false);
             UsersRolesPage.ResumeLayout(false);

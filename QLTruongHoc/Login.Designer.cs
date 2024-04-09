@@ -53,18 +53,20 @@
             // usn_label
             // 
             usn_label.AutoSize = true;
-            usn_label.Location = new Point(81, 119);
+            usn_label.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            usn_label.Location = new Point(62, 119);
             usn_label.Name = "usn_label";
-            usn_label.Size = new Size(129, 25);
+            usn_label.Size = new Size(148, 28);
             usn_label.TabIndex = 1;
             usn_label.Text = "Tên đăng nhập";
             // 
             // psw_label
             // 
             psw_label.AutoSize = true;
-            psw_label.Location = new Point(124, 198);
+            psw_label.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            psw_label.Location = new Point(112, 198);
             psw_label.Name = "psw_label";
-            psw_label.Size = new Size(86, 25);
+            psw_label.Size = new Size(98, 28);
             psw_label.TabIndex = 3;
             psw_label.Text = "Mật khẩu";
             // 
@@ -86,9 +88,10 @@
             // role_label
             // 
             role_label.AutoSize = true;
-            role_label.Location = new Point(147, 284);
+            role_label.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            role_label.Location = new Point(139, 286);
             role_label.Name = "role_label";
-            role_label.Size = new Size(63, 25);
+            role_label.Size = new Size(71, 28);
             role_label.TabIndex = 7;
             role_label.Text = "Vai trò";
             // 
