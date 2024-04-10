@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             title_label = new Label();
             usn_label = new Label();
             psw_label = new Label();
@@ -43,9 +44,10 @@
             title_label.AutoSize = true;
             title_label.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point, 163);
             title_label.ForeColor = SystemColors.MenuHighlight;
-            title_label.Location = new Point(203, 20);
+            title_label.Location = new Point(142, 12);
+            title_label.Margin = new Padding(2, 0, 2, 0);
             title_label.Name = "title_label";
-            title_label.Size = new Size(382, 45);
+            title_label.Size = new Size(261, 30);
             title_label.TabIndex = 0;
             title_label.Text = "QUẢN LÝ TRƯỜNG HỌC";
             title_label.TextAlign = ContentAlignment.TopCenter;
@@ -54,9 +56,10 @@
             // 
             usn_label.AutoSize = true;
             usn_label.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            usn_label.Location = new Point(62, 119);
+            usn_label.Location = new Point(43, 71);
+            usn_label.Margin = new Padding(2, 0, 2, 0);
             usn_label.Name = "usn_label";
-            usn_label.Size = new Size(148, 28);
+            usn_label.Size = new Size(102, 19);
             usn_label.TabIndex = 1;
             usn_label.Text = "Tên đăng nhập";
             // 
@@ -64,24 +67,27 @@
             // 
             psw_label.AutoSize = true;
             psw_label.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            psw_label.Location = new Point(112, 198);
+            psw_label.Location = new Point(78, 119);
+            psw_label.Margin = new Padding(2, 0, 2, 0);
             psw_label.Name = "psw_label";
-            psw_label.Size = new Size(98, 28);
+            psw_label.Size = new Size(68, 19);
             psw_label.TabIndex = 3;
             psw_label.Text = "Mật khẩu";
             // 
             // username_txtbox
             // 
-            username_txtbox.Location = new Point(216, 119);
+            username_txtbox.Location = new Point(151, 71);
+            username_txtbox.Margin = new Padding(2, 2, 2, 2);
             username_txtbox.Name = "username_txtbox";
-            username_txtbox.Size = new Size(339, 31);
+            username_txtbox.Size = new Size(238, 23);
             username_txtbox.TabIndex = 4;
             // 
             // psw_txtbox
             // 
-            psw_txtbox.Location = new Point(216, 198);
+            psw_txtbox.Location = new Point(151, 119);
+            psw_txtbox.Margin = new Padding(2, 2, 2, 2);
             psw_txtbox.Name = "psw_txtbox";
-            psw_txtbox.Size = new Size(339, 31);
+            psw_txtbox.Size = new Size(238, 23);
             psw_txtbox.TabIndex = 5;
             psw_txtbox.UseSystemPasswordChar = true;
             // 
@@ -89,9 +95,10 @@
             // 
             role_label.AutoSize = true;
             role_label.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            role_label.Location = new Point(139, 286);
+            role_label.Location = new Point(97, 172);
+            role_label.Margin = new Padding(2, 0, 2, 0);
             role_label.Name = "role_label";
-            role_label.Size = new Size(71, 28);
+            role_label.Size = new Size(50, 19);
             role_label.TabIndex = 7;
             role_label.Text = "Vai trò";
             // 
@@ -99,9 +106,10 @@
             // 
             login_btn.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
             login_btn.ForeColor = SystemColors.MenuHighlight;
-            login_btn.Location = new Point(216, 359);
+            login_btn.Location = new Point(151, 215);
+            login_btn.Margin = new Padding(2, 2, 2, 2);
             login_btn.Name = "login_btn";
-            login_btn.Size = new Size(110, 40);
+            login_btn.Size = new Size(77, 24);
             login_btn.TabIndex = 8;
             login_btn.Text = "Đăng nhập";
             login_btn.UseVisualStyleBackColor = true;
@@ -111,16 +119,17 @@
             // 
             role_combox.FormattingEnabled = true;
             role_combox.Items.AddRange(new object[] { "Quản trị viên", "Nhân viên cơ bản", "Giảng viên", "Giáo vụ", "Trưởng đơn vị", "Trường khoa", "Sinh viên" });
-            role_combox.Location = new Point(216, 281);
+            role_combox.Location = new Point(151, 169);
+            role_combox.Margin = new Padding(2, 2, 2, 2);
             role_combox.Name = "role_combox";
-            role_combox.Size = new Size(202, 33);
+            role_combox.Size = new Size(143, 23);
             role_combox.TabIndex = 9;
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(784, 450);
+            ClientSize = new Size(549, 270);
             Controls.Add(role_combox);
             Controls.Add(login_btn);
             Controls.Add(role_label);
@@ -129,6 +138,8 @@
             Controls.Add(psw_label);
             Controls.Add(usn_label);
             Controls.Add(title_label);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(2, 2, 2, 2);
             Name = "Login";
             Text = "ĐĂNG NHẬP";
             Load += Login_Load;

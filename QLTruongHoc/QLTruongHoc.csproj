@@ -6,7 +6,12 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>goal_target_motivation_successful_growth_success_icon_230357.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="goal_target_motivation_successful_growth_success_icon_230357.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Oracle.EntityFrameworkCore" Version="8.21.121" />
