@@ -6,6 +6,7 @@ namespace QLTruongHoc
     public partial class Login : Form
     {
         public static OracleConnection con;
+        public static String username;
         public Login()
         {
             InitializeComponent();
@@ -33,15 +34,15 @@ namespace QLTruongHoc
                 MessageBox.Show("VAI TRÒ không được để trống.");
                 return;
             }
-
+            username = username_txtbox.Text;
             //Check username, password and role
             try
             {
                 string connectionString = "";
                 if (role_combox.Text == "Quản trị viên")
-                    connectionString = @"DATA SOURCE = localhost:1522/xe;DBA Privilege=SYSDBA; USER ID=" + username_txtbox.Text + ";PASSWORD=" + psw_txtbox.Text;
+                    connectionString = @"DATA SOURCE = 172.16.112.128:1521/xe;DBA Privilege=SYSDBA; USER ID=" + username_txtbox.Text + ";PASSWORD=" + psw_txtbox.Text;
                 else
-                    connectionString = @"DATA SOURCE = localhost:1522/xe; USER ID=" + username_txtbox.Text + ";PASSWORD=" + psw_txtbox.Text;
+                    connectionString = @"DATA SOURCE = 172.16.112.128:1521/xe; USER ID=" + username_txtbox.Text + ";PASSWORD=" + psw_txtbox.Text;
 
                 con = new OracleConnection();
                 con.ConnectionString = connectionString;
@@ -59,10 +60,8 @@ namespace QLTruongHoc
                 }
                 else
                 {
-                    MessageBox.Show("Connect với Oracle thất bại!");
-
+                    MessageBox.Show("Connect với Oracle thất bại!" + username_txtbox.Text + " " + psw_txtbox.Text);
                 }
-
 
                 this.Hide();
             }

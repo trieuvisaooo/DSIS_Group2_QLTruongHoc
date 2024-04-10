@@ -30,8 +30,8 @@
         {
             label1 = new Label();
             label2 = new Label();
-            dataGridView1 = new DataGridView();
-            dataGridView2 = new DataGridView();
+            userGrid = new DataGridView();
+            roleGrid = new DataGridView();
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
@@ -44,8 +44,8 @@
             textBox2 = new TextBox();
             label3 = new Label();
             label4 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)userGrid).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)roleGrid).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -68,26 +68,26 @@
             label2.TabIndex = 1;
             label2.Text = "ROLE";
             // 
-            // dataGridView1
+            // userGrid
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(18, 57);
-            dataGridView1.Margin = new Padding(3, 2, 3, 2);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(860, 239);
-            dataGridView1.TabIndex = 2;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            userGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            userGrid.Location = new Point(18, 57);
+            userGrid.Margin = new Padding(3, 2, 3, 2);
+            userGrid.Name = "userGrid";
+            userGrid.RowHeadersWidth = 51;
+            userGrid.Size = new Size(860, 239);
+            userGrid.TabIndex = 2;
+            userGrid.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // dataGridView2
+            // roleGrid
             // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(18, 354);
-            dataGridView2.Margin = new Padding(3, 2, 3, 2);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(860, 239);
-            dataGridView2.TabIndex = 3;
+            roleGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            roleGrid.Location = new Point(18, 354);
+            roleGrid.Margin = new Padding(3, 2, 3, 2);
+            roleGrid.Name = "roleGrid";
+            roleGrid.RowHeadersWidth = 51;
+            roleGrid.Size = new Size(860, 239);
+            roleGrid.TabIndex = 3;
             // 
             // button2
             // 
@@ -241,16 +241,16 @@
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
-            Controls.Add(dataGridView2);
-            Controls.Add(dataGridView1);
+            Controls.Add(roleGrid);
+            Controls.Add(userGrid);
             Controls.Add(label2);
             Controls.Add(label1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "UseransRole";
             Size = new Size(1261, 620);
             Load += UseransRole_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)userGrid).EndInit();
+            ((System.ComponentModel.ISupportInitialize)roleGrid).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -259,8 +259,8 @@
 
         private Label label1;
         private Label label2;
-        private DataGridView dataGridView1;
-        private DataGridView dataGridView2;
+        private DataGridView userGrid;
+        private DataGridView roleGrid;
         private Button button2;
         private Button button3;
         private Button button4;
