@@ -51,5 +51,20 @@ namespace QLTruongHoc
         {
 
         }
+
+        private void tableUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void buttonCreateUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableRoles_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
