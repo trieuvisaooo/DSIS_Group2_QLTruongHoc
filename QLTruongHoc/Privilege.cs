@@ -26,5 +26,11 @@ namespace QLTruongHoc
         {
 
         }
+
+        private void grantBtn_Click(object sender, EventArgs e)
+        {
+            DBA_GrantPrivs grantPrivForm = new DBA_GrantPrivs();
+            grantPrivForm.Show();
+        }
     }
 }

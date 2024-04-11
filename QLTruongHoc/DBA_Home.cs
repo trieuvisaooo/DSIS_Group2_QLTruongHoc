@@ -1,4 +1,4 @@
-namespace QLTruongHoc
+﻿namespace QLTruongHoc
 {
     public partial class DBA_Home : Form
     {
@@ -27,11 +27,20 @@ namespace QLTruongHoc
 
         }
 
-
-        private void Home_Closed(object sender, FormClosedEventArgs e)
+        private void sysPrivs1_Load(object sender, EventArgs e)
         {
-            Application.Exit();
+
         }
 
+
+
+        private void DBA_Home_Closing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dg = MessageBox.Show("Bạn có muốn kết thúc chương trình không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dg == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

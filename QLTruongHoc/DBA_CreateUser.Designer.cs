@@ -41,7 +41,7 @@
             button1.BackColor = Color.IndianRed;
             button1.Font = new Font("Book Antiqua", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.Location = new Point(535, 339);
-            button1.Margin = new Padding(4, 4, 4, 4);
+            button1.Margin = new Padding(4);
             button1.Name = "button1";
             button1.Size = new Size(129, 49);
             button1.TabIndex = 11;
@@ -53,18 +53,18 @@
             Submit.BackColor = SystemColors.ActiveCaption;
             Submit.Font = new Font("Book Antiqua", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Submit.Location = new Point(372, 339);
-            Submit.Margin = new Padding(4, 4, 4, 4);
+            Submit.Margin = new Padding(4);
             Submit.Name = "Submit";
             Submit.Size = new Size(140, 49);
             Submit.TabIndex = 10;
-            Submit.Text = "Submit";
+            Submit.Text = "Apply";
             Submit.UseVisualStyleBackColor = false;
             // 
             // passbox
             // 
             passbox.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             passbox.Location = new Point(315, 230);
-            passbox.Margin = new Padding(4, 4, 4, 4);
+            passbox.Margin = new Padding(4);
             passbox.Name = "passbox";
             passbox.Size = new Size(460, 51);
             passbox.TabIndex = 9;
@@ -73,7 +73,7 @@
             // 
             userbox.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             userbox.Location = new Point(315, 105);
-            userbox.Margin = new Padding(4, 4, 4, 4);
+            userbox.Margin = new Padding(4);
             userbox.Name = "userbox";
             userbox.Size = new Size(460, 51);
             userbox.TabIndex = 8;
@@ -111,9 +111,9 @@
             Controls.Add(userbox);
             Controls.Add(label2);
             Controls.Add(label1);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "DBA_CreateUser";
-            Text = "DBA_CreateUser";
+            Text = "TẠO MỚI USER";
             ResumeLayout(false);
             PerformLayout();
         }

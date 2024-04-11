@@ -32,7 +32,7 @@ namespace QLTruongHoc
             grantView = new DataGridView();
             label1 = new Label();
             searchTextBox = new TextBox();
-            selectButton = new Button();
+            loadButton = new Button();
             grantRevokeButton = new Button();
             searchGrantee = new Button();
             ((System.ComponentModel.ISupportInitialize)grantView).BeginInit();
@@ -68,17 +68,17 @@ namespace QLTruongHoc
             searchTextBox.Size = new Size(200, 31);
             searchTextBox.TabIndex = 2;
             // 
-            // selectButton
+            // loadButton
             // 
-            selectButton.Font = new Font("Book Antiqua", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            selectButton.Location = new Point(1109, 27);
-            selectButton.Margin = new Padding(4, 5, 4, 5);
-            selectButton.Name = "selectButton";
-            selectButton.Size = new Size(162, 52);
-            selectButton.TabIndex = 3;
-            selectButton.Text = "SELECT";
-            selectButton.UseVisualStyleBackColor = true;
-            selectButton.Click += selectButton_Click;
+            loadButton.Font = new Font("Book Antiqua", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            loadButton.Location = new Point(1109, 27);
+            loadButton.Margin = new Padding(4, 5, 4, 5);
+            loadButton.Name = "loadButton";
+            loadButton.Size = new Size(162, 52);
+            loadButton.TabIndex = 3;
+            loadButton.Text = "LOAD";
+            loadButton.UseVisualStyleBackColor = true;
+            loadButton.Click += loadButton_Click;
             // 
             // grantRevokeButton
             // 
@@ -110,7 +110,7 @@ namespace QLTruongHoc
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(searchGrantee);
             Controls.Add(grantRevokeButton);
-            Controls.Add(selectButton);
+            Controls.Add(loadButton);
             Controls.Add(searchTextBox);
             Controls.Add(label1);
             Controls.Add(grantView);
@@ -128,7 +128,7 @@ namespace QLTruongHoc
         private System.Windows.Forms.DataGridView grantView;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox searchTextBox;
-        private System.Windows.Forms.Button selectButton;
+        private System.Windows.Forms.Button loadButton;
         private System.Windows.Forms.Button grantRevokeButton;
         private System.Windows.Forms.Button searchGrantee;
     }
