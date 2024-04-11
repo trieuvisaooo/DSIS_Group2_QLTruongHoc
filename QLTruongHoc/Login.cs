@@ -1,4 +1,5 @@
 ﻿using Oracle.ManagedDataAccess.Client;
+using System.Configuration;
 
 
 namespace QLTruongHoc
@@ -41,12 +42,16 @@ namespace QLTruongHoc
             try
             {
                 string connectionString = "";
+                var appSettings = ConfigurationManager.AppSettings;
+                string hostname = appSettings["hostname"] ?? "localhost";
+                string port = appSettings["port"] ?? "1521"; 
+
                 if (role_combox.Text == "Quản trị viên")
-                    connectionString = @"DATA SOURCE = localhost:1522/xe;DBA Privilege=SYSDBA; USER ID=" + username_txtbox.Text + ";PASSWORD=" + psw_txtbox.Text;
-                
-                    /*connectionString = @"DATA SOURCE = 172.16.112.128:1521/xe; USER ID=" + username_txtbox.Text + ";PASSWORD=" + psw_txtbox.Text;*/
-                
-                    connectionString = @"DATA SOURCE = localhost:1522/xe; USER ID=" + username_txtbox.Text + ";PASSWORD=" + psw_txtbox.Text;
+                    /*connectionString = @"DATA SOURCE = localhost:1522/xe;DBA Privilege=SYSDBA; USER ID=" + username_txtbox.Text + ";PASSWORD=" + psw_txtbox.Text;*/
+
+                    connectionString = @$"DATA SOURCE = {hostname}:{port}/xe; USER ID=" + username_txtbox.Text + ";PASSWORD=" + psw_txtbox.Text;
+                else
+                    connectionString = @$"DATA SOURCE = {hostname}:{port}/xe; USER ID=" + username_txtbox.Text + ";PASSWORD=" + psw_txtbox.Text;
 
 
                 con = new OracleConnection();
