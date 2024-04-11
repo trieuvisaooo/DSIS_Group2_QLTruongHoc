@@ -43,7 +43,7 @@ namespace QLTruongHoc
                     connectionString = @"DATA SOURCE = 172.16.112.128:1521/xe;DBA Privilege=SYSDBA; USER ID=" + username_txtbox.Text + ";PASSWORD=" + psw_txtbox.Text;
                 else
                     connectionString = @"DATA SOURCE = 172.16.112.128:1521/xe; USER ID=" + username_txtbox.Text + ";PASSWORD=" + psw_txtbox.Text;
-
+                
                 con = new OracleConnection();
                 con.ConnectionString = connectionString;
                 con.Open();

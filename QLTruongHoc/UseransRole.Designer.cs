@@ -70,6 +70,7 @@
             // 
             // userGrid
             // 
+            userGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             userGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             userGrid.Location = new Point(18, 57);
             userGrid.Margin = new Padding(3, 2, 3, 2);
@@ -81,6 +82,7 @@
             // 
             // roleGrid
             // 
+            roleGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             roleGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             roleGrid.Location = new Point(18, 354);
             roleGrid.Margin = new Padding(3, 2, 3, 2);
