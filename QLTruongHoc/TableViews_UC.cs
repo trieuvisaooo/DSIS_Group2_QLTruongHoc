@@ -5,18 +5,17 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLTruongHoc
 {
-    public partial class DBA_TablesAndViews_UC : UserControl
+    public partial class TableViews_UC : UserControl
     {
         public static OracleConnection conNow = Login.con;
 
-        public DBA_TablesAndViews_UC()
+        public TableViews_UC()
         {
             InitializeComponent();
             DBA_TablesAndViews_UC_load();
@@ -24,7 +23,8 @@ namespace QLTruongHoc
 
         private void DBA_TablesAndViews_UC_load()
         {
-            try {
+            try
+            {
                 // Select table
                 string selectTableSql = "select * from dba_tables where owner = :owner";
                 OracleCommand command = new OracleCommand(selectTableSql, conNow);
@@ -46,7 +46,8 @@ namespace QLTruongHoc
                 viewGrid.DataSource = dataTable1;
 
             }
-            catch(OracleException ex) {
+            catch (OracleException ex)
+            {
                 MessageBox.Show(ex.Message);
                 return;
 
@@ -58,7 +59,7 @@ namespace QLTruongHoc
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void label1_Click_1(object sender, EventArgs e)
         {
 
         }
