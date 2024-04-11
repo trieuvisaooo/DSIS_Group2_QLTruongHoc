@@ -39,7 +39,7 @@
             Cancel.BackColor = Color.IndianRed;
             Cancel.Font = new Font("Book Antiqua", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Cancel.Location = new Point(494, 324);
-            Cancel.Margin = new Padding(4, 4, 4, 4);
+            Cancel.Margin = new Padding(4);
             Cancel.Name = "Cancel";
             Cancel.Size = new Size(129, 49);
             Cancel.TabIndex = 17;
@@ -51,7 +51,7 @@
             Delete.BackColor = SystemColors.ActiveCaption;
             Delete.Font = new Font("Book Antiqua", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Delete.Location = new Point(331, 324);
-            Delete.Margin = new Padding(4, 4, 4, 4);
+            Delete.Margin = new Padding(4);
             Delete.Name = "Delete";
             Delete.Size = new Size(140, 49);
             Delete.TabIndex = 16;
@@ -62,7 +62,7 @@
             // 
             userbox.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             userbox.Location = new Point(376, 140);
-            userbox.Margin = new Padding(4, 4, 4, 4);
+            userbox.Margin = new Padding(4);
             userbox.Name = "userbox";
             userbox.Size = new Size(460, 51);
             userbox.TabIndex = 14;
@@ -87,9 +87,9 @@
             Controls.Add(Delete);
             Controls.Add(userbox);
             Controls.Add(label1);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "DBA_DelUser";
-            Text = "DBA_DelUser";
+            Text = "XÓA USER";
             ResumeLayout(false);
             PerformLayout();
         }

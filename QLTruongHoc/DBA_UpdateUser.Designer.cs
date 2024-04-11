@@ -41,7 +41,7 @@
             button1.BackColor = Color.IndianRed;
             button1.Font = new Font("Book Antiqua", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.Location = new Point(551, 340);
-            button1.Margin = new Padding(4, 4, 4, 4);
+            button1.Margin = new Padding(4);
             button1.Name = "button1";
             button1.Size = new Size(129, 49);
             button1.TabIndex = 17;
@@ -53,7 +53,7 @@
             Update.BackColor = SystemColors.ActiveCaption;
             Update.Font = new Font("Book Antiqua", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Update.Location = new Point(386, 340);
-            Update.Margin = new Padding(4, 4, 4, 4);
+            Update.Margin = new Padding(4);
             Update.Name = "Update";
             Update.Size = new Size(140, 49);
             Update.TabIndex = 16;
@@ -64,7 +64,7 @@
             // 
             passbox.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             passbox.Location = new Point(329, 231);
-            passbox.Margin = new Padding(4, 4, 4, 4);
+            passbox.Margin = new Padding(4);
             passbox.Name = "passbox";
             passbox.Size = new Size(460, 51);
             passbox.TabIndex = 15;
@@ -73,7 +73,7 @@
             // 
             rolebox.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rolebox.Location = new Point(329, 106);
-            rolebox.Margin = new Padding(4, 4, 4, 4);
+            rolebox.Margin = new Padding(4);
             rolebox.Name = "rolebox";
             rolebox.Size = new Size(460, 51);
             rolebox.TabIndex = 14;
@@ -111,9 +111,9 @@
             Controls.Add(rolebox);
             Controls.Add(label2);
             Controls.Add(label1);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "DBA_UpdateUser";
-            Text = "DBA_UpdateUser";
+            Text = "CẬP NHẬT MẬT KHẨU CHO USER";
             ResumeLayout(false);
             PerformLayout();
         }
