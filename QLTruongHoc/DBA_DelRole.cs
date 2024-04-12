@@ -62,7 +62,7 @@ namespace QLTruongHoc
                         DataTable dataTable = new DataTable();
                         da.Fill(dataTable);
                         UseransRole.grid2.DataSource = dataTable;
-                        MessageBox.Show("Tạo Role thành công");
+                        MessageBox.Show("Xóa Role thành công");
                         this.Close();
                     }
 
