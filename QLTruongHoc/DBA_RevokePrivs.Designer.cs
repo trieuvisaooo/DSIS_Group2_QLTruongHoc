@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
+            user_role_txtbox = new TextBox();
             label2 = new Label();
             label3 = new Label();
-            checkBox1 = new CheckBox();
-            checkBox2 = new CheckBox();
-            checkBox3 = new CheckBox();
-            checkBox4 = new CheckBox();
-            button1 = new Button();
-            button2 = new Button();
-            comboBox1 = new ComboBox();
+            revoke_btn = new Button();
+            cancel_btn = new Button();
+            table_view_combox = new ComboBox();
+            label4 = new Label();
+            check_result = new Label();
+            check_btn = new Button();
+            privs_combox = new ComboBox();
             SuspendLayout();
             // 
             // label1
@@ -52,19 +52,19 @@
             label1.TabIndex = 0;
             label1.Text = "User/Role";
             // 
-            // textBox1
+            // user_role_txtbox
             // 
-            textBox1.Location = new Point(175, 41);
-            textBox1.Margin = new Padding(4);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(208, 31);
-            textBox1.TabIndex = 1;
+            user_role_txtbox.Location = new Point(239, 47);
+            user_role_txtbox.Margin = new Padding(4);
+            user_role_txtbox.Name = "user_role_txtbox";
+            user_role_txtbox.Size = new Size(208, 31);
+            user_role_txtbox.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(45, 106);
+            label2.Location = new Point(45, 146);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(106, 25);
@@ -75,106 +75,111 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(45, 172);
+            label3.Location = new Point(45, 204);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(86, 25);
             label3.TabIndex = 4;
             label3.Text = "Privilege";
             // 
-            // checkBox1
+            // revoke_btn
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(175, 171);
-            checkBox1.Margin = new Padding(4);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(84, 29);
-            checkBox1.TabIndex = 5;
-            checkBox1.Text = "Select";
-            checkBox1.UseVisualStyleBackColor = true;
+            revoke_btn.BackColor = SystemColors.ActiveCaption;
+            revoke_btn.Font = new Font("Book Antiqua", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            revoke_btn.ForeColor = SystemColors.ActiveCaptionText;
+            revoke_btn.Location = new Point(175, 266);
+            revoke_btn.Margin = new Padding(4);
+            revoke_btn.Name = "revoke_btn";
+            revoke_btn.Size = new Size(118, 36);
+            revoke_btn.TabIndex = 9;
+            revoke_btn.Text = "Revoke";
+            revoke_btn.UseVisualStyleBackColor = false;
+            revoke_btn.Click += revoke_btn_Click;
             // 
-            // checkBox2
+            // cancel_btn
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(285, 172);
-            checkBox2.Margin = new Padding(4);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(82, 29);
-            checkBox2.TabIndex = 6;
-            checkBox2.Text = "Insert";
-            checkBox2.UseVisualStyleBackColor = true;
+            cancel_btn.BackColor = Color.IndianRed;
+            cancel_btn.Font = new Font("Book Antiqua", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cancel_btn.Location = new Point(320, 266);
+            cancel_btn.Margin = new Padding(4);
+            cancel_btn.Name = "cancel_btn";
+            cancel_btn.Size = new Size(118, 36);
+            cancel_btn.TabIndex = 10;
+            cancel_btn.Text = "Cancel";
+            cancel_btn.UseVisualStyleBackColor = false;
+            cancel_btn.Click += cancel_btn_Click;
             // 
-            // checkBox3
+            // table_view_combox
             // 
-            checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(388, 171);
-            checkBox3.Margin = new Padding(4);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(88, 29);
-            checkBox3.TabIndex = 7;
-            checkBox3.Text = "Delete";
-            checkBox3.UseVisualStyleBackColor = true;
+            table_view_combox.FormattingEnabled = true;
+            table_view_combox.Location = new Point(239, 143);
+            table_view_combox.Margin = new Padding(4);
+            table_view_combox.Name = "table_view_combox";
+            table_view_combox.Size = new Size(208, 33);
+            table_view_combox.TabIndex = 11;
+            table_view_combox.SelectedValueChanged += table_view_combox_SelectedValueChanged;
             // 
-            // checkBox4
+            // label4
             // 
-            checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(501, 171);
-            checkBox4.Margin = new Padding(4);
-            checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(96, 29);
-            checkBox4.TabIndex = 8;
-            checkBox4.Text = "Update";
-            checkBox4.UseVisualStyleBackColor = true;
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(45, 96);
+            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(121, 25);
+            label4.TabIndex = 12;
+            label4.Text = "Check Result";
             // 
-            // button1
+            // check_result
             // 
-            button1.BackColor = SystemColors.ActiveCaption;
-            button1.Font = new Font("Book Antiqua", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(175, 234);
-            button1.Margin = new Padding(4);
-            button1.Name = "button1";
-            button1.Size = new Size(118, 36);
-            button1.TabIndex = 9;
-            button1.Text = "Revoke";
-            button1.UseVisualStyleBackColor = false;
+            check_result.AutoSize = true;
+            check_result.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            check_result.ForeColor = Color.Red;
+            check_result.Location = new Point(239, 96);
+            check_result.Margin = new Padding(4, 0, 4, 0);
+            check_result.Name = "check_result";
+            check_result.Size = new Size(112, 25);
+            check_result.TabIndex = 13;
+            check_result.Text = "Unchecked!";
             // 
-            // button2
+            // check_btn
             // 
-            button2.BackColor = Color.IndianRed;
-            button2.Font = new Font("Book Antiqua", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(320, 234);
-            button2.Margin = new Padding(4);
-            button2.Name = "button2";
-            button2.Size = new Size(118, 36);
-            button2.TabIndex = 10;
-            button2.Text = "Cancel";
-            button2.UseVisualStyleBackColor = false;
+            check_btn.BackColor = SystemColors.ActiveCaption;
+            check_btn.Font = new Font("Book Antiqua", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            check_btn.ForeColor = SystemColors.ActiveCaptionText;
+            check_btn.Location = new Point(468, 47);
+            check_btn.Margin = new Padding(4);
+            check_btn.Name = "check_btn";
+            check_btn.Size = new Size(98, 31);
+            check_btn.TabIndex = 14;
+            check_btn.Text = "Check";
+            check_btn.UseVisualStyleBackColor = false;
+            check_btn.Click += check_btn_Click;
             // 
-            // comboBox1
+            // privs_combox
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(175, 102);
-            comboBox1.Margin = new Padding(4);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(208, 33);
-            comboBox1.TabIndex = 11;
+            privs_combox.FormattingEnabled = true;
+            privs_combox.Location = new Point(239, 201);
+            privs_combox.Margin = new Padding(4);
+            privs_combox.Name = "privs_combox";
+            privs_combox.Size = new Size(208, 33);
+            privs_combox.TabIndex = 15;
             // 
             // DBA_RevokePrivs
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(665, 379);
-            Controls.Add(comboBox1);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(checkBox4);
-            Controls.Add(checkBox3);
-            Controls.Add(checkBox2);
-            Controls.Add(checkBox1);
+            Controls.Add(privs_combox);
+            Controls.Add(check_btn);
+            Controls.Add(check_result);
+            Controls.Add(label4);
+            Controls.Add(table_view_combox);
+            Controls.Add(cancel_btn);
+            Controls.Add(revoke_btn);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(textBox1);
+            Controls.Add(user_role_txtbox);
             Controls.Add(label1);
             Margin = new Padding(4);
             Name = "DBA_RevokePrivs";
@@ -187,15 +192,15 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
+        private TextBox user_role_txtbox;
         private Label label2;
         private Label label3;
-        private CheckBox checkBox1;
-        private CheckBox checkBox2;
-        private CheckBox checkBox3;
-        private CheckBox checkBox4;
-        private Button button1;
-        private Button button2;
-        private ComboBox comboBox1;
+        private Button revoke_btn;
+        private Button cancel_btn;
+        private ComboBox table_view_combox;
+        private Label label4;
+        private Label check_result;
+        private Button check_btn;
+        private ComboBox privs_combox;
     }
 }
