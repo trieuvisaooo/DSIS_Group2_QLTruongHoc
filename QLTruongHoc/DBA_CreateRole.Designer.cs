@@ -40,10 +40,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            label1.Location = new Point(109, 107);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(76, 64);
             label1.Name = "label1";
-            label1.Size = new Size(79, 38);
+            label1.Size = new Size(54, 25);
             label1.TabIndex = 0;
             label1.Text = "Role:";
             // 
@@ -51,68 +50,68 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            label2.Location = new Point(109, 230);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(76, 138);
             label2.Name = "label2";
-            label2.Size = new Size(143, 38);
+            label2.Size = new Size(96, 25);
             label2.TabIndex = 1;
             label2.Text = "Password:";
             // 
             // rolebox
             // 
             rolebox.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rolebox.Location = new Point(321, 98);
-            rolebox.Margin = new Padding(4, 3, 4, 3);
+            rolebox.Location = new Point(225, 59);
+            rolebox.Margin = new Padding(3, 2, 3, 2);
             rolebox.Name = "rolebox";
-            rolebox.Size = new Size(460, 51);
+            rolebox.Size = new Size(323, 36);
             rolebox.TabIndex = 2;
             rolebox.TextChanged += rolebox_TextChanged;
             // 
             // passbox
             // 
             passbox.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            passbox.Location = new Point(321, 222);
-            passbox.Margin = new Padding(4, 3, 4, 3);
+            passbox.Location = new Point(225, 133);
+            passbox.Margin = new Padding(3, 2, 3, 2);
             passbox.Name = "passbox";
-            passbox.Size = new Size(460, 51);
+            passbox.Size = new Size(323, 36);
             passbox.TabIndex = 3;
             // 
             // Submit
             // 
             Submit.BackColor = SystemColors.ActiveCaption;
             Submit.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Submit.Location = new Point(380, 332);
-            Submit.Margin = new Padding(4, 3, 4, 3);
+            Submit.Location = new Point(266, 199);
+            Submit.Margin = new Padding(3, 2, 3, 2);
             Submit.Name = "Submit";
-            Submit.Size = new Size(140, 48);
+            Submit.Size = new Size(98, 29);
             Submit.TabIndex = 4;
             Submit.Text = "Apply";
             Submit.UseVisualStyleBackColor = false;
+            Submit.Click += Submit_Click;
             // 
             // button1
             // 
             button1.BackColor = Color.IndianRed;
             button1.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(546, 332);
-            button1.Margin = new Padding(4, 3, 4, 3);
+            button1.Location = new Point(382, 199);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(129, 48);
+            button1.Size = new Size(90, 29);
             button1.TabIndex = 5;
             button1.Text = "Cancel";
             button1.UseVisualStyleBackColor = false;
             // 
             // DBA_CreateRole
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(979, 442);
+            ClientSize = new Size(685, 265);
             Controls.Add(button1);
             Controls.Add(Submit);
             Controls.Add(passbox);
             Controls.Add(rolebox);
             Controls.Add(label2);
             Controls.Add(label1);
-            Margin = new Padding(4, 3, 4, 3);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "DBA_CreateRole";
             Text = "TẠO MỚI ROLE";
             ResumeLayout(false);

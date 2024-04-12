@@ -102,6 +102,7 @@
             button2.TabIndex = 5;
             button2.Text = "Create User";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -162,6 +163,7 @@
             button7.TabIndex = 8;
             button7.Text = "Create Role";
             button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
             // 
             // button8
             // 
@@ -261,8 +263,8 @@
 
         private Label label1;
         private Label label2;
-        private DataGridView userGrid;
-        private DataGridView roleGrid;
+        public DataGridView userGrid;
+        public DataGridView roleGrid;
         private Button button2;
         private Button button3;
         private Button button4;
