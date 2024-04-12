@@ -55,10 +55,16 @@ namespace QLTruongHoc
                 UseransRole.grid1.DataSource = dataTable;
                 this.Close();
                 return;
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

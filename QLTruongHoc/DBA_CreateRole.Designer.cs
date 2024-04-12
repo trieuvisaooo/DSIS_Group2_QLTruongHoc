@@ -99,6 +99,7 @@
             button1.TabIndex = 5;
             button1.Text = "Cancel";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // DBA_CreateRole
             // 

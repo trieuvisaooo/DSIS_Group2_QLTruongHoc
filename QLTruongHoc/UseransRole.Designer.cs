@@ -115,6 +115,7 @@
             button3.TabIndex = 6;
             button3.Text = "Delete User";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
@@ -127,6 +128,7 @@
             button4.TabIndex = 7;
             button4.Text = "Update User";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // button5
             // 
@@ -139,6 +141,7 @@
             button5.TabIndex = 10;
             button5.Text = "Update Role";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // button6
             // 
@@ -151,6 +154,7 @@
             button6.TabIndex = 9;
             button6.Text = "Delete Role";
             button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // button7
             // 
@@ -176,6 +180,7 @@
             button8.TabIndex = 11;
             button8.Text = "Search";
             button8.UseVisualStyleBackColor = false;
+            button8.Click += button8_Click;
             // 
             // button9
             // 

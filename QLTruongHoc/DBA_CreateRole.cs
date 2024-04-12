@@ -46,21 +46,28 @@ namespace QLTruongHoc
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("p_role_name", role);
                 cmd.Parameters.Add("p_password", password);
-                
+
                 cmd.ExecuteNonQuery();
 
                 string sql = "SELECT role, role_id, password_required FROM DBA_ROLES";
-                OracleDataAdapter da = new OracleDataAdapter(sql, conNow) { SuppressGetDecimalInvalidCastException = true};
+                OracleDataAdapter da = new OracleDataAdapter(sql, conNow) { SuppressGetDecimalInvalidCastException = true };
                 DataTable dataTable = new DataTable();
                 da.Fill(dataTable);
                 UseransRole.grid2.DataSource = dataTable;
                 this.Close();
 
-            } catch (Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message);
                 this.Close();
-               
+
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
