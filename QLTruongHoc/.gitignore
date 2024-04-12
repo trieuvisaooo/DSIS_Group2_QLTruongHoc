@@ -372,3 +372,6 @@ FodyWeavers.xsd
 QLTruongHoc/obj
 QLTruongHoc/.vs
 QLTruongHoc/bin
+App.config
+QLTruongHoc/App.config
+/QLTruongHoc/App.config
