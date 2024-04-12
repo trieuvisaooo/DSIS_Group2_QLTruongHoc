@@ -56,13 +56,13 @@ namespace QLTruongHoc
             label1.Location = new Point(40, 40);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(138, 25);
+            label1.Size = new Size(163, 25);
             label1.TabIndex = 1;
-            label1.Text = "Search Grantee";
+            label1.Text = "Search By Grantee";
             // 
             // searchTextBox
             // 
-            searchTextBox.Location = new Point(194, 36);
+            searchTextBox.Location = new Point(213, 37);
             searchTextBox.Margin = new Padding(4, 5, 4, 5);
             searchTextBox.Name = "searchTextBox";
             searchTextBox.Size = new Size(200, 31);
@@ -95,7 +95,7 @@ namespace QLTruongHoc
             // searchGrantee
             // 
             searchGrantee.BackColor = SystemColors.ActiveCaption;
-            searchGrantee.Location = new Point(402, 31);
+            searchGrantee.Location = new Point(421, 32);
             searchGrantee.Margin = new Padding(4, 5, 4, 5);
             searchGrantee.Name = "searchGrantee";
             searchGrantee.Size = new Size(109, 41);

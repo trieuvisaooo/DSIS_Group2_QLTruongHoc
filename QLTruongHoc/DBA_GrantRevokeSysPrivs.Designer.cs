@@ -36,13 +36,16 @@
             SysPrivs_combox = new ComboBox();
             apply_btn = new Button();
             cancel_btn = new Button();
+            label3 = new Label();
+            check_result = new Label();
+            check_btn = new Button();
             SuspendLayout();
             // 
             // grant_revoke_txt
             // 
             grant_revoke_txt.AutoSize = true;
             grant_revoke_txt.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            grant_revoke_txt.Location = new Point(48, 69);
+            grant_revoke_txt.Location = new Point(48, 40);
             grant_revoke_txt.Name = "grant_revoke_txt";
             grant_revoke_txt.Size = new Size(196, 32);
             grant_revoke_txt.TabIndex = 0;
@@ -52,7 +55,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            label1.Location = new Point(48, 140);
+            label1.Location = new Point(48, 241);
             label1.Name = "label1";
             label1.Size = new Size(201, 32);
             label1.TabIndex = 1;
@@ -62,7 +65,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            label2.Location = new Point(48, 222);
+            label2.Location = new Point(48, 113);
             label2.Name = "label2";
             label2.Size = new Size(120, 32);
             label2.TabIndex = 2;
@@ -70,7 +73,7 @@
             // 
             // user_role_txtbox
             // 
-            user_role_txtbox.Location = new Point(264, 225);
+            user_role_txtbox.Location = new Point(264, 116);
             user_role_txtbox.Name = "user_role_txtbox";
             user_role_txtbox.Size = new Size(292, 31);
             user_role_txtbox.TabIndex = 3;
@@ -79,15 +82,16 @@
             // 
             grant_revoke_combox.FormattingEnabled = true;
             grant_revoke_combox.Items.AddRange(new object[] { "GRANT", "REVOKE" });
-            grant_revoke_combox.Location = new Point(264, 72);
+            grant_revoke_combox.Location = new Point(264, 43);
             grant_revoke_combox.Name = "grant_revoke_combox";
             grant_revoke_combox.Size = new Size(292, 33);
             grant_revoke_combox.TabIndex = 4;
+            grant_revoke_combox.SelectedValueChanged += grant_revoke_combox_SelectedValueChanged;
             // 
             // SysPrivs_combox
             // 
             SysPrivs_combox.FormattingEnabled = true;
-            SysPrivs_combox.Location = new Point(264, 143);
+            SysPrivs_combox.Location = new Point(264, 244);
             SysPrivs_combox.Name = "SysPrivs_combox";
             SysPrivs_combox.Size = new Size(292, 33);
             SysPrivs_combox.TabIndex = 5;
@@ -98,7 +102,7 @@
             // 
             apply_btn.BackColor = SystemColors.ActiveCaption;
             apply_btn.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            apply_btn.Location = new Point(264, 298);
+            apply_btn.Location = new Point(264, 312);
             apply_btn.Name = "apply_btn";
             apply_btn.Size = new Size(112, 39);
             apply_btn.TabIndex = 6;
@@ -110,7 +114,7 @@
             // 
             cancel_btn.BackColor = Color.IndianRed;
             cancel_btn.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cancel_btn.Location = new Point(444, 298);
+            cancel_btn.Location = new Point(444, 312);
             cancel_btn.Name = "cancel_btn";
             cancel_btn.Size = new Size(112, 39);
             cancel_btn.TabIndex = 7;
@@ -118,11 +122,47 @@
             cancel_btn.UseVisualStyleBackColor = false;
             cancel_btn.Click += cancel_btn_Click;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label3.Location = new Point(48, 171);
+            label3.Name = "label3";
+            label3.Size = new Size(153, 32);
+            label3.TabIndex = 8;
+            label3.Text = "Check Result";
+            // 
+            // check_result
+            // 
+            check_result.AutoSize = true;
+            check_result.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            check_result.ForeColor = Color.Red;
+            check_result.Location = new Point(264, 171);
+            check_result.Name = "check_result";
+            check_result.Size = new Size(141, 32);
+            check_result.TabIndex = 9;
+            check_result.Text = "Unchecked!";
+            // 
+            // check_btn
+            // 
+            check_btn.BackColor = SystemColors.ActiveCaption;
+            check_btn.Font = new Font("Book Antiqua", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            check_btn.Location = new Point(577, 116);
+            check_btn.Name = "check_btn";
+            check_btn.Size = new Size(112, 31);
+            check_btn.TabIndex = 10;
+            check_btn.Text = "Check";
+            check_btn.UseVisualStyleBackColor = false;
+            check_btn.Click += check_btn_Click;
+            // 
             // DBA_GrantRevokeSysPrivs
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 380);
+            Controls.Add(check_btn);
+            Controls.Add(check_result);
+            Controls.Add(label3);
             Controls.Add(cancel_btn);
             Controls.Add(apply_btn);
             Controls.Add(SysPrivs_combox);
@@ -148,5 +188,8 @@
         private ComboBox SysPrivs_combox;
         private Button apply_btn;
         private Button cancel_btn;
+        private Label label3;
+        private Label check_result;
+        private Button check_btn;
     }
 }

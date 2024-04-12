@@ -77,6 +77,7 @@ namespace QLTruongHoc
                 if (reader1.GetInt32(0) == 0 && reader2.GetInt32(0) == 0)
                 {
                     checkResult_txt.Text = "Invalid User/Role!";
+                    withgrantoption_chkbox.Checked = false;
                     withgrantoption_chkbox.Enabled = false;
                 }
                 else if (reader1.GetInt32(0) == 1)
@@ -224,27 +225,6 @@ namespace QLTruongHoc
                             colOption = "(" + column_list + ")";
                         }
 
-                        //if (ColumnName_list.Items.Count == 0)
-                        //{
-                        //    colOption = "";
-                        //}
-                        //else
-                        //{
-                        //    string column_list = "";
-                        //    for (int i = 0; i < ColumnName_list.Items.Count; i++)
-                        //    {
-                        //        if (ColumnName_list.GetItemChecked(i) == true)
-                        //        {
-                        //            column_list += ColumnName_list.Items[i].ToString() + ",";
-                        //        }
-                        //    }
-                        //    if (column_list.Length > 0)
-                        //    {
-                        //        column_list = column_list.Substring(0, column_list.Length - 1);
-                        //    }
-                        //    colOption = "(" + column_list + ")";
-                        //}
-
                         grantStatement = "grant " + privs_combox.Text + colOption + " on QLTH." + table_view_combox.Text + " to " + user_role_txtbox.Text + " " + withgrantoption;
                     }
 
@@ -274,11 +254,11 @@ namespace QLTruongHoc
                                 grantSelectCmd.CommandType = CommandType.StoredProcedure;
                                 grantSelectCmd.Parameters.Add("user_role", user_role_txtbox.Text);
                                 grantSelectCmd.Parameters.Add("schema_name", "QLTH");
-                                grantSelectCmd.Parameters.Add("table_name", "QLTH" + "." + table_view_combox.Text);
-                                MessageBox.Show(column_list);
+                                grantSelectCmd.Parameters.Add("table_name", table_view_combox.Text);
+                                //MessageBox.Show(column_list); // debug line
                                 grantSelectCmd.Parameters.Add("column_name", column_list);
                                 grantSelectCmd.Parameters.Add("withgrantoption", withgrantoption);
-                                MessageBox.Show(grantSelectCmd.CommandText);
+                                //MessageBox.Show(grantSelectCmd.CommandText); // debug line
                                 grantSelectCmd.ExecuteNonQuery();
                                 MessageBox.Show("Thực hiện cấp quyền thành công!");
                                 return;
@@ -294,50 +274,9 @@ namespace QLTruongHoc
                             grantStatement = "grant " + privs_combox.Text + " on QLTH." + table_view_combox.Text + " to " + user_role_txtbox.Text + " " + withgrantoption;
                         }
 
-
-                        //if (ColumnName_list.CheckedItems() == false)
-                        //{
-                        //    //colOption = "";
-                        //    grantStatement = "grant " + privs_combox.Text  + " on QLTH." + table_view_combox.Text + " to " + user_role_txtbox.Text + " " + withgrantoption;
-                        //}
-                        //else
-                        //{
-                        //    string column_list = "";
-                        //    for (int i = 0; i < ColumnName_list.Items.Count; i++)
-                        //    {
-                        //        if (ColumnName_list.GetItemChecked(i) == true)
-                        //        {
-                        //            column_list += ColumnName_list.Items[i].ToString() + ",";
-                        //        }
-                        //    }
-                        //    if (column_list.Length > 0)
-                        //    {
-                        //        column_list = column_list.Substring(0, column_list.Length - 1);
-                        //    }
-
-                        //    //try
-                        //    //{
-                        //    //    //grantStatement = "grant " + privs_combox.Text + " on QLTH.V_" + table_view_combox.Text + "_" + user_role_txtbox.Text;
-                        //    //    grantSelectCmd.BindByName = true;
-                        //    //    grantSelectCmd.CommandText = "QLTH.grantSelectPriv";
-                        //    //    grantSelectCmd.CommandType = CommandType.StoredProcedure;
-                        //    //    grantSelectCmd.Parameters.Add("user_role", user_role_txtbox.Text);
-                        //    //    grantSelectCmd.Parameters.Add("schema_name", "QLTH");
-                        //    //    grantSelectCmd.Parameters.Add("table_name", "QLTH" + "." + table_view_combox.Text);
-                        //    //    MessageBox.Show(column_list);
-                        //    //    grantSelectCmd.Parameters.Add("column_name", column_list);
-                        //    //    grantSelectCmd.Parameters.Add("withgrantoption", withgrantoption);
-                        //    //    grantSelectCmd.ExecuteNonQuery();
-                        //    //    MessageBox.Show("Thực hiện cấp quyền thành công!");
-                        //    //    return;
-                        //    //} catch(OracleException ex) {
-                        //    //    MessageBox.Show(ex.Message);
-                        //    //    return;
-                        //    //}
-                        //}
                     }
 
-                    MessageBox.Show(grantStatement);
+                    //MessageBox.Show(grantStatement); // debug line
 
                     OracleCommand cmd = new OracleCommand(grantStatement, con_current);
                     cmd.ExecuteNonQuery();

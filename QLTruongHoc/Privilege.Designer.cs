@@ -32,14 +32,14 @@
             revokeBtn = new Button();
             label1 = new Label();
             label2 = new Label();
-            tableColumn = new DataGridView();
-            dataGridView1 = new DataGridView();
-            button3 = new Button();
-            button4 = new Button();
+            ColDataGridView = new DataGridView();
+            TableDataGridView = new DataGridView();
+            load_btn = new Button();
+            search_btn = new Button();
             label3 = new Label();
-            textBox1 = new TextBox();
-            ((System.ComponentModel.ISupportInitialize)tableColumn).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            search_txtbox = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)ColDataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)TableDataGridView).BeginInit();
             SuspendLayout();
             // 
             // grantBtn
@@ -64,6 +64,7 @@
             revokeBtn.TabIndex = 1;
             revokeBtn.Text = "HỦY QUYỀN CỦA ROLE/USER";
             revokeBtn.UseVisualStyleBackColor = true;
+            revokeBtn.Click += revokeBtn_Click;
             // 
             // label1
             // 
@@ -88,47 +89,49 @@
             label2.Text = "COLUMN";
             label2.Click += label2_Click;
             // 
-            // tableColumn
+            // ColDataGridView
             // 
-            tableColumn.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tableColumn.Location = new Point(60, 666);
-            tableColumn.Margin = new Padding(4);
-            tableColumn.Name = "tableColumn";
-            tableColumn.RowHeadersWidth = 51;
-            tableColumn.Size = new Size(1655, 419);
-            tableColumn.TabIndex = 5;
-            tableColumn.CellContentClick += tableColumn_CellContentClick;
+            ColDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            ColDataGridView.Location = new Point(60, 666);
+            ColDataGridView.Margin = new Padding(4);
+            ColDataGridView.Name = "ColDataGridView";
+            ColDataGridView.RowHeadersWidth = 51;
+            ColDataGridView.Size = new Size(1655, 419);
+            ColDataGridView.TabIndex = 5;
+            ColDataGridView.CellContentClick += tableColumn_CellContentClick;
             // 
-            // dataGridView1
+            // TableDataGridView
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(60, 180);
-            dataGridView1.Margin = new Padding(4);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1655, 419);
-            dataGridView1.TabIndex = 6;
+            TableDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            TableDataGridView.Location = new Point(60, 180);
+            TableDataGridView.Margin = new Padding(4);
+            TableDataGridView.Name = "TableDataGridView";
+            TableDataGridView.RowHeadersWidth = 51;
+            TableDataGridView.Size = new Size(1655, 419);
+            TableDataGridView.TabIndex = 6;
             // 
-            // button3
+            // load_btn
             // 
-            button3.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            button3.Location = new Point(1550, 34);
-            button3.Margin = new Padding(4);
-            button3.Name = "button3";
-            button3.Size = new Size(138, 65);
-            button3.TabIndex = 7;
-            button3.Text = "Load";
-            button3.UseVisualStyleBackColor = true;
+            load_btn.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            load_btn.Location = new Point(1550, 34);
+            load_btn.Margin = new Padding(4);
+            load_btn.Name = "load_btn";
+            load_btn.Size = new Size(138, 65);
+            load_btn.TabIndex = 7;
+            load_btn.Text = "Load";
+            load_btn.UseVisualStyleBackColor = true;
+            load_btn.Click += load_btn_Click;
             // 
-            // button4
+            // search_btn
             // 
-            button4.Location = new Point(1384, 65);
-            button4.Margin = new Padding(4);
-            button4.Name = "button4";
-            button4.Size = new Size(88, 32);
-            button4.TabIndex = 8;
-            button4.Text = "Search";
-            button4.UseVisualStyleBackColor = true;
+            search_btn.Location = new Point(1384, 65);
+            search_btn.Margin = new Padding(4);
+            search_btn.Name = "search_btn";
+            search_btn.Size = new Size(88, 32);
+            search_btn.TabIndex = 8;
+            search_btn.Text = "Search";
+            search_btn.UseVisualStyleBackColor = true;
+            search_btn.Click += search_btn_Click;
             // 
             // label3
             // 
@@ -136,28 +139,28 @@
             label3.Location = new Point(1199, 34);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(150, 25);
+            label3.Size = new Size(154, 25);
             label3.TabIndex = 9;
-            label3.Text = "Tìm kiếm Grantee";
+            label3.Text = "Search By Grantee";
             // 
-            // textBox1
+            // search_txtbox
             // 
-            textBox1.Location = new Point(1199, 65);
-            textBox1.Margin = new Padding(4);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(176, 31);
-            textBox1.TabIndex = 10;
+            search_txtbox.Location = new Point(1199, 65);
+            search_txtbox.Margin = new Padding(4);
+            search_txtbox.Name = "search_txtbox";
+            search_txtbox.Size = new Size(176, 31);
+            search_txtbox.TabIndex = 10;
             // 
             // Privilege
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(textBox1);
+            Controls.Add(search_txtbox);
             Controls.Add(label3);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(dataGridView1);
-            Controls.Add(tableColumn);
+            Controls.Add(search_btn);
+            Controls.Add(load_btn);
+            Controls.Add(TableDataGridView);
+            Controls.Add(ColDataGridView);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(revokeBtn);
@@ -165,8 +168,8 @@
             Margin = new Padding(4);
             Name = "Privilege";
             Size = new Size(1810, 1138);
-            ((System.ComponentModel.ISupportInitialize)tableColumn).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ColDataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)TableDataGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -177,11 +180,11 @@
         private Button revokeBtn;
         private Label label1;
         private Label label2;
-        private DataGridView tableColumn;
-        private DataGridView dataGridView1;
-        private Button button3;
-        private Button button4;
+        private DataGridView ColDataGridView;
+        private DataGridView TableDataGridView;
+        private Button load_btn;
+        private Button search_btn;
         private Label label3;
-        private TextBox textBox1;
+        private TextBox search_txtbox;
     }
 }
