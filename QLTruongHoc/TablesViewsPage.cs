@@ -5,23 +5,24 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLTruongHoc
 {
-    public partial class TableViews_UC : UserControl
+    public partial class TablesViewsPage : UserControl
     {
-        public static OracleConnection conNow = Login.con;
+        public static OracleConnection conNow;
 
-        public TableViews_UC()
+        public TablesViewsPage()
         {
+            conNow = Login.con;
             InitializeComponent();
-            DBA_TablesAndViews_UC_load();
         }
 
-        private void DBA_TablesAndViews_UC_load()
+        private void TablesViewsPage_Load(object sender, EventArgs e)
         {
             try
             {
@@ -52,16 +53,6 @@ namespace QLTruongHoc
                 return;
 
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

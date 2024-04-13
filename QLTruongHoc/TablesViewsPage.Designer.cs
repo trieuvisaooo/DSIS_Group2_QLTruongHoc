@@ -1,6 +1,6 @@
 ﻿namespace QLTruongHoc
 {
-    partial class TableViews_UC
+    partial class TablesViewsPage
     {
         /// <summary> 
         /// Required designer variable.
@@ -40,18 +40,17 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(29, 5);
+            label1.Location = new Point(20, 9);
             label1.Name = "label1";
             label1.Size = new Size(71, 28);
             label1.TabIndex = 0;
             label1.Text = "TABLE";
-            label1.Click += label1_Click_1;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(29, 309);
+            label2.Location = new Point(20, 304);
             label2.Name = "label2";
             label2.Size = new Size(62, 28);
             label2.TabIndex = 1;
@@ -60,20 +59,20 @@
             // tableGrid
             // 
             tableGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tableGrid.Location = new Point(29, 36);
+            tableGrid.Location = new Point(20, 49);
             tableGrid.Name = "tableGrid";
-            tableGrid.Size = new Size(979, 260);
+            tableGrid.Size = new Size(980, 236);
             tableGrid.TabIndex = 2;
             // 
             // viewGrid
             // 
             viewGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            viewGrid.Location = new Point(29, 340);
+            viewGrid.Location = new Point(20, 347);
             viewGrid.Name = "viewGrid";
-            viewGrid.Size = new Size(979, 260);
+            viewGrid.Size = new Size(980, 236);
             viewGrid.TabIndex = 3;
             // 
-            // TableViews_UC
+            // TablesViewsPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -81,8 +80,9 @@
             Controls.Add(tableGrid);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "TableViews_UC";
+            Name = "TablesViewsPage";
             Size = new Size(1260, 620);
+            Load += TablesViewsPage_Load;
             ((System.ComponentModel.ISupportInitialize)tableGrid).EndInit();
             ((System.ComponentModel.ISupportInitialize)viewGrid).EndInit();
             ResumeLayout(false);
