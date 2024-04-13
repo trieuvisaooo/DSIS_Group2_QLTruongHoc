@@ -1,6 +1,6 @@
 ﻿namespace QLTruongHoc
 {
-    partial class UseransRole
+    partial class UserandRole
     {
         /// <summary> 
         /// Required designer variable.

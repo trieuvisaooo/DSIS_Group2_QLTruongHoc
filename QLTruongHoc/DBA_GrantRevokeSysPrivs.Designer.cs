@@ -39,35 +39,36 @@
             label3 = new Label();
             check_result = new Label();
             check_btn = new Button();
+            label4 = new Label();
             SuspendLayout();
             // 
             // grant_revoke_txt
             // 
             grant_revoke_txt.AutoSize = true;
-            grant_revoke_txt.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            grant_revoke_txt.Location = new Point(48, 40);
+            grant_revoke_txt.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            grant_revoke_txt.Location = new Point(39, 43);
             grant_revoke_txt.Name = "grant_revoke_txt";
-            grant_revoke_txt.Size = new Size(196, 32);
+            grant_revoke_txt.Size = new Size(162, 28);
             grant_revoke_txt.TabIndex = 0;
             grant_revoke_txt.Text = "Grant Or Revoke";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            label1.Location = new Point(48, 241);
+            label1.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label1.Location = new Point(39, 244);
             label1.Name = "label1";
-            label1.Size = new Size(201, 32);
+            label1.Size = new Size(171, 28);
             label1.TabIndex = 1;
             label1.Text = "System Privileges";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            label2.Location = new Point(48, 113);
+            label2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label2.Location = new Point(39, 115);
             label2.Name = "label2";
-            label2.Size = new Size(120, 32);
+            label2.Size = new Size(100, 28);
             label2.TabIndex = 2;
             label2.Text = "User/Role";
             // 
@@ -102,7 +103,7 @@
             // 
             apply_btn.BackColor = SystemColors.ActiveCaption;
             apply_btn.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            apply_btn.Location = new Point(264, 312);
+            apply_btn.Location = new Point(264, 329);
             apply_btn.Name = "apply_btn";
             apply_btn.Size = new Size(112, 39);
             apply_btn.TabIndex = 6;
@@ -114,7 +115,7 @@
             // 
             cancel_btn.BackColor = Color.IndianRed;
             cancel_btn.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cancel_btn.Location = new Point(444, 312);
+            cancel_btn.Location = new Point(444, 329);
             cancel_btn.Name = "cancel_btn";
             cancel_btn.Size = new Size(112, 39);
             cancel_btn.TabIndex = 7;
@@ -125,21 +126,21 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            label3.Location = new Point(48, 171);
+            label3.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label3.Location = new Point(39, 174);
             label3.Name = "label3";
-            label3.Size = new Size(153, 32);
+            label3.Size = new Size(128, 28);
             label3.TabIndex = 8;
             label3.Text = "Check Result";
             // 
             // check_result
             // 
             check_result.AutoSize = true;
-            check_result.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            check_result.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 163);
             check_result.ForeColor = Color.Red;
             check_result.Location = new Point(264, 171);
             check_result.Name = "check_result";
-            check_result.Size = new Size(141, 32);
+            check_result.Size = new Size(119, 28);
             check_result.TabIndex = 9;
             check_result.Text = "Unchecked!";
             // 
@@ -155,11 +156,23 @@
             check_btn.UseVisualStyleBackColor = false;
             check_btn.Click += check_btn_Click;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 163);
+            label4.ForeColor = Color.Red;
+            label4.Location = new Point(264, 289);
+            label4.Name = "label4";
+            label4.Size = new Size(397, 25);
+            label4.TabIndex = 11;
+            label4.Text = "(*) Vui lòng kiểm tra user/role trước khi thực hiện";
+            // 
             // DBA_GrantRevokeSysPrivs
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 380);
+            Controls.Add(label4);
             Controls.Add(check_btn);
             Controls.Add(check_result);
             Controls.Add(label3);
@@ -191,5 +204,6 @@
         private Label label3;
         private Label check_result;
         private Button check_btn;
+        private Label label4;
     }
 }

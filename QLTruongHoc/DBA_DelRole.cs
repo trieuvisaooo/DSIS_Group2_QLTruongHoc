@@ -47,7 +47,8 @@ namespace QLTruongHoc
                     {
                         MessageBox.Show("Role không tồn tại trong hệ thống.");
                         return;
-                    } else
+                    }
+                    else
                     {
                         OracleCommand cmd = new OracleCommand();
                         cmd.Connection = conNow;
@@ -61,17 +62,24 @@ namespace QLTruongHoc
                         OracleDataAdapter da = new OracleDataAdapter(sql, conNow) { SuppressGetDecimalInvalidCastException = true };
                         DataTable dataTable = new DataTable();
                         da.Fill(dataTable);
-                        UseransRole.grid2.DataSource = dataTable;
+                        UserandRole.grid2.DataSource = dataTable;
                         MessageBox.Show("Xóa Role thành công");
                         this.Close();
                     }
 
-                    
+
                 }
-            } catch (Exception ex) { 
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message);
             }
-            
+
+        }
+
+        private void Cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

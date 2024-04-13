@@ -168,6 +168,7 @@
             Margin = new Padding(4);
             Name = "Privilege";
             Size = new Size(1810, 1138);
+            Load += Privilege_Load;
             ((System.ComponentModel.ISupportInitialize)ColDataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)TableDataGridView).EndInit();
             ResumeLayout(false);

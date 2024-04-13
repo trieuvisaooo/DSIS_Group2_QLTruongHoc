@@ -50,20 +50,28 @@ namespace QLTruongHoc
                     }
                     else
                     {
-                        OracleCommand cmd = new OracleCommand();
-                        cmd.Connection = conNow;
-                        cmd.CommandText = "QLTH.delete_user";
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.Add("p_username", user);
+                        try
+                        {
+                            OracleCommand cmd = new OracleCommand();
+                            cmd.Connection = conNow;
+                            cmd.CommandText = "QLTH.delete_user";
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.Add("p_username", user);
 
-                        cmd.ExecuteNonQuery();
+                            cmd.ExecuteNonQuery();
 
-                        string sql = "SELECT USERNAME, USER_ID, CREATED FROM ALL_USERS ORDER BY USERNAME";
-                        OracleDataAdapter adapter = new OracleDataAdapter(sql, conNow) { SuppressGetDecimalInvalidCastException = true };
-                        DataTable dataTable = new DataTable();
-                        adapter.Fill(dataTable);
-                        UseransRole.grid1.DataSource = dataTable;
-                        this.Close();
+                            string sql = "SELECT USERNAME, USER_ID, CREATED FROM ALL_USERS ORDER BY USERNAME";
+                            OracleDataAdapter adapter = new OracleDataAdapter(sql, conNow) { SuppressGetDecimalInvalidCastException = true };
+                            DataTable dataTable = new DataTable();
+                            adapter.Fill(dataTable);
+                            UserandRole.grid1.DataSource = dataTable;
+                            MessageBox.Show("Xóa thành công user " + user + "!");
+                            this.Close();
+                        } catch (OracleException ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+
                     }
 
 
@@ -73,6 +81,11 @@ namespace QLTruongHoc
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void Cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

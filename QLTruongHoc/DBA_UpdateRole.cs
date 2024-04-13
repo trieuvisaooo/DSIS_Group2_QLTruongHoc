@@ -64,7 +64,7 @@ namespace QLTruongHoc
                         DataTable dt1 = new DataTable();
                         da.Fill(dt1);
                         MessageBox.Show($"Role {rolebox.Text} đã được cập nhật thành công");
-                        UseransRole.grid2.DataSource = dt1;
+                        UserandRole.grid2.DataSource = dt1;
                     }
 
                     
@@ -77,7 +77,7 @@ namespace QLTruongHoc
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
     }
 }

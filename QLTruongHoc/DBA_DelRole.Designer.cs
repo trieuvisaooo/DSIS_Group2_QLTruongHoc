@@ -38,22 +38,23 @@
             // 
             Cancel.BackColor = Color.IndianRed;
             Cancel.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Cancel.Location = new Point(346, 209);
-            Cancel.Margin = new Padding(3, 2, 3, 2);
+            Cancel.Location = new Point(494, 317);
+            Cancel.Margin = new Padding(4, 3, 4, 3);
             Cancel.Name = "Cancel";
-            Cancel.Size = new Size(90, 29);
+            Cancel.Size = new Size(129, 48);
             Cancel.TabIndex = 21;
             Cancel.Text = "Cancel";
             Cancel.UseVisualStyleBackColor = false;
+            Cancel.Click += Cancel_Click;
             // 
             // Delete
             // 
             Delete.BackColor = SystemColors.ActiveCaption;
             Delete.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Delete.Location = new Point(232, 209);
-            Delete.Margin = new Padding(3, 2, 3, 2);
+            Delete.Location = new Point(331, 317);
+            Delete.Margin = new Padding(4, 3, 4, 3);
             Delete.Name = "Delete";
-            Delete.Size = new Size(98, 29);
+            Delete.Size = new Size(140, 48);
             Delete.TabIndex = 20;
             Delete.Text = "Delete";
             Delete.UseVisualStyleBackColor = false;
@@ -62,32 +63,33 @@
             // userbox
             // 
             userbox.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            userbox.Location = new Point(263, 99);
-            userbox.Margin = new Padding(3, 2, 3, 2);
+            userbox.Location = new Point(331, 164);
+            userbox.Margin = new Padding(4, 3, 4, 3);
             userbox.Name = "userbox";
-            userbox.Size = new Size(323, 36);
+            userbox.Size = new Size(460, 51);
             userbox.TabIndex = 19;
             // 
             // Role
             // 
             Role.AutoSize = true;
             Role.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            Role.Location = new Point(117, 101);
+            Role.Location = new Point(122, 167);
+            Role.Margin = new Padding(4, 0, 4, 0);
             Role.Name = "Role";
-            Role.Size = new Size(62, 30);
+            Role.Size = new Size(91, 45);
             Role.TabIndex = 18;
             Role.Text = "Role:";
             // 
             // DBA_DelRole
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(685, 265);
+            ClientSize = new Size(979, 442);
             Controls.Add(Cancel);
             Controls.Add(Delete);
             Controls.Add(userbox);
             Controls.Add(Role);
-            Margin = new Padding(3, 2, 3, 2);
+            Margin = new Padding(4, 3, 4, 3);
             Name = "DBA_DelRole";
             Text = "XÓA ROLE";
             ResumeLayout(false);

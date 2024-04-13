@@ -104,13 +104,14 @@ namespace QLTruongHoc
                         OracleDataAdapter da = new OracleDataAdapter(sql, conNow);
                         DataTable dt1 = new DataTable();
                         da.Fill(dt1);
-                        UseransRole.grid1.DataSource = dt1;
+                        UserandRole.grid1.DataSource = dt1;
                     }
 
                     
 
                 }
                 MessageBox.Show("Đổi mật khẩu thành công!");
+                this.Close();
             }
             catch (OracleException ex)
             {
@@ -121,7 +122,7 @@ namespace QLTruongHoc
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
 
         private void rolebox_TextChanged(object sender, EventArgs e)

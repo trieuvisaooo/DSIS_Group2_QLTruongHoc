@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace QLTruongHoc
 {
-    public partial class UseransRole : UserControl
+    public partial class UserandRole : UserControl
     {
         public static OracleConnection conNow = Login.con;
         public static DataGridView grid1;
         public static DataGridView grid2;
 
-        public UseransRole()
+        public UserandRole()
         {
             InitializeComponent();
             DBA_load_UserAndRole();

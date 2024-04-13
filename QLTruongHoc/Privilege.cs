@@ -85,5 +85,11 @@ namespace QLTruongHoc
             ColDataGridView.DataSource = dt2;
 
         }
+
+        private void Privilege_Load(object sender, EventArgs e)
+        {
+            view_table_privil();
+            view_col_privil();
+        }
     }
 }

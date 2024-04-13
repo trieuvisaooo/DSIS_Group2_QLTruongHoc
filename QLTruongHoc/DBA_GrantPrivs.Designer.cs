@@ -185,12 +185,12 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label7.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 163);
             label7.ForeColor = Color.Red;
             label7.Location = new Point(13, 294);
             label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
-            label7.Size = new Size(424, 25);
+            label7.Size = new Size(411, 25);
             label7.TabIndex = 12;
             label7.Text = "(*) Vui lòng kiểm tra User/Role trước khi cấp quyền";
             label7.Click += label7_Click;

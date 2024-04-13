@@ -39,6 +39,7 @@
             check_result = new Label();
             check_btn = new Button();
             privs_combox = new ComboBox();
+            label7 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -87,7 +88,7 @@
             revoke_btn.BackColor = SystemColors.ActiveCaption;
             revoke_btn.Font = new Font("Book Antiqua", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             revoke_btn.ForeColor = SystemColors.ActiveCaptionText;
-            revoke_btn.Location = new Point(175, 266);
+            revoke_btn.Location = new Point(239, 297);
             revoke_btn.Margin = new Padding(4);
             revoke_btn.Name = "revoke_btn";
             revoke_btn.Size = new Size(118, 36);
@@ -100,7 +101,7 @@
             // 
             cancel_btn.BackColor = Color.IndianRed;
             cancel_btn.Font = new Font("Book Antiqua", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cancel_btn.Location = new Point(320, 266);
+            cancel_btn.Location = new Point(384, 297);
             cancel_btn.Margin = new Padding(4);
             cancel_btn.Name = "cancel_btn";
             cancel_btn.Size = new Size(118, 36);
@@ -165,11 +166,24 @@
             privs_combox.Size = new Size(208, 33);
             privs_combox.TabIndex = 15;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 163);
+            label7.ForeColor = Color.Red;
+            label7.Location = new Point(140, 257);
+            label7.Margin = new Padding(4, 0, 4, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(411, 25);
+            label7.TabIndex = 16;
+            label7.Text = "(*) Vui lòng kiểm tra User/Role trước khi cấp quyền";
+            // 
             // DBA_RevokePrivs
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(665, 379);
+            Controls.Add(label7);
             Controls.Add(privs_combox);
             Controls.Add(check_btn);
             Controls.Add(check_result);
@@ -202,5 +216,6 @@
         private Label check_result;
         private Button check_btn;
         private ComboBox privs_combox;
+        private Label label7;
     }
 }

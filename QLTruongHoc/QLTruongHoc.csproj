@@ -10,10 +10,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="goal_target_motivation_successful_growth_success_icon_230357.ico" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Oracle.EntityFrameworkCore" Version="8.21.121" />
     <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="3.21.130" />
   </ItemGroup>
