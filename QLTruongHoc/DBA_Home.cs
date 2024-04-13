@@ -32,15 +32,26 @@
 
         }
 
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+
+            if (e.CloseReason == CloseReason.WindowsShutDown) return;
+            DialogResult dg = MessageBox.Show("Bạn có muốn kết thúc chương trình không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            switch (dg)
+            {
+                case DialogResult.No:
+                    e.Cancel = true;
+                    break;
+                default: break;
+            }
+        }
+
 
 
         private void DBA_Home_Closing(object sender, FormClosingEventArgs e)
         {
-            DialogResult dg = MessageBox.Show("Bạn có muốn kết thúc chương trình không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dg == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
+
         }
 
         private void tablesViewsTab_Click(object sender, EventArgs e)
@@ -51,6 +62,11 @@
         private void tablesViewsTab_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void DBA_Home_Closed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

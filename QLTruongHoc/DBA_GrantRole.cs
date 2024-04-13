@@ -29,7 +29,7 @@ namespace QLTruongHoc
                 string userOrRole = userOrrole_txtbox.Text.ToString();
                 string withAdminOption = (isAdminCheckBox.Checked) ? "WITH ADMIN OPTION" : "";
 
-             
+
 
                 if (role.Length == 0 || userOrRole.Length == 0)
                 {
@@ -50,11 +50,11 @@ namespace QLTruongHoc
 
                     var result_roleuser = Convert.ToString(cmd.Parameters["res"].Value);
 
-                    if(result_roleuser == "-1")
-                {
+                    if (result_roleuser == "-1")
+                    {
                         MessageBox.Show("User/Role cần cấp role không tồn tại");
                     }
-                else if (result_roleuser == "-2")
+                    else if (result_roleuser == "-2")
                     {
                         MessageBox.Show("Role cần cấp cho User không tồn tại");
                     }
@@ -69,7 +69,6 @@ namespace QLTruongHoc
                         DataTable dt = new DataTable();
                         da.Fill(dt);
                         DBA_RoleUI.roleUserGrid.DataSource = dt;
-
                     }
                 }
 
@@ -84,6 +83,11 @@ namespace QLTruongHoc
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void exit_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

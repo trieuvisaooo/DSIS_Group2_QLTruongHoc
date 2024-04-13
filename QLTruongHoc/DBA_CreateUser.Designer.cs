@@ -86,22 +86,22 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            label2.Location = new Point(43, 167);
+            label2.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label2.Location = new Point(34, 167);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(143, 38);
+            label2.Size = new Size(147, 38);
             label2.TabIndex = 7;
             label2.Text = "Password:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            label1.Location = new Point(43, 58);
+            label1.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label1.Location = new Point(34, 58);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(82, 38);
+            label1.Size = new Size(84, 38);
             label1.TabIndex = 6;
             label1.Text = "User:";
             // 
@@ -118,11 +118,11 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            label3.Location = new Point(43, 261);
+            label3.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label3.Location = new Point(34, 261);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(253, 38);
+            label3.Size = new Size(262, 38);
             label3.TabIndex = 12;
             label3.Text = "Confirm Password:";
             // 

@@ -40,13 +40,14 @@ namespace QLTruongHoc
             // 
             // grantView
             // 
+            grantView.BackgroundColor = SystemColors.Control;
             grantView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grantView.Location = new Point(40, 94);
             grantView.Margin = new Padding(4, 5, 4, 5);
             grantView.Name = "grantView";
             grantView.RowHeadersWidth = 51;
             grantView.RowTemplate.Height = 24;
-            grantView.Size = new Size(1491, 830);
+            grantView.Size = new Size(829, 830);
             grantView.TabIndex = 0;
             // 
             // label1
@@ -71,7 +72,7 @@ namespace QLTruongHoc
             // loadButton
             // 
             loadButton.Font = new Font("Book Antiqua", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            loadButton.Location = new Point(1109, 27);
+            loadButton.Location = new Point(863, 32);
             loadButton.Margin = new Padding(4, 5, 4, 5);
             loadButton.Name = "loadButton";
             loadButton.Size = new Size(162, 52);
@@ -83,7 +84,7 @@ namespace QLTruongHoc
             // grantRevokeButton
             // 
             grantRevokeButton.Font = new Font("Book Antiqua", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            grantRevokeButton.Location = new Point(1279, 27);
+            grantRevokeButton.Location = new Point(1033, 32);
             grantRevokeButton.Margin = new Padding(4, 5, 4, 5);
             grantRevokeButton.Name = "grantRevokeButton";
             grantRevokeButton.Size = new Size(252, 52);

@@ -27,6 +27,11 @@ namespace QLTruongHoc
                 if (rolebox.Text.Length == 0)
                 {
                     MessageBox.Show("Vui lòng nhập VAI TRÒ muốn cập nhật.");
+                    return;
+                } else if (passbox.Text != confirm_psw_txtbox.Text)
+                {
+                    MessageBox.Show("MẬT KHẨU không trùng khớp.");
+                    return;
                 }
                 else
                 {
@@ -63,11 +68,12 @@ namespace QLTruongHoc
                         OracleDataAdapter da = new OracleDataAdapter(sql, conNow);
                         DataTable dt1 = new DataTable();
                         da.Fill(dt1);
-                        MessageBox.Show($"Role {rolebox.Text} đã được cập nhật thành công");
                         UserandRole.grid2.DataSource = dt1;
+                        MessageBox.Show($"Role {rolebox.Text} đã được cập nhật thành công");
+                        this.Close();
                     }
 
-                    
+
                 }
             } catch(Exception ex)
             {

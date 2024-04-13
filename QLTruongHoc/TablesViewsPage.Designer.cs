@@ -40,9 +40,10 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(20, 9);
+            label1.Location = new Point(29, 15);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(71, 28);
+            label1.Size = new Size(105, 41);
             label1.TabIndex = 0;
             label1.Text = "TABLE";
             // 
@@ -50,38 +51,46 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(20, 304);
+            label2.Location = new Point(29, 507);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(62, 28);
+            label2.Size = new Size(95, 41);
             label2.TabIndex = 1;
             label2.Text = "VIEW";
             // 
             // tableGrid
             // 
+            tableGrid.BackgroundColor = SystemColors.Control;
             tableGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tableGrid.Location = new Point(20, 49);
+            tableGrid.Location = new Point(29, 82);
+            tableGrid.Margin = new Padding(4, 5, 4, 5);
             tableGrid.Name = "tableGrid";
-            tableGrid.Size = new Size(980, 236);
+            tableGrid.RowHeadersWidth = 62;
+            tableGrid.Size = new Size(1400, 393);
             tableGrid.TabIndex = 2;
             // 
             // viewGrid
             // 
+            viewGrid.BackgroundColor = SystemColors.Control;
             viewGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            viewGrid.Location = new Point(20, 347);
+            viewGrid.Location = new Point(29, 578);
+            viewGrid.Margin = new Padding(4, 5, 4, 5);
             viewGrid.Name = "viewGrid";
-            viewGrid.Size = new Size(980, 236);
+            viewGrid.RowHeadersWidth = 62;
+            viewGrid.Size = new Size(1400, 393);
             viewGrid.TabIndex = 3;
             // 
             // TablesViewsPage
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(viewGrid);
             Controls.Add(tableGrid);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "TablesViewsPage";
-            Size = new Size(1260, 620);
+            Size = new Size(1800, 1033);
             Load += TablesViewsPage_Load;
             ((System.ComponentModel.ISupportInitialize)tableGrid).EndInit();
             ((System.ComponentModel.ISupportInitialize)viewGrid).EndInit();

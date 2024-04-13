@@ -41,10 +41,10 @@
             // role_txt
             // 
             role_txt.AutoSize = true;
-            role_txt.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            role_txt.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 163);
             role_txt.Location = new Point(31, 52);
             role_txt.Name = "role_txt";
-            role_txt.Size = new Size(51, 28);
+            role_txt.Size = new Size(54, 28);
             role_txt.TabIndex = 0;
             role_txt.Text = "Role";
             role_txt.TextAlign = ContentAlignment.MiddleCenter;
@@ -52,10 +52,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 163);
             label1.Location = new Point(31, 133);
             label1.Name = "label1";
-            label1.Size = new Size(87, 28);
+            label1.Size = new Size(91, 28);
             label1.TabIndex = 1;
             label1.Text = "Grant to";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -97,6 +97,7 @@
             exit_btn.TabIndex = 5;
             exit_btn.Text = "Cancel";
             exit_btn.UseVisualStyleBackColor = false;
+            exit_btn.Click += exit_btn_Click;
             // 
             // isAdminCheckBox
             // 

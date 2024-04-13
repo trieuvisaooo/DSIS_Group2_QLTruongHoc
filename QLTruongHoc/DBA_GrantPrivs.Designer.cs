@@ -116,25 +116,25 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point, 163);
             label3.ForeColor = SystemColors.Highlight;
-            label3.Location = new Point(14, 126);
+            label3.Location = new Point(13, 130);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(70, 25);
+            label3.Size = new Size(107, 21);
             label3.TabIndex = 6;
-            label3.Text = "Result:";
+            label3.Text = "Check result:";
             label3.Click += label3_Click;
             // 
             // checkResult_txt
             // 
             checkResult_txt.AutoSize = true;
-            checkResult_txt.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            checkResult_txt.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point, 163);
             checkResult_txt.ForeColor = Color.Red;
-            checkResult_txt.Location = new Point(120, 126);
+            checkResult_txt.Location = new Point(133, 130);
             checkResult_txt.Margin = new Padding(4, 0, 4, 0);
             checkResult_txt.Name = "checkResult_txt";
-            checkResult_txt.Size = new Size(112, 25);
+            checkResult_txt.Size = new Size(100, 21);
             checkResult_txt.TabIndex = 7;
             checkResult_txt.Text = "Unchecked!";
             // 

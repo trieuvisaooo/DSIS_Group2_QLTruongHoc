@@ -58,7 +58,7 @@ namespace QLTruongHoc
             else
                 sql = "select * from dba_role_privs where GRANTEE LIKE \'%" + textBox1.Text + "%\'";
 
-            MessageBox.Show(sql);
+            //MessageBox.Show(sql); // debug line
             OracleDataAdapter da = new OracleDataAdapter(sql, conNow);
             DataTable dt = new DataTable();
             da.Fill(dt);

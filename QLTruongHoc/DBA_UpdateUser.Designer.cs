@@ -34,6 +34,8 @@
             rolebox = new TextBox();
             label2 = new Label();
             label1 = new Label();
+            confirm_psw_txtbox = new TextBox();
+            label3 = new Label();
             SuspendLayout();
             // 
             // button1
@@ -65,16 +67,17 @@
             // passbox
             // 
             passbox.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            passbox.Location = new Point(329, 232);
+            passbox.Location = new Point(329, 167);
             passbox.Margin = new Padding(4, 3, 4, 3);
             passbox.Name = "passbox";
             passbox.Size = new Size(460, 51);
             passbox.TabIndex = 15;
+            passbox.UseSystemPasswordChar = true;
             // 
             // rolebox
             // 
             rolebox.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rolebox.Location = new Point(329, 107);
+            rolebox.Location = new Point(329, 59);
             rolebox.Margin = new Padding(4, 3, 4, 3);
             rolebox.Name = "rolebox";
             rolebox.Size = new Size(460, 51);
@@ -84,30 +87,53 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            label2.Location = new Point(114, 233);
+            label2.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label2.Location = new Point(59, 175);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(165, 45);
+            label2.Size = new Size(214, 38);
             label2.TabIndex = 13;
-            label2.Text = "Password:";
+            label2.Text = "New Password:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            label1.Location = new Point(114, 108);
+            label1.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label1.Location = new Point(59, 67);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(95, 45);
+            label1.Size = new Size(84, 38);
             label1.TabIndex = 12;
             label1.Text = "User:";
+            // 
+            // confirm_psw_txtbox
+            // 
+            confirm_psw_txtbox.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            confirm_psw_txtbox.Location = new Point(329, 264);
+            confirm_psw_txtbox.Margin = new Padding(4, 3, 4, 3);
+            confirm_psw_txtbox.Name = "confirm_psw_txtbox";
+            confirm_psw_txtbox.Size = new Size(460, 51);
+            confirm_psw_txtbox.TabIndex = 19;
+            confirm_psw_txtbox.UseSystemPasswordChar = true;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label3.Location = new Point(59, 272);
+            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(262, 38);
+            label3.TabIndex = 18;
+            label3.Text = "Confirm Password:";
             // 
             // DBA_UpdateUser
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(979, 442);
+            Controls.Add(confirm_psw_txtbox);
+            Controls.Add(label3);
             Controls.Add(button1);
             Controls.Add(Update);
             Controls.Add(passbox);
@@ -129,5 +155,7 @@
         private TextBox rolebox;
         private Label label2;
         private Label label1;
+        private TextBox confirm_psw_txtbox;
+        private Label label3;
     }
 }

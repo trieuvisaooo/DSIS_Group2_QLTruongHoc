@@ -45,30 +45,30 @@
             // grant_revoke_txt
             // 
             grant_revoke_txt.AutoSize = true;
-            grant_revoke_txt.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            grant_revoke_txt.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 163);
             grant_revoke_txt.Location = new Point(39, 43);
             grant_revoke_txt.Name = "grant_revoke_txt";
-            grant_revoke_txt.Size = new Size(162, 28);
+            grant_revoke_txt.Size = new Size(169, 28);
             grant_revoke_txt.TabIndex = 0;
             grant_revoke_txt.Text = "Grant Or Revoke";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 163);
             label1.Location = new Point(39, 244);
             label1.Name = "label1";
-            label1.Size = new Size(171, 28);
+            label1.Size = new Size(178, 28);
             label1.TabIndex = 1;
             label1.Text = "System Privileges";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label2.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 163);
             label2.Location = new Point(39, 115);
             label2.Name = "label2";
-            label2.Size = new Size(100, 28);
+            label2.Size = new Size(105, 28);
             label2.TabIndex = 2;
             label2.Text = "User/Role";
             // 
@@ -126,10 +126,11 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label3.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label3.ForeColor = SystemColors.Highlight;
             label3.Location = new Point(39, 174);
             label3.Name = "label3";
-            label3.Size = new Size(128, 28);
+            label3.Size = new Size(133, 28);
             label3.TabIndex = 8;
             label3.Text = "Check Result";
             // 

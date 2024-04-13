@@ -72,11 +72,11 @@
             // Role
             // 
             Role.AutoSize = true;
-            Role.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            Role.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point, 163);
             Role.Location = new Point(122, 167);
             Role.Margin = new Padding(4, 0, 4, 0);
             Role.Name = "Role";
-            Role.Size = new Size(91, 45);
+            Role.Size = new Size(95, 45);
             Role.TabIndex = 18;
             Role.Text = "Role:";
             // 
