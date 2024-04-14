@@ -23,10 +23,11 @@ namespace QLTruongHoc
         {
             try
             {
-                string selectSql = "select * from dba_sys_privs where grantee = :grantee";
+                string selectSql = "select * from dba_sys_privs where grantee like \'%" + searchTextBox.Text + "%\' order by grantee asc";
+                //MessageBox.Show(selectSql); // debug line
                 OracleCommand cmd = new OracleCommand(selectSql, conNow);
                 cmd.BindByName = true;
-                cmd.Parameters.Add(new OracleParameter("grantee", searchTextBox.Text));
+                //cmd.Parameters.Add(new OracleParameter("grantee", searchTextBox.Text));
                 OracleDataAdapter adapter = new OracleDataAdapter(cmd) { SuppressGetDecimalInvalidCastException = true };
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
@@ -50,7 +51,7 @@ namespace QLTruongHoc
         {
             try
             {
-                string selectSql = "select * from dba_sys_privs";
+                string selectSql = "select * from dba_sys_privs order by grantee asc";
                 OracleCommand cmd = new OracleCommand(selectSql, conNow);
                 cmd.BindByName = true;
                 OracleDataAdapter adapter = new OracleDataAdapter(cmd) { SuppressGetDecimalInvalidCastException = true };
@@ -63,6 +64,11 @@ namespace QLTruongHoc
                 MessageBox.Show(ex.Message);
                 return;
             }
+        }
+
+        private void SysPrivs_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

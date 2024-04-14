@@ -31,7 +31,7 @@ namespace QLTruongHoc
 
         public void view_table_privil()
         {
-            string sql = "select * from DBA_TAB_PRIVS dba_tab_privs where owner =  \'QLTH\'";
+            string sql = "select * from DBA_TAB_PRIVS dba_tab_privs where owner =  \'QLTH\' order by grantee asc";
 
             OracleDataAdapter da = new OracleDataAdapter(sql, con_current);
             DataTable dt1 = new DataTable();
@@ -41,7 +41,7 @@ namespace QLTruongHoc
 
         public void view_col_privil()
         {
-            string sql = "select * from dba_col_privs where owner =  \'QLTH\'";
+            string sql = "select * from dba_col_privs where owner =  \'QLTH\' order by grantee asc";
 
             OracleDataAdapter da = new OracleDataAdapter(sql, con_current);
             DataTable dt2 = new DataTable();
@@ -70,7 +70,7 @@ namespace QLTruongHoc
 
         private void search_btn_Click(object sender, EventArgs e)
         {
-            string sql1 = "select * from DBA_TAB_PRIVS dba_tab_privs where owner =  \'QLTH\' and grantee = " + "\'" + search_txtbox.Text + "\'";
+            string sql1 = "select * from DBA_TAB_PRIVS dba_tab_privs where owner =  \'QLTH\' and grantee = " + "\'" + search_txtbox.Text + "\' order by grantee asc";
 
             OracleDataAdapter da1 = new OracleDataAdapter(sql1, con_current);
             DataTable dt1 = new DataTable();

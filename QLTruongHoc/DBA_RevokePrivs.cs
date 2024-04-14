@@ -104,7 +104,8 @@ namespace QLTruongHoc
                 {
                     try
                     {
-                        getTableStatement = "select table_name from role_tab_privs where owner = \'QLTH\'" + " and role = " + "\'" + user_role_txtbox.Text + "\'";
+                        getTableStatement = "select table_name from dba_tab_privs where owner = \'QLTH\'" + " and grantee = " + "\'" + user_role_txtbox.Text + "\'";
+                        //MessageBox.Show(getTableStatement); // debug line
                         getTableCmd = new OracleCommand(getTableStatement, con_current);
                         reader3 = getTableCmd.ExecuteReader();
                         while (reader3.Read())
@@ -164,7 +165,7 @@ namespace QLTruongHoc
                 privs_combox.Items.Clear();
                 try
                 {
-                    getPrivsStatement = "select privilege from role_tab_privs where owner = 'QLTH' and role = " + "\'" + user_role_txtbox.Text + "\' and table_name = " + "\'" + table_view_combox.Text + "\'";
+                    getPrivsStatement = "select privilege from dba_tab_privs where owner = 'QLTH' and grantee = " + "\'" + user_role_txtbox.Text + "\' and table_name = " + "\'" + table_view_combox.Text + "\'";
                     cmd = new OracleCommand(getPrivsStatement, con_current);
                     reader = cmd.ExecuteReader();
                     while (reader.Read())

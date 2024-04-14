@@ -119,6 +119,7 @@ namespace QLTruongHoc
             Name = "SysPrivs";
             Padding = new Padding(4, 5, 4, 5);
             Size = new Size(1816, 1012);
+            Load += SysPrivs_Load;
             ((System.ComponentModel.ISupportInitialize)grantView).EndInit();
             ResumeLayout(false);
             PerformLayout();
