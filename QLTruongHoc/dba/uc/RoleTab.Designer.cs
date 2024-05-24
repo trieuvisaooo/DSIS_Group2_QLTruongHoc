@@ -43,14 +43,15 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = SystemColors.Control;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(22, 84);
+            dataGridView1.Location = new Point(0, 84);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1212, 478);
+            dataGridView1.Size = new Size(1260, 514);
             dataGridView1.TabIndex = 0;
             // 
             // button1
@@ -147,10 +148,11 @@
             // 
             // button5
             // 
+            button5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             button5.BackColor = Color.DarkSlateBlue;
             button5.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 163);
             button5.ForeColor = SystemColors.ButtonFace;
-            button5.Location = new Point(1156, 49);
+            button5.Location = new Point(1182, 49);
             button5.Margin = new Padding(3, 2, 3, 2);
             button5.Name = "button5";
             button5.Size = new Size(78, 35);
@@ -159,7 +161,7 @@
             button5.UseVisualStyleBackColor = false;
             button5.Click += button5_Click;
             // 
-            // DBA_RoleUI
+            // RoleTab
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -174,8 +176,9 @@
             Controls.Add(button1);
             Controls.Add(dataGridView1);
             Margin = new Padding(3, 2, 3, 2);
-            Name = "DBA_RoleUI";
-            Size = new Size(1261, 620);
+            MinimumSize = new Size(1263, 600);
+            Name = "RoleTab";
+            Size = new Size(1263, 600);
             Load += DBA_RoleUI_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

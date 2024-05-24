@@ -40,74 +40,74 @@ namespace QLTruongHoc
             // 
             // grantView
             // 
+            grantView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            grantView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             grantView.BackgroundColor = SystemColors.Control;
             grantView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            grantView.Location = new Point(40, 94);
-            grantView.Margin = new Padding(4, 5, 4, 5);
+            grantView.Location = new Point(6, 55);
             grantView.Name = "grantView";
             grantView.RowHeadersWidth = 51;
             grantView.RowTemplate.Height = 24;
-            grantView.Size = new Size(829, 830);
+            grantView.Size = new Size(1251, 539);
             grantView.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            label1.Location = new Point(40, 40);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Font = new Font("Segoe UI", 11.25F);
+            label1.Location = new Point(28, 22);
             label1.Name = "label1";
-            label1.Size = new Size(163, 25);
+            label1.Size = new Size(129, 20);
             label1.TabIndex = 1;
             label1.Text = "Search By Grantee";
             // 
             // searchTextBox
             // 
-            searchTextBox.Location = new Point(213, 37);
-            searchTextBox.Margin = new Padding(4, 5, 4, 5);
+            searchTextBox.Font = new Font("Segoe UI", 11.25F);
+            searchTextBox.Location = new Point(163, 19);
             searchTextBox.Name = "searchTextBox";
-            searchTextBox.Size = new Size(200, 31);
+            searchTextBox.Size = new Size(158, 27);
             searchTextBox.TabIndex = 2;
             // 
             // loadButton
             // 
-            loadButton.Font = new Font("Book Antiqua", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            loadButton.Location = new Point(863, 32);
-            loadButton.Margin = new Padding(4, 5, 4, 5);
+            loadButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            loadButton.Font = new Font("Segoe UI", 11.25F);
+            loadButton.Location = new Point(1178, 20);
             loadButton.Name = "loadButton";
-            loadButton.Size = new Size(162, 52);
+            loadButton.Size = new Size(79, 31);
             loadButton.TabIndex = 3;
-            loadButton.Text = "LOAD";
+            loadButton.Text = "Refresh";
             loadButton.UseVisualStyleBackColor = true;
             loadButton.Click += loadButton_Click;
             // 
             // grantRevokeButton
             // 
-            grantRevokeButton.Font = new Font("Book Antiqua", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            grantRevokeButton.Location = new Point(1033, 32);
-            grantRevokeButton.Margin = new Padding(4, 5, 4, 5);
+            grantRevokeButton.BackColor = Color.LightGreen;
+            grantRevokeButton.Font = new Font("Segoe UI", 11.25F);
+            grantRevokeButton.Location = new Point(470, 6);
             grantRevokeButton.Name = "grantRevokeButton";
-            grantRevokeButton.Size = new Size(252, 52);
+            grantRevokeButton.Size = new Size(130, 43);
             grantRevokeButton.TabIndex = 4;
             grantRevokeButton.Text = "GRANT/REVOKE";
-            grantRevokeButton.UseVisualStyleBackColor = true;
+            grantRevokeButton.UseVisualStyleBackColor = false;
             grantRevokeButton.Click += grantRevokeButton_Click;
             // 
             // searchGrantee
             // 
-            searchGrantee.BackColor = SystemColors.ActiveCaption;
-            searchGrantee.Location = new Point(421, 32);
-            searchGrantee.Margin = new Padding(4, 5, 4, 5);
+            searchGrantee.BackColor = Color.Cyan;
+            searchGrantee.Font = new Font("Segoe UI", 11.25F);
+            searchGrantee.Location = new Point(327, 16);
             searchGrantee.Name = "searchGrantee";
-            searchGrantee.Size = new Size(109, 41);
+            searchGrantee.Size = new Size(76, 32);
             searchGrantee.TabIndex = 5;
             searchGrantee.Text = "Search";
             searchGrantee.UseVisualStyleBackColor = false;
             searchGrantee.Click += searchGrantee_Click;
             // 
-            // SysPrivs
+            // SysPrivsTab
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(searchGrantee);
             Controls.Add(grantRevokeButton);
@@ -115,10 +115,10 @@ namespace QLTruongHoc
             Controls.Add(searchTextBox);
             Controls.Add(label1);
             Controls.Add(grantView);
-            Margin = new Padding(4, 5, 4, 5);
-            Name = "SysPrivs";
-            Padding = new Padding(4, 5, 4, 5);
-            Size = new Size(1816, 1012);
+            MinimumSize = new Size(1263, 600);
+            Name = "SysPrivsTab";
+            Padding = new Padding(3);
+            Size = new Size(1263, 600);
             Load += SysPrivs_Load;
             ((System.ComponentModel.ISupportInitialize)grantView).EndInit();
             ResumeLayout(false);

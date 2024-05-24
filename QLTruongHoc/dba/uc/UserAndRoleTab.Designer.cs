@@ -45,15 +45,25 @@
             label3 = new Label();
             label4 = new Label();
             refreshButton = new Button();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            panel3 = new Panel();
+            panel4 = new Panel();
             ((System.ComponentModel.ISupportInitialize)userGrid).BeginInit();
             ((System.ComponentModel.ISupportInitialize)roleGrid).BeginInit();
+            tableLayoutPanel1.SuspendLayout();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            panel3.SuspendLayout();
+            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Trebuchet MS", 15.75F, FontStyle.Bold);
-            label1.Location = new Point(19, 23);
+            label1.Location = new Point(3, 6);
             label1.Name = "label1";
             label1.Size = new Size(62, 27);
             label1.TabIndex = 0;
@@ -63,7 +73,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Trebuchet MS", 15.75F, FontStyle.Bold);
-            label2.Location = new Point(18, 320);
+            label2.Location = new Point(3, 0);
             label2.Name = "label2";
             label2.Size = new Size(64, 27);
             label2.TabIndex = 1;
@@ -71,34 +81,37 @@
             // 
             // userGrid
             // 
+            userGrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             userGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             userGrid.BackgroundColor = SystemColors.Control;
             userGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            userGrid.Location = new Point(18, 53);
+            userGrid.Location = new Point(3, 35);
             userGrid.Margin = new Padding(3, 2, 3, 2);
             userGrid.Name = "userGrid";
             userGrid.RowHeadersWidth = 51;
-            userGrid.Size = new Size(860, 239);
+            userGrid.Size = new Size(886, 257);
             userGrid.TabIndex = 2;
             userGrid.CellContentClick += dataGridView1_CellContentClick;
             // 
             // roleGrid
             // 
+            roleGrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             roleGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             roleGrid.BackgroundColor = SystemColors.Control;
             roleGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            roleGrid.Location = new Point(18, 354);
+            roleGrid.Location = new Point(0, 22);
             roleGrid.Margin = new Padding(3, 2, 3, 2);
             roleGrid.Name = "roleGrid";
             roleGrid.RowHeadersWidth = 51;
-            roleGrid.Size = new Size(860, 239);
+            roleGrid.Size = new Size(889, 268);
             roleGrid.TabIndex = 3;
             // 
             // button2
             // 
+            button2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button2.BackColor = SystemColors.GradientInactiveCaption;
             button2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic);
-            button2.Location = new Point(1084, 132);
+            button2.Location = new Point(239, 74);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
             button2.Size = new Size(116, 32);
@@ -109,9 +122,10 @@
             // 
             // button3
             // 
+            button3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button3.BackColor = Color.PeachPuff;
             button3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic);
-            button3.Location = new Point(1084, 170);
+            button3.Location = new Point(239, 112);
             button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
             button3.Size = new Size(116, 32);
@@ -122,9 +136,10 @@
             // 
             // button4
             // 
+            button4.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button4.BackColor = SystemColors.Info;
             button4.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic);
-            button4.Location = new Point(1084, 211);
+            button4.Location = new Point(239, 153);
             button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
             button4.Size = new Size(116, 32);
@@ -135,9 +150,10 @@
             // 
             // button5
             // 
+            button5.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button5.BackColor = SystemColors.Info;
             button5.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic);
-            button5.Location = new Point(1084, 513);
+            button5.Location = new Point(240, 157);
             button5.Margin = new Padding(3, 2, 3, 2);
             button5.Name = "button5";
             button5.Size = new Size(116, 32);
@@ -148,9 +164,10 @@
             // 
             // button6
             // 
+            button6.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button6.BackColor = Color.PeachPuff;
             button6.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic);
-            button6.Location = new Point(1084, 468);
+            button6.Location = new Point(240, 112);
             button6.Margin = new Padding(3, 2, 3, 2);
             button6.Name = "button6";
             button6.Size = new Size(116, 32);
@@ -161,9 +178,10 @@
             // 
             // button7
             // 
+            button7.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button7.BackColor = SystemColors.GradientInactiveCaption;
             button7.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic);
-            button7.Location = new Point(1084, 420);
+            button7.Location = new Point(240, 64);
             button7.Margin = new Padding(3, 2, 3, 2);
             button7.Name = "button7";
             button7.Size = new Size(116, 32);
@@ -174,9 +192,10 @@
             // 
             // button8
             // 
+            button8.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button8.BackColor = Color.Lavender;
             button8.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic);
-            button8.Location = new Point(1119, 266);
+            button8.Location = new Point(274, 208);
             button8.Margin = new Padding(3, 2, 3, 2);
             button8.Name = "button8";
             button8.Size = new Size(82, 30);
@@ -187,9 +206,10 @@
             // 
             // button9
             // 
+            button9.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button9.BackColor = Color.Lavender;
             button9.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic);
-            button9.Location = new Point(1119, 563);
+            button9.Location = new Point(275, 207);
             button9.Margin = new Padding(3, 2, 3, 2);
             button9.Name = "button9";
             button9.Size = new Size(82, 30);
@@ -200,8 +220,9 @@
             // 
             // textBox1
             // 
+            textBox1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             textBox1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic);
-            textBox1.Location = new Point(908, 268);
+            textBox1.Location = new Point(63, 210);
             textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(205, 28);
@@ -209,8 +230,9 @@
             // 
             // textBox2
             // 
+            textBox2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             textBox2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic);
-            textBox2.Location = new Point(908, 563);
+            textBox2.Location = new Point(64, 207);
             textBox2.Margin = new Padding(3, 2, 3, 2);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(205, 28);
@@ -218,9 +240,10 @@
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic);
-            label3.Location = new Point(936, 255);
+            label3.Location = new Point(91, 197);
             label3.Name = "label3";
             label3.Size = new Size(89, 20);
             label3.TabIndex = 15;
@@ -229,9 +252,10 @@
             // 
             // label4
             // 
+            label4.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic);
-            label4.Location = new Point(934, 550);
+            label4.Location = new Point(90, 194);
             label4.Name = "label4";
             label4.Size = new Size(86, 20);
             label4.TabIndex = 16;
@@ -239,10 +263,11 @@
             // 
             // refreshButton
             // 
+            refreshButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             refreshButton.BackColor = Color.DarkSlateBlue;
             refreshButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic);
             refreshButton.ForeColor = SystemColors.ButtonHighlight;
-            refreshButton.Location = new Point(796, 15);
+            refreshButton.Location = new Point(807, -1);
             refreshButton.Margin = new Padding(3, 2, 3, 2);
             refreshButton.Name = "refreshButton";
             refreshButton.Size = new Size(82, 38);
@@ -251,35 +276,95 @@
             refreshButton.UseVisualStyleBackColor = false;
             refreshButton.Click += refreshButton_Click;
             // 
-            // UserandRole
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70.99032F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 29.00968F));
+            tableLayoutPanel1.Controls.Add(panel1, 0, 0);
+            tableLayoutPanel1.Controls.Add(panel2, 0, 1);
+            tableLayoutPanel1.Controls.Add(panel3, 1, 0);
+            tableLayoutPanel1.Controls.Add(panel4, 1, 1);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 2;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Size = new Size(1261, 610);
+            tableLayoutPanel1.TabIndex = 18;
+            // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.Controls.Add(userGrid);
+            panel1.Controls.Add(refreshButton);
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(3, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(889, 299);
+            panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel2.Controls.Add(label2);
+            panel2.Controls.Add(roleGrid);
+            panel2.Location = new Point(3, 308);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(889, 299);
+            panel2.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(button2);
+            panel3.Controls.Add(button3);
+            panel3.Controls.Add(label3);
+            panel3.Controls.Add(button4);
+            panel3.Controls.Add(button8);
+            panel3.Controls.Add(textBox1);
+            panel3.Dock = DockStyle.Fill;
+            panel3.Location = new Point(898, 3);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(360, 299);
+            panel3.TabIndex = 2;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(button7);
+            panel4.Controls.Add(label4);
+            panel4.Controls.Add(button6);
+            panel4.Controls.Add(textBox2);
+            panel4.Controls.Add(button5);
+            panel4.Controls.Add(button9);
+            panel4.Dock = DockStyle.Fill;
+            panel4.Location = new Point(898, 308);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(360, 299);
+            panel4.TabIndex = 3;
+            // 
+            // UserAndRoleTab
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(refreshButton);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(button9);
-            Controls.Add(button8);
-            Controls.Add(button5);
-            Controls.Add(button6);
-            Controls.Add(button7);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(roleGrid);
-            Controls.Add(userGrid);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(tableLayoutPanel1);
             Margin = new Padding(3, 2, 3, 2);
-            Name = "UserandRole";
-            Size = new Size(1261, 620);
+            MinimumSize = new Size(1261, 600);
+            Name = "UserAndRoleTab";
+            Size = new Size(1261, 600);
             Load += UseransRole_Load;
             ((System.ComponentModel.ISupportInitialize)userGrid).EndInit();
             ((System.ComponentModel.ISupportInitialize)roleGrid).EndInit();
+            tableLayoutPanel1.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -301,5 +386,10 @@
         private Label label3;
         private Label label4;
         private Button refreshButton;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Panel panel1;
+        private Panel panel2;
+        private Panel panel3;
+        private Panel panel4;
     }
 }
