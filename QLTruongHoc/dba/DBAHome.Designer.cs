@@ -18,27 +18,6 @@ namespace QLTruongHoc
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {   
-            //string connectionString = "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=172.16.112.128)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=xe)));User Id=QLTH;Password=QLTH;";
-
-            //try
-            //{
-            //    connection = new OracleConnection(connectionString);
-            //    connection.Open();
-            //    MessageBox.Show("Connection to Oracle database successful!");
-            //}
-            //catch (OracleException ex)
-            //{
-            //    MessageBox.Show("Error connecting to Oracle database: " + ex.Message);
-            //}
-            //finally
-            //{
-            //    // Ensure proper connection closure
-            //    if (connection != null)
-            //    {
-            //        connection.Close();
-            //    }
-            //}
-
             if (disposing && (components != null))
             {
                 components.Dispose();

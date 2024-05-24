@@ -1,4 +1,5 @@
 ﻿using Oracle.ManagedDataAccess.Client;
+using QLTruongHoc.nhan_su;
 using System.Configuration;
 
 
@@ -77,8 +78,8 @@ namespace QLTruongHoc
                 else
                 {
                     MessageBox.Show("Connect với tư cách là nhân viên thành công!");
-                    EmpHome emp_home = new EmpHome();
-                    emp_home.Show();
+                    EmpHome empHome = new EmpHome();
+                    empHome.Show();
                     this.Hide();
                 }
 

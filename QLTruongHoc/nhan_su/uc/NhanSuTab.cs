@@ -27,11 +27,6 @@ namespace QLTruongHoc.NhanSu
 
         private void NhanSu_tab_Load(object sender, EventArgs e)
         {
-            /*string sql = "SELECT * FROM QLTH.qlth_nhansu";
-            OracleDataAdapter da = new OracleDataAdapter(sql, conNow);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            NhanSu_Table.DataSource = dt;*/
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -45,6 +40,15 @@ namespace QLTruongHoc.NhanSu
                 da.Fill(dt);
                 NhanSu_Table.DataSource = dt;
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string sql = "SELECT * FROM QLTH.qlth_nhansu";
+            OracleDataAdapter da = new OracleDataAdapter(sql, conNow);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            NhanSu_Table.DataSource = dt;
         }
     }
 }

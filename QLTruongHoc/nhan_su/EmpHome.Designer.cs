@@ -1,6 +1,6 @@
-﻿namespace QLTruongHoc
+﻿namespace QLTruongHoc.nhan_su
 {
-    partial class EmpHome : Form
+    partial class EmpHome
     {
         /// <summary>
         /// Required designer variable.
@@ -29,65 +29,90 @@
         private void InitializeComponent()
         {
             tabControl1 = new TabControl();
-            NhanSuTab = new TabPage();
+            tabPage1 = new TabPage();
+            nhanSuTab1 = new NhanSu.NhanSuTab();
             tabPage2 = new TabPage();
+            button1 = new Button();
             tabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
             // 
-            tabControl1.Controls.Add(NhanSuTab);
+            tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new Point(1, 3);
-            tabControl1.Margin = new Padding(4, 5, 4, 5);
+            tabControl1.Location = new Point(2, 1);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1652, 1037);
+            tabControl1.Size = new Size(1265, 710);
             tabControl1.TabIndex = 0;
             // 
-            // NhanSuTab
+            // tabPage1
             // 
-            NhanSuTab.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            NhanSuTab.Location = new Point(4, 32);
-            NhanSuTab.Margin = new Padding(4, 5, 4, 5);
-            NhanSuTab.Name = "NhanSuTab";
-            NhanSuTab.Padding = new Padding(4, 5, 4, 5);
-            NhanSuTab.Size = new Size(1644, 1001);
-            NhanSuTab.TabIndex = 0;
-            NhanSuTab.Text = "Nhân Sự";
-            NhanSuTab.UseVisualStyleBackColor = true;
+            tabPage1.Controls.Add(nhanSuTab1);
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(1257, 682);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "tabPage1";
+            tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // nhanSuTab1
+            // 
+            nhanSuTab1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            nhanSuTab1.Location = new Point(0, 0);
+            nhanSuTab1.MinimumSize = new Size(1263, 600);
+            nhanSuTab1.Name = "nhanSuTab1";
+            nhanSuTab1.Size = new Size(1263, 679);
+            nhanSuTab1.TabIndex = 0;
             // 
             // tabPage2
             // 
             tabPage2.Location = new Point(4, 24);
-            tabPage2.Margin = new Padding(4, 5, 4, 5);
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(4, 5, 4, 5);
-            tabPage2.Size = new Size(1644, 1009);
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(1257, 682);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // Emp_Home
+            // button1
             // 
-            AutoScaleDimensions = new SizeF(9F, 23F);
+            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button1.BackColor = Color.Crimson;
+            button1.Font = new Font("Segoe UI Black", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.WhiteSmoke;
+            button1.Location = new Point(1179, 713);
+            button1.Name = "button1";
+            button1.Size = new Size(84, 35);
+            button1.TabIndex = 2;
+            button1.Text = "Sign Out";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // EmpHome
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1655, 842);
+            ClientSize = new Size(1267, 747);
+            Controls.Add(button1);
             Controls.Add(tabControl1);
-            Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FormBorderStyle = FormBorderStyle.SizableToolWindow;
-            Margin = new Padding(4, 5, 4, 5);
-            Name = "Emp_Home";
-            Text = "Emp_Home";
-            WindowState = FormWindowState.Maximized;
+            MinimumSize = new Size(1283, 786);
+            Name = "EmpHome";
+            Text = "EmpHome";
+            FormClosing += EmpHome_FormClosing;
             tabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
         private TabControl tabControl1;
-        private TabPage NhanSuTab;
+        private TabPage tabPage1;
         private TabPage tabPage2;
+        private Button button1;
+        private NhanSu.NhanSuTab nhanSuTab1;
     }
 }
