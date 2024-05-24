@@ -21,7 +21,6 @@ namespace QLTruongHoc
         public UserandRole()
         {
             InitializeComponent();
-            DBA_load_UserAndRole();
         }
 
 
@@ -151,11 +150,15 @@ namespace QLTruongHoc
                 userGrid.DataSource = dataTable;
                 grid1 = userGrid;
             }
-            catch(Exception ex) {
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message);
             }
         }
 
-        
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            DBA_load_UserAndRole();
+        }
     }
 }

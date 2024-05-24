@@ -88,6 +88,11 @@ namespace QLTruongHoc
 
         private void Privilege_Load(object sender, EventArgs e)
         {
+           
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
             view_table_privil();
             view_col_privil();
         }

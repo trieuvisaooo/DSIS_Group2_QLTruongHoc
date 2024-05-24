@@ -32,6 +32,7 @@
             label2 = new Label();
             tableGrid = new DataGridView();
             viewGrid = new DataGridView();
+            button5 = new Button();
             ((System.ComponentModel.ISupportInitialize)tableGrid).BeginInit();
             ((System.ComponentModel.ISupportInitialize)viewGrid).BeginInit();
             SuspendLayout();
@@ -40,10 +41,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(29, 15);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(23, 43);
             label1.Name = "label1";
-            label1.Size = new Size(105, 41);
+            label1.Size = new Size(71, 28);
             label1.TabIndex = 0;
             label1.Text = "TABLE";
             // 
@@ -51,10 +51,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(29, 507);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(23, 340);
             label2.Name = "label2";
-            label2.Size = new Size(95, 41);
+            label2.Size = new Size(62, 28);
             label2.TabIndex = 1;
             label2.Text = "VIEW";
             // 
@@ -62,35 +61,47 @@
             // 
             tableGrid.BackgroundColor = SystemColors.Control;
             tableGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tableGrid.Location = new Point(29, 82);
-            tableGrid.Margin = new Padding(4, 5, 4, 5);
+            tableGrid.Location = new Point(23, 78);
             tableGrid.Name = "tableGrid";
             tableGrid.RowHeadersWidth = 62;
-            tableGrid.Size = new Size(1400, 393);
+            tableGrid.Size = new Size(980, 236);
             tableGrid.TabIndex = 2;
             // 
             // viewGrid
             // 
             viewGrid.BackgroundColor = SystemColors.Control;
             viewGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            viewGrid.Location = new Point(29, 578);
-            viewGrid.Margin = new Padding(4, 5, 4, 5);
+            viewGrid.Location = new Point(23, 381);
             viewGrid.Name = "viewGrid";
             viewGrid.RowHeadersWidth = 62;
-            viewGrid.Size = new Size(1400, 393);
+            viewGrid.Size = new Size(980, 236);
             viewGrid.TabIndex = 3;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.DarkSlateBlue;
+            button5.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 163);
+            button5.ForeColor = SystemColors.ButtonFace;
+            button5.Location = new Point(925, 43);
+            button5.Margin = new Padding(3, 2, 3, 2);
+            button5.Name = "button5";
+            button5.Size = new Size(78, 35);
+            button5.TabIndex = 10;
+            button5.Text = "Refresh";
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // TablesViewsPage
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(button5);
             Controls.Add(viewGrid);
             Controls.Add(tableGrid);
             Controls.Add(label2);
             Controls.Add(label1);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "TablesViewsPage";
-            Size = new Size(1800, 1033);
+            Size = new Size(1260, 620);
             Load += TablesViewsPage_Load;
             ((System.ComponentModel.ISupportInitialize)tableGrid).EndInit();
             ((System.ComponentModel.ISupportInitialize)viewGrid).EndInit();
@@ -104,5 +115,6 @@
         private Label label2;
         private DataGridView tableGrid;
         private DataGridView viewGrid;
+        private Button button5;
     }
 }

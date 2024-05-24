@@ -41,13 +41,7 @@ namespace QLTruongHoc
 
         private void DBA_RoleUI_Load(object sender, EventArgs e)
         {
-            string sql = "select * from dba_role_privs";
-
-            OracleDataAdapter da = new OracleDataAdapter(sql, conNow);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
-            roleUserGrid = dataGridView1;
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -86,6 +80,17 @@ namespace QLTruongHoc
         {
             RevokeRole revokeRole = new RevokeRole();
             revokeRole.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string sql = "select * from dba_role_privs";
+
+            OracleDataAdapter da = new OracleDataAdapter(sql, conNow);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+            roleUserGrid = dataGridView1;
         }
     }
 }

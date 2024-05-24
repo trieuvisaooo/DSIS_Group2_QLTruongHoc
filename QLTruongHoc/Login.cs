@@ -12,6 +12,7 @@ namespace QLTruongHoc
         public static string role;
         public Login()
         {
+            con = new OracleConnection();
             InitializeComponent();
         }
 
@@ -50,15 +51,15 @@ namespace QLTruongHoc
                     /*connectionString = @"DATA SOURCE = localhost:1522/xe;DBA Privilege=SYSDBA; USER ID=" + username_txtbox.Text + ";PASSWORD=" + psw_txtbox.Text;*/
 
                     connectionString = @$"DATA SOURCE = {hostname}:{port}/xe;DBA Privilege=SYSDBA; USER ID=" + username_txtbox.Text + ";PASSWORD=" + psw_txtbox.Text;
+                  
                 else
                 {
                     connectionString = @$"DATA SOURCE = {hostname}:{port}/xe; USER ID=" + username_txtbox.Text + ";PASSWORD=" + psw_txtbox.Text;
-                    MessageBox.Show("Hiện tại chỉ đăng nhập với tư cách quản trị viên!");
-                    return;
+                    /*MessageBox.Show("Hiện tại chỉ đăng nhập với tư cách quản trị viên!");
+                    return;*/
                 }
 
 
-                con = new OracleConnection();
                 con.ConnectionString = connectionString;
                 con.Open();
 
@@ -75,7 +76,10 @@ namespace QLTruongHoc
                 }
                 else
                 {
-                    MessageBox.Show("Hiện tại chỉ đăng nhập với tư cách quản trị viên!");
+                    MessageBox.Show("Connect với tư cách là nhân viên thành công!");
+                    Emp_Home emp_home = new Emp_Home();
+                    emp_home.Show();
+                    this.Hide();
                 }
 
             }
@@ -84,6 +88,11 @@ namespace QLTruongHoc
                 MessageBox.Show(ex.Message);
                 return;
             }
+        }
+
+        private void role_combox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
