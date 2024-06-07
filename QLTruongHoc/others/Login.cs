@@ -51,15 +51,14 @@ namespace QLTruongHoc
                 if (role_combox.Text == "Quản trị viên")
                     /*connectionString = @"DATA SOURCE = localhost:1522/xe;DBA Privilege=SYSDBA; USER ID=" + username_txtbox.Text + ";PASSWORD=" + psw_txtbox.Text;*/
 
-                    connectionString = @$"DATA SOURCE = {hostname}:{port}/xe;DBA Privilege=SYSDBA; USER ID=" + username_txtbox.Text + ";PASSWORD=" + psw_txtbox.Text;
-                  
+                    connectionString = @$"DATA SOURCE = {hostname}:{port}/XEPDB1;DBA Privilege=SYSDBA; USER ID=" + username_txtbox.Text + ";PASSWORD=" + psw_txtbox.Text;
+                    
                 else
                 {
-                    connectionString = @$"DATA SOURCE = {hostname}:{port}/xe; USER ID=" + username_txtbox.Text + ";PASSWORD=" + psw_txtbox.Text;
+                    connectionString = @$"DATA SOURCE = {hostname}:{port}/XEPDB1; USER ID=" + username_txtbox.Text + ";PASSWORD=" + psw_txtbox.Text;
                     /*MessageBox.Show("Hiện tại chỉ đăng nhập với tư cách quản trị viên!");
                     return;*/
                 }
-
 
                 con.ConnectionString = connectionString;
                 con.Open();

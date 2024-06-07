@@ -100,7 +100,7 @@
             Controls.Add(tabControl1);
             MinimumSize = new Size(1283, 786);
             Name = "EmpHome";
-            Text = "EmpHome";
+            Text = "Quản lý trường học";
             FormClosing += EmpHome_FormClosing;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
