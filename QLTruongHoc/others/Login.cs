@@ -69,23 +69,24 @@ namespace QLTruongHoc
                 else
                 {
                     connectionString = @$"DATA SOURCE = {hostname}:{port}/XEPDB1; USER ID=" + username_txtbox.Text + ";PASSWORD=" + psw_txtbox.Text;
-                    /*var cmd = new OracleCommand();
+                    var cmd = new OracleCommand();
                     var qlthOracleConnection = new OracleConnection();
                     qlthOracleConnection.ConnectionString = qlthConnectionString;
                     qlthOracleConnection.Open();
                     cmd.Connection = qlthOracleConnection;
                     cmd.CommandText = "QLTH.USER_LOGIN";
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    
-                    cmd.Parameters.Add("USRNAME", username_txtbox.Text.ToString());
-                    cmd.Parameters.Add("USR_ROLE", role_combox.Text);
-                    cmd.Parameters.Add("RLE", OracleDbType.NVarchar2).Direction = System.Data.ParameterDirection.Output;
-                    MessageBox.Show(cmd.Parameters["USRNAME"].Value as string);
+
+                    cmd.Parameters.Add("USRNAME", OracleDbType.Int64).Value = Int64.Parse(username_txtbox.Text);
+                    cmd.Parameters.Add("USR_ROLE", OracleDbType.NVarchar2).Value = role_combox.Text;
+                    var outputParam = cmd.Parameters.Add("RLE", OracleDbType.NVarchar2, 20);
+                    outputParam.Direction = System.Data.ParameterDirection.Output;
+
                     cmd.ExecuteNonQuery();
-
-                    var result = cmd.Parameters["RLE"].Value as string;*/
-
-                    /*if (result == "#")
+                    
+                    var result = cmd.Parameters["RLE"].Value as string;
+                    qlthOracleConnection.Close();  
+                    if (result == "#")
                     {
                         MessageBox.Show("Tai khoan khong ton tai");
                     }
@@ -98,30 +99,19 @@ namespace QLTruongHoc
                         MessageBox.Show("print");
                         con.ConnectionString = connectionString;
                         con.Open();
-                        
+
                         Session.Instance.Username = username_txtbox.Text;
                         Session.Instance.Password = psw_txtbox.Text;
                         Session.Instance.Role = role_combox.Text;
                         Session.Instance.OracleConnection = con;
-                        
+
                         MessageBox.Show("Connect với tư cách là nhân viên thành công!");
                         EmpHome empHome = new EmpHome();
                         empHome.Show();
                         this.Hide();
-                    }*/
+                        
+                    }
 
-                    con.ConnectionString = connectionString;
-                    con.Open();
-
-                    Session.Instance.Username = username_txtbox.Text;
-                    Session.Instance.Password = psw_txtbox.Text;
-                    Session.Instance.Role = role_combox.Text;
-                    Session.Instance.OracleConnection = con;
-
-                    MessageBox.Show("Connect với tư cách là nhân viên thành công!");
-                    EmpHome empHome = new EmpHome();
-                    empHome.Show();
-                    this.Hide();
                 }
 
             }

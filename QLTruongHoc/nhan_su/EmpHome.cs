@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLTruongHoc.utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,8 +20,9 @@ namespace QLTruongHoc.nhan_su
             InitializeComponent();
         }
 
-        private void EmpHome_FormClosing(object sender, FormClosingEventArgs e)
+        protected override void OnFormClosing(FormClosingEventArgs e)
         {
+
             base.OnFormClosing(e);
 
             if (e.CloseReason == CloseReason.WindowsShutDown) return;
@@ -37,8 +39,11 @@ namespace QLTruongHoc.nhan_su
         private void EmpHome_Load(object sender, EventArgs e)
         {
             tabControl1.TabPages.Remove(tabPage2);
-            SessionAuthentication session = new SessionAuthentication();
+        }
 
+        private void EmpHome_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

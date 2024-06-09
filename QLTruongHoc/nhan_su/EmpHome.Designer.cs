@@ -107,7 +107,7 @@
             MinimumSize = new Size(1464, 1018);
             Name = "EmpHome";
             Text = "Quản lý trường học";
-            FormClosing += EmpHome_FormClosing;
+            FormClosed += EmpHome_FormClosed;
             Load += EmpHome_Load;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
