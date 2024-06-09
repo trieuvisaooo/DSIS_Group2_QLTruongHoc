@@ -1,4 +1,5 @@
 ﻿using Oracle.ManagedDataAccess.Client;
+using QLTruongHoc.utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,8 +15,6 @@ namespace QLTruongHoc
 {
     public partial class CreateRole : Form
     {
-
-        public static OracleConnection conNow = Login.con;
 
         public CreateRole()
         {
@@ -46,7 +45,7 @@ namespace QLTruongHoc
                 } else
                 {
                     var cmd = new OracleCommand();
-                    cmd.Connection = conNow;
+                    cmd.Connection = Session.Instance.OracleConnection;
                     cmd.CommandText = "QLTH.create_role";
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("p_role_name", role);
@@ -55,7 +54,7 @@ namespace QLTruongHoc
                     cmd.ExecuteNonQuery();
 
                     string sql = "SELECT role, role_id, password_required FROM DBA_ROLES";
-                    OracleDataAdapter da = new OracleDataAdapter(sql, conNow) { SuppressGetDecimalInvalidCastException = true };
+                    OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection) { SuppressGetDecimalInvalidCastException = true };
                     DataTable dataTable = new DataTable();
                     da.Fill(dataTable);
                     UserAndRoleTab.grid2.DataSource = dataTable;

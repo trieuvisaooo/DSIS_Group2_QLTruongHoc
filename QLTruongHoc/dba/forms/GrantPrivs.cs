@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Oracle.ManagedDataAccess.Client;
+using QLTruongHoc.utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,6 @@ namespace QLTruongHoc
 {
     public partial class GrantPrivs : Form
     {
-        public static OracleConnection con_current = Login.con;
         public GrantPrivs()
         {
             InitializeComponent();
@@ -24,7 +24,7 @@ namespace QLTruongHoc
         private void DBA_GrantPrivs_Load(object sender, EventArgs e)
         {
             string selectTableStatement = "select object_name from all_objects where (object_type = \'VIEW\' or object_type = \'TABLE\') and owner = \'QLTH\'";
-            OracleCommand cmd = new OracleCommand(selectTableStatement, con_current);
+            OracleCommand cmd = new OracleCommand(selectTableStatement, Session.Instance.OracleConnection);
             OracleDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
@@ -68,8 +68,8 @@ namespace QLTruongHoc
             {
                 string checkUserStatement = "select count(*) from dba_users where username = \'" + user_role_txtbox.Text + "\'";
                 string checkRoleStatement = "select count(*) from dba_roles where role = \'" + user_role_txtbox.Text + "\'";
-                OracleCommand cmd1 = new OracleCommand(checkUserStatement, con_current);
-                OracleCommand cmd2 = new OracleCommand(checkRoleStatement, con_current);
+                OracleCommand cmd1 = new OracleCommand(checkUserStatement, Session.Instance.OracleConnection);
+                OracleCommand cmd2 = new OracleCommand(checkRoleStatement, Session.Instance.OracleConnection);
                 OracleDataReader reader1 = cmd1.ExecuteReader();
                 OracleDataReader reader2 = cmd2.ExecuteReader();
                 reader1.Read();
@@ -115,7 +115,7 @@ namespace QLTruongHoc
                 if (cb != null)
                 {
                     string getColNameStatement = "select column_name from dba_tab_columns where owner = \'QLTH\' and table_name = \'" + cb.Text + "\'";
-                    OracleCommand cmd = new OracleCommand(getColNameStatement, con_current);
+                    OracleCommand cmd = new OracleCommand(getColNameStatement, Session.Instance.OracleConnection);
                     OracleDataReader reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
@@ -232,7 +232,7 @@ namespace QLTruongHoc
                     if (privs_combox.Text == "SELECT")
                     {
                         var grantSelectCmd = new OracleCommand();
-                        grantSelectCmd.Connection = con_current;
+                        grantSelectCmd.Connection = Session.Instance.OracleConnection;
 
                         //string colOption;
                         string column_list = "";
@@ -278,7 +278,7 @@ namespace QLTruongHoc
 
                     //MessageBox.Show(grantStatement); // debug line
 
-                    OracleCommand cmd = new OracleCommand(grantStatement, con_current);
+                    OracleCommand cmd = new OracleCommand(grantStatement, Session.Instance.OracleConnection);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Thực hiện cấp quyền thành công!");
 

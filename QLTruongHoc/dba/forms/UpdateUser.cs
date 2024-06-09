@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic.ApplicationServices;
 using Oracle.ManagedDataAccess.Client;
+using QLTruongHoc.utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,6 @@ namespace QLTruongHoc
 {
     public partial class UpdateUser : Form
     {
-        private static OracleConnection conNow = Login.con;
         public UpdateUser()
         {
             InitializeComponent();
@@ -35,7 +35,7 @@ namespace QLTruongHoc
                 else
                 {
                     OracleCommand cmd = new OracleCommand();
-                    cmd.Connection = conNow;
+                    cmd.Connection = Session.Instance.OracleConnection;
                     cmd.CommandText = "QLTH.check_user_role_exist";
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("user_role", rolebox.Text.ToString());
@@ -52,7 +52,7 @@ namespace QLTruongHoc
                     {
                         var cmd1 = new OracleCommand();
 
-                        cmd1.Connection = conNow;
+                        cmd1.Connection = Session.Instance.OracleConnection;
                         cmd1.CommandText = "QLTH.change_password";
                         cmd1.CommandType = CommandType.StoredProcedure;
 
@@ -63,7 +63,7 @@ namespace QLTruongHoc
 
                         string sql = "SELECT USERNAME, USER_ID, CREATED FROM ALL_USERS";
 
-                        OracleDataAdapter da = new OracleDataAdapter(sql, conNow);
+                        OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
                         DataTable dt1 = new DataTable();
                         da.Fill(dt1);
                         UserAndRoleTab.grid1.DataSource = dt1;

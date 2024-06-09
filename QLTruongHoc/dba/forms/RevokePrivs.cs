@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic.ApplicationServices;
 using Oracle.ManagedDataAccess.Client;
+using QLTruongHoc.utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,7 @@ namespace QLTruongHoc
 {
     public partial class RevokePrivs : Form
     {
-        public static OracleConnection con_current = Login.con;
+
         public RevokePrivs()
         {
             InitializeComponent();
@@ -39,8 +40,8 @@ namespace QLTruongHoc
             {
                 string checkUserStatement = "select count(*) from dba_users where username = \'" + user_role_txtbox.Text + "\'";
                 string checkRoleStatement = "select count(*) from dba_roles where role = \'" + user_role_txtbox.Text + "\'";
-                OracleCommand cmd1 = new OracleCommand(checkUserStatement, con_current);
-                OracleCommand cmd2 = new OracleCommand(checkRoleStatement, con_current);
+                OracleCommand cmd1 = new OracleCommand(checkUserStatement, Session.Instance.OracleConnection);
+                OracleCommand cmd2 = new OracleCommand(checkRoleStatement, Session.Instance.OracleConnection);
                 OracleDataReader reader1 = cmd1.ExecuteReader();
                 OracleDataReader reader2 = cmd2.ExecuteReader();
                 reader1.Read();
@@ -80,7 +81,7 @@ namespace QLTruongHoc
                     try
                     {
                         getTableStatement = "select table_name from dba_tab_privs where owner = \'QLTH\'" + " and grantee = " + "\'" + user_role_txtbox.Text + "\'";
-                        getTableCmd = new OracleCommand(getTableStatement, con_current);
+                        getTableCmd = new OracleCommand(getTableStatement, Session.Instance.OracleConnection);
                         reader3 = getTableCmd.ExecuteReader();
                         while (reader3.Read())
                         {
@@ -106,7 +107,7 @@ namespace QLTruongHoc
                     {
                         getTableStatement = "select table_name from dba_tab_privs where owner = \'QLTH\'" + " and grantee = " + "\'" + user_role_txtbox.Text + "\'";
                         //MessageBox.Show(getTableStatement); // debug line
-                        getTableCmd = new OracleCommand(getTableStatement, con_current);
+                        getTableCmd = new OracleCommand(getTableStatement, Session.Instance.OracleConnection);
                         reader3 = getTableCmd.ExecuteReader();
                         while (reader3.Read())
                         {
@@ -145,7 +146,7 @@ namespace QLTruongHoc
                 try
                 {
                     getPrivsStatement = "select privilege from dba_tab_privs where owner = 'QLTH' and grantee = " + "\'" + user_role_txtbox.Text + "\' and table_name = " + "\'" + table_view_combox.Text + "\'";
-                    cmd = new OracleCommand(getPrivsStatement, con_current);
+                    cmd = new OracleCommand(getPrivsStatement, Session.Instance.OracleConnection);
                     reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
@@ -166,7 +167,7 @@ namespace QLTruongHoc
                 try
                 {
                     getPrivsStatement = "select privilege from dba_tab_privs where owner = 'QLTH' and grantee = " + "\'" + user_role_txtbox.Text + "\' and table_name = " + "\'" + table_view_combox.Text + "\'";
-                    cmd = new OracleCommand(getPrivsStatement, con_current);
+                    cmd = new OracleCommand(getPrivsStatement, Session.Instance.OracleConnection);
                     reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
@@ -205,7 +206,7 @@ namespace QLTruongHoc
                 {
                     string revokeStetament = "revoke " + privs_combox.Text + " on QLTH." + table_view_combox.Text + " from " + user_role_txtbox.Text;
                     //MessageBox.Show(revokeStetament); // debug line
-                    OracleCommand cmd = new OracleCommand(revokeStetament, con_current);
+                    OracleCommand cmd = new OracleCommand(revokeStetament, Session.Instance.OracleConnection);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Thực hiện thu hồi quyền " + privs_combox.Text + " trên " + table_view_combox.Text + " từ " + user_role_txtbox.Text + " thành công!");
 

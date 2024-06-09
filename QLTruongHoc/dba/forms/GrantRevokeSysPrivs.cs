@@ -1,4 +1,5 @@
 ﻿using Oracle.ManagedDataAccess.Client;
+using QLTruongHoc.utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,7 @@ namespace QLTruongHoc
 {
     public partial class GrantRevokeSysPrivs : Form
     {
-        public static OracleConnection con_current = Login.con;
+
         public GrantRevokeSysPrivs()
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace QLTruongHoc
             try
             {
                 string selectSysPrivsSql = "select * from session_privs order by PRIVILEGE ASC";
-                OracleCommand cmd = new OracleCommand(selectSysPrivsSql, Login.con);
+                OracleCommand cmd = new OracleCommand(selectSysPrivsSql, Session.Instance.OracleConnection);
                 OracleDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
@@ -47,7 +48,7 @@ namespace QLTruongHoc
             {
                 string selectSysPrivsSql = "select privilege from dba_sys_privs where grantee =  " + "\'" + user_role_txtbox.Text + "\'" + " order by privilege asc";
                 //MessageBox.Show(selectSysPrivsSql); // debug line
-                OracleCommand cmd = new OracleCommand(selectSysPrivsSql, Login.con);
+                OracleCommand cmd = new OracleCommand(selectSysPrivsSql, Session.Instance.OracleConnection);
                 OracleDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
@@ -105,7 +106,7 @@ namespace QLTruongHoc
                         sqlStatement = grant_revoke_combox.Text + " " + SysPrivs_combox.Text + " FROM " + user_role_txtbox.Text;
                     }
 
-                    OracleCommand cmd = new OracleCommand(sqlStatement, Login.con);
+                    OracleCommand cmd = new OracleCommand(sqlStatement, Session.Instance.OracleConnection);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Thực hiện thao tác " + grant_revoke_combox.Text + " thành công");
                 }
@@ -153,8 +154,8 @@ namespace QLTruongHoc
             {
                 string checkUserStatement = "select count(*) from dba_users where username = \'" + user_role_txtbox.Text + "\'";
                 string checkRoleStatement = "select count(*) from dba_roles where role = \'" + user_role_txtbox.Text + "\'";
-                OracleCommand cmd1 = new OracleCommand(checkUserStatement, con_current);
-                OracleCommand cmd2 = new OracleCommand(checkRoleStatement, con_current  );
+                OracleCommand cmd1 = new OracleCommand(checkUserStatement, Session.Instance.OracleConnection);
+                OracleCommand cmd2 = new OracleCommand(checkRoleStatement, Session.Instance.OracleConnection);
                 OracleDataReader reader1 = cmd1.ExecuteReader();
                 OracleDataReader reader2 = cmd2.ExecuteReader();
                 reader1.Read();

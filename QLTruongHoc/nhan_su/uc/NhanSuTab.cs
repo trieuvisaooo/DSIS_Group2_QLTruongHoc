@@ -1,4 +1,5 @@
 ﻿using Oracle.ManagedDataAccess.Client;
+using QLTruongHoc.utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,6 @@ namespace QLTruongHoc.NhanSu
 {
     public partial class NhanSuTab : UserControl
     {
-        private static OracleConnection conNow = Login.con;
 
         public NhanSuTab()
         {
@@ -35,7 +35,7 @@ namespace QLTruongHoc.NhanSu
             if (search.Length > 0)
             {
                 string sql = $"SELECT * FROM QLTH.qlth_nhansu WHERE HOTEN LIKE '%{search}%'";
-                OracleDataAdapter da = new OracleDataAdapter(sql, conNow);
+                OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 NhanSu_Table.DataSource = dt;
@@ -45,7 +45,7 @@ namespace QLTruongHoc.NhanSu
         private void button2_Click(object sender, EventArgs e)
         {
             string sql = "SELECT * FROM QLTH.qlth_nhansu";
-            OracleDataAdapter da = new OracleDataAdapter(sql, conNow);
+            OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
             DataTable dt = new DataTable();
             da.Fill(dt);
             NhanSu_Table.DataSource = dt;

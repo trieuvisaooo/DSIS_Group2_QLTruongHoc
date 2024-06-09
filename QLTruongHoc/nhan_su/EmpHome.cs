@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace QLTruongHoc.nhan_su
 {
     public partial class EmpHome : Form
     {
+
         public EmpHome()
         {
             InitializeComponent();
@@ -30,6 +32,13 @@ namespace QLTruongHoc.nhan_su
                     break;
                 default: break;
             }
+        }
+
+        private void EmpHome_Load(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Remove(tabPage2);
+            SessionAuthentication session = new SessionAuthentication();
+
         }
     }
 }

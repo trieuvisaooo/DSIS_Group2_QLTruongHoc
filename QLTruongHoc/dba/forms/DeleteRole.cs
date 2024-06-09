@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic.ApplicationServices;
 using Oracle.ManagedDataAccess.Client;
+using QLTruongHoc.utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,6 @@ namespace QLTruongHoc
 {
     public partial class DeleteRole : Form
     {
-        private OracleConnection conNow = Login.con;
 
         public DeleteRole()
         {
@@ -34,7 +34,7 @@ namespace QLTruongHoc
                 {
 
                     OracleCommand cmd1 = new OracleCommand();
-                    cmd1.Connection = conNow;
+                    cmd1.Connection = Session.Instance.OracleConnection;
                     cmd1.CommandText = "QLTH.check_user_role_exist";
                     cmd1.CommandType = CommandType.StoredProcedure;
                     cmd1.Parameters.Add("user_role", role);
@@ -51,7 +51,7 @@ namespace QLTruongHoc
                     else
                     {
                         OracleCommand cmd = new OracleCommand();
-                        cmd.Connection = conNow;
+                        cmd.Connection = Session.Instance.OracleConnection;
                         cmd.CommandText = "QLTH.delete_role";
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add("p_role_name", role);
@@ -59,7 +59,7 @@ namespace QLTruongHoc
                         cmd.ExecuteNonQuery();
 
                         string sql = "SELECT role, role_id, password_required FROM DBA_ROLES";
-                        OracleDataAdapter da = new OracleDataAdapter(sql, conNow) { SuppressGetDecimalInvalidCastException = true };
+                        OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection) { SuppressGetDecimalInvalidCastException = true };
                         DataTable dataTable = new DataTable();
                         da.Fill(dataTable);
                         UserAndRoleTab.grid2.DataSource = dataTable;

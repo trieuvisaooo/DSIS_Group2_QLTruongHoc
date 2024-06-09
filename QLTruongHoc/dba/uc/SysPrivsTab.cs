@@ -1,4 +1,5 @@
 ﻿using Oracle.ManagedDataAccess.Client;
+using QLTruongHoc.utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,6 @@ namespace QLTruongHoc
 {
     public partial class SysPrivsTab : UserControl
     {
-        public static OracleConnection conNow = Login.con;
         public SysPrivsTab()
         {
             InitializeComponent();
@@ -25,7 +25,7 @@ namespace QLTruongHoc
             {
                 string selectSql = "select * from dba_sys_privs where grantee like \'%" + searchTextBox.Text + "%\' order by grantee asc";
                 //MessageBox.Show(selectSql); // debug line
-                OracleCommand cmd = new OracleCommand(selectSql, conNow);
+                OracleCommand cmd = new OracleCommand(selectSql, Session.Instance.OracleConnection);
                 cmd.BindByName = true;
                 //cmd.Parameters.Add(new OracleParameter("grantee", searchTextBox.Text));
                 OracleDataAdapter adapter = new OracleDataAdapter(cmd) { SuppressGetDecimalInvalidCastException = true };
@@ -52,7 +52,7 @@ namespace QLTruongHoc
             try
             {
                 string selectSql = "select * from dba_sys_privs order by grantee asc";
-                OracleCommand cmd = new OracleCommand(selectSql, conNow);
+                OracleCommand cmd = new OracleCommand(selectSql, Session.Instance.OracleConnection);
                 cmd.BindByName = true;
                 OracleDataAdapter adapter = new OracleDataAdapter(cmd) { SuppressGetDecimalInvalidCastException = true };
                 DataTable dataTable = new DataTable();

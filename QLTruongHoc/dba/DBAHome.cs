@@ -68,5 +68,10 @@
         {
             Application.Exit();
         }
+
+        private void auditTab1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

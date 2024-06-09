@@ -1,4 +1,5 @@
 ﻿using Oracle.ManagedDataAccess.Client;
+using QLTruongHoc.utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,8 +15,7 @@ namespace QLTruongHoc
 {
     public partial class CreateUser : Form
     {
-        public static OracleConnection conNow = Login.con;
-
+       
         public CreateUser()
         {
             InitializeComponent();
@@ -48,7 +48,7 @@ namespace QLTruongHoc
                 try
                 {
                     var cmd = new OracleCommand();
-                    cmd.Connection = conNow;
+                    cmd.Connection = Session.Instance.OracleConnection;
                     cmd.CommandText = "QLTH.AddUser_Proc";
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("u_username", username);
@@ -57,7 +57,7 @@ namespace QLTruongHoc
                     cmd.ExecuteNonQuery();
 
                     string sql = "SELECT USERNAME, USER_ID, CREATED FROM ALL_USERS ORDER BY USERNAME";
-                    OracleDataAdapter adapter = new OracleDataAdapter(sql, conNow) { SuppressGetDecimalInvalidCastException = true };
+                    OracleDataAdapter adapter = new OracleDataAdapter(sql, Session.Instance.OracleConnection) { SuppressGetDecimalInvalidCastException = true };
                     DataTable dataTable = new DataTable();
                     adapter.Fill(dataTable);
                     UserAndRoleTab.grid1.DataSource = dataTable;

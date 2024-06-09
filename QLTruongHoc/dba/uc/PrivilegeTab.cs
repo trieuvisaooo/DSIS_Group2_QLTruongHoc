@@ -1,4 +1,5 @@
 ﻿using Oracle.ManagedDataAccess.Client;
+using QLTruongHoc.utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,6 @@ namespace QLTruongHoc
 {
     public partial class PrivilegeTab : UserControl
     {
-        public static OracleConnection con_current = Login.con;
         public PrivilegeTab()
         {
             InitializeComponent();
@@ -33,7 +33,7 @@ namespace QLTruongHoc
         {
             string sql = "select * from DBA_TAB_PRIVS dba_tab_privs where owner =  \'QLTH\' order by grantee asc";
 
-            OracleDataAdapter da = new OracleDataAdapter(sql, con_current);
+            OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
             DataTable dt1 = new DataTable();
             da.Fill(dt1);
             TableDataGridView.DataSource = dt1;
@@ -43,7 +43,7 @@ namespace QLTruongHoc
         {
             string sql = "select * from dba_col_privs where owner =  \'QLTH\' order by grantee asc";
 
-            OracleDataAdapter da = new OracleDataAdapter(sql, con_current);
+            OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
             DataTable dt2 = new DataTable();
             da.Fill(dt2);
             ColDataGridView.DataSource = dt2;
@@ -65,14 +65,14 @@ namespace QLTruongHoc
         {
             string sql1 = "select * from DBA_TAB_PRIVS dba_tab_privs where owner =  \'QLTH\' and grantee = " + "\'" + search_txtbox.Text + "\' order by grantee asc";
 
-            OracleDataAdapter da1 = new OracleDataAdapter(sql1, con_current);
+            OracleDataAdapter da1 = new OracleDataAdapter(sql1, Session.Instance.OracleConnection);
             DataTable dt1 = new DataTable();
             da1.Fill(dt1);
             TableDataGridView.DataSource = dt1;
 
             string sql2 = "select * from dba_col_privs where owner =  \'QLTH\' and grantee = " + "\'" + search_txtbox.Text + "\'";
 
-            OracleDataAdapter da2 = new OracleDataAdapter(sql2, con_current);
+            OracleDataAdapter da2 = new OracleDataAdapter(sql2, Session.Instance.OracleConnection);
             DataTable dt2 = new DataTable();
             da2.Fill(dt2);
             ColDataGridView.DataSource = dt2;

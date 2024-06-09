@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Query.Internal;
 using Oracle.ManagedDataAccess.Client;
+using QLTruongHoc.utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,6 @@ namespace QLTruongHoc
 {
     public partial class UserAndRoleTab : UserControl
     {
-        public static OracleConnection conNow = Login.con;
         public static DataGridView grid1;
         public static DataGridView grid2;
 
@@ -30,7 +30,7 @@ namespace QLTruongHoc
             {
                 // Select table
                 string selectTableSql = "SELECT USERNAME, USER_ID, CREATED FROM ALL_USERS ORDER BY USERNAME";
-                OracleCommand command = new OracleCommand(selectTableSql, conNow);
+                OracleCommand command = new OracleCommand(selectTableSql, Session.Instance.OracleConnection);
                 command.BindByName = true;
                 command.Parameters.Add(new OracleParameter("owner", Login.username));
                 OracleDataAdapter adapter = new OracleDataAdapter(command) { SuppressGetDecimalInvalidCastException = true };
@@ -41,7 +41,7 @@ namespace QLTruongHoc
 
                 // Select View
                 string selectViewSql = "SELECT role, role_id, password_required FROM DBA_ROLES";
-                OracleCommand command1 = new OracleCommand(selectViewSql, conNow);
+                OracleCommand command1 = new OracleCommand(selectViewSql, Session.Instance.OracleConnection);
                 command1.BindByName = true;
                 command1.Parameters.Add(new OracleParameter("owner", Login.username));
                 OracleDataAdapter adapter1 = new OracleDataAdapter(command1) { SuppressGetDecimalInvalidCastException = true };
@@ -70,7 +70,7 @@ namespace QLTruongHoc
 
                 // Select View
                 string selectViewSql = $"SELECT role, role_id, password_required FROM DBA_ROLES WHERE role LIKE '%{role_search_text}%' ";
-                OracleCommand command1 = new OracleCommand(selectViewSql, conNow);
+                OracleCommand command1 = new OracleCommand(selectViewSql, Session.Instance.OracleConnection);
                 command1.BindByName = true;
                 command1.Parameters.Add(new OracleParameter("owner", Login.username));
                 OracleDataAdapter adapter1 = new OracleDataAdapter(command1) { SuppressGetDecimalInvalidCastException = true };
@@ -141,7 +141,7 @@ namespace QLTruongHoc
 
                 // Select table
                 string selectTableSql = $"SELECT USERNAME, USER_ID, CREATED FROM ALL_USERS WHERE USERNAME LIKE \'%{user_search_text}%\' ORDER BY USERNAME";
-                OracleCommand command = new OracleCommand(selectTableSql, conNow);
+                OracleCommand command = new OracleCommand(selectTableSql, Session.Instance.OracleConnection);
                 command.BindByName = true;
                 command.Parameters.Add(new OracleParameter("owner", Login.username));
                 OracleDataAdapter adapter = new OracleDataAdapter(command) { SuppressGetDecimalInvalidCastException = true };

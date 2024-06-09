@@ -1,4 +1,5 @@
 ﻿using Oracle.ManagedDataAccess.Client;
+using QLTruongHoc.utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,11 +15,9 @@ namespace QLTruongHoc
 {
     public partial class TablesViewsTab : UserControl
     {
-        public static OracleConnection conNow;
 
         public TablesViewsTab()
         {
-            conNow = Login.con;
             InitializeComponent();
         }
 
@@ -33,7 +32,7 @@ namespace QLTruongHoc
             {
                 // Select table
                 string selectTableSql = "select * from dba_tables where owner = :owner";
-                OracleCommand command = new OracleCommand(selectTableSql, conNow);
+                OracleCommand command = new OracleCommand(selectTableSql, Session.Instance.OracleConnection);
                 command.BindByName = true;
                 command.Parameters.Add(new OracleParameter("owner", Login.username));
                 OracleDataAdapter adapter = new OracleDataAdapter(command) { SuppressGetDecimalInvalidCastException = true };
@@ -43,7 +42,7 @@ namespace QLTruongHoc
 
                 // Select View
                 string selectViewSql = "select * from dba_views where owner = :owner";
-                OracleCommand command1 = new OracleCommand(selectViewSql, conNow);
+                OracleCommand command1 = new OracleCommand(selectViewSql, Session.Instance.OracleConnection);
                 command1.BindByName = true;
                 command1.Parameters.Add(new OracleParameter("owner", Login.username));
                 OracleDataAdapter adapter1 = new OracleDataAdapter(command1) { SuppressGetDecimalInvalidCastException = true };

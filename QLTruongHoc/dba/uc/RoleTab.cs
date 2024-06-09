@@ -1,4 +1,5 @@
 ﻿using Oracle.ManagedDataAccess.Client;
+using QLTruongHoc.utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,6 @@ namespace QLTruongHoc
 {
     public partial class RoleTab : UserControl
     {
-        private static OracleConnection conNow = Login.con;
         public static DataGridView roleUserGrid;
 
         public RoleTab()
@@ -53,7 +53,7 @@ namespace QLTruongHoc
                 sql = "select * from dba_role_privs where GRANTEE LIKE \'%" + textBox1.Text + "%\'";
 
             //MessageBox.Show(sql); // debug line
-            OracleDataAdapter da = new OracleDataAdapter(sql, conNow);
+            OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
@@ -69,7 +69,7 @@ namespace QLTruongHoc
                 sql = "select * from dba_role_privs where GRANTED_ROLE LIKE \'%" + textBox2.Text + "%\'";
 
             //MessageBox.Show(sql); // debug line
-            OracleDataAdapter da = new OracleDataAdapter(sql, conNow);
+            OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
@@ -86,7 +86,7 @@ namespace QLTruongHoc
         {
             string sql = "select * from dba_role_privs";
 
-            OracleDataAdapter da = new OracleDataAdapter(sql, conNow);
+            OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;

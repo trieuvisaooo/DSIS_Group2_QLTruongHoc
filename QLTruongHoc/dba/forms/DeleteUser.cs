@@ -1,4 +1,5 @@
 ﻿using Oracle.ManagedDataAccess.Client;
+using QLTruongHoc.utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,8 +14,6 @@ namespace QLTruongHoc
 {
     public partial class DeleteUser : Form
     {
-
-        private OracleConnection conNow = Login.con;
 
         public DeleteUser()
         {
@@ -34,7 +33,7 @@ namespace QLTruongHoc
                 {
 
                     OracleCommand cmd1 = new OracleCommand();
-                    cmd1.Connection = conNow;
+                    cmd1.Connection = Session.Instance.OracleConnection;
                     cmd1.CommandText = "QLTH.check_user_role_exist";
                     cmd1.CommandType = CommandType.StoredProcedure;
                     cmd1.Parameters.Add("user_role", user);
@@ -53,7 +52,7 @@ namespace QLTruongHoc
                         try
                         {
                             OracleCommand cmd = new OracleCommand();
-                            cmd.Connection = conNow;
+                            cmd.Connection = Session.Instance.OracleConnection;
                             cmd.CommandText = "QLTH.delete_user";
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.Add("p_username", user);
@@ -61,7 +60,7 @@ namespace QLTruongHoc
                             cmd.ExecuteNonQuery();
 
                             string sql = "SELECT USERNAME, USER_ID, CREATED FROM ALL_USERS ORDER BY USERNAME";
-                            OracleDataAdapter adapter = new OracleDataAdapter(sql, conNow) { SuppressGetDecimalInvalidCastException = true };
+                            OracleDataAdapter adapter = new OracleDataAdapter(sql, Session.Instance.OracleConnection) { SuppressGetDecimalInvalidCastException = true };
                             DataTable dataTable = new DataTable();
                             adapter.Fill(dataTable);
                             UserAndRoleTab.grid1.DataSource = dataTable;

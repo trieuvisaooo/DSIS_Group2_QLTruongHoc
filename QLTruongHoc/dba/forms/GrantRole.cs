@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic.ApplicationServices;
 using Oracle.ManagedDataAccess.Client;
+using QLTruongHoc.utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,6 @@ namespace QLTruongHoc
 {
     public partial class GrantRole : Form
     {
-        private static OracleConnection conNow = Login.con;
 
         public GrantRole()
         {
@@ -38,7 +38,7 @@ namespace QLTruongHoc
                 else
                 {
                     var cmd = new OracleCommand();
-                    cmd.Connection = conNow;
+                    cmd.Connection = Session.Instance.OracleConnection;
                     cmd.CommandText = "QLTH.grant_role";
                     cmd.CommandType = CommandType.StoredProcedure;
 
@@ -65,7 +65,7 @@ namespace QLTruongHoc
 
                         string sql = "select * from dba_role_privs";
 
-                        OracleDataAdapter da = new OracleDataAdapter(sql, conNow);
+                        OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
                         DataTable dt = new DataTable();
                         da.Fill(dt);
                         RoleTab.roleUserGrid.DataSource = dt;
