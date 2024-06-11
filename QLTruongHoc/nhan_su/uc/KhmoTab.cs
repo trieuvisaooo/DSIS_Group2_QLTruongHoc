@@ -90,6 +90,7 @@ namespace QLTruongHoc.nhan_su.uc
             comboBox2.ValueMember = "HK"; // Assuming "nam" is the column for storing values
             comboBox2.DisplayMember = "HK";
         }
+
         private void comboBox2_Format(object sender, ListControlConvertEventArgs e)
         {
             if (e.ListItem != null && e.ListItem is DataRowView)
@@ -101,6 +102,7 @@ namespace QLTruongHoc.nhan_su.uc
                 }
             }
         }
+
         private void comboBox3_DropDown(object sender, EventArgs e)
         {
             string sql = "select distinct MACT from QLTH.UV_QLTH_KHMO_FORM";
@@ -114,7 +116,7 @@ namespace QLTruongHoc.nhan_su.uc
                 da.Fill(dt);
             }
             DataRow newRow = dt.NewRow();
-            newRow["nam"] = "--";
+            newRow["MACT"] = "--";
             dt.Rows.Add(newRow);
             // Set the ComboBox's DataSource (the DataTable)
             comboBox3.DataSource = dt;
@@ -125,10 +127,48 @@ namespace QLTruongHoc.nhan_su.uc
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string sql = "select * from QLTH.UV_QLTH_KHMO_FORM ";
+
             string nam = comboBox1.Text;
             string hk = comboBox2.Text;
             string ct = comboBox3.Text;
-            MessageBox.Show(nam + hk + ct);
+            string hp = textBox1.Text.ToLower();
+
+            string namClause = $" NAM = '{nam}' ";
+            string hkClause = $" HK = {hk} ";
+            string ctClause = $" MACT = '{ct}' ";
+            string hpClause = $" LOWER(tenhp) LIKE LOWER('%{hp}%') ";
+
+            if (nam == "Năm học" || nam == "--")
+            {
+                namClause = null;
+            }
+            if (hk == "Học Kỳ" || hk == "--")
+            {
+                hkClause = null;
+            }
+            if (ct == "Chương trình" || ct == "--")
+            {
+                ctClause = null;
+            }
+            if (hp.Length == 0)
+            {
+                hpClause = null;
+            }
+
+            List<string> words = new List<string>{ namClause, hkClause, ctClause, hpClause };
+            string whereClasue = "where " + string.Join(" and ", words.Where(s => s != null));
+
+            if (namClause != null || hkClause != null || ctClause != null || hpClause != null)
+            {
+                sql = sql + whereClasue;
+            }
+            MessageBox.Show(sql);
+            OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+            CustomizeColumnHeaders();
         }
     }
 }
