@@ -38,7 +38,12 @@ namespace QLTruongHoc.nhan_su
 
         private void EmpHome_Load(object sender, EventArgs e)
         {
-            tabControl1.TabPages.Remove(tabPage2);
+            //switch (Session.Instance.Role)
+            //{
+            //    //case "Nhân viên cơ bản":
+            //    case null:
+
+            //}
         }
 
         private void EmpHome_FormClosed(object sender, FormClosedEventArgs e)

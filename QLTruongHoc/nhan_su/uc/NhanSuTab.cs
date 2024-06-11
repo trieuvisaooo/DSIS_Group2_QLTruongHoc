@@ -39,6 +39,7 @@ namespace QLTruongHoc.NhanSu
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 NhanSu_Table.DataSource = dt;
+                CustomizeColumnHeaders();
             }
         }
 
@@ -49,6 +50,22 @@ namespace QLTruongHoc.NhanSu
             DataTable dt = new DataTable();
             da.Fill(dt);
             NhanSu_Table.DataSource = dt;
+            CustomizeColumnHeaders();
+        }
+
+        private void CustomizeColumnHeaders()
+        {
+            // Change column headers to custom names
+            NhanSu_Table.Columns["MANS"].HeaderText = "Mã Nhân Sự";
+            NhanSu_Table.Columns["HOTEN"].HeaderText = "Họ Tên";
+            NhanSu_Table.Columns["PHAI"].HeaderText = "Phái";
+            NhanSu_Table.Columns["NGSINH"].HeaderText = "Ngày Sinh";
+            NhanSu_Table.Columns["DIACHI"].HeaderText = "Địa Chỉ";
+            NhanSu_Table.Columns["DT"].HeaderText = "SĐT";
+            NhanSu_Table.Columns["PHUCAP"].HeaderText = "Phụ Cấp";
+            NhanSu_Table.Columns["VAITRO"].HeaderText = "Vai Trò";
+            NhanSu_Table.Columns["MADV"].HeaderText = "Mã Đơn Vị";
+            NhanSu_Table.Columns["MACS"].HeaderText = "Cơ sở";
         }
     }
 }
