@@ -32,9 +32,9 @@
             refreshBtn = new Button();
             panel1 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
+            button1 = new Button();
             dataGridView1 = new DataGridView();
             listView1 = new ListView();
-            button1 = new Button();
             panel1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -55,7 +55,7 @@
             refreshBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             refreshBtn.BackColor = Color.DarkSlateBlue;
             refreshBtn.ForeColor = SystemColors.ButtonFace;
-            refreshBtn.Location = new Point(1335, 68);
+            refreshBtn.Location = new Point(1332, 3);
             refreshBtn.Name = "refreshBtn";
             refreshBtn.Size = new Size(94, 39);
             refreshBtn.TabIndex = 2;
@@ -67,53 +67,36 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.Controls.Add(tableLayoutPanel1);
-            panel1.Location = new Point(3, 110);
+            panel1.Location = new Point(3, 75);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1429, 690);
+            panel1.Size = new Size(1429, 725);
             panel1.TabIndex = 3;
             // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25.1224632F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 74.87753F));
-            tableLayoutPanel1.Controls.Add(dataGridView1, 1, 0);
-            tableLayoutPanel1.Controls.Add(listView1, 0, 0);
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25.1224613F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 74.87754F));
+            tableLayoutPanel1.Controls.Add(button1, 0, 0);
+            tableLayoutPanel1.Controls.Add(refreshBtn, 1, 0);
+            tableLayoutPanel1.Controls.Add(dataGridView1, 1, 1);
+            tableLayoutPanel1.Controls.Add(listView1, 0, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(1429, 690);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 6.3920455F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 93.6079559F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.Size = new Size(1429, 725);
             tableLayoutPanel1.TabIndex = 0;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(362, 3);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            tableLayoutPanel1.SetRowSpan(dataGridView1, 2);
-            dataGridView1.Size = new Size(1064, 684);
-            dataGridView1.TabIndex = 0;
-            // 
-            // listView1
-            // 
-            listView1.Dock = DockStyle.Fill;
-            listView1.Location = new Point(3, 3);
-            listView1.Name = "listView1";
-            tableLayoutPanel1.SetRowSpan(listView1, 2);
-            listView1.Size = new Size(353, 684);
-            listView1.TabIndex = 1;
-            listView1.UseCompatibleStateImageBehavior = false;
             // 
             // button1
             // 
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             button1.BackColor = Color.DarkOliveGreen;
             button1.ForeColor = SystemColors.ButtonFace;
-            button1.Location = new Point(265, 68);
+            button1.Location = new Point(261, 3);
             button1.Name = "button1";
             button1.Size = new Size(94, 39);
             button1.TabIndex = 4;
@@ -121,13 +104,37 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.Location = new Point(361, 48);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            tableLayoutPanel1.SetRowSpan(dataGridView1, 2);
+            dataGridView1.Size = new Size(1065, 674);
+            dataGridView1.TabIndex = 0;
+            // 
+            // listView1
+            // 
+            listView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            listView1.Location = new Point(3, 48);
+            listView1.MultiSelect = false;
+            listView1.Name = "listView1";
+            tableLayoutPanel1.SetRowSpan(listView1, 2);
+            listView1.Size = new Size(352, 674);
+            listView1.TabIndex = 1;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Tile;
+            listView1.ItemChecked += listView1_ItemChecked;
+            listView1.SelectedIndexChanged += listView1_SelectedIndexChanged;
+            listView1.MouseMove += listView1_MouseMove;
+            // 
             // DangKyTab
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(button1);
             Controls.Add(panel1);
-            Controls.Add(refreshBtn);
             Controls.Add(label1);
             Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(4);
@@ -148,7 +155,9 @@
         private Panel panel1;
         private TableLayoutPanel tableLayoutPanel1;
         private DataGridView dataGridView1;
-        private ListView listView1;
         private Button button1;
+        private ListView listView1;
+        private ToolTip listViewToolTip = new ToolTip();
+        
     }
 }
