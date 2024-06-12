@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Query.Internal;
 using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Types;
 using QLTruongHoc.nhan_su;
 using QLTruongHoc.utils;
 using System.Configuration;
@@ -79,18 +80,21 @@ namespace QLTruongHoc
 
                     cmd.Parameters.Add("USRNAME", OracleDbType.Int64).Value = Int64.Parse(username_txtbox.Text);
                     cmd.Parameters.Add("USR_ROLE", OracleDbType.NVarchar2).Value = role_combox.Text;
-                    var outputParam = cmd.Parameters.Add("RLE", OracleDbType.NVarchar2, 20);
+                    var outputParam = cmd.Parameters.Add("CNT", OracleDbType.Int64);
                     outputParam.Direction = System.Data.ParameterDirection.Output;
 
                     cmd.ExecuteNonQuery();
                     
-                    var result = cmd.Parameters["RLE"].Value as string;
+                    OracleDecimal oracleDecimal = (OracleDecimal)cmd.Parameters["CNT"].Value;
+                    int result = oracleDecimal.ToInt32();
+
                     qlthOracleConnection.Close();  
-                    if (result == "#")
+
+                    if (result == 0)
                     {
                         MessageBox.Show("Tai khoan khong ton tai");
                     }
-                    else if (result == "SV")
+                    else if (result == 2)
                     {
 
                     }

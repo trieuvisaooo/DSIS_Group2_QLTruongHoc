@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="script\" />
     <Folder Include="nhan_su\forms\" />
   </ItemGroup>
 

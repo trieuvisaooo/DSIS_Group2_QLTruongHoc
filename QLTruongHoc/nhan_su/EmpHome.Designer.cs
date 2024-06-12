@@ -37,12 +37,18 @@
             hocPhanTab1 = new uc.HocPhanTab();
             khmoTabpage = new TabPage();
             khmoTab1 = new uc.KhmoTab();
+            phanCongTab = new TabPage();
+            phanCongTab1 = new uc.PhanCongTab();
+            dangKyTabPage = new TabPage();
+            dangKyTab1 = new uc.DangKyTab();
             button1 = new Button();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             donViTabpage.SuspendLayout();
             hocPhanTabpage.SuspendLayout();
             khmoTabpage.SuspendLayout();
+            phanCongTab.SuspendLayout();
+            dangKyTabPage.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -52,6 +58,8 @@
             tabControl1.Controls.Add(donViTabpage);
             tabControl1.Controls.Add(hocPhanTabpage);
             tabControl1.Controls.Add(khmoTabpage);
+            tabControl1.Controls.Add(phanCongTab);
+            tabControl1.Controls.Add(dangKyTabPage);
             tabControl1.Location = new Point(2, 1);
             tabControl1.Margin = new Padding(3, 4, 3, 4);
             tabControl1.Name = "tabControl1";
@@ -146,6 +154,50 @@
             khmoTab1.Size = new Size(1432, 908);
             khmoTab1.TabIndex = 0;
             // 
+            // phanCongTab
+            // 
+            phanCongTab.Controls.Add(phanCongTab1);
+            phanCongTab.Location = new Point(4, 29);
+            phanCongTab.Name = "phanCongTab";
+            phanCongTab.Padding = new Padding(3);
+            phanCongTab.Size = new Size(1436, 914);
+            phanCongTab.TabIndex = 4;
+            phanCongTab.Text = "Phân Công";
+            phanCongTab.UseVisualStyleBackColor = true;
+            // 
+            // phanCongTab1
+            // 
+            phanCongTab1.Dock = DockStyle.Fill;
+            phanCongTab1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            phanCongTab1.Location = new Point(3, 3);
+            phanCongTab1.Margin = new Padding(4);
+            phanCongTab1.MinimumSize = new Size(1790, 10);
+            phanCongTab1.Name = "phanCongTab1";
+            phanCongTab1.Size = new Size(1790, 908);
+            phanCongTab1.TabIndex = 0;
+            // 
+            // dangKyTabPage
+            // 
+            dangKyTabPage.Controls.Add(dangKyTab1);
+            dangKyTabPage.Location = new Point(4, 29);
+            dangKyTabPage.Name = "dangKyTabPage";
+            dangKyTabPage.Padding = new Padding(3);
+            dangKyTabPage.Size = new Size(1436, 914);
+            dangKyTabPage.TabIndex = 5;
+            dangKyTabPage.Text = "Lớp Học";
+            dangKyTabPage.UseVisualStyleBackColor = true;
+            // 
+            // dangKyTab1
+            // 
+            dangKyTab1.Dock = DockStyle.Fill;
+            dangKyTab1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dangKyTab1.Location = new Point(3, 3);
+            dangKyTab1.Margin = new Padding(4);
+            dangKyTab1.MinimumSize = new Size(1432, 800);
+            dangKyTab1.Name = "dangKyTab1";
+            dangKyTab1.Size = new Size(1432, 908);
+            dangKyTab1.TabIndex = 0;
+            // 
             // button1
             // 
             button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
@@ -178,6 +230,8 @@
             donViTabpage.ResumeLayout(false);
             hocPhanTabpage.ResumeLayout(false);
             khmoTabpage.ResumeLayout(false);
+            phanCongTab.ResumeLayout(false);
+            dangKyTabPage.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -193,5 +247,9 @@
         private uc.HocPhanTab hocPhanTab1;
         private TabPage khmoTabpage;
         private uc.KhmoTab khmoTab1;
+        private TabPage phanCongTab;
+        private uc.PhanCongTab phanCongTab1;
+        private TabPage dangKyTabPage;
+        private uc.DangKyTab dangKyTab1;
     }
 }

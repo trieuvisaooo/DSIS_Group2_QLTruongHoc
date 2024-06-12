@@ -163,6 +163,7 @@ namespace QLTruongHoc.nhan_su.uc
             {
                 sql = sql + whereClasue;
             }
+
             MessageBox.Show(sql);
             OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
             DataTable dt = new DataTable();

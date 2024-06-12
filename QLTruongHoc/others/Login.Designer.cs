@@ -118,7 +118,7 @@
             // role_combox
             // 
             role_combox.FormattingEnabled = true;
-            role_combox.Items.AddRange(new object[] { "Quản trị viên", "Nhân viên cơ bản", "Giảng viên", "Giáo vụ", "Trưởng đơn vị", "Trường khoa", "Sinh viên" });
+            role_combox.Items.AddRange(new object[] { "Quản trị viên", "Nhân viên cơ bản", "Giảng viên", "Giáo vụ", "Trưởng đơn vị", "Trưởng khoa", "Sinh viên" });
             role_combox.Location = new Point(173, 225);
             role_combox.Margin = new Padding(2, 3, 2, 3);
             role_combox.Name = "role_combox";
