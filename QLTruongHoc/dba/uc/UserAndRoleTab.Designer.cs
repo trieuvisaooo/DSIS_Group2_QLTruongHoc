@@ -63,9 +63,10 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Trebuchet MS", 15.75F, FontStyle.Bold);
-            label1.Location = new Point(3, 6);
+            label1.Location = new Point(4, 10);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(62, 27);
+            label1.Size = new Size(93, 40);
             label1.TabIndex = 0;
             label1.Text = "USER";
             // 
@@ -73,9 +74,10 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Trebuchet MS", 15.75F, FontStyle.Bold);
-            label2.Location = new Point(3, 0);
+            label2.Location = new Point(4, 0);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(64, 27);
+            label2.Size = new Size(96, 40);
             label2.TabIndex = 1;
             label2.Text = "ROLE";
             // 
@@ -85,11 +87,11 @@
             userGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             userGrid.BackgroundColor = SystemColors.Control;
             userGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            userGrid.Location = new Point(3, 35);
-            userGrid.Margin = new Padding(3, 2, 3, 2);
+            userGrid.Location = new Point(4, 58);
+            userGrid.Margin = new Padding(4, 3, 4, 3);
             userGrid.Name = "userGrid";
             userGrid.RowHeadersWidth = 51;
-            userGrid.Size = new Size(886, 257);
+            userGrid.Size = new Size(1266, 420);
             userGrid.TabIndex = 2;
             userGrid.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -99,11 +101,11 @@
             roleGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             roleGrid.BackgroundColor = SystemColors.Control;
             roleGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            roleGrid.Location = new Point(0, 22);
-            roleGrid.Margin = new Padding(3, 2, 3, 2);
+            roleGrid.Location = new Point(0, 37);
+            roleGrid.Margin = new Padding(4, 3, 4, 3);
             roleGrid.Name = "roleGrid";
             roleGrid.RowHeadersWidth = 51;
-            roleGrid.Size = new Size(889, 268);
+            roleGrid.Size = new Size(1270, 439);
             roleGrid.TabIndex = 3;
             // 
             // button2
@@ -111,10 +113,10 @@
             button2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button2.BackColor = SystemColors.GradientInactiveCaption;
             button2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic);
-            button2.Location = new Point(239, 74);
-            button2.Margin = new Padding(3, 2, 3, 2);
+            button2.Location = new Point(342, 76);
+            button2.Margin = new Padding(4, 3, 4, 3);
             button2.Name = "button2";
-            button2.Size = new Size(116, 32);
+            button2.Size = new Size(166, 53);
             button2.TabIndex = 5;
             button2.Text = "Create User";
             button2.UseVisualStyleBackColor = false;
@@ -125,10 +127,10 @@
             button3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button3.BackColor = Color.PeachPuff;
             button3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic);
-            button3.Location = new Point(239, 112);
-            button3.Margin = new Padding(3, 2, 3, 2);
+            button3.Location = new Point(342, 147);
+            button3.Margin = new Padding(4, 3, 4, 3);
             button3.Name = "button3";
-            button3.Size = new Size(116, 32);
+            button3.Size = new Size(166, 53);
             button3.TabIndex = 6;
             button3.Text = "Delete User";
             button3.UseVisualStyleBackColor = false;
@@ -139,10 +141,10 @@
             button4.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button4.BackColor = SystemColors.Info;
             button4.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic);
-            button4.Location = new Point(239, 153);
-            button4.Margin = new Padding(3, 2, 3, 2);
+            button4.Location = new Point(342, 218);
+            button4.Margin = new Padding(4, 3, 4, 3);
             button4.Name = "button4";
-            button4.Size = new Size(116, 32);
+            button4.Size = new Size(166, 53);
             button4.TabIndex = 7;
             button4.Text = "Update User";
             button4.UseVisualStyleBackColor = false;
@@ -153,10 +155,10 @@
             button5.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button5.BackColor = SystemColors.Info;
             button5.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic);
-            button5.Location = new Point(240, 157);
-            button5.Margin = new Padding(3, 2, 3, 2);
+            button5.Location = new Point(344, 196);
+            button5.Margin = new Padding(4, 3, 4, 3);
             button5.Name = "button5";
-            button5.Size = new Size(116, 32);
+            button5.Size = new Size(166, 53);
             button5.TabIndex = 10;
             button5.Text = "Update Role";
             button5.UseVisualStyleBackColor = false;
@@ -167,10 +169,10 @@
             button6.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button6.BackColor = Color.PeachPuff;
             button6.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic);
-            button6.Location = new Point(240, 112);
-            button6.Margin = new Padding(3, 2, 3, 2);
+            button6.Location = new Point(344, 123);
+            button6.Margin = new Padding(4, 3, 4, 3);
             button6.Name = "button6";
-            button6.Size = new Size(116, 32);
+            button6.Size = new Size(166, 53);
             button6.TabIndex = 9;
             button6.Text = "Delete Role";
             button6.UseVisualStyleBackColor = false;
@@ -181,10 +183,10 @@
             button7.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button7.BackColor = SystemColors.GradientInactiveCaption;
             button7.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic);
-            button7.Location = new Point(240, 64);
-            button7.Margin = new Padding(3, 2, 3, 2);
+            button7.Location = new Point(344, 53);
+            button7.Margin = new Padding(4, 3, 4, 3);
             button7.Name = "button7";
-            button7.Size = new Size(116, 32);
+            button7.Size = new Size(166, 53);
             button7.TabIndex = 8;
             button7.Text = "Create Role";
             button7.UseVisualStyleBackColor = false;
@@ -193,28 +195,30 @@
             // button8
             // 
             button8.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button8.BackColor = Color.Lavender;
-            button8.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic);
-            button8.Location = new Point(274, 208);
-            button8.Margin = new Padding(3, 2, 3, 2);
+            button8.BackColor = Color.DarkSlateBlue;
+            button8.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 163);
+            button8.ForeColor = SystemColors.ButtonFace;
+            button8.Location = new Point(388, 301);
+            button8.Margin = new Padding(4, 3, 4, 3);
             button8.Name = "button8";
-            button8.Size = new Size(82, 30);
+            button8.Size = new Size(120, 44);
             button8.TabIndex = 11;
-            button8.Text = "Search";
+            button8.Text = "Tìm";
             button8.UseVisualStyleBackColor = false;
             button8.Click += button8_Click;
             // 
             // button9
             // 
             button9.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button9.BackColor = Color.Lavender;
-            button9.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic);
-            button9.Location = new Point(275, 207);
-            button9.Margin = new Padding(3, 2, 3, 2);
+            button9.BackColor = Color.DarkSlateBlue;
+            button9.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 163);
+            button9.ForeColor = SystemColors.ButtonFace;
+            button9.Location = new Point(388, 293);
+            button9.Margin = new Padding(4, 3, 4, 3);
             button9.Name = "button9";
-            button9.Size = new Size(82, 30);
+            button9.Size = new Size(120, 44);
             button9.TabIndex = 12;
-            button9.Text = "Search";
+            button9.Text = "Tìm";
             button9.UseVisualStyleBackColor = false;
             button9.Click += button9_Click;
             // 
@@ -222,20 +226,20 @@
             // 
             textBox1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             textBox1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic);
-            textBox1.Location = new Point(63, 210);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
+            textBox1.Location = new Point(47, 305);
+            textBox1.Margin = new Padding(4, 3, 4, 3);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(205, 28);
+            textBox1.Size = new Size(291, 38);
             textBox1.TabIndex = 13;
             // 
             // textBox2
             // 
             textBox2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             textBox2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic);
-            textBox2.Location = new Point(64, 207);
-            textBox2.Margin = new Padding(3, 2, 3, 2);
+            textBox2.Location = new Point(47, 297);
+            textBox2.Margin = new Padding(4, 3, 4, 3);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(205, 28);
+            textBox2.Size = new Size(291, 38);
             textBox2.TabIndex = 14;
             // 
             // label3
@@ -243,11 +247,12 @@
             label3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic);
-            label3.Location = new Point(91, 197);
+            label3.Location = new Point(47, 260);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(89, 20);
+            label3.Size = new Size(164, 31);
             label3.TabIndex = 15;
-            label3.Text = "Search user";
+            label3.Text = "Tìm kiếm User";
             label3.Click += label3_Click;
             // 
             // label4
@@ -255,22 +260,23 @@
             label4.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic);
-            label4.Location = new Point(90, 194);
+            label4.Location = new Point(47, 251);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(86, 20);
+            label4.Size = new Size(163, 31);
             label4.TabIndex = 16;
-            label4.Text = "Search role";
+            label4.Text = "Tìm kiếm Role";
             // 
             // refreshButton
             // 
             refreshButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             refreshButton.BackColor = Color.DarkSlateBlue;
-            refreshButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic);
+            refreshButton.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 163);
             refreshButton.ForeColor = SystemColors.ButtonHighlight;
-            refreshButton.Location = new Point(807, -1);
-            refreshButton.Margin = new Padding(3, 2, 3, 2);
+            refreshButton.Location = new Point(1146, 6);
+            refreshButton.Margin = new Padding(4, 3, 4, 3);
             refreshButton.Name = "refreshButton";
-            refreshButton.Size = new Size(82, 38);
+            refreshButton.Size = new Size(120, 44);
             refreshButton.TabIndex = 17;
             refreshButton.Text = "Refresh";
             refreshButton.UseVisualStyleBackColor = false;
@@ -287,11 +293,12 @@
             tableLayoutPanel1.Controls.Add(panel4, 1, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Margin = new Padding(4, 5, 4, 5);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(1261, 610);
+            tableLayoutPanel1.Size = new Size(1801, 1000);
             tableLayoutPanel1.TabIndex = 18;
             // 
             // panel1
@@ -300,9 +307,10 @@
             panel1.Controls.Add(userGrid);
             panel1.Controls.Add(refreshButton);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(3, 3);
+            panel1.Location = new Point(4, 5);
+            panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(889, 299);
+            panel1.Size = new Size(1270, 490);
             panel1.TabIndex = 0;
             // 
             // panel2
@@ -310,9 +318,10 @@
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.Controls.Add(label2);
             panel2.Controls.Add(roleGrid);
-            panel2.Location = new Point(3, 308);
+            panel2.Location = new Point(4, 505);
+            panel2.Margin = new Padding(4, 5, 4, 5);
             panel2.Name = "panel2";
-            panel2.Size = new Size(889, 299);
+            panel2.Size = new Size(1270, 490);
             panel2.TabIndex = 1;
             // 
             // panel3
@@ -324,9 +333,10 @@
             panel3.Controls.Add(button8);
             panel3.Controls.Add(textBox1);
             panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(898, 3);
+            panel3.Location = new Point(1282, 5);
+            panel3.Margin = new Padding(4, 5, 4, 5);
             panel3.Name = "panel3";
-            panel3.Size = new Size(360, 299);
+            panel3.Size = new Size(515, 490);
             panel3.TabIndex = 2;
             // 
             // panel4
@@ -338,20 +348,21 @@
             panel4.Controls.Add(button5);
             panel4.Controls.Add(button9);
             panel4.Dock = DockStyle.Fill;
-            panel4.Location = new Point(898, 308);
+            panel4.Location = new Point(1282, 505);
+            panel4.Margin = new Padding(4, 5, 4, 5);
             panel4.Name = "panel4";
-            panel4.Size = new Size(360, 299);
+            panel4.Size = new Size(515, 490);
             panel4.TabIndex = 3;
             // 
             // UserAndRoleTab
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(tableLayoutPanel1);
-            Margin = new Padding(3, 2, 3, 2);
-            MinimumSize = new Size(1261, 600);
+            Margin = new Padding(4, 3, 4, 3);
+            MinimumSize = new Size(1801, 1000);
             Name = "UserAndRoleTab";
-            Size = new Size(1261, 600);
+            Size = new Size(1801, 1000);
             Load += UseransRole_Load;
             ((System.ComponentModel.ISupportInitialize)userGrid).EndInit();
             ((System.ComponentModel.ISupportInitialize)roleGrid).EndInit();
