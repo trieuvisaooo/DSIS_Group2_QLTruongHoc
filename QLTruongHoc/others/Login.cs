@@ -2,6 +2,7 @@
 using Oracle.ManagedDataAccess.Client;
 using Oracle.ManagedDataAccess.Types;
 using QLTruongHoc.nhan_su;
+using QLTruongHoc.sinh_vien;
 using QLTruongHoc.utils;
 using System.Configuration;
 using System.DirectoryServices.Protocols;
@@ -78,7 +79,7 @@ namespace QLTruongHoc
                     cmd.CommandText = "QLTH.USER_LOGIN";
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("USRNAME", OracleDbType.Int64).Value = Int64.Parse(username_txtbox.Text);
+                    cmd.Parameters.Add("USRNAME", username_txtbox.Text);
                     cmd.Parameters.Add("USR_ROLE", OracleDbType.NVarchar2).Value = role_combox.Text;
                     var outputParam = cmd.Parameters.Add("CNT", OracleDbType.Int64);
                     outputParam.Direction = System.Data.ParameterDirection.Output;
@@ -92,15 +93,11 @@ namespace QLTruongHoc
 
                     if (result == 0)
                     {
-                        MessageBox.Show("Tai khoan khong ton tai");
+                        MessageBox.Show("Tài khoản không tồn tại!");
                     }
-                    else if (result == 2)
+                    else if (result == 1)
                     {
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("print");
+                        MessageBox.Show("Login NS");
                         con.ConnectionString = connectionString;
                         con.Open();
 
@@ -109,11 +106,27 @@ namespace QLTruongHoc
                         Session.Instance.Role = role_combox.Text;
                         Session.Instance.OracleConnection = con;
 
-                        MessageBox.Show("Connect với tư cách là nhân viên thành công!");
+                        MessageBox.Show("Connect với tư cách là nhân sự thành công!");
                         EmpHome empHome = new EmpHome();
                         empHome.Show();
                         this.Hide();
-                        
+                    } 
+                    else if (result == 2)
+                    {
+                        MessageBox.Show("Login SV");
+                        con.ConnectionString = connectionString;
+                        con.Open();
+
+                        Session.Instance.Username = username_txtbox.Text;
+                        Session.Instance.Password = psw_txtbox.Text;
+                        Session.Instance.Role = role_combox.Text;
+                        Session.Instance.OracleConnection = con;
+
+                        MessageBox.Show("Connect với tư cách là sinh viên thành công!");
+                        StuHome stuHome = new StuHome();
+                        stuHome.Show();
+                        this.Hide();
+
                     }
 
                 }
