@@ -47,9 +47,10 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(3, 0);
+            label1.Location = new Point(4, 0);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(71, 28);
+            label1.Size = new Size(105, 41);
             label1.TabIndex = 0;
             label1.Text = "TABLE";
             // 
@@ -57,9 +58,10 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(3, 0);
+            label2.Location = new Point(4, 0);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(62, 28);
+            label2.Size = new Size(95, 41);
             label2.TabIndex = 1;
             label2.Text = "VIEW";
             // 
@@ -68,10 +70,11 @@
             tableGrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tableGrid.BackgroundColor = SystemColors.Control;
             tableGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tableGrid.Location = new Point(0, 39);
+            tableGrid.Location = new Point(0, 65);
+            tableGrid.Margin = new Padding(4, 5, 4, 5);
             tableGrid.Name = "tableGrid";
             tableGrid.RowHeadersWidth = 62;
-            tableGrid.Size = new Size(974, 255);
+            tableGrid.Size = new Size(1391, 425);
             tableGrid.TabIndex = 2;
             // 
             // viewGrid
@@ -79,22 +82,23 @@
             viewGrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             viewGrid.BackgroundColor = SystemColors.Control;
             viewGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            viewGrid.Location = new Point(3, 55);
+            viewGrid.Location = new Point(4, 92);
+            viewGrid.Margin = new Padding(4, 5, 4, 5);
             viewGrid.Name = "viewGrid";
             viewGrid.RowHeadersWidth = 62;
-            viewGrid.Size = new Size(971, 236);
+            viewGrid.Size = new Size(1387, 393);
             viewGrid.TabIndex = 3;
             // 
             // button5
             // 
             button5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             button5.BackColor = Color.DarkSlateBlue;
-            button5.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 163);
+            button5.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 163);
             button5.ForeColor = SystemColors.ButtonFace;
-            button5.Location = new Point(902, 2);
-            button5.Margin = new Padding(3, 2, 3, 2);
+            button5.Location = new Point(1271, 13);
+            button5.Margin = new Padding(4, 3, 4, 3);
             button5.Name = "button5";
-            button5.Size = new Size(72, 35);
+            button5.Size = new Size(120, 44);
             button5.TabIndex = 10;
             button5.Text = "Refresh";
             button5.UseVisualStyleBackColor = false;
@@ -104,16 +108,17 @@
             // 
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 280F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 400F));
             tableLayoutPanel1.Controls.Add(panel1, 0, 0);
             tableLayoutPanel1.Controls.Add(panel2, 0, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Margin = new Padding(4, 5, 4, 5);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(1263, 600);
+            tableLayoutPanel1.Size = new Size(1804, 1000);
             tableLayoutPanel1.TabIndex = 11;
             // 
             // panel1
@@ -122,9 +127,10 @@
             panel1.Controls.Add(tableGrid);
             panel1.Controls.Add(button5);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(3, 3);
+            panel1.Location = new Point(4, 5);
+            panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(977, 294);
+            panel1.Size = new Size(1396, 490);
             panel1.TabIndex = 0;
             // 
             // panel2
@@ -132,19 +138,21 @@
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.Controls.Add(viewGrid);
             panel2.Controls.Add(label2);
-            panel2.Location = new Point(3, 303);
+            panel2.Location = new Point(4, 505);
+            panel2.Margin = new Padding(4, 5, 4, 5);
             panel2.Name = "panel2";
-            panel2.Size = new Size(977, 294);
+            panel2.Size = new Size(1396, 490);
             panel2.TabIndex = 1;
             // 
             // TablesViewsTab
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(tableLayoutPanel1);
-            MinimumSize = new Size(1263, 600);
+            Margin = new Padding(4, 5, 4, 5);
+            MinimumSize = new Size(1804, 1000);
             Name = "TablesViewsTab";
-            Size = new Size(1263, 600);
+            Size = new Size(1804, 1000);
             Load += TablesViewsPage_Load;
             ((System.ComponentModel.ISupportInitialize)tableGrid).EndInit();
             ((System.ComponentModel.ISupportInitialize)viewGrid).EndInit();
