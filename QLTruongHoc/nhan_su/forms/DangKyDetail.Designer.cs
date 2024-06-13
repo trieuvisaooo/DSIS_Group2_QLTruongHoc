@@ -64,6 +64,12 @@
             label8 = new Label();
             panel9 = new Panel();
             button1 = new Button();
+            panel13 = new Panel();
+            textBox8 = new TextBox();
+            label9 = new Label();
+            panel14 = new Panel();
+            textBox9 = new TextBox();
+            label13 = new Label();
             tableLayoutPanel1.SuspendLayout();
             panel12.SuspendLayout();
             panel11.SuspendLayout();
@@ -77,6 +83,8 @@
             panel5.SuspendLayout();
             panel8.SuspendLayout();
             panel9.SuspendLayout();
+            panel13.SuspendLayout();
+            panel14.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -86,9 +94,7 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.Controls.Add(panel12, 3, 2);
-            tableLayoutPanel1.Controls.Add(panel11, 2, 2);
-            tableLayoutPanel1.Controls.Add(panel10, 1, 2);
+            tableLayoutPanel1.Controls.Add(panel14, 0, 2);
             tableLayoutPanel1.Controls.Add(panel7, 2, 1);
             tableLayoutPanel1.Controls.Add(panel6, 1, 1);
             tableLayoutPanel1.Controls.Add(panel1, 0, 0);
@@ -96,12 +102,16 @@
             tableLayoutPanel1.Controls.Add(panel3, 2, 0);
             tableLayoutPanel1.Controls.Add(panel4, 3, 0);
             tableLayoutPanel1.Controls.Add(panel5, 0, 1);
-            tableLayoutPanel1.Controls.Add(panel8, 0, 2);
             tableLayoutPanel1.Controls.Add(panel9, 3, 3);
-            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Controls.Add(panel8, 0, 3);
+            tableLayoutPanel1.Controls.Add(panel10, 1, 3);
+            tableLayoutPanel1.Controls.Add(panel11, 2, 3);
+            tableLayoutPanel1.Controls.Add(button1, 3, 4);
+            tableLayoutPanel1.Controls.Add(panel13, 1, 2);
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 4;
+            tableLayoutPanel1.RowCount = 5;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 80F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 80F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 80F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 80F));
@@ -114,7 +124,7 @@
             panel12.Controls.Add(diemTkTextBox);
             panel12.Controls.Add(label12);
             panel12.Dock = DockStyle.Fill;
-            panel12.Location = new Point(840, 163);
+            panel12.Location = new Point(0, 0);
             panel12.Name = "panel12";
             panel12.Size = new Size(273, 74);
             panel12.TabIndex = 11;
@@ -141,7 +151,7 @@
             panel11.Controls.Add(diemCkTextBox);
             panel11.Controls.Add(label11);
             panel11.Dock = DockStyle.Fill;
-            panel11.Location = new Point(561, 163);
+            panel11.Location = new Point(561, 243);
             panel11.Name = "panel11";
             panel11.Size = new Size(273, 74);
             panel11.TabIndex = 10;
@@ -168,7 +178,7 @@
             panel10.Controls.Add(diemThiTextBox);
             panel10.Controls.Add(label10);
             panel10.Dock = DockStyle.Fill;
-            panel10.Location = new Point(282, 163);
+            panel10.Location = new Point(282, 243);
             panel10.Name = "panel10";
             panel10.Size = new Size(273, 74);
             panel10.TabIndex = 9;
@@ -205,6 +215,7 @@
             textBox7.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox7.Location = new Point(49, 3);
             textBox7.Name = "textBox7";
+            textBox7.ReadOnly = true;
             textBox7.Size = new Size(221, 31);
             textBox7.TabIndex = 2;
             // 
@@ -232,6 +243,7 @@
             textBox6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox6.Location = new Point(88, 3);
             textBox6.Name = "textBox6";
+            textBox6.ReadOnly = true;
             textBox6.Size = new Size(182, 31);
             textBox6.TabIndex = 2;
             // 
@@ -259,6 +271,7 @@
             textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox1.Location = new Point(74, 6);
             textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
             textBox1.Size = new Size(196, 31);
             textBox1.TabIndex = 1;
             // 
@@ -287,6 +300,7 @@
             textBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox2.Location = new Point(75, 3);
             textBox2.Name = "textBox2";
+            textBox2.ReadOnly = true;
             textBox2.Size = new Size(195, 31);
             textBox2.TabIndex = 1;
             // 
@@ -314,6 +328,7 @@
             textBox3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox3.Location = new Point(59, 3);
             textBox3.Name = "textBox3";
+            textBox3.ReadOnly = true;
             textBox3.Size = new Size(211, 31);
             textBox3.TabIndex = 2;
             // 
@@ -341,6 +356,7 @@
             textBox4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox4.Location = new Point(76, 0);
             textBox4.Name = "textBox4";
+            textBox4.ReadOnly = true;
             textBox4.Size = new Size(194, 31);
             textBox4.TabIndex = 2;
             // 
@@ -368,6 +384,7 @@
             textBox5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox5.Location = new Point(127, 3);
             textBox5.Name = "textBox5";
+            textBox5.ReadOnly = true;
             textBox5.Size = new Size(143, 31);
             textBox5.TabIndex = 2;
             // 
@@ -385,7 +402,7 @@
             panel8.Controls.Add(diemQtTextBox);
             panel8.Controls.Add(label8);
             panel8.Dock = DockStyle.Fill;
-            panel8.Location = new Point(3, 163);
+            panel8.Location = new Point(3, 243);
             panel8.Name = "panel8";
             panel8.Size = new Size(273, 74);
             panel8.TabIndex = 7;
@@ -409,25 +426,81 @@
             // 
             // panel9
             // 
-            panel9.Controls.Add(button1);
+            panel9.Controls.Add(panel12);
             panel9.Dock = DockStyle.Fill;
             panel9.Location = new Point(840, 243);
             panel9.Name = "panel9";
-            panel9.Size = new Size(273, 199);
+            panel9.Size = new Size(273, 74);
             panel9.TabIndex = 12;
             // 
             // button1
             // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             button1.BackColor = SystemColors.MenuHighlight;
             button1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(169, 3);
+            button1.Location = new Point(840, 323);
             button1.Name = "button1";
-            button1.Size = new Size(101, 69);
+            button1.Size = new Size(133, 69);
             button1.TabIndex = 0;
             button1.Text = "Lưu";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // panel13
+            // 
+            panel13.Controls.Add(textBox8);
+            panel13.Controls.Add(label9);
+            panel13.Dock = DockStyle.Fill;
+            panel13.Location = new Point(282, 163);
+            panel13.Name = "panel13";
+            panel13.Size = new Size(273, 74);
+            panel13.TabIndex = 13;
+            // 
+            // textBox8
+            // 
+            textBox8.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            textBox8.Location = new Point(67, 3);
+            textBox8.Name = "textBox8";
+            textBox8.ReadOnly = true;
+            textBox8.Size = new Size(203, 31);
+            textBox8.TabIndex = 2;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(3, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(67, 25);
+            label9.TabIndex = 0;
+            label9.Text = "Họ Tên";
+            // 
+            // panel14
+            // 
+            panel14.Controls.Add(textBox9);
+            panel14.Controls.Add(label13);
+            panel14.Dock = DockStyle.Fill;
+            panel14.Location = new Point(3, 163);
+            panel14.Name = "panel14";
+            panel14.Size = new Size(273, 74);
+            panel14.TabIndex = 14;
+            // 
+            // textBox9
+            // 
+            textBox9.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            textBox9.Location = new Point(68, 3);
+            textBox9.Name = "textBox9";
+            textBox9.ReadOnly = true;
+            textBox9.Size = new Size(202, 31);
+            textBox9.TabIndex = 2;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(3, 0);
+            label13.Name = "label13";
+            label13.Size = new Size(59, 25);
+            label13.TabIndex = 0;
+            label13.Text = "MSSV";
             // 
             // DangKyDetail
             // 
@@ -465,6 +538,10 @@
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
             panel9.ResumeLayout(false);
+            panel13.ResumeLayout(false);
+            panel13.PerformLayout();
+            panel14.ResumeLayout(false);
+            panel14.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -506,5 +583,11 @@
         private Label label10;
         private Panel panel9;
         private Button button1;
+        private Panel panel14;
+        private TextBox textBox9;
+        private Label label13;
+        private Panel panel13;
+        private TextBox textBox8;
+        private Label label9;
     }
 }

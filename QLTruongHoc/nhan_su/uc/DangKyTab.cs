@@ -27,7 +27,7 @@ namespace QLTruongHoc.nhan_su.uc
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
-            dataGridView1.CellClick += dataGridView1_CellClick;
+
             CustomizeColumnHeaders();
         }
 
@@ -62,7 +62,6 @@ namespace QLTruongHoc.nhan_su.uc
             try
             {
                 OracleCommand command = new OracleCommand(sql, Session.Instance.OracleConnection);
-
                 OracleDataReader reader = command.ExecuteReader();
 
                 while (reader.Read())
@@ -116,7 +115,6 @@ namespace QLTruongHoc.nhan_su.uc
                 string selectedText = selectedItem.Text;
 
                 // Perform actions based on selection
-                MessageBox.Show("Selected item: " + selectedText);
 
                 string[] items = selectedText.Split(" / ", StringSplitOptions.RemoveEmptyEntries);
                 string sql = $"select dk.mahp, hp.tenhp,dk.hk, dk.nam, dk.mact, dk.ngayhoc, dk.tiet,sv.masv, sv.hoten, dk.diemthi, dk.diemqt, dk.diemck, dk.diemtk\r\nfrom qlth.qlth_dangky dk join qlth.qlth_sinhvien sv on dk.masv = sv.masv " +
@@ -154,14 +152,16 @@ namespace QLTruongHoc.nhan_su.uc
                 chuongtrinh: row.Cells["MACT"].Value.ToString(),
                 ngayhoc: row.Cells["NGAYHOC"].Value.ToString(),
                 tiet: row.Cells["TIET"].Value.ToString(),
+                mssv: row.Cells["MASV"].Value == DBNull.Value ? null : (int)row.Cells["MASV"].Value,
+                hoten: row.Cells["HOTEN"].Value.ToString(),
                 diemqt: row.Cells["DIEMQT"].Value == DBNull.Value ? null : (decimal)row.Cells["DIEMQT"].Value,
                 diemthi: row.Cells["DIEMTHI"].Value == DBNull.Value ? null : (decimal)row.Cells["DIEMTHI"].Value,
                 diemck: row.Cells["DIEMCK"].Value == DBNull.Value ? null : (decimal)row.Cells["DIEMCK"].Value,
                 diemtk: row.Cells["DIEMTK"].Value == DBNull.Value ? null : (decimal)row.Cells["DIEMTK"].Value);
 
-            MessageBox.Show(row.Cells["DIEMTHI"].Value.ToString());
-
             dangKyDetail.Show();
+            
+            dataGridView1.DataSource = new DataTable();
         }
     }
 }
