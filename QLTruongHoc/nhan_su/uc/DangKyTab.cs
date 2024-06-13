@@ -1,4 +1,5 @@
 ﻿using Oracle.ManagedDataAccess.Client;
+using QLTruongHoc.nhan_su.forms;
 using QLTruongHoc.utils;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,7 @@ namespace QLTruongHoc.nhan_su.uc
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             CustomizeColumnHeaders();
         }
 
@@ -45,7 +47,6 @@ namespace QLTruongHoc.nhan_su.uc
             dataGridView1.Columns["DIEMTK"].HeaderText = "Điểm TK";
             dataGridView1.Columns["MASV"].HeaderText = "Mã SV";
             dataGridView1.Columns["HOTEN"].HeaderText = "Họ Tên";
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -134,6 +135,33 @@ namespace QLTruongHoc.nhan_su.uc
                 CustomizeColumnHeaders();
 
             }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+            {
+                return;
+            }
+            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+            decimal? diemthi = row.Cells["DIEMTHI"].Value == DBNull.Value ? null : (decimal)row.Cells["DIEMTHI"].Value;
+
+            DangKyDetail dangKyDetail = new DangKyDetail(
+                mahp: row.Cells["MAHP"].Value.ToString(),
+                tenhp: row.Cells["TENHP"].Value.ToString(),
+                nam: row.Cells["NAM"].Value.ToString(),
+                hocky: row.Cells["HK"].Value == DBNull.Value ? null : (decimal)row.Cells["HK"].Value,
+                chuongtrinh: row.Cells["MACT"].Value.ToString(),
+                ngayhoc: row.Cells["NGAYHOC"].Value.ToString(),
+                tiet: row.Cells["TIET"].Value.ToString(),
+                diemqt: row.Cells["DIEMQT"].Value == DBNull.Value ? null : (decimal)row.Cells["DIEMQT"].Value,
+                diemthi: row.Cells["DIEMTHI"].Value == DBNull.Value ? null : (decimal)row.Cells["DIEMTHI"].Value,
+                diemck: row.Cells["DIEMCK"].Value == DBNull.Value ? null : (decimal)row.Cells["DIEMCK"].Value,
+                diemtk: row.Cells["DIEMTK"].Value == DBNull.Value ? null : (decimal)row.Cells["DIEMTK"].Value);
+
+            MessageBox.Show(row.Cells["DIEMTHI"].Value.ToString());
+
+            dangKyDetail.Show();
         }
     }
 }

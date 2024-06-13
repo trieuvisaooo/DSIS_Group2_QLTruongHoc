@@ -110,10 +110,13 @@
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(361, 48);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             tableLayoutPanel1.SetRowSpan(dataGridView1, 2);
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(1065, 674);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // listView1
             // 
@@ -158,6 +161,5 @@
         private Button button1;
         private ListView listView1;
         private ToolTip listViewToolTip = new ToolTip();
-        
     }
 }
