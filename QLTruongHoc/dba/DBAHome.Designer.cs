@@ -71,20 +71,20 @@ namespace QLTruongHoc
             tabControl1.Controls.Add(auditPage);
             tabControl1.Controls.Add(backup_recovery_tab);
             tabControl1.Location = new Point(1, 1);
-            tabControl1.Margin = new Padding(4, 5, 4, 5);
+            tabControl1.Margin = new Padding(3, 4, 3, 4);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1808, 989);
+            tabControl1.Size = new Size(1446, 791);
             tabControl1.TabIndex = 0;
             // 
             // UsersRolesPage
             // 
             UsersRolesPage.Controls.Add(userAndRoleTab1);
-            UsersRolesPage.Location = new Point(4, 34);
-            UsersRolesPage.Margin = new Padding(4, 5, 4, 5);
+            UsersRolesPage.Location = new Point(4, 29);
+            UsersRolesPage.Margin = new Padding(3, 4, 3, 4);
             UsersRolesPage.Name = "UsersRolesPage";
-            UsersRolesPage.Padding = new Padding(4, 5, 4, 5);
-            UsersRolesPage.Size = new Size(1800, 951);
+            UsersRolesPage.Padding = new Padding(3, 4, 3, 4);
+            UsersRolesPage.Size = new Size(1438, 758);
             UsersRolesPage.TabIndex = 0;
             UsersRolesPage.Text = "Users & Roles";
             UsersRolesPage.UseVisualStyleBackColor = true;
@@ -92,21 +92,21 @@ namespace QLTruongHoc
             // userAndRoleTab1
             // 
             userAndRoleTab1.Dock = DockStyle.Fill;
-            userAndRoleTab1.Location = new Point(4, 5);
-            userAndRoleTab1.Margin = new Padding(5, 4, 5, 4);
-            userAndRoleTab1.MinimumSize = new Size(1801, 1000);
+            userAndRoleTab1.Location = new Point(3, 4);
+            userAndRoleTab1.Margin = new Padding(4, 3, 4, 3);
+            userAndRoleTab1.MinimumSize = new Size(1441, 800);
             userAndRoleTab1.Name = "userAndRoleTab1";
-            userAndRoleTab1.Size = new Size(1801, 1000);
+            userAndRoleTab1.Size = new Size(1441, 800);
             userAndRoleTab1.TabIndex = 0;
             // 
             // RolesPage
             // 
             RolesPage.Controls.Add(roleTab1);
-            RolesPage.Location = new Point(4, 34);
-            RolesPage.Margin = new Padding(4, 5, 4, 5);
+            RolesPage.Location = new Point(4, 29);
+            RolesPage.Margin = new Padding(3, 4, 3, 4);
             RolesPage.Name = "RolesPage";
-            RolesPage.Padding = new Padding(4, 5, 4, 5);
-            RolesPage.Size = new Size(1800, 951);
+            RolesPage.Padding = new Padding(3, 4, 3, 4);
+            RolesPage.Size = new Size(1438, 758);
             RolesPage.TabIndex = 1;
             RolesPage.Text = "Roles of User";
             RolesPage.UseVisualStyleBackColor = true;
@@ -115,20 +115,20 @@ namespace QLTruongHoc
             // 
             roleTab1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             roleTab1.Location = new Point(-1, 0);
-            roleTab1.Margin = new Padding(5, 4, 5, 4);
-            roleTab1.MinimumSize = new Size(1801, 1000);
+            roleTab1.Margin = new Padding(4, 3, 4, 3);
+            roleTab1.MinimumSize = new Size(1441, 800);
             roleTab1.Name = "roleTab1";
-            roleTab1.Size = new Size(1801, 1000);
+            roleTab1.Size = new Size(1441, 800);
             roleTab1.TabIndex = 0;
             // 
             // privilegesPage
             // 
             privilegesPage.Controls.Add(privilegeTab1);
-            privilegesPage.Location = new Point(4, 34);
-            privilegesPage.Margin = new Padding(4, 5, 4, 5);
+            privilegesPage.Location = new Point(4, 29);
+            privilegesPage.Margin = new Padding(3, 4, 3, 4);
             privilegesPage.Name = "privilegesPage";
-            privilegesPage.Padding = new Padding(4, 5, 4, 5);
-            privilegesPage.Size = new Size(1800, 951);
+            privilegesPage.Padding = new Padding(3, 4, 3, 4);
+            privilegesPage.Size = new Size(1438, 758);
             privilegesPage.TabIndex = 2;
             privilegesPage.Text = "Object Privileges";
             privilegesPage.UseVisualStyleBackColor = true;
@@ -137,20 +137,20 @@ namespace QLTruongHoc
             // 
             privilegeTab1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             privilegeTab1.Location = new Point(0, 2);
-            privilegeTab1.Margin = new Padding(5, 4, 5, 4);
-            privilegeTab1.MinimumSize = new Size(1804, 1000);
+            privilegeTab1.Margin = new Padding(4, 3, 4, 3);
+            privilegeTab1.MinimumSize = new Size(1443, 800);
             privilegeTab1.Name = "privilegeTab1";
-            privilegeTab1.Size = new Size(1804, 1000);
+            privilegeTab1.Size = new Size(1443, 800);
             privilegeTab1.TabIndex = 0;
             // 
             // SysPrivilegesPage
             // 
             SysPrivilegesPage.Controls.Add(sysPrivsTab1);
-            SysPrivilegesPage.Location = new Point(4, 34);
-            SysPrivilegesPage.Margin = new Padding(4, 5, 4, 5);
+            SysPrivilegesPage.Location = new Point(4, 29);
+            SysPrivilegesPage.Margin = new Padding(3, 4, 3, 4);
             SysPrivilegesPage.Name = "SysPrivilegesPage";
-            SysPrivilegesPage.Padding = new Padding(4, 5, 4, 5);
-            SysPrivilegesPage.Size = new Size(1800, 951);
+            SysPrivilegesPage.Padding = new Padding(3, 4, 3, 4);
+            SysPrivilegesPage.Size = new Size(1438, 758);
             SysPrivilegesPage.TabIndex = 4;
             SysPrivilegesPage.Text = "System Privileges";
             SysPrivilegesPage.UseVisualStyleBackColor = true;
@@ -159,21 +159,21 @@ namespace QLTruongHoc
             // 
             sysPrivsTab1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             sysPrivsTab1.Location = new Point(0, 0);
-            sysPrivsTab1.Margin = new Padding(4, 6, 4, 6);
-            sysPrivsTab1.MinimumSize = new Size(1804, 1000);
+            sysPrivsTab1.Margin = new Padding(3, 5, 3, 5);
+            sysPrivsTab1.MinimumSize = new Size(1443, 800);
             sysPrivsTab1.Name = "sysPrivsTab1";
-            sysPrivsTab1.Padding = new Padding(4, 5, 4, 5);
-            sysPrivsTab1.Size = new Size(1804, 1000);
+            sysPrivsTab1.Padding = new Padding(3, 4, 3, 4);
+            sysPrivsTab1.Size = new Size(1443, 800);
             sysPrivsTab1.TabIndex = 0;
             // 
             // tablesViewsTab
             // 
             tablesViewsTab.Controls.Add(tablesViewsPage1);
-            tablesViewsTab.Location = new Point(4, 34);
-            tablesViewsTab.Margin = new Padding(4, 5, 4, 5);
+            tablesViewsTab.Location = new Point(4, 29);
+            tablesViewsTab.Margin = new Padding(3, 4, 3, 4);
             tablesViewsTab.Name = "tablesViewsTab";
-            tablesViewsTab.Padding = new Padding(4, 5, 4, 5);
-            tablesViewsTab.Size = new Size(1800, 951);
+            tablesViewsTab.Padding = new Padding(3, 4, 3, 4);
+            tablesViewsTab.Size = new Size(1438, 758);
             tablesViewsTab.TabIndex = 3;
             tablesViewsTab.Text = "Tables & Views";
             tablesViewsTab.UseVisualStyleBackColor = true;
@@ -182,20 +182,20 @@ namespace QLTruongHoc
             // 
             tablesViewsPage1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tablesViewsPage1.Location = new Point(0, 0);
-            tablesViewsPage1.Margin = new Padding(6, 9, 6, 9);
-            tablesViewsPage1.MinimumSize = new Size(1804, 1000);
+            tablesViewsPage1.Margin = new Padding(5, 7, 5, 7);
+            tablesViewsPage1.MinimumSize = new Size(1443, 800);
             tablesViewsPage1.Name = "tablesViewsPage1";
-            tablesViewsPage1.Size = new Size(1804, 1000);
+            tablesViewsPage1.Size = new Size(1443, 800);
             tablesViewsPage1.TabIndex = 0;
             // 
             // auditPage
             // 
             auditPage.Controls.Add(auditTab1);
-            auditPage.Location = new Point(4, 34);
-            auditPage.Margin = new Padding(4, 5, 4, 5);
+            auditPage.Location = new Point(4, 29);
+            auditPage.Margin = new Padding(3, 4, 3, 4);
             auditPage.Name = "auditPage";
-            auditPage.Padding = new Padding(4, 5, 4, 5);
-            auditPage.Size = new Size(1800, 951);
+            auditPage.Padding = new Padding(3, 4, 3, 4);
+            auditPage.Size = new Size(1438, 758);
             auditPage.TabIndex = 5;
             auditPage.Text = "Audit";
             auditPage.UseVisualStyleBackColor = true;
@@ -203,22 +203,22 @@ namespace QLTruongHoc
             // auditTab1
             // 
             auditTab1.Dock = DockStyle.Fill;
-            auditTab1.Location = new Point(4, 5);
-            auditTab1.Margin = new Padding(4, 6, 4, 6);
-            auditTab1.MinimumSize = new Size(1801, 1000);
+            auditTab1.Location = new Point(3, 4);
+            auditTab1.Margin = new Padding(3, 5, 3, 5);
+            auditTab1.MinimumSize = new Size(1441, 800);
             auditTab1.Name = "auditTab1";
-            auditTab1.Size = new Size(1801, 1000);
+            auditTab1.Size = new Size(1441, 800);
             auditTab1.TabIndex = 0;
             auditTab1.Load += auditTab1_Load;
             // 
             // backup_recovery_tab
             // 
             backup_recovery_tab.Controls.Add(backupAndRecoveryTab1);
-            backup_recovery_tab.Location = new Point(4, 34);
-            backup_recovery_tab.Margin = new Padding(4, 5, 4, 5);
+            backup_recovery_tab.Location = new Point(4, 29);
+            backup_recovery_tab.Margin = new Padding(3, 4, 3, 4);
             backup_recovery_tab.Name = "backup_recovery_tab";
-            backup_recovery_tab.Padding = new Padding(4, 5, 4, 5);
-            backup_recovery_tab.Size = new Size(1800, 951);
+            backup_recovery_tab.Padding = new Padding(3, 4, 3, 4);
+            backup_recovery_tab.Size = new Size(1438, 758);
             backup_recovery_tab.TabIndex = 6;
             backup_recovery_tab.Text = "Backup & Recovery";
             backup_recovery_tab.UseVisualStyleBackColor = true;
@@ -226,10 +226,11 @@ namespace QLTruongHoc
             // backupAndRecoveryTab1
             // 
             backupAndRecoveryTab1.Dock = DockStyle.Fill;
-            backupAndRecoveryTab1.Location = new Point(4, 5);
-            backupAndRecoveryTab1.MinimumSize = new Size(1801, 1000);
+            backupAndRecoveryTab1.Location = new Point(3, 4);
+            backupAndRecoveryTab1.Margin = new Padding(2, 2, 2, 2);
+            backupAndRecoveryTab1.MinimumSize = new Size(1441, 800);
             backupAndRecoveryTab1.Name = "backupAndRecoveryTab1";
-            backupAndRecoveryTab1.Size = new Size(1801, 1000);
+            backupAndRecoveryTab1.Size = new Size(1441, 800);
             backupAndRecoveryTab1.TabIndex = 0;
             // 
             // button1
@@ -238,24 +239,24 @@ namespace QLTruongHoc
             button1.BackColor = Color.Crimson;
             button1.Font = new Font("Segoe UI Black", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.WhiteSmoke;
-            button1.Location = new Point(1682, 989);
-            button1.Margin = new Padding(4, 5, 4, 5);
+            button1.Location = new Point(1346, 791);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(120, 59);
+            button1.Size = new Size(96, 47);
             button1.TabIndex = 1;
             button1.Text = "Sign Out";
             button1.UseVisualStyleBackColor = false;
             // 
             // DBAHome
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1810, 1050);
+            ClientSize = new Size(1448, 840);
             Controls.Add(button1);
             Controls.Add(tabControl1);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(4, 5, 4, 5);
-            MinimumSize = new Size(1824, 1006);
+            Margin = new Padding(3, 4, 3, 4);
+            MinimumSize = new Size(1463, 814);
             Name = "DBAHome";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "QUẢN LÝ TRƯỜNG HỌC";

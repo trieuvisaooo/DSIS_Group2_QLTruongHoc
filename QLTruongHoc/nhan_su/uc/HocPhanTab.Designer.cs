@@ -34,7 +34,9 @@
             searchTextBox = new TextBox();
             button1 = new Button();
             button2 = new Button();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -65,7 +67,7 @@
             // 
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label2.AutoSize = true;
-            label2.Location = new Point(841, 42);
+            label2.Location = new Point(3, 10);
             label2.Name = "label2";
             label2.Size = new Size(84, 25);
             label2.TabIndex = 2;
@@ -74,7 +76,7 @@
             // searchTextBox
             // 
             searchTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            searchTextBox.Location = new Point(940, 39);
+            searchTextBox.Location = new Point(93, 7);
             searchTextBox.Name = "searchTextBox";
             searchTextBox.Size = new Size(194, 31);
             searchTextBox.TabIndex = 3;
@@ -84,9 +86,9 @@
             button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             button1.BackColor = Color.MediumVioletRed;
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(1134, 39);
+            button1.Location = new Point(293, 7);
             button1.Name = "button1";
-            button1.Size = new Size(94, 32);
+            button1.Size = new Size(94, 34);
             button1.TabIndex = 4;
             button1.Text = "Tìm kiếm";
             button1.UseVisualStyleBackColor = false;
@@ -97,22 +99,31 @@
             button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             button2.BackColor = Color.DarkSlateBlue;
             button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(1335, 39);
+            button2.Location = new Point(446, 5);
             button2.Name = "button2";
-            button2.Size = new Size(94, 32);
+            button2.Size = new Size(94, 36);
             button2.TabIndex = 5;
             button2.Text = "Refresh";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(button2);
+            panel1.Controls.Add(searchTextBox);
+            panel1.Controls.Add(button1);
+            panel1.Location = new Point(886, 24);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(543, 47);
+            panel1.TabIndex = 6;
+            // 
             // HocPhanTab
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(searchTextBox);
-            Controls.Add(label2);
+            Controls.Add(panel1);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
             Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -121,6 +132,8 @@
             Name = "HocPhanTab";
             Size = new Size(1432, 1000);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -133,5 +146,6 @@
         private TextBox searchTextBox;
         private Button button1;
         private Button button2;
+        private Panel panel1;
     }
 }
