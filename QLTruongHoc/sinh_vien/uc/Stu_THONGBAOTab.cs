@@ -1,4 +1,5 @@
-﻿using Oracle.ManagedDataAccess.Client;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Oracle.ManagedDataAccess.Client;
 using QLTruongHoc.utils;
 using System;
 using System.Collections.Generic;
@@ -44,7 +45,6 @@ namespace QLTruongHoc.sinh_vien.uc
             // Change column width
             dataGridView1.Columns["MATB"].Width = 280;
             //dataGridView1.Columns["NOIDUNG"].Width = ;
-
         }
     }
 }

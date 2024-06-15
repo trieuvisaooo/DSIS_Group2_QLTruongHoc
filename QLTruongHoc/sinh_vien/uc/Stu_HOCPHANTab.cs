@@ -44,7 +44,7 @@ namespace QLTruongHoc.sinh_vien.uc
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 dataGridView1.DataSource = dt;
-                //CustomizeColumnHeaders();
+                CustomizeColumnHeaders();
             }
             catch (Exception ex)
             {

@@ -41,6 +41,7 @@
             ttcnsvTab1 = new uc.Stu_TTCNTab();
             tabControl1 = new TabControl();
             DangKyTabPage = new TabPage();
+            stu_dangkyTab1 = new uc.Stu_DANGKYTab();
             LogoutBtn = new Button();
             TBTabpage.SuspendLayout();
             KQHTTabPage.SuspendLayout();
@@ -48,6 +49,7 @@
             HPTabpage.SuspendLayout();
             TTCNTabPage.SuspendLayout();
             tabControl1.SuspendLayout();
+            DangKyTabPage.SuspendLayout();
             SuspendLayout();
             // 
             // TBTabpage
@@ -168,12 +170,22 @@
             // 
             // DangKyTabPage
             // 
+            DangKyTabPage.Controls.Add(stu_dangkyTab1);
             DangKyTabPage.Location = new Point(4, 34);
             DangKyTabPage.Name = "DangKyTabPage";
             DangKyTabPage.Size = new Size(1795, 855);
             DangKyTabPage.TabIndex = 6;
             DangKyTabPage.Text = "Đăng Ký HP";
             DangKyTabPage.UseVisualStyleBackColor = true;
+            // 
+            // stu_dangkyTab1
+            // 
+            stu_dangkyTab1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            stu_dangkyTab1.Location = new Point(0, 0);
+            stu_dangkyTab1.MinimumSize = new Size(1432, 800);
+            stu_dangkyTab1.Name = "stu_dangkyTab1";
+            stu_dangkyTab1.Size = new Size(1795, 850);
+            stu_dangkyTab1.TabIndex = 0;
             // 
             // LogoutBtn
             // 
@@ -208,6 +220,7 @@
             HPTabpage.ResumeLayout(false);
             TTCNTabPage.ResumeLayout(false);
             tabControl1.ResumeLayout(false);
+            DangKyTabPage.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -226,5 +239,6 @@
         private uc.Stu_KQHTTab kqhtTab1;
         private uc.HPSVTab hpsvTab1;
         private Button LogoutBtn;
+        private uc.Stu_DANGKYTab stu_dangkyTab1;
     }
 }

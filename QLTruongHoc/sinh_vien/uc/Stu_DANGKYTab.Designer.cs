@@ -30,9 +30,6 @@
         {
             label1 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
-            dataGridView1 = new DataGridView();
-            panel1 = new Panel();
-            label2 = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
             dataGridView2 = new DataGridView();
             panel2 = new Panel();
@@ -42,20 +39,32 @@
             FGAComBox = new ComboBox();
             label4 = new Label();
             label5 = new Label();
+            dataGridView1 = new DataGridView();
+            panel1 = new Panel();
+            label2 = new Label();
             tableLayoutPanel3 = new TableLayoutPanel();
             dataGridView3 = new DataGridView();
             panel4 = new Panel();
             label6 = new Label();
+            RegisterDataGridView = new DataGridView();
+            ViewBtn = new Button();
+            RegisterBtn = new Button();
+            NotiLabel = new Label();
+            ResultGridView = new DataGridView();
+            label7 = new Label();
+            CancelBtn = new Button();
             tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            panel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel1.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)RegisterDataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ResultGridView).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -84,41 +93,6 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Size = new Size(200, 100);
             tableLayoutPanel1.TabIndex = 0;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.BackgroundColor = SystemColors.Control;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tableLayoutPanel1.SetColumnSpan(dataGridView1, 2);
-            dataGridView1.Location = new Point(4, 25);
-            dataGridView1.Margin = new Padding(4, 5, 4, 5);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(192, 10);
-            dataGridView1.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(label2);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(4, 5);
-            panel1.Margin = new Padding(4, 5, 4, 5);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(92, 157);
-            panel1.TabIndex = 1;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(0, 0);
-            label2.Margin = new Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(129, 48);
-            label2.TabIndex = 2;
-            label2.Text = "AUDIT";
             // 
             // tableLayoutPanel2
             // 
@@ -228,6 +202,41 @@
             label5.TabIndex = 3;
             label5.Text = "Standard Audit";
             // 
+            // dataGridView1
+            // 
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = SystemColors.Control;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            tableLayoutPanel1.SetColumnSpan(dataGridView1, 2);
+            dataGridView1.Location = new Point(4, 25);
+            dataGridView1.Margin = new Padding(4, 5, 4, 5);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 62;
+            dataGridView1.Size = new Size(192, 10);
+            dataGridView1.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(label2);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(4, 5);
+            panel1.Margin = new Padding(4, 5, 4, 5);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(92, 157);
+            panel1.TabIndex = 1;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(0, 0);
+            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(129, 48);
+            label2.TabIndex = 2;
+            label2.Text = "AUDIT";
+            // 
             // tableLayoutPanel3
             // 
             tableLayoutPanel3.ColumnCount = 2;
@@ -275,28 +284,123 @@
             label6.TabIndex = 2;
             label6.Text = "AUDIT";
             // 
+            // RegisterDataGridView
+            // 
+            RegisterDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            RegisterDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            RegisterDataGridView.BackgroundColor = SystemColors.Control;
+            RegisterDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            RegisterDataGridView.Location = new Point(14, 133);
+            RegisterDataGridView.Name = "RegisterDataGridView";
+            RegisterDataGridView.RowHeadersWidth = 51;
+            RegisterDataGridView.Size = new Size(1404, 230);
+            RegisterDataGridView.TabIndex = 26;
+            // 
+            // ViewBtn
+            // 
+            ViewBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            ViewBtn.BackColor = Color.DarkSlateBlue;
+            ViewBtn.ForeColor = SystemColors.ButtonHighlight;
+            ViewBtn.Location = new Point(1297, 81);
+            ViewBtn.Name = "ViewBtn";
+            ViewBtn.Size = new Size(121, 47);
+            ViewBtn.TabIndex = 27;
+            ViewBtn.Text = "Xem";
+            ViewBtn.UseVisualStyleBackColor = false;
+            ViewBtn.Click += ViewBtn_Click;
+            // 
+            // RegisterBtn
+            // 
+            RegisterBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            RegisterBtn.BackColor = Color.DarkSlateBlue;
+            RegisterBtn.ForeColor = SystemColors.ButtonHighlight;
+            RegisterBtn.Location = new Point(1297, 366);
+            RegisterBtn.Name = "RegisterBtn";
+            RegisterBtn.Size = new Size(121, 47);
+            RegisterBtn.TabIndex = 28;
+            RegisterBtn.Text = "Đăng Ký";
+            RegisterBtn.UseVisualStyleBackColor = false;
+            RegisterBtn.Click += RegisterBtn_Click;
+            // 
+            // NotiLabel
+            // 
+            NotiLabel.AutoSize = true;
+            NotiLabel.Font = new Font("Segoe UI", 10F, FontStyle.Italic, GraphicsUnit.Point, 163);
+            NotiLabel.ForeColor = Color.Red;
+            NotiLabel.Location = new Point(14, 92);
+            NotiLabel.Name = "NotiLabel";
+            NotiLabel.Size = new Size(409, 28);
+            NotiLabel.TabIndex = 29;
+            NotiLabel.Text = "(*) Bấm \"Xem\" để tiến hành đăng kí học phần";
+            // 
+            // ResultGridView
+            // 
+            ResultGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            ResultGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            ResultGridView.BackgroundColor = SystemColors.Control;
+            ResultGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            ResultGridView.Location = new Point(14, 491);
+            ResultGridView.Name = "ResultGridView";
+            ResultGridView.RowHeadersWidth = 62;
+            ResultGridView.Size = new Size(1404, 258);
+            ResultGridView.TabIndex = 30;
+            // 
+            // label7
+            // 
+            label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 163);
+            label7.Location = new Point(14, 450);
+            label7.Margin = new Padding(4, 0, 4, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(344, 38);
+            label7.TabIndex = 31;
+            label7.Text = "HỌC PHẦN ĐÃ ĐĂNG KÝ";
+            // 
+            // CancelBtn
+            // 
+            CancelBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            CancelBtn.BackColor = Color.LightCoral;
+            CancelBtn.ForeColor = SystemColors.ButtonHighlight;
+            CancelBtn.Location = new Point(1281, 753);
+            CancelBtn.Name = "CancelBtn";
+            CancelBtn.Size = new Size(138, 47);
+            CancelBtn.TabIndex = 32;
+            CancelBtn.Text = "Hủy Đăng Ký";
+            CancelBtn.UseVisualStyleBackColor = false;
+            CancelBtn.Click += CancelBtn_Click;
+            // 
             // Stu_DANGKYTab
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(CancelBtn);
+            Controls.Add(label7);
+            Controls.Add(ResultGridView);
+            Controls.Add(NotiLabel);
+            Controls.Add(RegisterBtn);
+            Controls.Add(ViewBtn);
+            Controls.Add(RegisterDataGridView);
             Controls.Add(label1);
             MinimumSize = new Size(1432, 800);
             Name = "Stu_DANGKYTab";
             Size = new Size(1432, 800);
             tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)RegisterDataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ResultGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -321,5 +425,12 @@
         private DataGridView dataGridView3;
         private Panel panel4;
         private Label label6;
+        private DataGridView RegisterDataGridView;
+        private Button ViewBtn;
+        private Button RegisterBtn;
+        private Label NotiLabel;
+        private DataGridView ResultGridView;
+        private Label label7;
+        private Button CancelBtn;
     }
 }
