@@ -55,3 +55,5 @@ BEGIN
     RES := 0;
 END;
 /
+
+select mans, hoten from qlth.qlth_nhansu where madv = 'HTTT';

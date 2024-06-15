@@ -15,5 +15,24 @@ namespace QLTruongHoc.utils
             OracleCommand cmd = new OracleCommand(sql, Session.Instance.OracleConnection);
             cmd.ExecuteNonQuery();
         }
+
+        static public string getUserDv()
+        {
+            string sql = $"select madv " +
+                $"from qlth.qlth_nhansu " +
+                $"where mans = SYS_CONTEXT('USERENV', 'SESSION_USER')";
+
+            OracleCommand cmd = new OracleCommand(sql, Session.Instance.OracleConnection);
+            OracleDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                string madv = reader["MADV"].ToString();
+                return madv;
+            }
+
+            return "";
+            
+        }
     }
 }

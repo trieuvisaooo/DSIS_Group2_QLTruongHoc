@@ -27,3 +27,13 @@ and dk.nam = '2023-2024'
 and ct.tenct = 'Chính quy - Ch??ng trình chu?n'
 and dk.ngayhoc = 'T2'
 and dk.tiet = '1-4';
+
+select dk.mahp, hp.tenhp,dk.hk, dk.nam, dk.mact, dk.ngayhoc, dk.tiet,sv.masv, sv.hoten, dk.diemthi, dk.diemqt, dk.diemck, dk.diemtk
+from qlth.qlth_dangky dk 
+join qlth.qlth_sinhvien sv on dk.masv = sv.masv
+join qlth.qlth_hocphan hp on dk.mahp = hp.mahp;
+
+select PC.MAGV, PC.MAHP, HP.TENHP, PC.HK, PC.NAM, CT.TENCT, PC.NGAYHOC, PC.TIET
+from qlth.uv_qlth_xemphanconggiangday PC 
+JOIN QLTH.qlth_hocphan HP ON PC.MAHP = HP.MAHP
+JOIN QLTH.QLTH_CHUONGTRINH CT ON CT.MACT = PC.MACT;

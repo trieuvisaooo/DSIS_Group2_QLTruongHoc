@@ -29,15 +29,18 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            refreshBtn = new Button();
             panel1 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
             button1 = new Button();
             dataGridView1 = new DataGridView();
             listView1 = new ListView();
+            panel2 = new Panel();
+            button2 = new Button();
+            refreshBtn = new Button();
             panel1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -49,19 +52,6 @@
             label1.Size = new Size(137, 38);
             label1.TabIndex = 0;
             label1.Text = "LỚP HỌC";
-            // 
-            // refreshBtn
-            // 
-            refreshBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            refreshBtn.BackColor = Color.DarkSlateBlue;
-            refreshBtn.ForeColor = SystemColors.ButtonFace;
-            refreshBtn.Location = new Point(1332, 3);
-            refreshBtn.Name = "refreshBtn";
-            refreshBtn.Size = new Size(94, 39);
-            refreshBtn.TabIndex = 2;
-            refreshBtn.Text = "Refresh";
-            refreshBtn.UseVisualStyleBackColor = false;
-            refreshBtn.Click += refreshBtn_Click;
             // 
             // panel1
             // 
@@ -78,15 +68,16 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25.1224613F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 74.87754F));
             tableLayoutPanel1.Controls.Add(button1, 0, 0);
-            tableLayoutPanel1.Controls.Add(refreshBtn, 1, 0);
             tableLayoutPanel1.Controls.Add(dataGridView1, 1, 1);
             tableLayoutPanel1.Controls.Add(listView1, 0, 1);
+            tableLayoutPanel1.Controls.Add(panel2, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 6.3920455F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 93.6079559F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Size = new Size(1429, 725);
             tableLayoutPanel1.TabIndex = 0;
@@ -117,6 +108,7 @@
             dataGridView1.Size = new Size(1065, 674);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellClick += dataGridView1_CellClick;
+            dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
             // 
             // listView1
             // 
@@ -133,6 +125,41 @@
             listView1.SelectedIndexChanged += listView1_SelectedIndexChanged;
             listView1.MouseMove += listView1_MouseMove;
             // 
+            // panel2
+            // 
+            panel2.Controls.Add(button2);
+            panel2.Controls.Add(refreshBtn);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(361, 3);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1065, 39);
+            panel2.TabIndex = 5;
+            // 
+            // button2
+            // 
+            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button2.BackColor = Color.Crimson;
+            button2.ForeColor = SystemColors.ButtonFace;
+            button2.Location = new Point(861, 0);
+            button2.Name = "button2";
+            button2.Size = new Size(94, 39);
+            button2.TabIndex = 4;
+            button2.Text = "Xóa";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // refreshBtn
+            // 
+            refreshBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            refreshBtn.BackColor = Color.DarkSlateBlue;
+            refreshBtn.ForeColor = SystemColors.ButtonFace;
+            refreshBtn.Location = new Point(971, 0);
+            refreshBtn.Name = "refreshBtn";
+            refreshBtn.Size = new Size(94, 39);
+            refreshBtn.TabIndex = 3;
+            refreshBtn.Text = "Refresh";
+            refreshBtn.UseVisualStyleBackColor = false;
+            refreshBtn.Click += refreshBtn_Click_1;
+            // 
             // DangKyTab
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -147,6 +174,7 @@
             panel1.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -154,12 +182,14 @@
         #endregion
 
         private Label label1;
-        private Button refreshBtn;
         private Panel panel1;
         private TableLayoutPanel tableLayoutPanel1;
         private DataGridView dataGridView1;
         private Button button1;
         private ListView listView1;
         private ToolTip listViewToolTip = new ToolTip();
+        private Panel panel2;
+        private Button refreshBtn;
+        private Button button2;
     }
 }

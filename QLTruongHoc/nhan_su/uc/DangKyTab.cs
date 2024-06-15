@@ -23,6 +23,7 @@ namespace QLTruongHoc.nhan_su.uc
         private void refreshBtn_Click(object sender, EventArgs e)
         {
             string sql = "select dk.mahp, hp.tenhp,dk.hk, dk.nam, dk.mact, dk.ngayhoc, dk.tiet,sv.masv, sv.hoten, dk.diemthi, dk.diemqt, dk.diemck, dk.diemtk\r\nfrom qlth.qlth_dangky dk join qlth.qlth_sinhvien sv on dk.masv = sv.masv\r\njoin qlth.qlth_hocphan hp on dk.mahp = hp.mahp";
+            MessageBox.Show(sql);
             OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -137,6 +138,28 @@ namespace QLTruongHoc.nhan_su.uc
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            MessageBox.Show("Clicked");
+            
+        }
+
+        private void refreshBtn_Click_1(object sender, EventArgs e)
+        {
+            if (Session.Instance.Role == "Giáo vụ")
+            {
+                string sql = "select dk.mahp, hp.tenhp,dk.hk, dk.nam, dk.mact, dk.ngayhoc, dk.tiet,sv.masv, sv.hoten, dk.diemthi, dk.diemqt, dk.diemck, dk.diemtk\r\nfrom qlth.qlth_dangky dk join qlth.qlth_sinhvien sv on dk.masv = sv.masv\r\njoin qlth.qlth_hocphan hp on dk.mahp = hp.mahp";
+                MessageBox.Show(sql);
+                OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+
+                CustomizeColumnHeaders();
+            }
+
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
             if (e.RowIndex == -1)
             {
                 return;
@@ -160,7 +183,7 @@ namespace QLTruongHoc.nhan_su.uc
                 diemtk: row.Cells["DIEMTK"].Value == DBNull.Value ? null : (decimal)row.Cells["DIEMTK"].Value);
 
             dangKyDetail.Show();
-            
+
             dataGridView1.DataSource = new DataTable();
         }
     }
