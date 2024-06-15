@@ -49,7 +49,7 @@ namespace QLTruongHoc
             auditTab1 = new dba.uc.AuditTab();
             backup_recovery_tab = new TabPage();
             backupAndRecoveryTab1 = new dba.uc.BackupAndRecoveryTab();
-            button1 = new Button();
+            LogoutBtn = new Button();
             tabControl1.SuspendLayout();
             UsersRolesPage.SuspendLayout();
             RolesPage.SuspendLayout();
@@ -209,7 +209,6 @@ namespace QLTruongHoc
             auditTab1.Name = "auditTab1";
             auditTab1.Size = new Size(1801, 1000);
             auditTab1.TabIndex = 0;
-            auditTab1.Load += auditTab1_Load;
             // 
             // backup_recovery_tab
             // 
@@ -232,26 +231,27 @@ namespace QLTruongHoc
             backupAndRecoveryTab1.Size = new Size(1801, 1000);
             backupAndRecoveryTab1.TabIndex = 0;
             // 
-            // button1
+            // LogoutBtn
             // 
-            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button1.BackColor = Color.Crimson;
-            button1.Font = new Font("Segoe UI Black", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.WhiteSmoke;
-            button1.Location = new Point(1682, 989);
-            button1.Margin = new Padding(4, 5, 4, 5);
-            button1.Name = "button1";
-            button1.Size = new Size(120, 59);
-            button1.TabIndex = 1;
-            button1.Text = "Sign Out";
-            button1.UseVisualStyleBackColor = false;
+            LogoutBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            LogoutBtn.BackColor = Color.Crimson;
+            LogoutBtn.Font = new Font("Segoe UI Black", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LogoutBtn.ForeColor = Color.WhiteSmoke;
+            LogoutBtn.Location = new Point(1671, 989);
+            LogoutBtn.Margin = new Padding(4, 5, 4, 5);
+            LogoutBtn.Name = "LogoutBtn";
+            LogoutBtn.Size = new Size(136, 59);
+            LogoutBtn.TabIndex = 1;
+            LogoutBtn.Text = "Đăng xuất";
+            LogoutBtn.UseVisualStyleBackColor = false;
+            LogoutBtn.Click += LogoutBtn_Click;
             // 
             // DBAHome
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1810, 1050);
-            Controls.Add(button1);
+            Controls.Add(LogoutBtn);
             Controls.Add(tabControl1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 5, 4, 5);
@@ -259,9 +259,7 @@ namespace QLTruongHoc
             Name = "DBAHome";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "QUẢN LÝ TRƯỜNG HỌC";
-            FormClosing += DBA_Home_Closing;
-            FormClosed += DBA_Home_Closed;
-            Load += Form1_Load;
+            FormClosed += DBAHome_FormClosed;
             tabControl1.ResumeLayout(false);
             UsersRolesPage.ResumeLayout(false);
             RolesPage.ResumeLayout(false);
@@ -281,7 +279,7 @@ namespace QLTruongHoc
         private TabPage tablesViewsTab;
         private TabPage SysPrivilegesPage;
         private TabPage auditPage;
-        private Button button1;
+        private Button LogoutBtn;
         private TabPage RolesPage;
         private TablesViewsTab tablesViewsPage1;
         private UserAndRoleTab userAndRoleTab1;

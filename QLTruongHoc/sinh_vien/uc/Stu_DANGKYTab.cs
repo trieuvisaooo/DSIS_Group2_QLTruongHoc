@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace QLTruongHoc.sinh_vien.uc
 {
-    public partial class TTCNSVTab : UserControl
+    public partial class Stu_DANGKYTab : UserControl
     {
-        public TTCNSVTab()
+        public Stu_DANGKYTab()
         {
             InitializeComponent();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

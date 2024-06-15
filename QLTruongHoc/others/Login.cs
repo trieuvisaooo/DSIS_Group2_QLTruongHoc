@@ -1,18 +1,16 @@
-﻿using Microsoft.EntityFrameworkCore.Query.Internal;
-using Oracle.ManagedDataAccess.Client;
+﻿using Oracle.ManagedDataAccess.Client;
 using Oracle.ManagedDataAccess.Types;
 using QLTruongHoc.nhan_su;
 using QLTruongHoc.sinh_vien;
 using QLTruongHoc.utils;
 using System.Configuration;
-using System.DirectoryServices.Protocols;
 
 
 namespace QLTruongHoc
 {
     public partial class Login : Form
     {
-        private OracleConnection con;
+        public OracleConnection con;
         public static string username;
         public static string password;
         public static string role;
@@ -45,6 +43,11 @@ namespace QLTruongHoc
                 return;
             }
             username = username_txtbox.Text;
+            if (username == "SYS" || username == "sys")
+            {
+                MessageBox.Show("TÊN ĐĂNG NHẬP hoặc MẬT KHẨU không hợp lệ!"); 
+                return;
+            }
             //Check username, password and role
             try
             {
@@ -64,7 +67,7 @@ namespace QLTruongHoc
                     con.Open();
                     Session.Instance.OracleConnection = con;
                     MessageBox.Show("Connect với tư cách là quản trị viên thành công!");
-                    DBAHome dba = new DBAHome();
+                    DBAHome dba = new DBAHome(this);
                     dba.Show();
                     this.Hide();
                 }
@@ -93,7 +96,7 @@ namespace QLTruongHoc
 
                     if (result == 0)
                     {
-                        MessageBox.Show("Tài khoản không tồn tại!");
+                        MessageBox.Show("Không tồn tại tài khoản với vai trò tương ứng!");
                     }
                     else if (result == 1)
                     {
@@ -123,7 +126,7 @@ namespace QLTruongHoc
                         Session.Instance.OracleConnection = con;
 
                         MessageBox.Show("Connect với tư cách là sinh viên thành công!");
-                        StuHome stuHome = new StuHome();
+                        StuHome stuHome = new StuHome(this);
                         stuHome.Show();
                         this.Hide();
 
@@ -134,7 +137,8 @@ namespace QLTruongHoc
             }
             catch (OracleException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("TÊN ĐĂNG NHẬP hoặc MẬT KHẨU không hợp lệ!"); 
+                //MessageBox.Show(ex.Message);
                 return;
             }
         }
