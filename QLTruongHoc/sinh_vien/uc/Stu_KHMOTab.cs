@@ -1,15 +1,6 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using QLTruongHoc.utils;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace QLTruongHoc.sinh_vien.uc
 {
@@ -177,7 +168,7 @@ namespace QLTruongHoc.sinh_vien.uc
                 sql = sql + whereClasue;
             }
 
-            MessageBox.Show(sql);
+            //MessageBox.Show(sql);
             OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
             DataTable dt = new DataTable();
             da.Fill(dt);

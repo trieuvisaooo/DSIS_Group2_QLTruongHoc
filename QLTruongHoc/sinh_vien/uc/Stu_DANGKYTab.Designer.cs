@@ -286,6 +286,8 @@
             // 
             // RegisterDataGridView
             // 
+            RegisterDataGridView.AllowUserToAddRows = false;
+            RegisterDataGridView.AllowUserToDeleteRows = false;
             RegisterDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             RegisterDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             RegisterDataGridView.BackgroundColor = SystemColors.Control;
@@ -335,6 +337,8 @@
             // 
             // ResultGridView
             // 
+            ResultGridView.AllowUserToAddRows = false;
+            ResultGridView.AllowUserToDeleteRows = false;
             ResultGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             ResultGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             ResultGridView.BackgroundColor = SystemColors.Control;

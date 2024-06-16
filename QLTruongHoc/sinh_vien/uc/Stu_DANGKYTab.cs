@@ -1,15 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Oracle.ManagedDataAccess.Client;
+﻿using Oracle.ManagedDataAccess.Client;
 using QLTruongHoc.utils;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace QLTruongHoc.sinh_vien.uc
 {
@@ -28,7 +19,7 @@ namespace QLTruongHoc.sinh_vien.uc
         {
             try
             {
-                string sql = "SELECT MAHP, TENHP, NAM||'/'||HK AS \"NAM/HK\", NGAYHOC, TIET, SOTC, SOSVTD, MADV FROM QLTH.UV_QLTH_KEHOACHMOHP " +
+                string sql = "SELECT MAHP, TENHP, NAM||'/'||HK AS \"NAM/HK\", NGAYHOC, TIET, SOTC, SOSVTD, SOSVDK, MADV FROM QLTH.UV_QLTH_KEHOACHMOHP " +
                              "\r\nWHERE NAM = '" + tgdk.getYear() + "' AND HK = " + tgdk.getSem() +
                              "\r\n AND MAHP NOT IN (SELECT MAHP FROM QLTH.QLTH_DANGKY WHERE NAM = '" + tgdk.getYear() + "' AND HK = " + tgdk.getSem() + ")";
                 OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
@@ -47,9 +38,12 @@ namespace QLTruongHoc.sinh_vien.uc
         {
             try
             {
-                string sql = "SELECT DK.MAHP, HP.TENHP, DK.NAM||'/'||DK.HK AS \"NAM/HK\", DK.NGAYHOC, DK.TIET, HP.SOTC, HP.SOSVTD, HP.MADV " +
-                            "\r\nFROM QLTH.QLTH_DANGKY DK JOIN QLTH.QLTH_HOCPHAN HP ON DK.MAHP = HP.MAHP " +
-                             "\r\nWHERE NAM = '" + tgdk.getYear() + "' AND HK = " + tgdk.getSem();
+                //string sql = "SELECT DK.MAHP, HP.TENHP, DK.NAM||'/'||DK.HK AS \"NAM/HK\", DK.NGAYHOC, DK.TIET, HP.SOTC, HP.SOSVTD, HP.MADV " +
+                //            "\r\nFROM QLTH.QLTH_DANGKY DK JOIN QLTH.QLTH_HOCPHAN HP ON DK.MAHP = HP.MAHP " +
+                //             "\r\nWHERE NAM = '" + tgdk.getYear() + "' AND HK = " + tgdk.getSem();
+                string sql = "SELECT KHMO.MAHP, KHMO.TENHP, KHMO.NAM||'/'||KHMO.HK AS \"NAM/HK\", KHMO.NGAYHOC, KHMO.TIET, KHMO.SOTC, KHMO.SOSVTD, KHMO.SOSVDK, KHMO.MADV FROM QLTH.UV_QLTH_KEHOACHMOHP KHMO" +
+                            "\r\nWHERE NAM = '" + tgdk.getYear() + "' AND HK = " + tgdk.getSem() +
+                            "\r\n AND MAHP IN (SELECT MAHP FROM QLTH.QLTH_DANGKY DK WHERE DK.NAM = '" + tgdk.getYear() + "' AND DK.HK = " + tgdk.getSem() + " AND DK.NGAYHOC = KHMO.NGAYHOC AND DK.TIET = KHMO.TIET)";
                 OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -73,13 +67,13 @@ namespace QLTruongHoc.sinh_vien.uc
             }
             else if (curtime > tgdk.getEndTime())
             {
-                NotiLabel.Text = "(*) Thời gian đăng ký học phần đã kết thúc từ " + tgdk.getEndTime().ToString("dd/MM/yyyy HH:mm:ss");
-                MessageBox.Show("(*) Thời gian đăng ký học phần đã kết thúc từ " + tgdk.getEndTime().ToString("dd/MM/yyyy HH:mm:ss"));
+                NotiLabel.Text = "(*) Thời gian đăng ký học phần đã kết thúc từ " + tgdk.getEndTime().ToString("HH:mm:ss dd/MM/yyyy");
+                MessageBox.Show("(*) Thời gian đăng ký học phần đã kết thúc từ " + tgdk.getEndTime().ToString("HH:mm:ss dd/MM/yyyy"));
             }
             else if (curtime >= tgdk.getStartTime() && curtime <= tgdk.getEndTime())
             {
-                NotiLabel.Text = "(*) Đang trong thời gian đăng ký (" + tgdk.getStartTime().ToString("dd/MM/yyyy HH:mm:ss") + "-" + tgdk.getEndTime().ToString("dd/MM/yyyy HH:mm:ss") + "), chọn những học phần muốn đăng ký!";
-                MessageBox.Show("(*) Đang trong thời gian đăng ký, chọn những học phần muốn đăng ký bên dưới!");
+                NotiLabel.Text = "(*) Đang trong thời gian đăng ký (" + tgdk.getStartTime().ToString("HH:mm:ss dd/MM/yyyy") + "-" + tgdk.getEndTime().ToString("HH:mm:ss dd/MM/yyyy") + "), chọn những học phần muốn đăng ký!";
+                MessageBox.Show("(*) Đang trong thời gian đăng ký, bạn có thể đăng ký học phần!");
                 getRegisterCourse();
                 getResult();
             }
@@ -95,6 +89,7 @@ namespace QLTruongHoc.sinh_vien.uc
             RegisterDataGridView.Columns["TIET"].HeaderText = "Tiết Học";
             RegisterDataGridView.Columns["SOTC"].HeaderText = "Số TC";
             RegisterDataGridView.Columns["SOSVTD"].HeaderText = "Số SVTD";
+            RegisterDataGridView.Columns["SOSVTD"].HeaderText = "Số SVDK";
             RegisterDataGridView.Columns["MADV"].HeaderText = "Mã Đơn Vị";
             // Change column width
             RegisterDataGridView.Columns["TENHP"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -123,6 +118,7 @@ namespace QLTruongHoc.sinh_vien.uc
             ResultGridView.Columns["TIET"].HeaderText = "Tiết Học";
             ResultGridView.Columns["SOTC"].HeaderText = "Số TC";
             ResultGridView.Columns["SOSVTD"].HeaderText = "Số SVTD";
+            ResultGridView.Columns["SOSVDK"].HeaderText = "Số SVDK";
             ResultGridView.Columns["MADV"].HeaderText = "Mã Đơn Vị";
             // Change column width
             ResultGridView.Columns["TENHP"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;

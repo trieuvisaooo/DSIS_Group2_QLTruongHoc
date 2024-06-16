@@ -1,15 +1,5 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using QLTruongHoc.utils;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace QLTruongHoc.sinh_vien.uc
 {
@@ -20,43 +10,6 @@ namespace QLTruongHoc.sinh_vien.uc
         {
             InitializeComponent();
         }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //private void getStuInfo(SinhVien sv)
-        //{
-        //    string query_sql = "SELECT TO_CHAR(MASV), HOTEN, PHAI, TO_CHAR(NGSINH), DIACHI, DT, MACT, MANGANH, TO_CHAR(SOTCTL), TO_CHAR(DTBTL) FROM QLTH.QLTH_SINHVIEN";
-        //    OracleCommand cmd = new OracleCommand(query_sql, Session.Instance.OracleConnection);
-        //    try
-        //    {
-        //        using (OracleDataReader reader = cmd.ExecuteReader())
-        //        {
-        //            if (reader.Read())
-        //            {
-        //                sv.id = reader.IsDBNull(reader.GetOrdinal("TO_CHAR(MASV)")) ? "" : reader.GetString(reader.GetOrdinal("TO_CHAR(MASV)"));
-        //                sv.name = reader.IsDBNull(reader.GetOrdinal("HOTEN")) ? "" : reader.GetString(reader.GetOrdinal("HOTEN"));
-        //                sv.gender = reader.IsDBNull(reader.GetOrdinal("PHAI")) ? "" : reader.GetString(reader.GetOrdinal("PHAI"));
-        //                sv.birthday = reader.IsDBNull(reader.GetOrdinal("TO_CHAR(NGSINH)")) ? "" : reader.GetString(reader.GetOrdinal("TO_CHAR(NGSINH)"));
-        //                sv.addr = reader.IsDBNull(reader.GetOrdinal("DIACHI")) ? "" : reader.GetString(reader.GetOrdinal("DIACHI"));
-        //                sv.phonenum = reader.IsDBNull(reader.GetOrdinal("DT")) ? "" : reader.GetString(reader.GetOrdinal("DT"));
-        //                sv.program = reader.IsDBNull(reader.GetOrdinal("MACT")) ? "" : reader.GetString(reader.GetOrdinal("MACT"));
-        //                sv.major = reader.IsDBNull(reader.GetOrdinal("MANGANH")) ? "" : reader.GetString(reader.GetOrdinal("MANGANH"));
-        //                sv.credit = reader.IsDBNull(reader.GetOrdinal("TO_CHAR(SOTCTL)")) ? "" : reader.GetString(reader.GetOrdinal("TO_CHAR(SOTCTL)"));
-        //                sv.grade = reader.IsDBNull(reader.GetOrdinal("TO_CHAR(DTBTL)")) ? "" : reader.GetString(reader.GetOrdinal("TO_CHAR(DTBTL)"));
-        //                return;
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //        return;
-        //    }
-
-        //}
 
         private void TTCNSVTab_Load(object sender, EventArgs e)
         {

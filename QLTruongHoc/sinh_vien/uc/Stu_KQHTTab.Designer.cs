@@ -85,6 +85,8 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = SystemColors.Control;
@@ -106,7 +108,7 @@
             label1.TabIndex = 18;
             label1.Text = "KẾT QUẢ HỌC TẬP";
             // 
-            // KQHTTab
+            // Stu_KQHTTab
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -117,7 +119,7 @@
             Controls.Add(dataGridView1);
             Controls.Add(label1);
             MinimumSize = new Size(1432, 800);
-            Name = "KQHTTab";
+            Name = "Stu_KQHTTab";
             Size = new Size(1432, 800);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

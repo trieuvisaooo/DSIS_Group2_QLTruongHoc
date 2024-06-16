@@ -1,7 +1,6 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using QLTruongHoc.dba.forms;
 using QLTruongHoc.utils;
-using System;
 using System.Data;
 using System.Diagnostics;
 using System.Text;

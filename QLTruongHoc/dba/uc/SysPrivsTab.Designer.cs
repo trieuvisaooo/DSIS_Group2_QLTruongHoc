@@ -49,7 +49,7 @@ namespace QLTruongHoc
             grantView.Name = "grantView";
             grantView.RowHeadersWidth = 51;
             grantView.RowTemplate.Height = 24;
-            grantView.Size = new Size(1787, 898);
+            grantView.Size = new Size(1415, 698);
             grantView.TabIndex = 0;
             // 
             // label1
@@ -78,12 +78,12 @@ namespace QLTruongHoc
             loadButton.BackColor = Color.DarkSlateBlue;
             loadButton.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 163);
             loadButton.ForeColor = SystemColors.ButtonFace;
-            loadButton.Location = new Point(1676, 30);
+            loadButton.Location = new Point(1304, 30);
             loadButton.Margin = new Padding(4, 5, 4, 5);
             loadButton.Name = "loadButton";
             loadButton.Size = new Size(120, 44);
             loadButton.TabIndex = 3;
-            loadButton.Text = "Refresh";
+            loadButton.Text = "Xem";
             loadButton.UseVisualStyleBackColor = false;
             loadButton.Click += loadButton_Click;
             // 
@@ -125,11 +125,10 @@ namespace QLTruongHoc
             Controls.Add(label1);
             Controls.Add(grantView);
             Margin = new Padding(4, 5, 4, 5);
-            MinimumSize = new Size(1804, 1000);
+            MinimumSize = new Size(1432, 800);
             Name = "SysPrivsTab";
             Padding = new Padding(4, 5, 4, 5);
-            Size = new Size(1804, 1000);
-            Load += SysPrivs_Load;
+            Size = new Size(1432, 800);
             ((System.ComponentModel.ISupportInitialize)grantView).EndInit();
             ResumeLayout(false);
             PerformLayout();

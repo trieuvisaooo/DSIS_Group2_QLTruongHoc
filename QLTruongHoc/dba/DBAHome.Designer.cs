@@ -94,9 +94,9 @@ namespace QLTruongHoc
             userAndRoleTab1.Dock = DockStyle.Fill;
             userAndRoleTab1.Location = new Point(4, 5);
             userAndRoleTab1.Margin = new Padding(5, 4, 5, 4);
-            userAndRoleTab1.MinimumSize = new Size(1801, 1000);
+            userAndRoleTab1.MinimumSize = new Size(1432, 800);
             userAndRoleTab1.Name = "userAndRoleTab1";
-            userAndRoleTab1.Size = new Size(1801, 1000);
+            userAndRoleTab1.Size = new Size(1792, 941);
             userAndRoleTab1.TabIndex = 0;
             // 
             // RolesPage
@@ -114,11 +114,11 @@ namespace QLTruongHoc
             // roleTab1
             // 
             roleTab1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            roleTab1.Location = new Point(-1, 0);
+            roleTab1.Location = new Point(0, 0);
             roleTab1.Margin = new Padding(5, 4, 5, 4);
-            roleTab1.MinimumSize = new Size(1801, 1000);
+            roleTab1.MinimumSize = new Size(1432, 800);
             roleTab1.Name = "roleTab1";
-            roleTab1.Size = new Size(1801, 1000);
+            roleTab1.Size = new Size(1795, 850);
             roleTab1.TabIndex = 0;
             // 
             // privilegesPage
@@ -136,11 +136,11 @@ namespace QLTruongHoc
             // privilegeTab1
             // 
             privilegeTab1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            privilegeTab1.Location = new Point(0, 2);
+            privilegeTab1.Location = new Point(0, 0);
             privilegeTab1.Margin = new Padding(5, 4, 5, 4);
-            privilegeTab1.MinimumSize = new Size(1804, 1000);
+            privilegeTab1.MinimumSize = new Size(1432, 800);
             privilegeTab1.Name = "privilegeTab1";
-            privilegeTab1.Size = new Size(1804, 1000);
+            privilegeTab1.Size = new Size(1795, 850);
             privilegeTab1.TabIndex = 0;
             // 
             // SysPrivilegesPage
@@ -160,10 +160,10 @@ namespace QLTruongHoc
             sysPrivsTab1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             sysPrivsTab1.Location = new Point(0, 0);
             sysPrivsTab1.Margin = new Padding(4, 6, 4, 6);
-            sysPrivsTab1.MinimumSize = new Size(1804, 1000);
+            sysPrivsTab1.MinimumSize = new Size(1432, 800);
             sysPrivsTab1.Name = "sysPrivsTab1";
             sysPrivsTab1.Padding = new Padding(4, 5, 4, 5);
-            sysPrivsTab1.Size = new Size(1804, 1000);
+            sysPrivsTab1.Size = new Size(1795, 850);
             sysPrivsTab1.TabIndex = 0;
             // 
             // tablesViewsTab
@@ -183,9 +183,9 @@ namespace QLTruongHoc
             tablesViewsPage1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tablesViewsPage1.Location = new Point(0, 0);
             tablesViewsPage1.Margin = new Padding(6, 9, 6, 9);
-            tablesViewsPage1.MinimumSize = new Size(1804, 1000);
+            tablesViewsPage1.MinimumSize = new Size(1432, 800);
             tablesViewsPage1.Name = "tablesViewsPage1";
-            tablesViewsPage1.Size = new Size(1804, 1000);
+            tablesViewsPage1.Size = new Size(1795, 850);
             tablesViewsPage1.TabIndex = 0;
             // 
             // auditPage
@@ -205,9 +205,9 @@ namespace QLTruongHoc
             auditTab1.Dock = DockStyle.Fill;
             auditTab1.Location = new Point(4, 5);
             auditTab1.Margin = new Padding(4, 6, 4, 6);
-            auditTab1.MinimumSize = new Size(1801, 1000);
+            auditTab1.MinimumSize = new Size(1432, 800);
             auditTab1.Name = "auditTab1";
-            auditTab1.Size = new Size(1801, 1000);
+            auditTab1.Size = new Size(1792, 941);
             auditTab1.TabIndex = 0;
             // 
             // backup_recovery_tab
@@ -226,9 +226,9 @@ namespace QLTruongHoc
             // 
             backupAndRecoveryTab1.Dock = DockStyle.Fill;
             backupAndRecoveryTab1.Location = new Point(4, 5);
-            backupAndRecoveryTab1.MinimumSize = new Size(1801, 1000);
+            backupAndRecoveryTab1.MinimumSize = new Size(1432, 800);
             backupAndRecoveryTab1.Name = "backupAndRecoveryTab1";
-            backupAndRecoveryTab1.Size = new Size(1801, 1000);
+            backupAndRecoveryTab1.Size = new Size(1792, 941);
             backupAndRecoveryTab1.TabIndex = 0;
             // 
             // LogoutBtn

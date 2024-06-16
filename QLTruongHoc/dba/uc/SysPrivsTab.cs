@@ -1,14 +1,6 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using QLTruongHoc.utils;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace QLTruongHoc
 {
@@ -64,11 +56,6 @@ namespace QLTruongHoc
                 MessageBox.Show(ex.Message);
                 return;
             }
-        }
-
-        private void SysPrivs_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

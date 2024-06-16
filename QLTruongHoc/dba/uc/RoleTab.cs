@@ -1,16 +1,6 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using QLTruongHoc.utils;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace QLTruongHoc
 {
@@ -27,21 +17,6 @@ namespace QLTruongHoc
         {
             GrantRole dBA_GrantRole = new GrantRole();
             dBA_GrantRole.Show();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DBA_RoleUI_Load(object sender, EventArgs e)
-        {
-            
         }
 
         private void button3_Click(object sender, EventArgs e)

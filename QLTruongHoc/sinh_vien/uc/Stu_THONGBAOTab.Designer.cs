@@ -36,6 +36,8 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = SystemColors.Control;
@@ -70,7 +72,7 @@
             ViewBtn.UseVisualStyleBackColor = false;
             ViewBtn.Click += ViewBtn_Click;
             // 
-            // THONGBAOTab
+            // Stu_THONGBAOTab
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -78,7 +80,7 @@
             Controls.Add(dataGridView1);
             Controls.Add(label1);
             MinimumSize = new Size(1432, 800);
-            Name = "THONGBAOTab";
+            Name = "Stu_THONGBAOTab";
             Size = new Size(1432, 800);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

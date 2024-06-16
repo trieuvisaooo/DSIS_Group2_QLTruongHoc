@@ -1,15 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Query.Internal;
-using Oracle.ManagedDataAccess.Client;
+﻿using Oracle.ManagedDataAccess.Client;
 using QLTruongHoc.utils;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace QLTruongHoc
 {
@@ -56,11 +47,6 @@ namespace QLTruongHoc
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void button9_Click(object sender, EventArgs e)
         {
             try
@@ -83,16 +69,6 @@ namespace QLTruongHoc
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void UseransRole_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button2_Click(object sender, EventArgs e)

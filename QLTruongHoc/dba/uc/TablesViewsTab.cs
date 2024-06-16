@@ -1,15 +1,6 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using QLTruongHoc.utils;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace QLTruongHoc
 {
@@ -19,11 +10,6 @@ namespace QLTruongHoc
         public TablesViewsTab()
         {
             InitializeComponent();
-        }
-
-        private void TablesViewsPage_Load(object sender, EventArgs e)
-        {
-            
         }
 
         private void button5_Click(object sender, EventArgs e)

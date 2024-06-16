@@ -92,7 +92,6 @@
             label1.Size = new Size(298, 38);
             label1.TabIndex = 6;
             label1.Text = "User/Role cần thu hồi:";
-            label1.Click += label1_Click;
             // 
             // roleBox
             // 
