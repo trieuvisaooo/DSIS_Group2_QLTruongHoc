@@ -1,4 +1,5 @@
 ﻿using Oracle.ManagedDataAccess.Client;
+using QLTruongHoc.nhan_su.forms;
 using QLTruongHoc.utils;
 using System;
 using System.Collections.Generic;
@@ -64,7 +65,8 @@ namespace QLTruongHoc.nhan_su.uc
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            InsertHocPhan form= new InsertHocPhan();
+            form.Show();
         }
     }
 }
