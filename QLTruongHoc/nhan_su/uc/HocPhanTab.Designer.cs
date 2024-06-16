@@ -35,6 +35,8 @@
             button1 = new Button();
             button2 = new Button();
             panel1 = new Panel();
+            button3 = new Button();
+            button4 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -60,7 +62,7 @@
             dataGridView1.Location = new Point(4, 77);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1425, 920);
+            dataGridView1.Size = new Size(1269, 920);
             dataGridView1.TabIndex = 1;
             // 
             // label2
@@ -119,10 +121,37 @@
             panel1.Size = new Size(543, 47);
             panel1.TabIndex = 6;
             // 
+            // button3
+            // 
+            button3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button3.BackColor = Color.MediumSeaGreen;
+            button3.ForeColor = SystemColors.ButtonHighlight;
+            button3.Location = new Point(1332, 126);
+            button3.Name = "button3";
+            button3.Size = new Size(94, 36);
+            button3.TabIndex = 7;
+            button3.Text = "Tạo Mới";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
+            // button4
+            // 
+            button4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button4.BackColor = Color.Chocolate;
+            button4.ForeColor = SystemColors.ButtonHighlight;
+            button4.Location = new Point(1332, 178);
+            button4.Name = "button4";
+            button4.Size = new Size(94, 36);
+            button4.TabIndex = 8;
+            button4.Text = "Cập Nhật";
+            button4.UseVisualStyleBackColor = false;
+            // 
             // HocPhanTab
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(button4);
+            Controls.Add(button3);
             Controls.Add(panel1);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
@@ -147,5 +176,7 @@
         private Button button1;
         private Button button2;
         private Panel panel1;
+        private Button button3;
+        private Button button4;
     }
 }

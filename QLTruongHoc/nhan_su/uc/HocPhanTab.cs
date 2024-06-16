@@ -61,5 +61,10 @@ namespace QLTruongHoc.nhan_su.uc
                 CustomizeColumnHeaders();
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

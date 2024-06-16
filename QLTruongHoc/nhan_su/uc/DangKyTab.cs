@@ -136,12 +136,6 @@ namespace QLTruongHoc.nhan_su.uc
             }
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            MessageBox.Show("Clicked");
-            
-        }
-
         private void refreshBtn_Click_1(object sender, EventArgs e)
         {
             if (Session.Instance.Role == "Giáo vụ")
@@ -158,13 +152,10 @@ namespace QLTruongHoc.nhan_su.uc
 
         }
 
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-            if (e.RowIndex == -1)
-            {
-                return;
-            }
-            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+            
+            DataGridViewRow row = dataGridView1.SelectedRows[0];
             decimal? diemthi = row.Cells["DIEMTHI"].Value == DBNull.Value ? null : (decimal)row.Cells["DIEMTHI"].Value;
 
             DangKyDetail dangKyDetail = new DangKyDetail(

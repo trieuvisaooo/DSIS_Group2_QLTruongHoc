@@ -34,6 +34,8 @@
             label1 = new Label();
             label2 = new Label();
             searchBtn = new Button();
+            button1 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -46,7 +48,8 @@
             dataGridView1.Location = new Point(3, 69);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1434, 728);
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(1294, 728);
             dataGridView1.TabIndex = 0;
             // 
             // refreshBtn
@@ -55,7 +58,7 @@
             refreshBtn.BackColor = Color.DarkSlateBlue;
             refreshBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             refreshBtn.ForeColor = Color.Snow;
-            refreshBtn.Location = new Point(1343, 24);
+            refreshBtn.Location = new Point(1335, 24);
             refreshBtn.Name = "refreshBtn";
             refreshBtn.Size = new Size(94, 39);
             refreshBtn.TabIndex = 1;
@@ -67,7 +70,7 @@
             // 
             searchTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             searchTextBox.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            searchTextBox.Location = new Point(939, 28);
+            searchTextBox.Location = new Point(931, 28);
             searchTextBox.Name = "searchTextBox";
             searchTextBox.Size = new Size(272, 31);
             searchTextBox.TabIndex = 2;
@@ -77,7 +80,7 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(849, 31);
+            label1.Location = new Point(841, 31);
             label1.Name = "label1";
             label1.Size = new Size(84, 25);
             label1.TabIndex = 3;
@@ -99,7 +102,7 @@
             searchBtn.BackColor = Color.MediumVioletRed;
             searchBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             searchBtn.ForeColor = Color.Snow;
-            searchBtn.Location = new Point(1211, 24);
+            searchBtn.Location = new Point(1203, 24);
             searchBtn.Name = "searchBtn";
             searchBtn.Size = new Size(94, 39);
             searchBtn.TabIndex = 5;
@@ -107,10 +110,40 @@
             searchBtn.UseVisualStyleBackColor = false;
             searchBtn.Click += searchBtn_Click;
             // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button1.BackColor = Color.SeaGreen;
+            button1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.Snow;
+            button1.Location = new Point(1335, 155);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 39);
+            button1.TabIndex = 6;
+            button1.Text = "Thêm";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button2.BackColor = Color.Goldenrod;
+            button2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.Snow;
+            button2.Location = new Point(1335, 200);
+            button2.Name = "button2";
+            button2.Size = new Size(94, 39);
+            button2.TabIndex = 7;
+            button2.Text = "Cập Nhật";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
             // DonViTab
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(searchBtn);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -119,7 +152,7 @@
             Controls.Add(dataGridView1);
             MinimumSize = new Size(1432, 800);
             Name = "DonViTab";
-            Size = new Size(1440, 800);
+            Size = new Size(1432, 800);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -133,5 +166,7 @@
         private Label label1;
         private Label label2;
         private Button searchBtn;
+        private Button button1;
+        private Button button2;
     }
 }

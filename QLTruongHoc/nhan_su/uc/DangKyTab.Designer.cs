@@ -37,6 +37,8 @@
             panel2 = new Panel();
             button2 = new Button();
             refreshBtn = new Button();
+            button3 = new Button();
+            button4 = new Button();
             panel1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -107,8 +109,6 @@
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(1065, 674);
             dataGridView1.TabIndex = 0;
-            dataGridView1.CellClick += dataGridView1_CellClick;
-            dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
             // 
             // listView1
             // 
@@ -127,6 +127,8 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(button4);
+            panel2.Controls.Add(button3);
             panel2.Controls.Add(button2);
             panel2.Controls.Add(refreshBtn);
             panel2.Dock = DockStyle.Fill;
@@ -140,7 +142,7 @@
             button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             button2.BackColor = Color.Crimson;
             button2.ForeColor = SystemColors.ButtonFace;
-            button2.Location = new Point(861, 0);
+            button2.Location = new Point(680, 0);
             button2.Name = "button2";
             button2.Size = new Size(94, 39);
             button2.TabIndex = 4;
@@ -159,6 +161,31 @@
             refreshBtn.Text = "Refresh";
             refreshBtn.UseVisualStyleBackColor = false;
             refreshBtn.Click += refreshBtn_Click_1;
+            // 
+            // button3
+            // 
+            button3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button3.BackColor = Color.SeaGreen;
+            button3.ForeColor = SystemColors.ButtonFace;
+            button3.Location = new Point(462, 0);
+            button3.Name = "button3";
+            button3.Size = new Size(94, 39);
+            button3.TabIndex = 5;
+            button3.Text = "Thêm";
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            button4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button4.BackColor = Color.DarkGoldenrod;
+            button4.ForeColor = SystemColors.ButtonFace;
+            button4.Location = new Point(571, 0);
+            button4.Name = "button4";
+            button4.Size = new Size(94, 39);
+            button4.TabIndex = 6;
+            button4.Text = "Cập Nhật";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // DangKyTab
             // 
@@ -191,5 +218,7 @@
         private Panel panel2;
         private Button refreshBtn;
         private Button button2;
+        private Button button4;
+        private Button button3;
     }
 }

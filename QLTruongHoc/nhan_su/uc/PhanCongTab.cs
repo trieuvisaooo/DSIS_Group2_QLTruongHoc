@@ -51,20 +51,7 @@ namespace QLTruongHoc.nhan_su.uc
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1)
-            {
-                return;
-            }
-            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-            string chuongTrinh = row.Cells["TENCT"].Value as string;
-            string mahp = row.Cells["MAHP"].Value as string;
-            decimal hk = (decimal)row.Cells["HK"].Value;
-            string nam = row.Cells["NAM"].Value as string;
-            string ngayHoc = row.Cells["NGAYHOC"].Value as string;
-            string tiet = row.Cells["TIET"].Value as string;
-
-            UpdatePhanCong updatePhanCong = new UpdatePhanCong(mahp, hk, nam, ngayHoc, tiet, chuongTrinh);
-            updatePhanCong.Show();
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -80,9 +67,65 @@ namespace QLTruongHoc.nhan_su.uc
 
         private void button3_Click(object sender, EventArgs e)
         {
-            DataGridViewRow row = dataGridView1.SelectedRows[0];
-            MessageBox.Show(row.Cells["MAHP"].Value as string);
 
+            try
+            {
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa phân công này?", "Xóa Phân Công", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                switch (result)
+                {
+                    case DialogResult.Yes:
+                        DataGridViewRow row = dataGridView1.SelectedRows[0];
+                        string chuongTrinh = row.Cells["TENCT"].Value as string;
+                        string mahp = row.Cells["MAHP"].Value as string;
+                        decimal hk = (decimal)row.Cells["HK"].Value;
+                        string nam = row.Cells["NAM"].Value as string;
+                        string ngayHoc = row.Cells["NGAYHOC"].Value as string;
+                        string tiet = row.Cells["TIET"].Value as string;
+
+                        string sql = $"delete from qlth.qlth_phancong " +
+                            $"where mahp = '{mahp}' " +
+                            $"and hk = {hk} " +
+                            $"and nam = '{nam}' " +
+                            $"and mact = (select mact " +
+                            $"from qlth.qlth_chuongtrinh " +
+                            $"where tenct = N'{chuongTrinh}') " +
+                            $"and ngayhoc = '{ngayHoc}' " +
+                            $"and tiet = '{tiet}'";
+
+                        MessageBox.Show(sql);
+
+                        OracleCommand cmd = new OracleCommand(sql, Session.Instance.OracleConnection);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Xóa Thành Công");
+
+                        break;
+                    default:
+                        break;
+                }
+                
+            }   
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            
+            //DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+            DataGridViewRow row = dataGridView1.SelectedRows[0];   
+            string chuongTrinh = row.Cells["TENCT"].Value as string;
+            string mahp = row.Cells["MAHP"].Value as string;
+            decimal hk = (decimal)row.Cells["HK"].Value;
+            string nam = row.Cells["NAM"].Value as string;
+            string ngayHoc = row.Cells["NGAYHOC"].Value as string;
+            string tiet = row.Cells["TIET"].Value as string;
+
+            UpdatePhanCong updatePhanCong = new UpdatePhanCong(mahp, hk, nam, ngayHoc, tiet, chuongTrinh);
+            updatePhanCong.Show();
         }
     }
 }
