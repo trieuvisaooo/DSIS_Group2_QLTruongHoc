@@ -1,15 +1,6 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
-using Oracle.ManagedDataAccess.Client;
+﻿using Oracle.ManagedDataAccess.Client;
 using QLTruongHoc.utils;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace QLTruongHoc
 {
@@ -42,8 +33,8 @@ namespace QLTruongHoc
                     cmd.CommandText = "QLTH.grant_role";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("user_name", userOrRole);
-                    cmd.Parameters.Add("role_name", role);
+                    cmd.Parameters.Add("user_name", userOrrole_txtbox.Text);
+                    cmd.Parameters.Add("role_name", role_txtbox.Text);
                     cmd.Parameters.Add("withadminoption", withAdminOption);
                     cmd.Parameters.Add("res", OracleDbType.Int32).Direction = ParameterDirection.Output;
                     cmd.ExecuteNonQuery();
@@ -78,11 +69,6 @@ namespace QLTruongHoc
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void exit_btn_Click(object sender, EventArgs e)

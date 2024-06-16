@@ -108,7 +108,6 @@
             isAdminCheckBox.Size = new Size(22, 21);
             isAdminCheckBox.TabIndex = 6;
             isAdminCheckBox.UseVisualStyleBackColor = true;
-            isAdminCheckBox.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // label2
             // 

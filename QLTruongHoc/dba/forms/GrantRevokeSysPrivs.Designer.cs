@@ -96,8 +96,6 @@
             SysPrivs_combox.Name = "SysPrivs_combox";
             SysPrivs_combox.Size = new Size(292, 33);
             SysPrivs_combox.TabIndex = 5;
-            SysPrivs_combox.SelectedIndexChanged += SysPrivs_combox_SelectedIndexChanged;
-            SysPrivs_combox.DataContextChanged += SysPrivs_combox_DataContextChanged;
             // 
             // apply_btn
             // 

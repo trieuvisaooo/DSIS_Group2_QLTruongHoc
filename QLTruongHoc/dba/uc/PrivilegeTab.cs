@@ -1,14 +1,6 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using QLTruongHoc.utils;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace QLTruongHoc
 {
@@ -63,14 +55,14 @@ namespace QLTruongHoc
 
         private void search_btn_Click(object sender, EventArgs e)
         {
-            string sql1 = "select * from DBA_TAB_PRIVS dba_tab_privs where owner =  \'QLTH\' and grantee = " + "\'" + search_txtbox.Text + "\' order by grantee asc";
+            string sql1 = "select * from DBA_TAB_PRIVS dba_tab_privs where owner =  \'QLTH\' and grantee like " + "\'" + search_txtbox.Text + "\' order by grantee asc";
 
             OracleDataAdapter da1 = new OracleDataAdapter(sql1, Session.Instance.OracleConnection);
             DataTable dt1 = new DataTable();
             da1.Fill(dt1);
             TableDataGridView.DataSource = dt1;
 
-            string sql2 = "select * from dba_col_privs where owner =  \'QLTH\' and grantee = " + "\'" + search_txtbox.Text + "\'";
+            string sql2 = "select * from dba_col_privs where owner =  \'QLTH\' and grantee like " + "\'" + search_txtbox.Text + "\'";
 
             OracleDataAdapter da2 = new OracleDataAdapter(sql2, Session.Instance.OracleConnection);
             DataTable dt2 = new DataTable();

@@ -1,16 +1,5 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
-using Oracle.ManagedDataAccess.Client;
+﻿using Oracle.ManagedDataAccess.Client;
 using QLTruongHoc.utils;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace QLTruongHoc
 {
@@ -204,7 +193,7 @@ namespace QLTruongHoc
             {
                 try
                 {
-                    string revokeStetament = "revoke " + privs_combox.Text + " on QLTH." + table_view_combox.Text + " from " + user_role_txtbox.Text;
+                    string revokeStetament = "revoke " + privs_combox.Text + " on QLTH." + table_view_combox.Text + @" from """ + user_role_txtbox.Text + @"""";
                     //MessageBox.Show(revokeStetament); // debug line
                     OracleCommand cmd = new OracleCommand(revokeStetament, Session.Instance.OracleConnection);
                     cmd.ExecuteNonQuery();

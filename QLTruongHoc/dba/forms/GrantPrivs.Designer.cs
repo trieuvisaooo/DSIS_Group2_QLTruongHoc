@@ -67,7 +67,6 @@
             label2.Size = new Size(98, 25);
             label2.TabIndex = 1;
             label2.Text = "Attributes";
-            label2.Click += label2_Click;
             // 
             // user_role_txtbox
             // 
@@ -124,7 +123,6 @@
             label3.Size = new Size(107, 21);
             label3.TabIndex = 6;
             label3.Text = "Check result:";
-            label3.Click += label3_Click;
             // 
             // checkResult_txt
             // 
@@ -159,7 +157,6 @@
             label6.Size = new Size(106, 25);
             label6.TabIndex = 9;
             label6.Text = "Table/View";
-            label6.Click += label6_Click;
             // 
             // privs_combox
             // 
@@ -193,7 +190,6 @@
             label7.Size = new Size(411, 25);
             label7.TabIndex = 12;
             label7.Text = "(*) Vui lòng kiểm tra User/Role trước khi cấp quyền";
-            label7.Click += label7_Click;
             // 
             // grant_btn
             // 
