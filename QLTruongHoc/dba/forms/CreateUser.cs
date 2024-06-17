@@ -51,7 +51,7 @@ namespace QLTruongHoc
                     OracleDataAdapter adapter = new OracleDataAdapter(sql, Session.Instance.OracleConnection) { SuppressGetDecimalInvalidCastException = true };
                     DataTable dataTable = new DataTable();
                     adapter.Fill(dataTable);
-                    UserAndRoleTab.grid1.DataSource = dataTable;
+                    DBA_UserAndRoleTab.grid1.DataSource = dataTable;
                     MessageBox.Show("Tạo mới thành công user " + username + ".");
                     this.Close();
                     return;

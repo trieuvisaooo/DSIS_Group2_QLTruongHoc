@@ -1,6 +1,6 @@
 ﻿namespace QLTruongHoc
 {
-    partial class TablesViewsTab
+    partial class DBA_TablesViewsTab
     {
         /// <summary> 
         /// Required designer variable.

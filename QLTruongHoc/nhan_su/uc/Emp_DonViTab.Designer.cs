@@ -1,6 +1,6 @@
 ﻿namespace QLTruongHoc.nhan_su.uc
 {
-    partial class DonViTab
+    partial class Emp_DonViTab
     {
         /// <summary> 
         /// Required designer variable.

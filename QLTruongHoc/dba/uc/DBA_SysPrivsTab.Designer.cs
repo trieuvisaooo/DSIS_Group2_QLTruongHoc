@@ -1,7 +1,7 @@
 ﻿
 namespace QLTruongHoc
 {
-    partial class SysPrivsTab
+    partial class DBA_SysPrivsTab
     {
         /// <summary> 
         /// Required designer variable.

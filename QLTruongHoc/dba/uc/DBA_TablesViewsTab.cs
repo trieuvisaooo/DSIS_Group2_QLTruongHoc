@@ -4,10 +4,10 @@ using System.Data;
 
 namespace QLTruongHoc
 {
-    public partial class TablesViewsTab : UserControl
+    public partial class DBA_TablesViewsTab : UserControl
     {
 
-        public TablesViewsTab()
+        public DBA_TablesViewsTab()
         {
             InitializeComponent();
         }

@@ -53,7 +53,7 @@ namespace QLTruongHoc
                         OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection) { SuppressGetDecimalInvalidCastException = true };
                         DataTable dataTable = new DataTable();
                         da.Fill(dataTable);
-                        UserAndRoleTab.grid2.DataSource = dataTable;
+                        DBA_UserAndRoleTab.grid2.DataSource = dataTable;
                         MessageBox.Show("Xóa Role thành công");
                         this.Close();
                     }

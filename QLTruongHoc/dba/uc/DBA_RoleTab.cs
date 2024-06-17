@@ -4,11 +4,11 @@ using System.Data;
 
 namespace QLTruongHoc
 {
-    public partial class RoleTab : UserControl
+    public partial class DBA_RoleTab : UserControl
     {
         public static DataGridView roleUserGrid;
 
-        public RoleTab()
+        public DBA_RoleTab()
         {
             InitializeComponent();
         }

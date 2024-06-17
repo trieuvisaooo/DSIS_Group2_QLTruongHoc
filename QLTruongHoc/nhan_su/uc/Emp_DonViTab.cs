@@ -6,9 +6,9 @@ using System.Data;
 
 namespace QLTruongHoc.nhan_su.uc
 {
-    public partial class DonViTab : UserControl
+    public partial class Emp_DonViTab : UserControl
     {
-        public DonViTab()
+        public Emp_DonViTab()
         {
             InitializeComponent();
         }

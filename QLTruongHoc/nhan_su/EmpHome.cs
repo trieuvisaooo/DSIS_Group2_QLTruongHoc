@@ -18,6 +18,10 @@ namespace QLTruongHoc.nhan_su
         public EmpHome()
         {
             InitializeComponent();
+            if (Session.Instance.Role == "Nhân viên cơ bản")
+            {
+
+            }
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)

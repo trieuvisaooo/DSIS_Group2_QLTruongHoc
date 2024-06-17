@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace QLTruongHoc.nhan_su.uc
 {
-    public partial class HocPhanTab : UserControl
+    public partial class Emp_HocPhanTab : UserControl
     {
-        public HocPhanTab()
+        public Emp_HocPhanTab()
         {
             InitializeComponent();
         }

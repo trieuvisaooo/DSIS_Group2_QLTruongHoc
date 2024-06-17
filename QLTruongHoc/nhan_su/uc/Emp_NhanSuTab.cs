@@ -1,21 +1,14 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using QLTruongHoc.utils;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace QLTruongHoc.NhanSu
+
+namespace QLTruongHoc.nhan_su.uc
 {
-    public partial class NhanSuTab : UserControl
+    public partial class Emp_NhanSuTab : UserControl
     {
 
-        public NhanSuTab()
+        public Emp_NhanSuTab()
         {
             InitializeComponent();
         }

@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace QLTruongHoc.nhan_su.uc
 {
-    public partial class DangKyTab : UserControl
+    public partial class Emp_DangKyTab : UserControl
     {
-        public DangKyTab()
+        public Emp_DangKyTab()
         {
             InitializeComponent();
         }

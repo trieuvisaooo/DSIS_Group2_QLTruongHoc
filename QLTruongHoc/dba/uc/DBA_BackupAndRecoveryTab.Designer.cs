@@ -1,6 +1,6 @@
 ﻿namespace QLTruongHoc.dba.uc
 {
-    partial class BackupAndRecoveryTab
+    partial class DBA_BackupAndRecoveryTab
     {
         /// <summary> 
         /// Required designer variable.

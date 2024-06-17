@@ -17,7 +17,7 @@ namespace QLTruongHoc
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
-        {   
+        {
             if (disposing && (components != null))
             {
                 components.Dispose();
@@ -36,19 +36,19 @@ namespace QLTruongHoc
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DBAHome));
             tabControl1 = new TabControl();
             UsersRolesPage = new TabPage();
-            userAndRoleTab1 = new UserAndRoleTab();
+            userAndRoleTab1 = new DBA_UserAndRoleTab();
             RolesPage = new TabPage();
-            roleTab1 = new RoleTab();
+            roleTab1 = new DBA_RoleTab();
             privilegesPage = new TabPage();
-            privilegeTab1 = new PrivilegeTab();
+            privilegeTab1 = new DBA_PrivilegeTab();
             SysPrivilegesPage = new TabPage();
-            sysPrivsTab1 = new SysPrivsTab();
+            sysPrivsTab1 = new DBA_SysPrivsTab();
             tablesViewsTab = new TabPage();
-            tablesViewsPage1 = new TablesViewsTab();
+            tablesViewsPage1 = new DBA_TablesViewsTab();
             auditPage = new TabPage();
-            auditTab1 = new dba.uc.AuditTab();
+            auditTab1 = new dba.uc.DBA_AuditTab();
             backup_recovery_tab = new TabPage();
-            backupAndRecoveryTab1 = new dba.uc.BackupAndRecoveryTab();
+            backupAndRecoveryTab1 = new dba.uc.DBA_BackupAndRecoveryTab();
             LogoutBtn = new Button();
             tabControl1.SuspendLayout();
             UsersRolesPage.SuspendLayout();
@@ -71,20 +71,20 @@ namespace QLTruongHoc
             tabControl1.Controls.Add(auditPage);
             tabControl1.Controls.Add(backup_recovery_tab);
             tabControl1.Location = new Point(1, 1);
-            tabControl1.Margin = new Padding(3, 4, 3, 4);
+            tabControl1.Margin = new Padding(4, 5, 4, 5);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1446, 791);
+            tabControl1.Size = new Size(1808, 989);
             tabControl1.TabIndex = 0;
             // 
             // UsersRolesPage
             // 
             UsersRolesPage.Controls.Add(userAndRoleTab1);
-            UsersRolesPage.Location = new Point(4, 29);
-            UsersRolesPage.Margin = new Padding(3, 4, 3, 4);
+            UsersRolesPage.Location = new Point(4, 34);
+            UsersRolesPage.Margin = new Padding(4, 5, 4, 5);
             UsersRolesPage.Name = "UsersRolesPage";
-            UsersRolesPage.Padding = new Padding(3, 4, 3, 4);
-            UsersRolesPage.Size = new Size(1438, 758);
+            UsersRolesPage.Padding = new Padding(4, 5, 4, 5);
+            UsersRolesPage.Size = new Size(1800, 951);
             UsersRolesPage.TabIndex = 0;
             UsersRolesPage.Text = "Users & Roles";
             UsersRolesPage.UseVisualStyleBackColor = true;
@@ -102,11 +102,11 @@ namespace QLTruongHoc
             // RolesPage
             // 
             RolesPage.Controls.Add(roleTab1);
-            RolesPage.Location = new Point(4, 29);
-            RolesPage.Margin = new Padding(3, 4, 3, 4);
+            RolesPage.Location = new Point(4, 34);
+            RolesPage.Margin = new Padding(4, 5, 4, 5);
             RolesPage.Name = "RolesPage";
-            RolesPage.Padding = new Padding(3, 4, 3, 4);
-            RolesPage.Size = new Size(1438, 758);
+            RolesPage.Padding = new Padding(4, 5, 4, 5);
+            RolesPage.Size = new Size(1800, 951);
             RolesPage.TabIndex = 1;
             RolesPage.Text = "Roles of User";
             RolesPage.UseVisualStyleBackColor = true;
@@ -124,11 +124,11 @@ namespace QLTruongHoc
             // privilegesPage
             // 
             privilegesPage.Controls.Add(privilegeTab1);
-            privilegesPage.Location = new Point(4, 29);
-            privilegesPage.Margin = new Padding(3, 4, 3, 4);
+            privilegesPage.Location = new Point(4, 34);
+            privilegesPage.Margin = new Padding(4, 5, 4, 5);
             privilegesPage.Name = "privilegesPage";
-            privilegesPage.Padding = new Padding(3, 4, 3, 4);
-            privilegesPage.Size = new Size(1438, 758);
+            privilegesPage.Padding = new Padding(4, 5, 4, 5);
+            privilegesPage.Size = new Size(1800, 951);
             privilegesPage.TabIndex = 2;
             privilegesPage.Text = "Object Privileges";
             privilegesPage.UseVisualStyleBackColor = true;
@@ -146,11 +146,11 @@ namespace QLTruongHoc
             // SysPrivilegesPage
             // 
             SysPrivilegesPage.Controls.Add(sysPrivsTab1);
-            SysPrivilegesPage.Location = new Point(4, 29);
-            SysPrivilegesPage.Margin = new Padding(3, 4, 3, 4);
+            SysPrivilegesPage.Location = new Point(4, 34);
+            SysPrivilegesPage.Margin = new Padding(4, 5, 4, 5);
             SysPrivilegesPage.Name = "SysPrivilegesPage";
-            SysPrivilegesPage.Padding = new Padding(3, 4, 3, 4);
-            SysPrivilegesPage.Size = new Size(1438, 758);
+            SysPrivilegesPage.Padding = new Padding(4, 5, 4, 5);
+            SysPrivilegesPage.Size = new Size(1800, 951);
             SysPrivilegesPage.TabIndex = 4;
             SysPrivilegesPage.Text = "System Privileges";
             SysPrivilegesPage.UseVisualStyleBackColor = true;
@@ -169,11 +169,11 @@ namespace QLTruongHoc
             // tablesViewsTab
             // 
             tablesViewsTab.Controls.Add(tablesViewsPage1);
-            tablesViewsTab.Location = new Point(4, 29);
-            tablesViewsTab.Margin = new Padding(3, 4, 3, 4);
+            tablesViewsTab.Location = new Point(4, 34);
+            tablesViewsTab.Margin = new Padding(4, 5, 4, 5);
             tablesViewsTab.Name = "tablesViewsTab";
-            tablesViewsTab.Padding = new Padding(3, 4, 3, 4);
-            tablesViewsTab.Size = new Size(1438, 758);
+            tablesViewsTab.Padding = new Padding(4, 5, 4, 5);
+            tablesViewsTab.Size = new Size(1800, 951);
             tablesViewsTab.TabIndex = 3;
             tablesViewsTab.Text = "Tables & Views";
             tablesViewsTab.UseVisualStyleBackColor = true;
@@ -191,11 +191,11 @@ namespace QLTruongHoc
             // auditPage
             // 
             auditPage.Controls.Add(auditTab1);
-            auditPage.Location = new Point(4, 29);
-            auditPage.Margin = new Padding(3, 4, 3, 4);
+            auditPage.Location = new Point(4, 34);
+            auditPage.Margin = new Padding(4, 5, 4, 5);
             auditPage.Name = "auditPage";
-            auditPage.Padding = new Padding(3, 4, 3, 4);
-            auditPage.Size = new Size(1438, 758);
+            auditPage.Padding = new Padding(4, 5, 4, 5);
+            auditPage.Size = new Size(1800, 951);
             auditPage.TabIndex = 5;
             auditPage.Text = "Audit";
             auditPage.UseVisualStyleBackColor = true;
@@ -213,11 +213,11 @@ namespace QLTruongHoc
             // backup_recovery_tab
             // 
             backup_recovery_tab.Controls.Add(backupAndRecoveryTab1);
-            backup_recovery_tab.Location = new Point(4, 29);
-            backup_recovery_tab.Margin = new Padding(3, 4, 3, 4);
+            backup_recovery_tab.Location = new Point(4, 34);
+            backup_recovery_tab.Margin = new Padding(4, 5, 4, 5);
             backup_recovery_tab.Name = "backup_recovery_tab";
-            backup_recovery_tab.Padding = new Padding(3, 4, 3, 4);
-            backup_recovery_tab.Size = new Size(1438, 758);
+            backup_recovery_tab.Padding = new Padding(4, 5, 4, 5);
+            backup_recovery_tab.Size = new Size(1800, 951);
             backup_recovery_tab.TabIndex = 6;
             backup_recovery_tab.Text = "Backup & Recovery";
             backup_recovery_tab.UseVisualStyleBackColor = true;
@@ -248,14 +248,14 @@ namespace QLTruongHoc
             // 
             // DBAHome
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1810, 1050);
             Controls.Add(LogoutBtn);
             Controls.Add(tabControl1);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 4, 3, 4);
-            MinimumSize = new Size(1463, 814);
+            Margin = new Padding(4, 5, 4, 5);
+            MinimumSize = new Size(1824, 1006);
             Name = "DBAHome";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "QUẢN LÝ TRƯỜNG HỌC";
@@ -281,13 +281,13 @@ namespace QLTruongHoc
         private TabPage auditPage;
         private Button LogoutBtn;
         private TabPage RolesPage;
-        private TablesViewsTab tablesViewsPage1;
-        private UserAndRoleTab userAndRoleTab1;
-        private RoleTab roleTab1;
-        private PrivilegeTab privilegeTab1;
-        private SysPrivsTab sysPrivsTab1;
-        private dba.uc.AuditTab auditTab1;
+        private DBA_TablesViewsTab tablesViewsPage1;
+        private DBA_UserAndRoleTab userAndRoleTab1;
+        private DBA_RoleTab roleTab1;
+        private DBA_PrivilegeTab privilegeTab1;
+        private DBA_SysPrivsTab sysPrivsTab1;
+        private dba.uc.DBA_AuditTab auditTab1;
         private TabPage backup_recovery_tab;
-        private dba.uc.BackupAndRecoveryTab backupAndRecoveryTab1;
+        private dba.uc.DBA_BackupAndRecoveryTab backupAndRecoveryTab1;
     }
 }

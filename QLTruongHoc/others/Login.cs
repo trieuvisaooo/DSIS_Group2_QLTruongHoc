@@ -100,7 +100,6 @@ namespace QLTruongHoc
                     }
                     else if (result == 1)
                     {
-                        MessageBox.Show("Login NS");
                         con.ConnectionString = connectionString;
                         con.Open();
 
@@ -116,7 +115,6 @@ namespace QLTruongHoc
                     } 
                     else if (result == 2)
                     {
-                        MessageBox.Show("Login SV");
                         con.ConnectionString = connectionString;
                         con.Open();
 

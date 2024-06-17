@@ -1,6 +1,6 @@
 ﻿namespace QLTruongHoc.nhan_su.uc
 {
-    partial class DangKyTab
+    partial class Emp_DangKyTab
     {
         /// <summary> 
         /// Required designer variable.

@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace QLTruongHoc.nhan_su.uc
 {
-    public partial class KhmoTab : UserControl
+    public partial class Emp_KhmoTab : UserControl
     {
-        public KhmoTab()
+        public Emp_KhmoTab()
         {
             InitializeComponent();
         }

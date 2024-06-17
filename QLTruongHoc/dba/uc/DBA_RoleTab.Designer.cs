@@ -1,6 +1,6 @@
 ﻿namespace QLTruongHoc
 {
-    partial class RoleTab
+    partial class DBA_RoleTab
     {
         /// <summary> 
         /// Required designer variable.

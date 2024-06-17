@@ -5,10 +5,10 @@ using System.Data;
 
 namespace QLTruongHoc.dba.uc
 {
-    public partial class AuditTab : UserControl
+    public partial class DBA_AuditTab : UserControl
     {
         string audit_type;
-        public AuditTab()
+        public DBA_AuditTab()
         {
             InitializeComponent();
         }

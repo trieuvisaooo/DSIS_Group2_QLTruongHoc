@@ -1,6 +1,6 @@
-﻿namespace QLTruongHoc.sinh_vien.uc
+﻿namespace QLTruongHoc.nhan_su.uc
 {
-    partial class Stu_TTCNTab
+    partial class Emp_TTCNTab
     {
         /// <summary> 
         /// Required designer variable.
@@ -42,13 +42,13 @@
             label7 = new Label();
             PhoneNumTxtBox = new TextBox();
             label8 = new Label();
-            ProgramTxtBox = new TextBox();
+            AllowanceTxtBox = new TextBox();
             label3 = new Label();
-            MajorTxtBox = new TextBox();
+            RoleTxtBox = new TextBox();
             label9 = new Label();
-            CreditTxtBox = new TextBox();
+            DepartmentTxtBox = new TextBox();
             label10 = new Label();
-            GradeTxtBox = new TextBox();
+            LocationTxtBox = new TextBox();
             label11 = new Label();
             ModifyBtn = new Button();
             SaveBtn = new Button();
@@ -63,9 +63,9 @@
             label1.Font = new Font("Segoe UI", 28F, FontStyle.Bold, GraphicsUnit.Point, 163);
             label1.Location = new Point(396, 33);
             label1.Name = "label1";
-            label1.Size = new Size(639, 74);
+            label1.Size = new Size(618, 74);
             label1.TabIndex = 0;
-            label1.Text = "THÔNG TIN SINH VIÊN";
+            label1.Text = "THÔNG TIN CÁ NHÂN";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel2
@@ -189,13 +189,13 @@
             label8.TabIndex = 19;
             label8.Text = "Điện thoại";
             // 
-            // ProgramTxtBox
+            // AllowanceTxtBox
             // 
-            ProgramTxtBox.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 163);
-            ProgramTxtBox.Location = new Point(980, 209);
-            ProgramTxtBox.Name = "ProgramTxtBox";
-            ProgramTxtBox.Size = new Size(285, 45);
-            ProgramTxtBox.TabIndex = 22;
+            AllowanceTxtBox.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 163);
+            AllowanceTxtBox.Location = new Point(980, 209);
+            AllowanceTxtBox.Name = "AllowanceTxtBox";
+            AllowanceTxtBox.Size = new Size(285, 45);
+            AllowanceTxtBox.TabIndex = 22;
             // 
             // label3
             // 
@@ -203,17 +203,17 @@
             label3.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 163);
             label3.Location = new Point(820, 212);
             label3.Name = "label3";
-            label3.Size = new Size(98, 38);
+            label3.Size = new Size(118, 38);
             label3.TabIndex = 21;
-            label3.Text = "Mã CT";
+            label3.Text = "Phụ cấp";
             // 
-            // MajorTxtBox
+            // RoleTxtBox
             // 
-            MajorTxtBox.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 163);
-            MajorTxtBox.Location = new Point(980, 292);
-            MajorTxtBox.Name = "MajorTxtBox";
-            MajorTxtBox.Size = new Size(285, 45);
-            MajorTxtBox.TabIndex = 24;
+            RoleTxtBox.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 163);
+            RoleTxtBox.Location = new Point(980, 292);
+            RoleTxtBox.Name = "RoleTxtBox";
+            RoleTxtBox.Size = new Size(285, 45);
+            RoleTxtBox.TabIndex = 24;
             // 
             // label9
             // 
@@ -221,17 +221,17 @@
             label9.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 163);
             label9.Location = new Point(820, 295);
             label9.Name = "label9";
-            label9.Size = new Size(146, 38);
+            label9.Size = new Size(100, 38);
             label9.TabIndex = 23;
-            label9.Text = "Mã ngành";
+            label9.Text = "Vai trò";
             // 
-            // CreditTxtBox
+            // DepartmentTxtBox
             // 
-            CreditTxtBox.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 163);
-            CreditTxtBox.Location = new Point(980, 375);
-            CreditTxtBox.Name = "CreditTxtBox";
-            CreditTxtBox.Size = new Size(285, 45);
-            CreditTxtBox.TabIndex = 26;
+            DepartmentTxtBox.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 163);
+            DepartmentTxtBox.Location = new Point(980, 375);
+            DepartmentTxtBox.Name = "DepartmentTxtBox";
+            DepartmentTxtBox.Size = new Size(285, 45);
+            DepartmentTxtBox.TabIndex = 26;
             // 
             // label10
             // 
@@ -239,17 +239,17 @@
             label10.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 163);
             label10.Location = new Point(820, 378);
             label10.Name = "label10";
-            label10.Size = new Size(117, 38);
+            label10.Size = new Size(145, 38);
             label10.TabIndex = 25;
-            label10.Text = "Số TCTL";
+            label10.Text = "Mã đơn vị";
             // 
-            // GradeTxtBox
+            // LocationTxtBox
             // 
-            GradeTxtBox.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 163);
-            GradeTxtBox.Location = new Point(978, 458);
-            GradeTxtBox.Name = "GradeTxtBox";
-            GradeTxtBox.Size = new Size(287, 45);
-            GradeTxtBox.TabIndex = 28;
+            LocationTxtBox.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 163);
+            LocationTxtBox.Location = new Point(978, 458);
+            LocationTxtBox.Name = "LocationTxtBox";
+            LocationTxtBox.Size = new Size(287, 45);
+            LocationTxtBox.TabIndex = 28;
             // 
             // label11
             // 
@@ -257,9 +257,9 @@
             label11.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 163);
             label11.Location = new Point(820, 461);
             label11.Name = "label11";
-            label11.Size = new Size(152, 38);
+            label11.Size = new Size(98, 38);
             label11.TabIndex = 27;
-            label11.Text = "Điểm TBTL";
+            label11.Text = "Mã CS";
             // 
             // ModifyBtn
             // 
@@ -307,7 +307,7 @@
             CancelBtn.UseVisualStyleBackColor = false;
             CancelBtn.Click += CancelBtn_Click;
             // 
-            // Stu_TTCNTab
+            // Emp_TTCNTab
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -315,13 +315,13 @@
             Controls.Add(ViewBtn);
             Controls.Add(SaveBtn);
             Controls.Add(ModifyBtn);
-            Controls.Add(GradeTxtBox);
+            Controls.Add(LocationTxtBox);
             Controls.Add(label11);
-            Controls.Add(CreditTxtBox);
+            Controls.Add(DepartmentTxtBox);
             Controls.Add(label10);
-            Controls.Add(MajorTxtBox);
+            Controls.Add(RoleTxtBox);
             Controls.Add(label9);
-            Controls.Add(ProgramTxtBox);
+            Controls.Add(AllowanceTxtBox);
             Controls.Add(label3);
             Controls.Add(PhoneNumTxtBox);
             Controls.Add(label8);
@@ -338,7 +338,7 @@
             Controls.Add(label1);
             Controls.Add(tableLayoutPanel2);
             MinimumSize = new Size(1432, 800);
-            Name = "Stu_TTCNTab";
+            Name = "Emp_TTCNTab";
             Size = new Size(1432, 850);
             Load += TTCNSVTab_Load;
             ResumeLayout(false);
@@ -361,13 +361,13 @@
         private Label label7;
         private TextBox PhoneNumTxtBox;
         private Label label8;
-        private TextBox ProgramTxtBox;
+        private TextBox AllowanceTxtBox;
         private Label label3;
-        private TextBox MajorTxtBox;
+        private TextBox RoleTxtBox;
         private Label label9;
-        private TextBox CreditTxtBox;
+        private TextBox DepartmentTxtBox;
         private Label label10;
-        private TextBox GradeTxtBox;
+        private TextBox LocationTxtBox;
         private Label label11;
         private Button ModifyBtn;
         private Button SaveBtn;

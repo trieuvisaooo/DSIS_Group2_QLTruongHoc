@@ -1,6 +1,6 @@
 ﻿namespace QLTruongHoc.nhan_su.uc
 {
-    partial class KhmoTab
+    partial class Emp_KhmoTab
     {
         /// <summary> 
         /// Required designer variable.

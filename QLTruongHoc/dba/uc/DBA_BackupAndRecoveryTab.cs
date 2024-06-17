@@ -8,9 +8,9 @@ using System.Text;
 
 namespace QLTruongHoc.dba.uc
 {
-    public partial class BackupAndRecoveryTab : UserControl
+    public partial class DBA_BackupAndRecoveryTab : UserControl
     {
-        public BackupAndRecoveryTab()
+        public DBA_BackupAndRecoveryTab()
         {
             InitializeComponent();
         }
@@ -55,7 +55,7 @@ namespace QLTruongHoc.dba.uc
 
             using (StreamWriter writer = cmd.StandardInput)
             {
-                writer.WriteLine("cd \\"); 
+                writer.WriteLine("cd \\");
                 writer.WriteLine("rman target /"); // connect to RMAN
                 writer.WriteLine("list backup of database summary;"); // get list backup
                 writer.WriteLine("exit"); // exit RMAN
@@ -97,7 +97,8 @@ namespace QLTruongHoc.dba.uc
                     index = resultBuilder.ToString().LastIndexOf("\n");
                     resultBuilder.Remove(index, resultBuilder.Length - index);
                 }
-            } else if (resultBuilder.Length == 0)
+            }
+            else if (resultBuilder.Length == 0)
             {
                 resultBuilder.AppendLine("Không tồn tại bản sao lưu nào!");
             }
@@ -136,8 +137,8 @@ namespace QLTruongHoc.dba.uc
                 writer.WriteLine("cd \\");
                 writer.WriteLine("rman target /"); // connect to RMAN
                 writer.WriteLine("shutdown immediate;"); // convert log mode
-                writer.WriteLine("startup mount;"); 
-                writer.WriteLine("alter database archivelog;"); 
+                writer.WriteLine("startup mount;");
+                writer.WriteLine("alter database archivelog;");
                 writer.WriteLine("alter database open;");
                 writer.WriteLine("backup database;"); // get list backup
                 writer.WriteLine("exit"); // exit RMAN

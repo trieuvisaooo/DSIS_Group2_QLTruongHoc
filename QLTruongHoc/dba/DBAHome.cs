@@ -20,7 +20,9 @@
             if (isLogout)
             {
                 dg = MessageBox.Show("Bạn có muốn đăng xuất không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            } else {
+            }
+            else
+            {
                 dg = MessageBox.Show("Bạn có muốn kết thúc chương trình không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             }
             switch (dg)
@@ -28,7 +30,13 @@
                 case DialogResult.No:
                     e.Cancel = true;
                     break;
-                default: break;
+                default: 
+                    if (isLogout)
+                    {
+                        CurLogin.con.Close();
+                        CurLogin.Show();
+                    }
+                    break;
             }
         }
 
@@ -37,8 +45,6 @@
         {
             isLogout = true;
             this.Close();
-            CurLogin.con.Close();
-            CurLogin.Show();
         }
 
         private void DBAHome_FormClosed(object sender, FormClosedEventArgs e)

@@ -1,6 +1,6 @@
 ﻿namespace QLTruongHoc.dba.uc
 {
-    partial class AuditTab
+    partial class DBA_AuditTab
     {
         /// <summary> 
         /// Required designer variable.

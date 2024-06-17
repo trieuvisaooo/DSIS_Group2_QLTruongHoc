@@ -61,7 +61,7 @@ namespace QLTruongHoc
                     OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
-                    RoleTab.roleUserGrid.DataSource = dt;
+                    DBA_RoleTab.roleUserGrid.DataSource = dt;
                 }
 
             }

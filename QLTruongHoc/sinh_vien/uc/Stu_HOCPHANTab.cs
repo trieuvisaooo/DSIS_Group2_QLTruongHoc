@@ -4,9 +4,9 @@ using System.Data;
 
 namespace QLTruongHoc.sinh_vien.uc
 {
-    public partial class HPSVTab : UserControl
+    public partial class Stu_HOCPHANTab : UserControl
     {
-        public HPSVTab()
+        public Stu_HOCPHANTab()
         {
             InitializeComponent();
         }
@@ -60,8 +60,10 @@ namespace QLTruongHoc.sinh_vien.uc
                     dataGridView1.DataSource = dt;
                     CustomizeColumnHeaders();
                 }
-            } catch (Exception ex) { 
-                MessageBox.Show(ex.Message); 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

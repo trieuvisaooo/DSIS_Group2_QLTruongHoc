@@ -1,6 +1,6 @@
 ﻿namespace QLTruongHoc
 {
-    partial class PrivilegeTab
+    partial class DBA_PrivilegeTab
     {
         /// <summary> 
         /// Required designer variable.

@@ -1,6 +1,6 @@
-﻿namespace QLTruongHoc.NhanSu
+﻿namespace QLTruongHoc.nhan_su.uc
 {
-    partial class NhanSuTab
+    partial class Emp_NhanSuTab
     {
         /// <summary> 
         /// Required designer variable.

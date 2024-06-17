@@ -56,7 +56,7 @@ namespace QLTruongHoc
                         OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
                         DataTable dt1 = new DataTable();
                         da.Fill(dt1);
-                        UserAndRoleTab.grid1.DataSource = dt1;
+                        DBA_UserAndRoleTab.grid1.DataSource = dt1;
                         MessageBox.Show("Đổi mật khẩu thành công!");
                         this.Close();
 

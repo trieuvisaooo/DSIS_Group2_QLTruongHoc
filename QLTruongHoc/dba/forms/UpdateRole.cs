@@ -59,7 +59,7 @@ namespace QLTruongHoc
                         OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
                         DataTable dt1 = new DataTable();
                         da.Fill(dt1);
-                        UserAndRoleTab.grid2.DataSource = dt1;
+                        DBA_UserAndRoleTab.grid2.DataSource = dt1;
                         MessageBox.Show($"Role {rolebox.Text} đã được cập nhật thành công");
                         this.Close();
                     }

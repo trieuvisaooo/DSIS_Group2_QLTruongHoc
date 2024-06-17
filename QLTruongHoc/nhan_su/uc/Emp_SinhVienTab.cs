@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace QLTruongHoc.nhan_su.uc
 {
-    public partial class SinhVienTab : UserControl
+    public partial class Emp_SinhVienTab : UserControl
     {
-        public SinhVienTab()
+        public Emp_SinhVienTab()
         {
             InitializeComponent();
         }

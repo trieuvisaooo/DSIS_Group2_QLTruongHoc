@@ -1,6 +1,6 @@
 ﻿namespace QLTruongHoc.nhan_su.uc
 {
-    partial class SinhVienTab
+    partial class Emp_SinhVienTab
     {
         /// <summary> 
         /// Required designer variable.

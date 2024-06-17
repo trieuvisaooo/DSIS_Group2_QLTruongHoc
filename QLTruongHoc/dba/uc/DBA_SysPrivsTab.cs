@@ -4,9 +4,9 @@ using System.Data;
 
 namespace QLTruongHoc
 {
-    public partial class SysPrivsTab : UserControl
+    public partial class DBA_SysPrivsTab : UserControl
     {
-        public SysPrivsTab()
+        public DBA_SysPrivsTab()
         {
             InitializeComponent();
         }

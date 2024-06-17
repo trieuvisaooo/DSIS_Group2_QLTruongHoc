@@ -4,9 +4,9 @@ using System.Data;
 
 namespace QLTruongHoc
 {
-    public partial class PrivilegeTab : UserControl
+    public partial class DBA_PrivilegeTab : UserControl
     {
-        public PrivilegeTab()
+        public DBA_PrivilegeTab()
         {
             InitializeComponent();
         }

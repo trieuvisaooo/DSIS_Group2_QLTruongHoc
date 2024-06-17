@@ -24,8 +24,7 @@ namespace QLTruongHoc.sinh_vien
         {
             isLogout = true;
             this.Close();
-            CurLogin.con.Close();
-            CurLogin.Show();
+
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -47,7 +46,13 @@ namespace QLTruongHoc.sinh_vien
                 case DialogResult.No:
                     e.Cancel = true;
                     break;
-                default: break;
+                default: 
+                    if (isLogout)
+                    {
+                        CurLogin.con.Close();
+                        CurLogin.Show();
+                    }
+                    break;
             }
         }
 

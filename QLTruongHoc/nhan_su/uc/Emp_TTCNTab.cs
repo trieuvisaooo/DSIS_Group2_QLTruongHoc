@@ -1,12 +1,12 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using QLTruongHoc.utils;
 
-namespace QLTruongHoc.sinh_vien.uc
+namespace QLTruongHoc.nhan_su.uc
 {
-    public partial class Stu_TTCNTab : UserControl
+    public partial class Emp_TTCNTab : UserControl
     {
-        SinhVien sv = new SinhVien();
-        public Stu_TTCNTab()
+        NhanSu ns = new NhanSu();
+        public Emp_TTCNTab()
         {
             InitializeComponent();
         }
@@ -20,10 +20,10 @@ namespace QLTruongHoc.sinh_vien.uc
             BirthDayTxtBox.Visible = false;
             AddrTxtBox.Visible = false;
             PhoneNumTxtBox.Visible = false;
-            ProgramTxtBox.Visible = false;
-            MajorTxtBox.Visible = false;
-            CreditTxtBox.Visible = false;
-            GradeTxtBox.Visible = false;
+            AllowanceTxtBox.Visible = false;
+            RoleTxtBox.Visible = false;
+            DepartmentTxtBox.Visible = false;
+            LocationTxtBox.Visible = false;
             ModifyBtn.Visible = false;
             SaveBtn.Visible = false;
             CancelBtn.Visible = false;
@@ -32,17 +32,17 @@ namespace QLTruongHoc.sinh_vien.uc
         private void ViewBtn_Click(object sender, EventArgs e)
         {
             ViewBtn.Visible = false;
-            sv.getStuInfo();
-            IdTxtBox.Text = sv.id;
-            NameTxtBox.Text = sv.name;
-            GenderTxtBox.Text = sv.gender;
-            BirthDayTxtBox.Text = sv.birthday;
-            AddrTxtBox.Text = sv.addr;
-            PhoneNumTxtBox.Text = sv.phonenum;
-            ProgramTxtBox.Text = sv.program;
-            MajorTxtBox.Text = sv.major;
-            CreditTxtBox.Text = sv.credit;
-            GradeTxtBox.Text = sv.grade;
+            ns.getEmpInfo();
+            IdTxtBox.Text = ns.id;
+            NameTxtBox.Text = ns.name;
+            GenderTxtBox.Text = ns.gender;
+            BirthDayTxtBox.Text = ns.birthday;
+            AddrTxtBox.Text = ns.addr;
+            PhoneNumTxtBox.Text = ns.phonenum;
+            AllowanceTxtBox.Text = ns.allowance;
+            RoleTxtBox.Text = ns.role;
+            DepartmentTxtBox.Text = ns.department;
+            LocationTxtBox.Text = ns.location;
 
             IdTxtBox.Visible = true;
             NameTxtBox.Visible = true;
@@ -50,10 +50,10 @@ namespace QLTruongHoc.sinh_vien.uc
             BirthDayTxtBox.Visible = true;
             AddrTxtBox.Visible = true;
             PhoneNumTxtBox.Visible = true;
-            ProgramTxtBox.Visible = true;
-            MajorTxtBox.Visible = true;
-            CreditTxtBox.Visible = true;
-            GradeTxtBox.Visible = true;
+            AllowanceTxtBox.Visible = true;
+            RoleTxtBox.Visible = true;
+            DepartmentTxtBox.Visible = true;
+            LocationTxtBox.Visible = true;
             ModifyBtn.Visible = true;
 
             IdTxtBox.ReadOnly = true;
@@ -62,15 +62,15 @@ namespace QLTruongHoc.sinh_vien.uc
             BirthDayTxtBox.ReadOnly = true;
             AddrTxtBox.ReadOnly = true;
             PhoneNumTxtBox.ReadOnly = true;
-            ProgramTxtBox.ReadOnly = true;
-            MajorTxtBox.ReadOnly = true;
-            CreditTxtBox.ReadOnly = true;
-            GradeTxtBox.ReadOnly = true;
+            AllowanceTxtBox.ReadOnly = true;
+            RoleTxtBox.ReadOnly = true;
+            DepartmentTxtBox.ReadOnly = true;
+            LocationTxtBox.ReadOnly = true;
         }
 
         private void ModifyBtn_Click(object sender, EventArgs e)
         {
-            AddrTxtBox.ReadOnly = false;
+            //AddrTxtBox.ReadOnly = false;
             PhoneNumTxtBox.ReadOnly = false;
             ModifyBtn.Visible = false;
             SaveBtn.Visible = true;
@@ -79,11 +79,9 @@ namespace QLTruongHoc.sinh_vien.uc
 
         private void CancelBtn_Click(object sender, EventArgs e)
         {
-            sv.getStuInfo();
+            ns.getEmpInfo();
             ModifyBtn.Visible = true;
-            AddrTxtBox.Text = sv.addr;
-            PhoneNumTxtBox.Text = sv.phonenum;
-            AddrTxtBox.ReadOnly = true;
+            PhoneNumTxtBox.Text = ns.phonenum;
             PhoneNumTxtBox.ReadOnly = true;
             SaveBtn.Visible = false;
             CancelBtn.Visible = false;
@@ -93,11 +91,10 @@ namespace QLTruongHoc.sinh_vien.uc
         {
             try
             {
-                string update_sql = "UPDATE QLTH.QLTH_SINHVIEN SET DIACHI = N'" + AddrTxtBox.Text.ToString() + "', DT = '" + PhoneNumTxtBox.Text.ToString() + "'";
+                string update_sql = "UPDATE QLTH.QLTH_NHANSU SET DT = '" + PhoneNumTxtBox.Text.ToString() + "'";
                 OracleCommand cmd = new OracleCommand(update_sql, Session.Instance.OracleConnection);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Cập nhật thông tin thành công!");
-                AddrTxtBox.ReadOnly = true;
                 PhoneNumTxtBox.ReadOnly = true;
                 SaveBtn.Visible = false;
                 CancelBtn.Visible = false;
