@@ -1,15 +1,6 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using QLTruongHoc.utils;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.SqlTypes;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace QLTruongHoc
 {
@@ -19,11 +10,6 @@ namespace QLTruongHoc
         public CreateRole()
         {
             InitializeComponent();
-        }
-
-        private void rolebox_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void Submit_Click(object sender, EventArgs e)

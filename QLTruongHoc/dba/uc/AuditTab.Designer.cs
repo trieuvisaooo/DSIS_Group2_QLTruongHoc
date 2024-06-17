@@ -58,7 +58,7 @@
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 167F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(1801, 1000);
+            tableLayoutPanel1.Size = new Size(1432, 800);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // dataGridView1
@@ -72,7 +72,7 @@
             dataGridView1.Margin = new Padding(4, 5, 4, 5);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1793, 823);
+            dataGridView1.Size = new Size(1424, 623);
             dataGridView1.TabIndex = 0;
             // 
             // panel1
@@ -82,7 +82,7 @@
             panel1.Location = new Point(4, 5);
             panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(892, 157);
+            panel1.Size = new Size(708, 157);
             panel1.TabIndex = 1;
             // 
             // label1
@@ -103,17 +103,17 @@
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(904, 5);
+            panel2.Location = new Point(720, 5);
             panel2.Margin = new Padding(4, 5, 4, 5);
             panel2.Name = "panel2";
-            panel2.Size = new Size(893, 157);
+            panel2.Size = new Size(708, 157);
             panel2.TabIndex = 2;
             // 
             // StandardAuditComBox
             // 
             StandardAuditComBox.FormattingEnabled = true;
             StandardAuditComBox.Items.AddRange(new object[] { "DBA_AUDIT", "DANGKY_AUDIT", "NHANSU_AUDIT" });
-            StandardAuditComBox.Location = new Point(656, 91);
+            StandardAuditComBox.Location = new Point(394, 89);
             StandardAuditComBox.Margin = new Padding(2, 4, 2, 4);
             StandardAuditComBox.Name = "StandardAuditComBox";
             StandardAuditComBox.Size = new Size(216, 33);
@@ -124,7 +124,7 @@
             // 
             FGAComBox.FormattingEnabled = true;
             FGAComBox.Items.AddRange(new object[] { "SELECT_NHANSU", "UPDATE_DANGKY" });
-            FGAComBox.Location = new Point(333, 91);
+            FGAComBox.Location = new Point(71, 89);
             FGAComBox.Margin = new Padding(2, 4, 2, 4);
             FGAComBox.Name = "FGAComBox";
             FGAComBox.Size = new Size(264, 33);
@@ -135,7 +135,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            label3.Location = new Point(333, 35);
+            label3.Location = new Point(71, 33);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(264, 38);
@@ -146,7 +146,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            label2.Location = new Point(656, 35);
+            label2.Location = new Point(394, 33);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(216, 38);
@@ -159,9 +159,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(tableLayoutPanel1);
             Margin = new Padding(4, 5, 4, 5);
-            MinimumSize = new Size(1801, 1000);
+            MinimumSize = new Size(1432, 800);
             Name = "AuditTab";
-            Size = new Size(1801, 1000);
+            Size = new Size(1432, 800);
             tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);

@@ -1,16 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Oracle.ManagedDataAccess.Client;
+﻿using Oracle.ManagedDataAccess.Client;
 using QLTruongHoc.utils;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace QLTruongHoc
 {
@@ -35,31 +25,6 @@ namespace QLTruongHoc
             table_view_combox.Enabled = false;
             ColumnName_list.Enabled = false;
             withgrantoption_chkbox.Enabled = false;
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void check_btn_Click(object sender, EventArgs e)
@@ -204,7 +169,7 @@ namespace QLTruongHoc
                     // cấp quyền insert và delete
                     if (privs_combox.Text == "INSERT" || privs_combox.Text == "DELETE")
                     {
-                        grantStatement = "grant " + privs_combox.Text + " on QLTH." + table_view_combox.Text + " to " + user_role_txtbox.Text + " " + withgrantoption;
+                        grantStatement = "grant " + privs_combox.Text + " on QLTH." + table_view_combox.Text + @" to """ + user_role_txtbox.Text + @""" " + withgrantoption;
                     }
 
                     // cấp quyền update
@@ -225,7 +190,7 @@ namespace QLTruongHoc
                             colOption = "(" + column_list + ")";
                         }
 
-                        grantStatement = "grant " + privs_combox.Text + colOption + " on QLTH." + table_view_combox.Text + " to " + user_role_txtbox.Text + " " + withgrantoption;
+                        grantStatement = "grant " + privs_combox.Text + colOption + " on QLTH." + table_view_combox.Text + @" to """ + user_role_txtbox.Text + @""" " + withgrantoption;
                     }
 
                     // cấp quyền select
@@ -271,7 +236,7 @@ namespace QLTruongHoc
                         }
                         else
                         {
-                            grantStatement = "grant " + privs_combox.Text + " on QLTH." + table_view_combox.Text + " to " + user_role_txtbox.Text + " " + withgrantoption;
+                            grantStatement = "grant " + privs_combox.Text + " on QLTH." + table_view_combox.Text + @" to """ + user_role_txtbox.Text + @""" " + withgrantoption;
                         }
 
                     }
