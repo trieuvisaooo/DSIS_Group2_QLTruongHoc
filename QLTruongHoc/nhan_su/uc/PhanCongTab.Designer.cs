@@ -39,6 +39,7 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = SystemColors.Control;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -46,7 +47,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1236, 709);
+            dataGridView1.Size = new Size(1396, 709);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellClick += dataGridView1_CellClick;
             // 
@@ -62,9 +63,10 @@
             // 
             // button1
             // 
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             button1.BackColor = Color.DarkSlateBlue;
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(1158, 34);
+            button1.Location = new Point(1318, 34);
             button1.Name = "button1";
             button1.Size = new Size(94, 38);
             button1.TabIndex = 2;
@@ -74,9 +76,10 @@
             // 
             // button2
             // 
+            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             button2.BackColor = Color.MediumSpringGreen;
             button2.ForeColor = SystemColors.ActiveCaptionText;
-            button2.Location = new Point(723, 34);
+            button2.Location = new Point(883, 34);
             button2.Name = "button2";
             button2.Size = new Size(94, 38);
             button2.TabIndex = 3;
@@ -86,9 +89,10 @@
             // 
             // button3
             // 
+            button3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             button3.BackColor = Color.Crimson;
             button3.ForeColor = SystemColors.ButtonFace;
-            button3.Location = new Point(923, 34);
+            button3.Location = new Point(1083, 34);
             button3.Name = "button3";
             button3.Size = new Size(94, 38);
             button3.TabIndex = 4;
@@ -98,9 +102,10 @@
             // 
             // button4
             // 
+            button4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             button4.BackColor = Color.PaleGoldenrod;
             button4.ForeColor = SystemColors.ActiveCaptionText;
-            button4.Location = new Point(823, 34);
+            button4.Location = new Point(983, 34);
             button4.Name = "button4";
             button4.Size = new Size(94, 38);
             button4.TabIndex = 5;
@@ -120,9 +125,9 @@
             Controls.Add(dataGridView1);
             Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(4);
-            MinimumSize = new Size(1790, 10);
+            MinimumSize = new Size(1432, 800);
             Name = "PhanCongTab";
-            Size = new Size(1790, 800);
+            Size = new Size(1432, 800);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

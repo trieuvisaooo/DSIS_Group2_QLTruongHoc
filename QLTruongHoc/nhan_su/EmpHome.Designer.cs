@@ -177,9 +177,9 @@
             phanCongTab1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             phanCongTab1.Location = new Point(3, 3);
             phanCongTab1.Margin = new Padding(4);
-            phanCongTab1.MinimumSize = new Size(1790, 10);
+            phanCongTab1.MinimumSize = new Size(1432, 800);
             phanCongTab1.Name = "phanCongTab1";
-            phanCongTab1.Size = new Size(1790, 752);
+            phanCongTab1.Size = new Size(1432, 800);
             phanCongTab1.TabIndex = 0;
             // 
             // dangKyTabPage
@@ -278,10 +278,10 @@
         private TabPage khmoTabpage;
         private uc.KhmoTab khmoTab1;
         private TabPage phanCongTab;
-        private uc.PhanCongTab phanCongTab1;
         private TabPage dangKyTabPage;
         private uc.DangKyTab dangKyTab1;
         private TabPage sinhVienTab;
         private uc.SinhVienTab sinhVienTab1;
+        private uc.PhanCongTab phanCongTab1;
     }
 }
