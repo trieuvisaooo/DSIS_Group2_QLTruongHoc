@@ -62,6 +62,7 @@
             dataGridView1.Location = new Point(4, 77);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(1269, 920);
             dataGridView1.TabIndex = 1;
             // 
@@ -145,6 +146,7 @@
             button4.TabIndex = 8;
             button4.Text = "Cập Nhật";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // HocPhanTab
             // 

@@ -65,7 +65,15 @@ namespace QLTruongHoc.nhan_su.uc
 
         private void button3_Click(object sender, EventArgs e)
         {
-            InsertHocPhan form= new InsertHocPhan();
+            InsertHocPhan form = new InsertHocPhan();
+            form.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dataGridView1.SelectedRows[0];
+            string mahp = row.Cells["MAHP"].Value as string;
+            UpdateHocPhan form = new UpdateHocPhan(mahp);
             form.Show();
         }
     }
