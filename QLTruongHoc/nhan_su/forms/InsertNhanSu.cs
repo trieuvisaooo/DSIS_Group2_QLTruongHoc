@@ -12,14 +12,14 @@ using System.Windows.Forms;
 
 namespace QLTruongHoc.nhan_su.forms
 {
-    public partial class InsertSinhVien : Form
+    public partial class InsertNhanSu : Form
     {
-        public InsertSinhVien()
+        public InsertNhanSu()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void SaveBtn_Click(object sender, EventArgs e)
         {
             DbCommand.setDateFormatDb();
             DateTime birthDate = dateTimePicker1.Value;
@@ -35,15 +35,15 @@ namespace QLTruongHoc.nhan_su.forms
                 month = "0" + month;
             }
             string year = birthDate.Year.ToString();
-            string sql = $"INSERT INTO QLTH.QLTH_SINHVIEN(MASV, HOTEN, PHAI, NGSINH, DIACHI, DT, MACT) " +
-                $"VALUES({textBox1.Text}, N'{textBox2.Text}', N'{comboBox1.SelectedItem.ToString()}', '{year}-{month}-{day}', N'{textBox3.Text}', '{textBox4.Text}', '{comboBox2.SelectedItem.ToString()}')";
+            string sql = $"INSERT INTO QLTH.QLTH_NHANSU(MANS, HOTEN, PHAI, NGSINH, DIACHI, DT, VAITRO, MADV) " +
+                $"VALUES({textBox1.Text}, N'{textBox2.Text}', N'{comboBox1.SelectedItem.ToString()}', '{year}-{month}-{day}', N'{textBox3.Text}', '{textBox4.Text}', '{comboBox2.SelectedItem.ToString()}', '{comboBox3.SelectedItem.ToString()}')";
 
             //MessageBox.Show(sql);
             OracleCommand command = new OracleCommand(sql, Session.Instance.OracleConnection);
             command.ExecuteNonQuery();
-            MessageBox.Show("Data Updated Successfully");
+            MessageBox.Show("Thêm nhân sự thành công!");
 
-            this.Hide();
+            this.Close();
         }
     }
 }

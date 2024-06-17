@@ -11,6 +11,12 @@ namespace QLTruongHoc.nhan_su.uc
         public Emp_DonViTab()
         {
             InitializeComponent();
+
+            if (Session.Instance.Role == "Giáo vụ")
+            {
+                InsertBtn.Visible = true;
+                UpdateBtn.Visible = true;
+            }
         }
 
         private void refreshBtn_Click(object sender, EventArgs e)
@@ -32,7 +38,7 @@ namespace QLTruongHoc.nhan_su.uc
 
         }
 
-        private void searchBtn_Click(object sender, EventArgs e)
+        private void SearchBtn_Click(object sender, EventArgs e)
         {
             string search = searchTextBox.Text;
             search = search.ToLower();
@@ -47,15 +53,21 @@ namespace QLTruongHoc.nhan_su.uc
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void InsertBtn_Click(object sender, EventArgs e)
         {
             InsertDonVi form = new InsertDonVi();
             form.Show();
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void UpdateBtn_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn dòng đơn vị muốn cập nhật.");
+                return;
+            }
+
             DataGridViewRow row = dataGridView1.SelectedRows[0];
             MessageBox.Show(row.Cells["MADV"].Value as string); 
             string madv = row.Cells["MADV"].Value as string;

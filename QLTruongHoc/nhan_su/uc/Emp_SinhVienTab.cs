@@ -18,19 +18,11 @@ namespace QLTruongHoc.nhan_su.uc
         public Emp_SinhVienTab()
         {
             InitializeComponent();
-        }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //string alterSessionSql = $"ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD'";
-            //OracleCommand cmd = new OracleCommand(alterSessionSql, Session.Instance.OracleConnection);
-            //cmd.ExecuteNonQuery();
-            string sql = "select * from qlth.qlth_sinhvien";
-            OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
-            CustomizeColumnHeaders();
+            if (Session.Instance.Role == "Giáo vụ")
+            {
+                InsertBtn.Visible = true;
+            }
         }
 
         private void CustomizeColumnHeaders()
@@ -50,19 +42,34 @@ namespace QLTruongHoc.nhan_su.uc
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1)
-            {
-                return;
-            }
 
-            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-            int mssv = (int)row.Cells["MASV"].Value;
-            UpdateSinhVien updateSinhVien = new UpdateSinhVien(mssv);
-            updateSinhVien.Show();
+            if (Session.Instance.Role == "Giáo vụ")
+            {
+                if (e.RowIndex == -1)
+                {
+                    return;
+                }
+
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                int mssv = (int)row.Cells["MASV"].Value;
+                UpdateSinhVien updateSinhVien = new UpdateSinhVien(mssv);
+                updateSinhVien.Show();
+            }
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+
+        private void ViewBtn_Click(object sender, EventArgs e)
+        {
+            string sql = "select * from qlth.qlth_sinhvien";
+            OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+            CustomizeColumnHeaders();
+        }
+
+        private void InsertBtn_Click(object sender, EventArgs e)
         {
             InsertSinhVien insertSinhVien = new();
             insertSinhVien.Show();

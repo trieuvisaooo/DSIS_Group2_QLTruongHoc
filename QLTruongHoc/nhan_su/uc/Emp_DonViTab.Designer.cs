@@ -31,11 +31,10 @@
             dataGridView1 = new DataGridView();
             refreshBtn = new Button();
             searchTextBox = new TextBox();
-            label1 = new Label();
             label2 = new Label();
-            searchBtn = new Button();
-            button1 = new Button();
-            button2 = new Button();
+            SearchBtn = new Button();
+            InsertBtn = new Button();
+            UpdateBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -45,11 +44,12 @@
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = SystemColors.Control;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(3, 69);
+            dataGridView1.Location = new Point(16, 86);
+            dataGridView1.Margin = new Padding(4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1294, 728);
+            dataGridView1.Size = new Size(1606, 910);
             dataGridView1.TabIndex = 0;
             // 
             // refreshBtn
@@ -58,11 +58,12 @@
             refreshBtn.BackColor = Color.DarkSlateBlue;
             refreshBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             refreshBtn.ForeColor = Color.Snow;
-            refreshBtn.Location = new Point(1335, 24);
+            refreshBtn.Location = new Point(1501, 26);
+            refreshBtn.Margin = new Padding(4);
             refreshBtn.Name = "refreshBtn";
-            refreshBtn.Size = new Size(94, 39);
+            refreshBtn.Size = new Size(121, 47);
             refreshBtn.TabIndex = 1;
-            refreshBtn.Text = "Refresh";
+            refreshBtn.Text = "Xem";
             refreshBtn.UseVisualStyleBackColor = false;
             refreshBtn.Click += refreshBtn_Click;
             // 
@@ -70,89 +71,86 @@
             // 
             searchTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             searchTextBox.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            searchTextBox.Location = new Point(931, 28);
+            searchTextBox.Location = new Point(993, 31);
+            searchTextBox.Margin = new Padding(4);
             searchTextBox.Name = "searchTextBox";
-            searchTextBox.Size = new Size(272, 31);
+            searchTextBox.PlaceholderText = "tìm kiếm theo mã hoặc tên";
+            searchTextBox.Size = new Size(339, 36);
             searchTextBox.TabIndex = 2;
-            // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(841, 31);
-            label1.Name = "label1";
-            label1.Size = new Size(84, 25);
-            label1.TabIndex = 3;
-            label1.Text = "Tìm kiếm";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(3, 18);
+            label2.Location = new Point(4, 22);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(118, 38);
+            label2.Size = new Size(137, 45);
             label2.TabIndex = 4;
             label2.Text = "ĐƠN VỊ";
             // 
-            // searchBtn
+            // SearchBtn
             // 
-            searchBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            searchBtn.BackColor = Color.MediumVioletRed;
-            searchBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            searchBtn.ForeColor = Color.Snow;
-            searchBtn.Location = new Point(1203, 24);
-            searchBtn.Name = "searchBtn";
-            searchBtn.Size = new Size(94, 39);
-            searchBtn.TabIndex = 5;
-            searchBtn.Text = "Tìm kiếm";
-            searchBtn.UseVisualStyleBackColor = false;
-            searchBtn.Click += searchBtn_Click;
+            SearchBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            SearchBtn.BackColor = Color.MediumVioletRed;
+            SearchBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SearchBtn.ForeColor = Color.Snow;
+            SearchBtn.Location = new Point(1340, 26);
+            SearchBtn.Margin = new Padding(4);
+            SearchBtn.Name = "SearchBtn";
+            SearchBtn.Size = new Size(121, 47);
+            SearchBtn.TabIndex = 5;
+            SearchBtn.Text = "Tìm kiếm";
+            SearchBtn.UseVisualStyleBackColor = false;
+            SearchBtn.Click += SearchBtn_Click;
             // 
-            // button1
+            // InsertBtn
             // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button1.BackColor = Color.SeaGreen;
-            button1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.Snow;
-            button1.Location = new Point(1335, 155);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 39);
-            button1.TabIndex = 6;
-            button1.Text = "Thêm";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            InsertBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            InsertBtn.BackColor = Color.SeaGreen;
+            InsertBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            InsertBtn.ForeColor = SystemColors.ActiveCaptionText;
+            InsertBtn.Location = new Point(1665, 86);
+            InsertBtn.Margin = new Padding(4);
+            InsertBtn.Name = "InsertBtn";
+            InsertBtn.Size = new Size(121, 47);
+            InsertBtn.TabIndex = 6;
+            InsertBtn.Text = "Thêm";
+            InsertBtn.UseVisualStyleBackColor = false;
+            InsertBtn.Visible = false;
+            InsertBtn.Click += InsertBtn_Click;
             // 
-            // button2
+            // UpdateBtn
             // 
-            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button2.BackColor = Color.Goldenrod;
-            button2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.Snow;
-            button2.Location = new Point(1335, 200);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 39);
-            button2.TabIndex = 7;
-            button2.Text = "Cập Nhật";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            UpdateBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            UpdateBtn.BackColor = Color.PaleGoldenrod;
+            UpdateBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            UpdateBtn.ForeColor = SystemColors.ActiveCaptionText;
+            UpdateBtn.Location = new Point(1665, 141);
+            UpdateBtn.Margin = new Padding(4);
+            UpdateBtn.Name = "UpdateBtn";
+            UpdateBtn.Size = new Size(121, 47);
+            UpdateBtn.TabIndex = 7;
+            UpdateBtn.Text = "Cập Nhật";
+            UpdateBtn.UseVisualStyleBackColor = false;
+            UpdateBtn.Visible = false;
+            UpdateBtn.Click += UpdateBtn_Click;
             // 
-            // DonViTab
+            // Emp_DonViTab
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(searchBtn);
+            Controls.Add(UpdateBtn);
+            Controls.Add(InsertBtn);
+            Controls.Add(SearchBtn);
             Controls.Add(label2);
-            Controls.Add(label1);
             Controls.Add(searchTextBox);
             Controls.Add(refreshBtn);
             Controls.Add(dataGridView1);
-            MinimumSize = new Size(1432, 800);
-            Name = "DonViTab";
-            Size = new Size(1432, 800);
+            Margin = new Padding(4);
+            MinimumSize = new Size(1790, 1000);
+            Name = "Emp_DonViTab";
+            Size = new Size(1790, 1000);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -165,8 +163,8 @@
         private TextBox searchTextBox;
         private Label label1;
         private Label label2;
-        private Button searchBtn;
-        private Button button1;
-        private Button button2;
+        private Button SearchBtn;
+        private Button InsertBtn;
+        private Button UpdateBtn;
     }
 }

@@ -19,9 +19,16 @@ namespace QLTruongHoc.nhan_su.uc
         public Emp_PhanCongTab()
         {
             InitializeComponent();
+
+            if (Session.Instance.Role == "Nhân viên cơ bản" || Session.Instance.Role == "Giảng viên")
+            {
+                InsertBtn.Visible = false;
+                UpdateBtn.Visible = false;
+                DeleteBtn.Visible = false;
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ViewBtn_Click(object sender, EventArgs e)
         {
             try
             {
@@ -62,7 +69,7 @@ namespace QLTruongHoc.nhan_su.uc
             
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void InsertBtn_Click(object sender, EventArgs e)
         {
             string dv = DbCommand.getUserDv();
             MessageBox.Show(dv);
@@ -73,8 +80,13 @@ namespace QLTruongHoc.nhan_su.uc
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void DeleteBtn_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn phân công muốn xóa.");
+                return;
+            }
 
             try
             {
@@ -101,7 +113,7 @@ namespace QLTruongHoc.nhan_su.uc
                             $"and ngayhoc = '{ngayHoc}' " +
                             $"and tiet = '{tiet}'";
 
-                        MessageBox.Show(sql);
+                        //MessageBox.Show(sql);
 
                         OracleCommand cmd = new OracleCommand(sql, Session.Instance.OracleConnection);
                         cmd.ExecuteNonQuery();
@@ -120,9 +132,13 @@ namespace QLTruongHoc.nhan_su.uc
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void UpdateBtn_Click(object sender, EventArgs e)
         {
-            
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn phân công muốn cập nhật.");
+                return;
+            }
             //DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
             DataGridViewRow row = dataGridView1.SelectedRows[0];   
             string chuongTrinh = row.Cells["TENCT"].Value as string;

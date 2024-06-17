@@ -97,7 +97,7 @@ namespace QLTruongHoc.nhan_su.forms
                     $"sosvtd = {numericUpDown4.Value}, " +
                     $"madv = '{madv}' " + 
                     $"where mahp = '{this.MaHp}'";
-                MessageBox.Show(sql);
+                //MessageBox.Show(sql);
                 OracleCommand cmd = new OracleCommand(sql, Session.Instance.OracleConnection);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Cập nhật thành công");

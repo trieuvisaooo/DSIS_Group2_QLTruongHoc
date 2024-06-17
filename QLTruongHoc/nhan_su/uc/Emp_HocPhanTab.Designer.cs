@@ -30,13 +30,12 @@
         {
             label1 = new Label();
             dataGridView1 = new DataGridView();
-            label2 = new Label();
             searchTextBox = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
+            SearchBtn = new Button();
+            ViewBtn = new Button();
             panel1 = new Panel();
-            button3 = new Button();
-            button4 = new Button();
+            InsertBtn = new Button();
+            UpdateBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -48,10 +47,9 @@
             label1.Location = new Point(4, 9);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(269, 38);
+            label1.Size = new Size(317, 45);
             label1.TabIndex = 0;
             label1.Text = "TẤT CẢ HỌC PHẦN";
-            label1.Click += label1_Click;
             // 
             // dataGridView1
             // 
@@ -59,108 +57,100 @@
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = SystemColors.Control;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(4, 77);
+            dataGridView1.Location = new Point(21, 77);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1269, 920);
+            dataGridView1.Size = new Size(1252, 920);
             dataGridView1.TabIndex = 1;
-            // 
-            // label2
-            // 
-            label2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label2.AutoSize = true;
-            label2.Location = new Point(3, 10);
-            label2.Name = "label2";
-            label2.Size = new Size(84, 25);
-            label2.TabIndex = 2;
-            label2.Text = "Tìm kiếm";
             // 
             // searchTextBox
             // 
             searchTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            searchTextBox.Location = new Point(93, 7);
+            searchTextBox.Location = new Point(3, 8);
             searchTextBox.Name = "searchTextBox";
-            searchTextBox.Size = new Size(194, 31);
+            searchTextBox.PlaceholderText = "tìm theo mã hoặc tên";
+            searchTextBox.Size = new Size(312, 36);
             searchTextBox.TabIndex = 3;
             // 
-            // button1
+            // SearchBtn
             // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button1.BackColor = Color.MediumVioletRed;
-            button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(293, 7);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 34);
-            button1.TabIndex = 4;
-            button1.Text = "Tìm kiếm";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            SearchBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            SearchBtn.BackColor = Color.MediumVioletRed;
+            SearchBtn.ForeColor = SystemColors.ButtonHighlight;
+            SearchBtn.Location = new Point(332, 0);
+            SearchBtn.Name = "SearchBtn";
+            SearchBtn.Size = new Size(121, 47);
+            SearchBtn.TabIndex = 4;
+            SearchBtn.Text = "Tìm kiếm";
+            SearchBtn.UseVisualStyleBackColor = false;
+            SearchBtn.Click += SearchBtn_Click;
             // 
-            // button2
+            // ViewBtn
             // 
-            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button2.BackColor = Color.DarkSlateBlue;
-            button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(446, 5);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 36);
-            button2.TabIndex = 5;
-            button2.Text = "Refresh";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            ViewBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            ViewBtn.BackColor = Color.DarkSlateBlue;
+            ViewBtn.ForeColor = SystemColors.ButtonHighlight;
+            ViewBtn.Location = new Point(486, 0);
+            ViewBtn.Name = "ViewBtn";
+            ViewBtn.Size = new Size(121, 47);
+            ViewBtn.TabIndex = 5;
+            ViewBtn.Text = "Xem";
+            ViewBtn.UseVisualStyleBackColor = false;
+            ViewBtn.Click += ViewBtn_Click;
             // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(button2);
+            panel1.Controls.Add(ViewBtn);
             panel1.Controls.Add(searchTextBox);
-            panel1.Controls.Add(button1);
-            panel1.Location = new Point(886, 24);
+            panel1.Controls.Add(SearchBtn);
+            panel1.Location = new Point(664, 24);
             panel1.Name = "panel1";
-            panel1.Size = new Size(543, 47);
+            panel1.Size = new Size(609, 47);
             panel1.TabIndex = 6;
             // 
-            // button3
+            // InsertBtn
             // 
-            button3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button3.BackColor = Color.MediumSeaGreen;
-            button3.ForeColor = SystemColors.ButtonHighlight;
-            button3.Location = new Point(1332, 126);
-            button3.Name = "button3";
-            button3.Size = new Size(94, 36);
-            button3.TabIndex = 7;
-            button3.Text = "Tạo Mới";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
+            InsertBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            InsertBtn.BackColor = Color.MediumSeaGreen;
+            InsertBtn.ForeColor = SystemColors.ActiveCaptionText;
+            InsertBtn.Location = new Point(1308, 77);
+            InsertBtn.Name = "InsertBtn";
+            InsertBtn.Size = new Size(121, 47);
+            InsertBtn.TabIndex = 7;
+            InsertBtn.Text = "Tạo Mới";
+            InsertBtn.UseVisualStyleBackColor = false;
+            InsertBtn.Visible = false;
+            InsertBtn.Click += InsertBtn_Click;
             // 
-            // button4
+            // UpdateBtn
             // 
-            button4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button4.BackColor = Color.Chocolate;
-            button4.ForeColor = SystemColors.ButtonHighlight;
-            button4.Location = new Point(1332, 178);
-            button4.Name = "button4";
-            button4.Size = new Size(94, 36);
-            button4.TabIndex = 8;
-            button4.Text = "Cập Nhật";
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click;
+            UpdateBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            UpdateBtn.BackColor = Color.PaleGoldenrod;
+            UpdateBtn.ForeColor = SystemColors.ActiveCaptionText;
+            UpdateBtn.Location = new Point(1308, 129);
+            UpdateBtn.Name = "UpdateBtn";
+            UpdateBtn.Size = new Size(121, 47);
+            UpdateBtn.TabIndex = 8;
+            UpdateBtn.Text = "Cập Nhật";
+            UpdateBtn.UseVisualStyleBackColor = false;
+            UpdateBtn.Visible = false;
+            UpdateBtn.Click += UpdateBtn_Click;
             // 
-            // HocPhanTab
+            // Emp_HocPhanTab
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(button4);
-            Controls.Add(button3);
+            Controls.Add(UpdateBtn);
+            Controls.Add(InsertBtn);
             Controls.Add(panel1);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
             Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(4);
             MinimumSize = new Size(1432, 1000);
-            Name = "HocPhanTab";
+            Name = "Emp_HocPhanTab";
             Size = new Size(1432, 1000);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
@@ -175,10 +165,10 @@
         private DataGridView dataGridView1;
         private Label label2;
         private TextBox searchTextBox;
-        private Button button1;
-        private Button button2;
+        private Button SearchBtn;
+        private Button ViewBtn;
         private Panel panel1;
-        private Button button3;
-        private Button button4;
+        private Button InsertBtn;
+        private Button UpdateBtn;
     }
 }

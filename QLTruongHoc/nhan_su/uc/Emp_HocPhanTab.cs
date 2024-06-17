@@ -18,14 +18,15 @@ namespace QLTruongHoc.nhan_su.uc
         public Emp_HocPhanTab()
         {
             InitializeComponent();
+
+            if (Session.Instance.Role == "Giáo vụ")
+            {
+                InsertBtn.Visible = true;
+                UpdateBtn.Visible = true;
+            }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void ViewBtn_Click(object sender, EventArgs e)
         {
             string sql = "SELECT hp.mahp, hp.tenhp, hp.sotc, hp.stlt, hp.stth, hp.sosvtd, dv.tendv \r\nFROM QLTH.QLTH_HOCPHAN hp JOIN QLTH.QLTH_DONVI dv on hp.madv = dv.madv";
             OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
@@ -46,15 +47,25 @@ namespace QLTruongHoc.nhan_su.uc
             dataGridView1.Columns["SOSVTD"].HeaderText = "Số Lượng Tối Đa";
             dataGridView1.Columns["TENDV"].HeaderText = "Đơn Vị";
 
+            // change column size
+            dataGridView1.Columns["MAHP"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns["TENHP"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns["SOTC"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns["STLT"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns["STTH"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns["SOSVTD"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns["TENDV"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void SearchBtn_Click(object sender, EventArgs e)
         {
             string search = searchTextBox.Text;
             search = search.ToLower();
             if (search.Length > 0)
             {
-                string sql = $"SELECT hp.mahp, hp.tenhp, hp.sotc, hp.stlt, hp.stth, hp.sosvtd, dv.tendv \r\nFROM QLTH.QLTH_HOCPHAN hp JOIN QLTH.QLTH_DONVI dv on hp.madv = dv.madv WHERE hp.mahp LIKE LOWER('%{search}%') or hp.tenhp LIKE LOWER('%{search}%')";
+                string sql = $"SELECT hp.mahp, hp.tenhp, hp.sotc, hp.stlt, hp.stth, hp.sosvtd, dv.tendv \r\nFROM QLTH.QLTH_HOCPHAN hp JOIN QLTH.QLTH_DONVI dv on hp.madv = dv.madv WHERE LOWER(hp.mahp) LIKE LOWER('%{search}%') or LOWER(hp.tenhp) LIKE LOWER(N'%{search}%')";
                 OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -63,14 +74,20 @@ namespace QLTruongHoc.nhan_su.uc
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void InsertBtn_Click(object sender, EventArgs e)
         {
             InsertHocPhan form = new InsertHocPhan();
             form.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void UpdateBtn_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn học phần muốn cập nhật.");
+                return;
+            }
+
             DataGridViewRow row = dataGridView1.SelectedRows[0];
             string mahp = row.Cells["MAHP"].Value as string;
             UpdateHocPhan form = new UpdateHocPhan(mahp);

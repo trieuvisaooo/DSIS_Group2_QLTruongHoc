@@ -17,9 +17,14 @@ namespace QLTruongHoc.nhan_su.uc
         public Emp_KhmoTab()
         {
             InitializeComponent();
+            if (Session.Instance.Role == "Giáo vụ")
+            {
+                InsertBtn.Visible = true;
+                UpdateBtn.Visible = true;
+            }
         }
 
-        private void refreshBtn_Click(object sender, EventArgs e)
+        private void ViewBtn_Click(object sender, EventArgs e)
         {
 
             string sql = "select * from QLTH.UV_QLTH_KHMO_FORM";
@@ -39,6 +44,8 @@ namespace QLTruongHoc.nhan_su.uc
             dataGridView1.Columns["MACT"].HeaderText = "Chương Trình";
             dataGridView1.Columns["HK"].HeaderText = "Học Kỳ";
             dataGridView1.Columns["TENDV"].HeaderText = "Đơn Vị";
+            // change column size
+            dataGridView1.Columns["TENHP"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
         }
 
@@ -49,7 +56,7 @@ namespace QLTruongHoc.nhan_su.uc
 
         private void comboBox1_DropDown(object sender, EventArgs e)
         {
-            string sql = "select distinct nam from QLTH.UV_QLTH_KHMO_FORM";
+            string sql = "select distinct nam from QLTH.UV_QLTH_KHMO_FORM order by nam";
 
             // Create a DataTable object
             DataTable dt = new DataTable();
@@ -71,7 +78,7 @@ namespace QLTruongHoc.nhan_su.uc
 
         private void comboBox2_DropDown(object sender, EventArgs e)
         {
-            string sql = "select distinct HK from QLTH.UV_QLTH_KHMO_FORM";
+            string sql = "select distinct HK from QLTH.UV_QLTH_KHMO_FORM order by HK";
 
             // Create a DataTable object
             DataTable dt = new DataTable();
@@ -125,7 +132,7 @@ namespace QLTruongHoc.nhan_su.uc
             comboBox3.DisplayMember = "MACT";
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void SearchBtn_Click(object sender, EventArgs e)
         {
             string sql = "select * from QLTH.UV_QLTH_KHMO_FORM ";
 
@@ -156,7 +163,7 @@ namespace QLTruongHoc.nhan_su.uc
                 hpClause = null;
             }
 
-            List<string> words = new List<string>{ namClause, hkClause, ctClause, hpClause };
+            List<string> words = new List<string> { namClause, hkClause, ctClause, hpClause };
             string whereClasue = "where " + string.Join(" and ", words.Where(s => s != null));
 
             if (namClause != null || hkClause != null || ctClause != null || hpClause != null)
@@ -164,12 +171,21 @@ namespace QLTruongHoc.nhan_su.uc
                 sql = sql + whereClasue;
             }
 
-            MessageBox.Show(sql);
             OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
             CustomizeColumnHeaders();
+        }
+
+        private void UpdateBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InsertBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

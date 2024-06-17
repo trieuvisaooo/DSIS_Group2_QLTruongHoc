@@ -81,7 +81,7 @@ namespace QLTruongHoc.nhan_su.forms
                 $"and pc.ngayhoc = '{textBox5.Text}' " +
                 $"and pc.tiet = '{textBox6.Text}'";
 
-                MessageBox.Show(sql);
+                //MessageBox.Show(sql);
                 OracleCommand cmd = new OracleCommand(sql, Session.Instance.OracleConnection);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Cập Nhật Thành Công");

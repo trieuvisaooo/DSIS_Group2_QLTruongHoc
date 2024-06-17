@@ -108,7 +108,7 @@ namespace QLTruongHoc.nhan_su.forms
 
             string sql = $"insert into qlth.qlth_phancong(magv, mahp, hk, nam, mact, ngayhoc, tiet) " +
                 $"values ({magv}, '{info[0]}' , {info[2]}, '{info[3]}', '{info[4]}', '{ngayHoc}', '{tiet}')";
-            MessageBox.Show(sql);
+            //MessageBox.Show(sql);
 
             OracleCommand cmd = new OracleCommand(sql, Session.Instance.OracleConnection);
             cmd.ExecuteNonQuery();

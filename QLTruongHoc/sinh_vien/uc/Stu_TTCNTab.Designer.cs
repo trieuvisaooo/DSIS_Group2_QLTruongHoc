@@ -275,7 +275,7 @@
             // 
             // SaveBtn
             // 
-            SaveBtn.BackColor = Color.SpringGreen;
+            SaveBtn.BackColor = Color.MediumSeaGreen;
             SaveBtn.Location = new Point(771, 795);
             SaveBtn.Name = "SaveBtn";
             SaveBtn.Size = new Size(121, 47);
@@ -298,7 +298,7 @@
             // 
             // CancelBtn
             // 
-            CancelBtn.BackColor = Color.Red;
+            CancelBtn.BackColor = Color.Crimson;
             CancelBtn.Location = new Point(579, 795);
             CancelBtn.Name = "CancelBtn";
             CancelBtn.Size = new Size(121, 47);

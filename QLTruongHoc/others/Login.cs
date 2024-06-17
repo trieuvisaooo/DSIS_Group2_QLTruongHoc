@@ -109,7 +109,7 @@ namespace QLTruongHoc
                         Session.Instance.OracleConnection = con;
 
                         MessageBox.Show("Connect với tư cách là nhân sự thành công!");
-                        EmpHome empHome = new EmpHome();
+                        EmpHome empHome = new EmpHome(this);
                         empHome.Show();
                         this.Hide();
                     } 

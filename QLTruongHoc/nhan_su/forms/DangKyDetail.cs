@@ -73,10 +73,10 @@ namespace QLTruongHoc.nhan_su.forms
                 $"AND HK = {textBox4.Text} " +
                 $"AND NAM = '{textBox3.Text}' " +
                 $"AND MACT = '{textBox5.Text}'";
-                MessageBox.Show( sql );
+                //MessageBox.Show( sql );
                 OracleCommand command = new OracleCommand(sql, Session.Instance.OracleConnection);
                 command.ExecuteNonQuery();
-                MessageBox.Show("Data Updated Successfully");
+                MessageBox.Show("Cập nhật điểm thành công.");
             }
             catch (Exception ex)
             {

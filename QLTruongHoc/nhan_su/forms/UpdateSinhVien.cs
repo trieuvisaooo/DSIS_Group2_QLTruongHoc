@@ -91,10 +91,10 @@ namespace QLTruongHoc.nhan_su.forms
             string sql = $"update qlth.qlth_sinhvien  " +
                 $"set hoten = N'{hoten}', phai = N'{phai}', ngsinh = '{year}-{month}-{day}', diachi = N'{diaChi}', dt = '{dt}', mact = '{mact}' " +
                 $"where masv = {this.Mssv}";
-            MessageBox.Show(sql);
+            //MessageBox.Show(sql);
             OracleCommand command = new OracleCommand(sql, Session.Instance.OracleConnection);
             command.ExecuteNonQuery();
-            MessageBox.Show("Data Updated Successfully");
+            MessageBox.Show("Cập nhật thông tin thành công.");
 
             this.Hide();
         }

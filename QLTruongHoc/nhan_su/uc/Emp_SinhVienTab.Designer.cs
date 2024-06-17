@@ -30,8 +30,8 @@
         {
             dataGridView1 = new DataGridView();
             label1 = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            ViewBtn = new Button();
+            InsertBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -39,12 +39,13 @@
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = SystemColors.ButtonFace;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(17, 90);
+            dataGridView1.Location = new Point(17, 102);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1399, 695);
+            dataGridView1.Size = new Size(1399, 683);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellClick += dataGridView1_CellClick;
             // 
@@ -54,46 +55,47 @@
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(17, 0);
             label1.Name = "label1";
-            label1.Size = new Size(287, 38);
+            label1.Size = new Size(336, 45);
             label1.TabIndex = 1;
             label1.Text = "QUẢN LÝ SINH VIÊN";
             // 
-            // button1
+            // ViewBtn
             // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button1.BackColor = Color.DarkSlateBlue;
-            button1.ForeColor = SystemColors.ButtonFace;
-            button1.Location = new Point(1322, 50);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 34);
-            button1.TabIndex = 2;
-            button1.Text = "Refresh";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            ViewBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            ViewBtn.BackColor = Color.DarkSlateBlue;
+            ViewBtn.ForeColor = SystemColors.ButtonFace;
+            ViewBtn.Location = new Point(1295, 50);
+            ViewBtn.Name = "ViewBtn";
+            ViewBtn.Size = new Size(121, 47);
+            ViewBtn.TabIndex = 2;
+            ViewBtn.Text = "Xem";
+            ViewBtn.UseVisualStyleBackColor = false;
+            ViewBtn.Click += ViewBtn_Click;
             // 
-            // button2
+            // InsertBtn
             // 
-            button2.BackColor = Color.SpringGreen;
-            button2.Location = new Point(17, 50);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 36);
-            button2.TabIndex = 3;
-            button2.Text = "Tạo Mới";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            InsertBtn.BackColor = Color.MediumSeaGreen;
+            InsertBtn.Location = new Point(17, 49);
+            InsertBtn.Name = "InsertBtn";
+            InsertBtn.Size = new Size(121, 47);
+            InsertBtn.TabIndex = 3;
+            InsertBtn.Text = "Tạo Mới";
+            InsertBtn.UseVisualStyleBackColor = false;
+            InsertBtn.Visible = false;
+            InsertBtn.Click += InsertBtn_Click;
             // 
-            // SinhVienTab
+            // Emp_SinhVienTab
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(InsertBtn);
+            Controls.Add(ViewBtn);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
             Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(4);
             MinimumSize = new Size(1432, 800);
-            Name = "SinhVienTab";
+            Name = "Emp_SinhVienTab";
             Size = new Size(1432, 800);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
@@ -104,7 +106,7 @@
 
         private DataGridView dataGridView1;
         private Label label1;
-        private Button button1;
-        private Button button2;
+        private Button ViewBtn;
+        private Button InsertBtn;
     }
 }

@@ -90,7 +90,7 @@ namespace QLTruongHoc.sinh_vien.uc
             // SearchBtn
             // 
             SearchBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            SearchBtn.BackColor = Color.DeepPink;
+            SearchBtn.BackColor = Color.MediumVioletRed;
             SearchBtn.ForeColor = SystemColors.ButtonHighlight;
             SearchBtn.Location = new Point(979, 64);
             SearchBtn.Name = "SearchBtn";
@@ -100,7 +100,7 @@ namespace QLTruongHoc.sinh_vien.uc
             SearchBtn.UseVisualStyleBackColor = false;
             SearchBtn.Click += SearchBtn_Click;
             // 
-            // HPSVTab
+            // Stu_HOCPHANTab
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -110,7 +110,7 @@ namespace QLTruongHoc.sinh_vien.uc
             Controls.Add(dataGridView1);
             Controls.Add(label1);
             MinimumSize = new Size(1432, 800);
-            Name = "HPSVTab";
+            Name = "Stu_HOCPHANTab";
             Size = new Size(1432, 800);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

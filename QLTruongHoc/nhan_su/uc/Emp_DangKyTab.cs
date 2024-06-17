@@ -1,15 +1,8 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using QLTruongHoc.nhan_su.forms;
 using QLTruongHoc.utils;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace QLTruongHoc.nhan_su.uc
 {
@@ -18,12 +11,21 @@ namespace QLTruongHoc.nhan_su.uc
         public Emp_DangKyTab()
         {
             InitializeComponent();
+
+            if (Session.Instance.Role == "Giáo vụ")
+            {
+                InsertBtn.Visible = true;
+                DeleteBtn.Visible = true;
+            } else if (Session.Instance.Role == "Giảng viên" || Session.Instance.Role == "Trưởng đơn vị" || Session.Instance.Role == "Trưởng khoa")
+            {
+                UpdateBtn.Visible = true;
+            }
         }
 
         private void refreshBtn_Click(object sender, EventArgs e)
         {
             string sql = "select dk.mahp, hp.tenhp,dk.hk, dk.nam, dk.mact, dk.ngayhoc, dk.tiet,sv.masv, sv.hoten, dk.diemthi, dk.diemqt, dk.diemck, dk.diemtk\r\nfrom qlth.qlth_dangky dk join qlth.qlth_sinhvien sv on dk.masv = sv.masv\r\njoin qlth.qlth_hocphan hp on dk.mahp = hp.mahp";
-            MessageBox.Show(sql);
+            //MessageBox.Show(sql);
             OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -141,7 +143,7 @@ namespace QLTruongHoc.nhan_su.uc
             if (Session.Instance.Role == "Giáo vụ")
             {
                 string sql = "select dk.mahp, hp.tenhp,dk.hk, dk.nam, dk.mact, dk.ngayhoc, dk.tiet,sv.masv, sv.hoten, dk.diemthi, dk.diemqt, dk.diemck, dk.diemtk\r\nfrom qlth.qlth_dangky dk join qlth.qlth_sinhvien sv on dk.masv = sv.masv\r\njoin qlth.qlth_hocphan hp on dk.mahp = hp.mahp";
-                MessageBox.Show(sql);
+                //MessageBox.Show(sql);
                 OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -152,9 +154,14 @@ namespace QLTruongHoc.nhan_su.uc
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void UpdateBtn_Click(object sender, EventArgs e)
         {
-            
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn sinh viên để cập nhật điểm.");
+                return;
+            }
+
             DataGridViewRow row = dataGridView1.SelectedRows[0];
             decimal? diemthi = row.Cells["DIEMTHI"].Value == DBNull.Value ? null : (decimal)row.Cells["DIEMTHI"].Value;
 

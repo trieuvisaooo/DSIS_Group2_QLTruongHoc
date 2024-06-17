@@ -35,10 +35,10 @@
             dataGridView1 = new DataGridView();
             listView1 = new ListView();
             panel2 = new Panel();
-            button2 = new Button();
+            UpdateBtn = new Button();
+            InsertBtn = new Button();
+            DeleteBtn = new Button();
             refreshBtn = new Button();
-            button3 = new Button();
-            button4 = new Button();
             panel1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -51,7 +51,7 @@
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(137, 38);
+            label1.Size = new Size(163, 45);
             label1.TabIndex = 0;
             label1.Text = "LỚP HỌC";
             // 
@@ -89,9 +89,9 @@
             button1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             button1.BackColor = Color.DarkOliveGreen;
             button1.ForeColor = SystemColors.ButtonFace;
-            button1.Location = new Point(261, 3);
+            button1.Location = new Point(234, 3);
             button1.Name = "button1";
-            button1.Size = new Size(94, 39);
+            button1.Size = new Size(121, 39);
             button1.TabIndex = 4;
             button1.Text = "Refresh";
             button1.UseVisualStyleBackColor = false;
@@ -99,6 +99,7 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = SystemColors.ButtonFace;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(361, 48);
@@ -127,76 +128,79 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(button4);
-            panel2.Controls.Add(button3);
-            panel2.Controls.Add(button2);
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            panel2.Controls.Add(UpdateBtn);
+            panel2.Controls.Add(InsertBtn);
+            panel2.Controls.Add(DeleteBtn);
             panel2.Controls.Add(refreshBtn);
-            panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(361, 3);
             panel2.Name = "panel2";
             panel2.Size = new Size(1065, 39);
             panel2.TabIndex = 5;
             // 
-            // button2
+            // UpdateBtn
             // 
-            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button2.BackColor = Color.Crimson;
-            button2.ForeColor = SystemColors.ButtonFace;
-            button2.Location = new Point(680, 0);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 39);
-            button2.TabIndex = 4;
-            button2.Text = "Xóa";
-            button2.UseVisualStyleBackColor = false;
+            UpdateBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            UpdateBtn.BackColor = Color.PaleGoldenrod;
+            UpdateBtn.ForeColor = SystemColors.ActiveCaptionText;
+            UpdateBtn.Location = new Point(558, -3);
+            UpdateBtn.Name = "UpdateBtn";
+            UpdateBtn.Size = new Size(121, 47);
+            UpdateBtn.TabIndex = 6;
+            UpdateBtn.Text = "Cập Nhật";
+            UpdateBtn.UseVisualStyleBackColor = false;
+            UpdateBtn.Visible = false;
+            UpdateBtn.Click += UpdateBtn_Click;
+            // 
+            // InsertBtn
+            // 
+            InsertBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            InsertBtn.BackColor = Color.MediumSeaGreen;
+            InsertBtn.ForeColor = SystemColors.ActiveCaptionText;
+            InsertBtn.Location = new Point(431, -3);
+            InsertBtn.Name = "InsertBtn";
+            InsertBtn.Size = new Size(121, 47);
+            InsertBtn.TabIndex = 5;
+            InsertBtn.Text = "Thêm";
+            InsertBtn.UseVisualStyleBackColor = false;
+            InsertBtn.Visible = false;
+            // 
+            // DeleteBtn
+            // 
+            DeleteBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            DeleteBtn.BackColor = Color.Crimson;
+            DeleteBtn.ForeColor = SystemColors.ActiveCaptionText;
+            DeleteBtn.Location = new Point(685, -3);
+            DeleteBtn.Name = "DeleteBtn";
+            DeleteBtn.Size = new Size(121, 47);
+            DeleteBtn.TabIndex = 4;
+            DeleteBtn.Text = "Xóa";
+            DeleteBtn.UseVisualStyleBackColor = false;
+            DeleteBtn.Visible = false;
             // 
             // refreshBtn
             // 
             refreshBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             refreshBtn.BackColor = Color.DarkSlateBlue;
             refreshBtn.ForeColor = SystemColors.ButtonFace;
-            refreshBtn.Location = new Point(971, 0);
+            refreshBtn.Location = new Point(947, -3);
             refreshBtn.Name = "refreshBtn";
-            refreshBtn.Size = new Size(94, 39);
+            refreshBtn.Size = new Size(121, 47);
             refreshBtn.TabIndex = 3;
-            refreshBtn.Text = "Refresh";
+            refreshBtn.Text = "Xem";
             refreshBtn.UseVisualStyleBackColor = false;
             refreshBtn.Click += refreshBtn_Click_1;
             // 
-            // button3
+            // Emp_DangKyTab
             // 
-            button3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button3.BackColor = Color.SeaGreen;
-            button3.ForeColor = SystemColors.ButtonFace;
-            button3.Location = new Point(462, 0);
-            button3.Name = "button3";
-            button3.Size = new Size(94, 39);
-            button3.TabIndex = 5;
-            button3.Text = "Thêm";
-            button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            button4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button4.BackColor = Color.DarkGoldenrod;
-            button4.ForeColor = SystemColors.ButtonFace;
-            button4.Location = new Point(571, 0);
-            button4.Name = "button4";
-            button4.Size = new Size(94, 39);
-            button4.TabIndex = 6;
-            button4.Text = "Cập Nhật";
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click;
-            // 
-            // DangKyTab
-            // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panel1);
             Controls.Add(label1);
             Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(4);
             MinimumSize = new Size(1432, 800);
-            Name = "DangKyTab";
+            Name = "Emp_DangKyTab";
             Size = new Size(1432, 800);
             panel1.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
@@ -217,8 +221,8 @@
         private ToolTip listViewToolTip = new ToolTip();
         private Panel panel2;
         private Button refreshBtn;
-        private Button button2;
-        private Button button4;
-        private Button button3;
+        private Button DeleteBtn;
+        private Button UpdateBtn;
+        private Button InsertBtn;
     }
 }

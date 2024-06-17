@@ -1,6 +1,8 @@
 ﻿using Oracle.ManagedDataAccess.Client;
+using QLTruongHoc.nhan_su.forms;
 using QLTruongHoc.utils;
 using System.Data;
+using System.Windows.Forms;
 
 
 namespace QLTruongHoc.nhan_su.uc
@@ -13,16 +15,7 @@ namespace QLTruongHoc.nhan_su.uc
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NhanSu_tab_Load(object sender, EventArgs e)
-        {
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void SearchBtn_Click(object sender, EventArgs e)
         {
             string search = searchTextBox.Text;
             if (search.Length > 0)
@@ -36,7 +29,7 @@ namespace QLTruongHoc.nhan_su.uc
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void ViewBtn_Click(object sender, EventArgs e)
         {
             string sql = "SELECT * FROM QLTH.qlth_nhansu";
             OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
@@ -59,6 +52,50 @@ namespace QLTruongHoc.nhan_su.uc
             NhanSu_Table.Columns["VAITRO"].HeaderText = "Vai Trò";
             NhanSu_Table.Columns["MADV"].HeaderText = "Mã Đơn Vị";
             NhanSu_Table.Columns["MACS"].HeaderText = "Cơ sở";
+        }
+
+        private void InsertBtn_Click(object sender, EventArgs e)
+        {
+            InsertNhanSu insertNhanSu = new InsertNhanSu();
+            insertNhanSu.Show();
+        }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            if (NhanSu_Table.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn nhân sự muốn xóa.");
+                return;
+            }
+
+            try
+            {
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa phân sự này?", "Xóa Nhân Sự", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                switch (result)
+                {
+                    case DialogResult.Yes:
+                        DataGridViewRow row = NhanSu_Table.SelectedRows[0];
+                        int mans = (int)row.Cells["MANS"].Value;
+
+                        string sql = $"delete from qlth.qlth_nhansu " +
+                            "where mans = " + mans;
+
+
+                        OracleCommand cmd = new OracleCommand(sql, Session.Instance.OracleConnection);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Xóa Thành Công");
+
+                        break;
+                    default:
+                        break;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
