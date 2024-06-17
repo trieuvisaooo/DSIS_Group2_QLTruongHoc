@@ -68,7 +68,6 @@
             rolebox.Name = "rolebox";
             rolebox.Size = new Size(460, 51);
             rolebox.TabIndex = 2;
-            rolebox.TextChanged += rolebox_TextChanged;
             // 
             // passbox
             // 

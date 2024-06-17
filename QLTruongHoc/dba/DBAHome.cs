@@ -2,42 +2,27 @@
 {
     public partial class DBAHome : Form
     {
-        public DBAHome()
+        Login CurLogin = new Login();
+        bool isLogout = false;
+        public DBAHome(Login curLogin)
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void sysPrivs1_Load(object sender, EventArgs e)
-        {
-
+            CurLogin = curLogin;
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
+
             base.OnFormClosing(e);
 
             if (e.CloseReason == CloseReason.WindowsShutDown) return;
-            DialogResult dg = MessageBox.Show("Bạn có muốn kết thúc chương trình không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dg;
+            if (isLogout)
+            {
+                dg = MessageBox.Show("Bạn có muốn đăng xuất không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            } else {
+                dg = MessageBox.Show("Bạn có muốn kết thúc chương trình không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            }
             switch (dg)
             {
                 case DialogResult.No:
@@ -48,30 +33,20 @@
         }
 
 
-
-        private void DBA_Home_Closing(object sender, FormClosingEventArgs e)
+        private void LogoutBtn_Click(object sender, EventArgs e)
         {
-
+            isLogout = true;
+            this.Close();
+            CurLogin.con.Close();
+            CurLogin.Show();
         }
 
-        private void tablesViewsTab_Click(object sender, EventArgs e)
+        private void DBAHome_FormClosed(object sender, FormClosedEventArgs e)
         {
-
-        }
-
-        private void tablesViewsTab_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DBA_Home_Closed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void auditTab1_Load(object sender, EventArgs e)
-        {
-
+            if (!isLogout)
+            {
+                Application.Exit();
+            }
         }
     }
 }

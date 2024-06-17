@@ -154,7 +154,7 @@ namespace QLTruongHoc.dba.forms
                         catch (Exception ex)
                         {
                             MessageBox.Show("Khôi phục thất bại!");
-                            //MessageBox.Show(ex.Message);
+                            MessageBox.Show(ex.Message);
                         }
                     }
 

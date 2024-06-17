@@ -29,39 +29,108 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StuHome));
-            tabControl1 = new TabControl();
+            TBTabpage = new TabPage();
+            thongbaoTab1 = new uc.Stu_THONGBAOTab();
+            KQHTTabPage = new TabPage();
+            kqhtTab1 = new uc.Stu_KQHTTab();
+            KHMoTabpage = new TabPage();
+            khmO_sv1 = new uc.Stu_KHMOTab();
+            HPTabpage = new TabPage();
+            hpsvTab1 = new uc.HPSVTab();
             TTCNTabPage = new TabPage();
-            hocPhanTabpage = new TabPage();
-            hocPhanTab1 = new nhan_su.uc.HocPhanTab();
-            khmoTabpage = new TabPage();
-            khmoTab1 = new nhan_su.uc.KhmoTab();
-            dangKyTabPage = new TabPage();
-            dangKyTab1 = new nhan_su.uc.DangKyTab();
-            donViTabpage = new TabPage();
-            donViTab1 = new nhan_su.uc.DonViTab();
-            ttcnsvTab1 = new uc.TTCNSVTab();
-            tabControl1.SuspendLayout();
+            ttcnsvTab1 = new uc.Stu_TTCNTab();
+            tabControl1 = new TabControl();
+            DangKyTabPage = new TabPage();
+            stu_dangkyTab1 = new uc.Stu_DANGKYTab();
+            LogoutBtn = new Button();
+            TBTabpage.SuspendLayout();
+            KQHTTabPage.SuspendLayout();
+            KHMoTabpage.SuspendLayout();
+            HPTabpage.SuspendLayout();
             TTCNTabPage.SuspendLayout();
-            hocPhanTabpage.SuspendLayout();
-            khmoTabpage.SuspendLayout();
-            dangKyTabPage.SuspendLayout();
-            donViTabpage.SuspendLayout();
+            tabControl1.SuspendLayout();
+            DangKyTabPage.SuspendLayout();
             SuspendLayout();
             // 
-            // tabControl1
+            // TBTabpage
             // 
-            tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            tabControl1.Controls.Add(TTCNTabPage);
-            tabControl1.Controls.Add(hocPhanTabpage);
-            tabControl1.Controls.Add(khmoTabpage);
-            tabControl1.Controls.Add(dangKyTabPage);
-            tabControl1.Controls.Add(donViTabpage);
-            tabControl1.Location = new Point(4, 0);
-            tabControl1.Margin = new Padding(4, 5, 4, 5);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1803, 1024);
-            tabControl1.TabIndex = 1;
+            TBTabpage.Controls.Add(thongbaoTab1);
+            TBTabpage.Location = new Point(4, 34);
+            TBTabpage.Margin = new Padding(4, 5, 4, 5);
+            TBTabpage.Name = "TBTabpage";
+            TBTabpage.Padding = new Padding(4, 5, 4, 5);
+            TBTabpage.Size = new Size(1795, 855);
+            TBTabpage.TabIndex = 1;
+            TBTabpage.Text = "Thông Báo";
+            TBTabpage.UseVisualStyleBackColor = true;
+            // 
+            // thongbaoTab1
+            // 
+            thongbaoTab1.Location = new Point(0, 0);
+            thongbaoTab1.MinimumSize = new Size(1432, 800);
+            thongbaoTab1.Name = "thongbaoTab1";
+            thongbaoTab1.Size = new Size(1795, 850);
+            thongbaoTab1.TabIndex = 0;
+            // 
+            // KQHTTabPage
+            // 
+            KQHTTabPage.Controls.Add(kqhtTab1);
+            KQHTTabPage.Location = new Point(4, 34);
+            KQHTTabPage.Margin = new Padding(4);
+            KQHTTabPage.Name = "KQHTTabPage";
+            KQHTTabPage.Padding = new Padding(4);
+            KQHTTabPage.Size = new Size(1795, 855);
+            KQHTTabPage.TabIndex = 5;
+            KQHTTabPage.Text = "Kết Quả Học Tập";
+            KQHTTabPage.UseVisualStyleBackColor = true;
+            // 
+            // kqhtTab1
+            // 
+            kqhtTab1.Location = new Point(0, 0);
+            kqhtTab1.MinimumSize = new Size(1432, 800);
+            kqhtTab1.Name = "kqhtTab1";
+            kqhtTab1.Size = new Size(1795, 850);
+            kqhtTab1.TabIndex = 0;
+            // 
+            // KHMoTabpage
+            // 
+            KHMoTabpage.Controls.Add(khmO_sv1);
+            KHMoTabpage.Location = new Point(4, 34);
+            KHMoTabpage.Margin = new Padding(4);
+            KHMoTabpage.Name = "KHMoTabpage";
+            KHMoTabpage.Padding = new Padding(4);
+            KHMoTabpage.Size = new Size(1795, 855);
+            KHMoTabpage.TabIndex = 3;
+            KHMoTabpage.Text = "Kế Hoạch Mở";
+            KHMoTabpage.UseVisualStyleBackColor = true;
+            // 
+            // khmO_sv1
+            // 
+            khmO_sv1.Location = new Point(0, 0);
+            khmO_sv1.MinimumSize = new Size(1432, 800);
+            khmO_sv1.Name = "khmO_sv1";
+            khmO_sv1.Size = new Size(1795, 850);
+            khmO_sv1.TabIndex = 0;
+            // 
+            // HPTabpage
+            // 
+            HPTabpage.Controls.Add(hpsvTab1);
+            HPTabpage.Location = new Point(4, 34);
+            HPTabpage.Margin = new Padding(4);
+            HPTabpage.Name = "HPTabpage";
+            HPTabpage.Padding = new Padding(4);
+            HPTabpage.Size = new Size(1795, 855);
+            HPTabpage.TabIndex = 2;
+            HPTabpage.Text = "Học Phần";
+            HPTabpage.UseVisualStyleBackColor = true;
+            // 
+            // hpsvTab1
+            // 
+            hpsvTab1.Location = new Point(0, 0);
+            hpsvTab1.MinimumSize = new Size(1432, 800);
+            hpsvTab1.Name = "hpsvTab1";
+            hpsvTab1.Size = new Size(1795, 850);
+            hpsvTab1.TabIndex = 0;
             // 
             // TTCNTabPage
             // 
@@ -70,140 +139,106 @@
             TTCNTabPage.Margin = new Padding(4, 5, 4, 5);
             TTCNTabPage.Name = "TTCNTabPage";
             TTCNTabPage.Padding = new Padding(4, 5, 4, 5);
-            TTCNTabPage.Size = new Size(1795, 986);
+            TTCNTabPage.Size = new Size(1795, 855);
             TTCNTabPage.TabIndex = 0;
             TTCNTabPage.Text = "Thông Tin Cá Nhân";
             TTCNTabPage.UseVisualStyleBackColor = true;
             // 
-            // hocPhanTabpage
-            // 
-            hocPhanTabpage.Controls.Add(hocPhanTab1);
-            hocPhanTabpage.Location = new Point(4, 34);
-            hocPhanTabpage.Margin = new Padding(4);
-            hocPhanTabpage.Name = "hocPhanTabpage";
-            hocPhanTabpage.Padding = new Padding(4);
-            hocPhanTabpage.Size = new Size(1795, 986);
-            hocPhanTabpage.TabIndex = 2;
-            hocPhanTabpage.Text = "Học Phần";
-            hocPhanTabpage.UseVisualStyleBackColor = true;
-            // 
-            // hocPhanTab1
-            // 
-            hocPhanTab1.Dock = DockStyle.Fill;
-            hocPhanTab1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            hocPhanTab1.Location = new Point(4, 4);
-            hocPhanTab1.Margin = new Padding(5, 5, 5, 5);
-            hocPhanTab1.MinimumSize = new Size(1790, 1250);
-            hocPhanTab1.Name = "hocPhanTab1";
-            hocPhanTab1.Size = new Size(1790, 1250);
-            hocPhanTab1.TabIndex = 0;
-            // 
-            // khmoTabpage
-            // 
-            khmoTabpage.Controls.Add(khmoTab1);
-            khmoTabpage.Location = new Point(4, 34);
-            khmoTabpage.Margin = new Padding(4);
-            khmoTabpage.Name = "khmoTabpage";
-            khmoTabpage.Padding = new Padding(4);
-            khmoTabpage.Size = new Size(1795, 986);
-            khmoTabpage.TabIndex = 3;
-            khmoTabpage.Text = "Kế Hoạch Mở";
-            khmoTabpage.UseVisualStyleBackColor = true;
-            // 
-            // khmoTab1
-            // 
-            khmoTab1.Dock = DockStyle.Fill;
-            khmoTab1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            khmoTab1.Location = new Point(4, 4);
-            khmoTab1.Margin = new Padding(5, 5, 5, 5);
-            khmoTab1.MinimumSize = new Size(1790, 1000);
-            khmoTab1.Name = "khmoTab1";
-            khmoTab1.Size = new Size(1790, 1000);
-            khmoTab1.TabIndex = 0;
-            // 
-            // dangKyTabPage
-            // 
-            dangKyTabPage.Controls.Add(dangKyTab1);
-            dangKyTabPage.Location = new Point(4, 34);
-            dangKyTabPage.Margin = new Padding(4);
-            dangKyTabPage.Name = "dangKyTabPage";
-            dangKyTabPage.Padding = new Padding(4);
-            dangKyTabPage.Size = new Size(1795, 986);
-            dangKyTabPage.TabIndex = 5;
-            dangKyTabPage.Text = "Lớp Học";
-            dangKyTabPage.UseVisualStyleBackColor = true;
-            // 
-            // dangKyTab1
-            // 
-            dangKyTab1.Dock = DockStyle.Fill;
-            dangKyTab1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dangKyTab1.Location = new Point(4, 4);
-            dangKyTab1.Margin = new Padding(5, 5, 5, 5);
-            dangKyTab1.MinimumSize = new Size(1790, 1000);
-            dangKyTab1.Name = "dangKyTab1";
-            dangKyTab1.Size = new Size(1790, 1000);
-            dangKyTab1.TabIndex = 0;
-            // 
-            // donViTabpage
-            // 
-            donViTabpage.Controls.Add(donViTab1);
-            donViTabpage.Location = new Point(4, 34);
-            donViTabpage.Margin = new Padding(4, 5, 4, 5);
-            donViTabpage.Name = "donViTabpage";
-            donViTabpage.Padding = new Padding(4, 5, 4, 5);
-            donViTabpage.Size = new Size(1795, 986);
-            donViTabpage.TabIndex = 1;
-            donViTabpage.Text = "Đơn Vị";
-            donViTabpage.UseVisualStyleBackColor = true;
-            // 
-            // donViTab1
-            // 
-            donViTab1.Dock = DockStyle.Fill;
-            donViTab1.Location = new Point(4, 5);
-            donViTab1.Margin = new Padding(5);
-            donViTab1.MinimumSize = new Size(1790, 1000);
-            donViTab1.Name = "donViTab1";
-            donViTab1.Size = new Size(1790, 1000);
-            donViTab1.TabIndex = 0;
-            // 
             // ttcnsvTab1
             // 
             ttcnsvTab1.Location = new Point(-4, 0);
+            ttcnsvTab1.MinimumSize = new Size(1432, 800);
             ttcnsvTab1.Name = "ttcnsvTab1";
-            ttcnsvTab1.Size = new Size(1799, 986);
+            ttcnsvTab1.Size = new Size(1799, 886);
             ttcnsvTab1.TabIndex = 0;
+            // 
+            // tabControl1
+            // 
+            tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tabControl1.Controls.Add(TTCNTabPage);
+            tabControl1.Controls.Add(KQHTTabPage);
+            tabControl1.Controls.Add(HPTabpage);
+            tabControl1.Controls.Add(KHMoTabpage);
+            tabControl1.Controls.Add(DangKyTabPage);
+            tabControl1.Controls.Add(TBTabpage);
+            tabControl1.Location = new Point(4, 0);
+            tabControl1.Margin = new Padding(4, 5, 4, 5);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(1803, 893);
+            tabControl1.TabIndex = 1;
+            // 
+            // DangKyTabPage
+            // 
+            DangKyTabPage.Controls.Add(stu_dangkyTab1);
+            DangKyTabPage.Location = new Point(4, 34);
+            DangKyTabPage.Name = "DangKyTabPage";
+            DangKyTabPage.Size = new Size(1795, 855);
+            DangKyTabPage.TabIndex = 6;
+            DangKyTabPage.Text = "Đăng Ký HP";
+            DangKyTabPage.UseVisualStyleBackColor = true;
+            // 
+            // stu_dangkyTab1
+            // 
+            stu_dangkyTab1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            stu_dangkyTab1.Location = new Point(0, 0);
+            stu_dangkyTab1.MinimumSize = new Size(1432, 800);
+            stu_dangkyTab1.Name = "stu_dangkyTab1";
+            stu_dangkyTab1.Size = new Size(1795, 850);
+            stu_dangkyTab1.TabIndex = 0;
+            // 
+            // LogoutBtn
+            // 
+            LogoutBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            LogoutBtn.BackColor = Color.Crimson;
+            LogoutBtn.Font = new Font("Segoe UI Black", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LogoutBtn.ForeColor = Color.WhiteSmoke;
+            LogoutBtn.Location = new Point(1669, 889);
+            LogoutBtn.Margin = new Padding(4, 5, 4, 5);
+            LogoutBtn.Name = "LogoutBtn";
+            LogoutBtn.Size = new Size(136, 59);
+            LogoutBtn.TabIndex = 2;
+            LogoutBtn.Text = "Đăng xuất";
+            LogoutBtn.UseVisualStyleBackColor = false;
+            LogoutBtn.Click += LogoutBtn_Click;
             // 
             // StuHome
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1808, 1050);
+            ClientSize = new Size(1808, 950);
+            Controls.Add(LogoutBtn);
             Controls.Add(tabControl1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(1824, 1006);
             Name = "StuHome";
             Text = "QUẢN LÝ TRƯỜNG HỌC";
-            tabControl1.ResumeLayout(false);
+            FormClosed += StuHome_FormClosed;
+            TBTabpage.ResumeLayout(false);
+            KQHTTabPage.ResumeLayout(false);
+            KHMoTabpage.ResumeLayout(false);
+            HPTabpage.ResumeLayout(false);
             TTCNTabPage.ResumeLayout(false);
-            hocPhanTabpage.ResumeLayout(false);
-            khmoTabpage.ResumeLayout(false);
-            dangKyTabPage.ResumeLayout(false);
-            donViTabpage.ResumeLayout(false);
+            tabControl1.ResumeLayout(false);
+            DangKyTabPage.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private TabControl tabControl1;
+        private TabPage TBTabpage;
+        private TabPage KQHTTabPage;
+        private TabPage KHMoTabpage;
+        private TabPage HPTabpage;
         private TabPage TTCNTabPage;
-        private TabPage donViTabpage;
-        private nhan_su.uc.DonViTab donViTab1;
-        private TabPage hocPhanTabpage;
-        private nhan_su.uc.HocPhanTab hocPhanTab1;
-        private TabPage khmoTabpage;
-        private nhan_su.uc.KhmoTab khmoTab1;
-        private TabPage dangKyTabPage;
-        private nhan_su.uc.DangKyTab dangKyTab1;
-        private uc.TTCNSVTab ttcnsvTab1;
+        private uc.Stu_TTCNTab ttcnsvTab1;
+        private TabControl tabControl1;
+        private TabPage DangKyTabPage;
+        private uc.Stu_KHMOTab khmO_sv1;
+        private uc.Stu_THONGBAOTab thongbaoTab1;
+        private uc.Stu_KQHTTab kqhtTab1;
+        private uc.HPSVTab hpsvTab1;
+        private Button LogoutBtn;
+        private uc.Stu_DANGKYTab stu_dangkyTab1;
     }
 }

@@ -218,7 +218,7 @@
             loadButton.Name = "loadButton";
             loadButton.Size = new Size(120, 44);
             loadButton.TabIndex = 11;
-            loadButton.Text = "Refresh";
+            loadButton.Text = "Xem";
             loadButton.UseVisualStyleBackColor = false;
             loadButton.Click += loadButton_Click;
             // 
@@ -251,7 +251,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(tableLayoutPanel1);
             Margin = new Padding(4, 3, 4, 3);
-            MinimumSize = new Size(1804, 1000);
+            MinimumSize = new Size(1432, 800);
             Name = "PrivilegeTab";
             Size = new Size(1804, 1000);
             Load += Privilege_Load;

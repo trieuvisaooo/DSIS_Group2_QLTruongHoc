@@ -23,14 +23,15 @@ namespace QLTruongHoc.dba.uc
                 {
                     sql_statement = "SELECT AUDIT_TYPE, DBUSERNAME, EVENT_TIMESTAMP, ACTION_NAME, OBJECT_NAME, SQL_TEXT, SYSTEM_PRIVILEGE_USED, RETURN_CODE" +
                                     "\r\nFROM UNIFIED_AUDIT_TRAIL" +
-                                    "\r\nWHERE UNIFIED_AUDIT_POLICIES LIKE '%DBA_ON_QLTH_AUDIT_POL%'" +
+                                    "\r\nWHERE UNIFIED_AUDIT_POLICIES LIKE '%DBA_ON_QLTH_AUDIT_POL%' AND DBUSERNAME != 'SYS'" +
                                     "\r\nORDER BY EVENT_TIMESTAMP DESC";
                     //MessageBox.Show(sql_statement);
                     OracleDataAdapter da = new OracleDataAdapter(sql_statement, Session.Instance.OracleConnection);
                     DataTable dt1 = new DataTable();
                     da.Fill(dt1);
                     dataGridView1.DataSource = dt1;
-                } catch (Exception ex)
+                }
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
@@ -52,7 +53,7 @@ namespace QLTruongHoc.dba.uc
                 {
                     MessageBox.Show(ex.Message);
                 }
-                
+
             }
             else if (audit_type == "DANGKY_AUDIT")
             {
@@ -97,7 +98,7 @@ namespace QLTruongHoc.dba.uc
                 {
                     MessageBox.Show(ex.Message);
                 }
-                
+
             }
             else if (audit_type == "UPDATE_DANGKY")
             {
@@ -116,9 +117,9 @@ namespace QLTruongHoc.dba.uc
                 {
                     MessageBox.Show(ex.Message);
                 }
-                
+
             }
-            
+
         }
     }
 }

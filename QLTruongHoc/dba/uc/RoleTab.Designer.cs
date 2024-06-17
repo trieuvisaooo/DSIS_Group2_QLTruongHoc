@@ -51,7 +51,7 @@
             dataGridView1.Margin = new Padding(4, 3, 4, 3);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1800, 857);
+            dataGridView1.Size = new Size(1428, 657);
             dataGridView1.TabIndex = 0;
             // 
             // button1
@@ -101,7 +101,6 @@
             label2.Size = new Size(158, 31);
             label2.TabIndex = 4;
             label2.Text = "Tìm theo Role";
-            label2.Click += label2_Click;
             // 
             // button3
             // 
@@ -148,7 +147,6 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(337, 36);
             textBox2.TabIndex = 8;
-            textBox2.TextChanged += textBox2_TextChanged;
             // 
             // button5
             // 
@@ -156,12 +154,12 @@
             button5.BackColor = Color.DarkSlateBlue;
             button5.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 163);
             button5.ForeColor = SystemColors.ButtonFace;
-            button5.Location = new Point(1680, 78);
+            button5.Location = new Point(1308, 78);
             button5.Margin = new Padding(4, 3, 4, 3);
             button5.Name = "button5";
             button5.Size = new Size(120, 44);
             button5.TabIndex = 9;
-            button5.Text = "Refresh";
+            button5.Text = "Xem";
             button5.UseVisualStyleBackColor = false;
             button5.Click += button5_Click;
             // 
@@ -180,10 +178,9 @@
             Controls.Add(button1);
             Controls.Add(dataGridView1);
             Margin = new Padding(4, 3, 4, 3);
-            MinimumSize = new Size(1804, 1000);
+            MinimumSize = new Size(1432, 800);
             Name = "RoleTab";
-            Size = new Size(1804, 1000);
-            Load += DBA_RoleUI_Load;
+            Size = new Size(1432, 800);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

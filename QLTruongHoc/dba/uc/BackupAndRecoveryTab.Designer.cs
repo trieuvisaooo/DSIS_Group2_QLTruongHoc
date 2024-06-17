@@ -254,7 +254,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panel1);
-            MinimumSize = new Size(1801, 1000);
+            MinimumSize = new Size(1432, 800);
             Name = "BackupAndRecoveryTab";
             Size = new Size(1801, 1000);
             panel1.ResumeLayout(false);
