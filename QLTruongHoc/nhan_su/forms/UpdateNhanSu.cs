@@ -43,7 +43,7 @@ namespace QLTruongHoc.nhan_su.forms
                             + $" set hoten = N'{NameTxtBox.Text}', phai = N'{GenderComBox.SelectedItem.ToString()}', ngsinh = TO_DATE('{DateOfBirthPicker.Value.ToString("dd/MM/yyyy")}', 'dd/mm/yyyy'), diachi = N'{AddrTxtbox.Text}', dt = '{PhoneTxtBox.Text}', phucap = {AllowanceNumericUpDown.Value}, vaitro = N'{RoleComBox.SelectedItem.ToString()}', madv = '{DepartmentCombox.SelectedItem.ToString()}', macs = '{LocationCombox.SelectedItem.ToString()}' "
                             + $"where mans = TO_NUMBER({ns.id})";
                 OracleCommand cmd = new OracleCommand(sql, Session.Instance.OracleConnection);
-                MessageBox.Show(sql);
+                //MessageBox.Show(sql);
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Cập nhật thành công!");

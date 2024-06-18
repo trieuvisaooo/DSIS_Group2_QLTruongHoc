@@ -14,6 +14,12 @@ namespace QLTruongHoc.nhan_su.uc
 
         private void ViewBtn_Click(object sender, EventArgs e)
         {
+            if (TabComBox.SelectedItem == null)
+            {
+                MessageBox.Show("Vui lòng chọn bảng muốn xem.");
+                return;
+            }
+
             string sql_statement;
             string tab_name = TabComBox.Text.ToString();
             try

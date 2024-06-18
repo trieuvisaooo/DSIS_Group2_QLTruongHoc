@@ -126,6 +126,7 @@
             // 
             // TabComBox
             // 
+            TabComBox.DropDownStyle = ComboBoxStyle.DropDownList;
             TabComBox.FormattingEnabled = true;
             TabComBox.Items.AddRange(new object[] { "NHANSU", "SINHVIEN", "CHUONGTRINH", "NGANH", "THONGBAO", "COSO", "THOIGIANDK", "DONVI", "HOCPHAN", "KHMO", "PHANCONG", "DANGKY" });
             TabComBox.Location = new Point(556, 84);
@@ -156,13 +157,13 @@
             label1.TabIndex = 2;
             label1.Text = "BACKUP-RECOVERY";
             // 
-            // Emp_XemQLTH
+            // Emp_XemQLTHTab
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panel1);
             MinimumSize = new Size(1432, 800);
-            Name = "Emp_XemQLTH";
+            Name = "Emp_XemQLTHTab";
             Size = new Size(1432, 800);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
