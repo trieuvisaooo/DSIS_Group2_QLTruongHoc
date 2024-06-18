@@ -315,7 +315,7 @@
             // 
             RegisterBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             RegisterBtn.BackColor = Color.MediumSeaGreen;
-            RegisterBtn.ForeColor = SystemColors.ButtonHighlight;
+            RegisterBtn.ForeColor = SystemColors.ActiveCaptionText;
             RegisterBtn.Location = new Point(1297, 366);
             RegisterBtn.Name = "RegisterBtn";
             RegisterBtn.Size = new Size(121, 47);
@@ -365,7 +365,7 @@
             // 
             CancelBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             CancelBtn.BackColor = Color.Crimson;
-            CancelBtn.ForeColor = SystemColors.ButtonHighlight;
+            CancelBtn.ForeColor = SystemColors.ActiveCaptionText;
             CancelBtn.Location = new Point(1281, 753);
             CancelBtn.Name = "CancelBtn";
             CancelBtn.Size = new Size(138, 47);

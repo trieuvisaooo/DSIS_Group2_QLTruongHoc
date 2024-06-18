@@ -35,8 +35,8 @@ namespace QLTruongHoc.nhan_su.forms
                 month = "0" + month;
             }
             string year = birthDate.Year.ToString();
-            string sql = $"INSERT INTO QLTH.QLTH_NHANSU(MANS, HOTEN, PHAI, NGSINH, DIACHI, DT, VAITRO, MADV) " +
-                $"VALUES({textBox1.Text}, N'{textBox2.Text}', N'{comboBox1.SelectedItem.ToString()}', '{year}-{month}-{day}', N'{textBox3.Text}', '{textBox4.Text}', '{comboBox2.SelectedItem.ToString()}', '{comboBox3.SelectedItem.ToString()}')";
+            string sql = $"INSERT INTO QLTH.QLTH_NHANSU(MANS, HOTEN, PHAI, NGSINH, DIACHI, DT, VAITRO, MADV, MACS) " +
+                $"VALUES({textBox1.Text}, N'{textBox2.Text}', N'{comboBox1.SelectedItem.ToString()}', '{year}-{month}-{day}', N'{textBox3.Text}', '{textBox4.Text}', '{comboBox2.SelectedItem.ToString()}', '{comboBox3.SelectedItem.ToString()}', '{comboBox4.SelectedItem.ToString()}')";
 
             //MessageBox.Show(sql);
             OracleCommand command = new OracleCommand(sql, Session.Instance.OracleConnection);

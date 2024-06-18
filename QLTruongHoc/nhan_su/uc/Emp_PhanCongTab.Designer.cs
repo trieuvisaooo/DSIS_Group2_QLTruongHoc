@@ -77,7 +77,7 @@
             // InsertBtn
             // 
             InsertBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            InsertBtn.BackColor = Color.MediumSpringGreen;
+            InsertBtn.BackColor = Color.MediumSeaGreen;
             InsertBtn.ForeColor = SystemColors.ActiveCaptionText;
             InsertBtn.Location = new Point(812, 34);
             InsertBtn.Name = "InsertBtn";

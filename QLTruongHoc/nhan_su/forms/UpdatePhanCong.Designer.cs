@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             tableLayoutPanel1 = new TableLayoutPanel();
-            textBox7 = new TextBox();
+            textBox8 = new TextBox();
             textBox6 = new TextBox();
             textBox5 = new TextBox();
             textBox4 = new TextBox();
@@ -40,12 +40,12 @@
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
-            label7 = new Label();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             button1 = new Button();
+            label7 = new Label();
+            textBox7 = new TextBox();
             label8 = new Label();
-            textBox8 = new TextBox();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -87,19 +87,20 @@
             tableLayoutPanel1.Size = new Size(644, 521);
             tableLayoutPanel1.TabIndex = 0;
             // 
-            // textBox7
+            // textBox8
             // 
-            textBox7.Location = new Point(216, 353);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(425, 31);
-            textBox7.TabIndex = 14;
+            textBox8.Location = new Point(216, 303);
+            textBox8.Name = "textBox8";
+            textBox8.ReadOnly = true;
+            textBox8.Size = new Size(425, 36);
+            textBox8.TabIndex = 17;
             // 
             // textBox6
             // 
             textBox6.Location = new Point(216, 253);
             textBox6.Name = "textBox6";
             textBox6.ReadOnly = true;
-            textBox6.Size = new Size(425, 31);
+            textBox6.Size = new Size(425, 36);
             textBox6.TabIndex = 13;
             // 
             // textBox5
@@ -107,7 +108,7 @@
             textBox5.Location = new Point(216, 203);
             textBox5.Name = "textBox5";
             textBox5.ReadOnly = true;
-            textBox5.Size = new Size(425, 31);
+            textBox5.Size = new Size(425, 36);
             textBox5.TabIndex = 12;
             // 
             // textBox4
@@ -115,7 +116,7 @@
             textBox4.Location = new Point(216, 153);
             textBox4.Name = "textBox4";
             textBox4.ReadOnly = true;
-            textBox4.Size = new Size(425, 31);
+            textBox4.Size = new Size(425, 36);
             textBox4.TabIndex = 11;
             // 
             // textBox3
@@ -123,16 +124,16 @@
             textBox3.Location = new Point(216, 103);
             textBox3.Name = "textBox3";
             textBox3.ReadOnly = true;
-            textBox3.Size = new Size(425, 31);
+            textBox3.Size = new Size(425, 36);
             textBox3.TabIndex = 10;
             // 
             // label1
             // 
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label1.AutoSize = true;
-            label1.Location = new Point(145, 0);
+            label1.Location = new Point(132, 0);
             label1.Name = "label1";
-            label1.Size = new Size(65, 25);
+            label1.Size = new Size(78, 30);
             label1.TabIndex = 0;
             label1.Text = "Mã HP";
             // 
@@ -140,9 +141,9 @@
             // 
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label2.AutoSize = true;
-            label2.Location = new Point(144, 50);
+            label2.Location = new Point(129, 50);
             label2.Name = "label2";
-            label2.Size = new Size(66, 25);
+            label2.Size = new Size(81, 30);
             label2.TabIndex = 1;
             label2.Text = "Tên HP";
             // 
@@ -150,9 +151,9 @@
             // 
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label3.AutoSize = true;
-            label3.Location = new Point(143, 100);
+            label3.Location = new Point(129, 100);
             label3.Name = "label3";
-            label3.Size = new Size(67, 25);
+            label3.Size = new Size(81, 30);
             label3.TabIndex = 2;
             label3.Text = "Học Kỳ";
             // 
@@ -160,9 +161,9 @@
             // 
             label4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label4.AutoSize = true;
-            label4.Location = new Point(160, 150);
+            label4.Location = new Point(151, 150);
             label4.Name = "label4";
-            label4.Size = new Size(50, 25);
+            label4.Size = new Size(59, 30);
             label4.TabIndex = 3;
             label4.Text = "Năm";
             // 
@@ -170,9 +171,9 @@
             // 
             label5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label5.AutoSize = true;
-            label5.Location = new Point(119, 200);
+            label5.Location = new Point(101, 200);
             label5.Name = "label5";
-            label5.Size = new Size(91, 25);
+            label5.Size = new Size(109, 30);
             label5.TabIndex = 4;
             label5.Text = "Ngày Học";
             // 
@@ -180,28 +181,18 @@
             // 
             label6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label6.AutoSize = true;
-            label6.Location = new Point(170, 250);
+            label6.Location = new Point(161, 250);
             label6.Name = "label6";
-            label6.Size = new Size(40, 25);
+            label6.Size = new Size(49, 30);
             label6.TabIndex = 5;
             label6.Text = "Tiết";
-            // 
-            // label7
-            // 
-            label7.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label7.AutoSize = true;
-            label7.Location = new Point(145, 350);
-            label7.Name = "label7";
-            label7.Size = new Size(65, 25);
-            label7.TabIndex = 7;
-            label7.Text = "Mã GV";
             // 
             // textBox1
             // 
             textBox1.Location = new Point(216, 3);
             textBox1.Name = "textBox1";
             textBox1.ReadOnly = true;
-            textBox1.Size = new Size(425, 31);
+            textBox1.Size = new Size(425, 36);
             textBox1.TabIndex = 6;
             // 
             // textBox2
@@ -209,12 +200,12 @@
             textBox2.Location = new Point(216, 53);
             textBox2.Name = "textBox2";
             textBox2.ReadOnly = true;
-            textBox2.Size = new Size(425, 31);
+            textBox2.Size = new Size(425, 36);
             textBox2.TabIndex = 9;
             // 
             // button1
             // 
-            button1.BackColor = Color.DarkTurquoise;
+            button1.BackColor = Color.MediumSeaGreen;
             button1.Location = new Point(216, 403);
             button1.Name = "button1";
             button1.Size = new Size(127, 48);
@@ -223,28 +214,37 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // label7
+            // 
+            label7.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label7.AutoSize = true;
+            label7.Location = new Point(131, 350);
+            label7.Name = "label7";
+            label7.Size = new Size(79, 30);
+            label7.TabIndex = 7;
+            label7.Text = "Mã GV";
+            // 
+            // textBox7
+            // 
+            textBox7.Location = new Point(216, 353);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(425, 36);
+            textBox7.TabIndex = 14;
+            // 
             // label8
             // 
             label8.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label8.AutoSize = true;
-            label8.Location = new Point(92, 300);
+            label8.Location = new Point(67, 300);
             label8.Name = "label8";
-            label8.Size = new Size(118, 25);
+            label8.Size = new Size(143, 30);
             label8.TabIndex = 16;
             label8.Text = "Chương Trình";
             label8.TextAlign = ContentAlignment.TopRight;
             // 
-            // textBox8
-            // 
-            textBox8.Location = new Point(216, 303);
-            textBox8.Name = "textBox8";
-            textBox8.ReadOnly = true;
-            textBox8.Size = new Size(425, 31);
-            textBox8.TabIndex = 17;
-            // 
             // UpdatePhanCong
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(694, 562);
             Controls.Add(tableLayoutPanel1);

@@ -35,6 +35,7 @@
             ViewBtn = new Button();
             InsertBtn = new Button();
             DeleteBtn = new Button();
+            UpdateBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)NhanSu_Table).BeginInit();
             SuspendLayout();
             // 
@@ -45,12 +46,12 @@
             NhanSu_Table.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             NhanSu_Table.BackgroundColor = SystemColors.ButtonFace;
             NhanSu_Table.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            NhanSu_Table.Location = new Point(4, 94);
+            NhanSu_Table.Location = new Point(10, 94);
             NhanSu_Table.Margin = new Padding(4, 5, 4, 5);
             NhanSu_Table.Name = "NhanSu_Table";
             NhanSu_Table.RowHeadersWidth = 51;
             NhanSu_Table.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            NhanSu_Table.Size = new Size(1778, 878);
+            NhanSu_Table.Size = new Size(1772, 878);
             NhanSu_Table.TabIndex = 0;
             // 
             // searchTextBox
@@ -105,7 +106,7 @@
             // InsertBtn
             // 
             InsertBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            InsertBtn.BackColor = Color.MediumSpringGreen;
+            InsertBtn.BackColor = Color.MediumSeaGreen;
             InsertBtn.ForeColor = SystemColors.ActiveCaptionText;
             InsertBtn.Location = new Point(1044, 25);
             InsertBtn.Name = "InsertBtn";
@@ -120,7 +121,7 @@
             DeleteBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             DeleteBtn.BackColor = Color.Crimson;
             DeleteBtn.ForeColor = SystemColors.ActiveCaptionText;
-            DeleteBtn.Location = new Point(1171, 26);
+            DeleteBtn.Location = new Point(1298, 26);
             DeleteBtn.Name = "DeleteBtn";
             DeleteBtn.Size = new Size(121, 47);
             DeleteBtn.TabIndex = 6;
@@ -128,10 +129,24 @@
             DeleteBtn.UseVisualStyleBackColor = false;
             DeleteBtn.Click += DeleteBtn_Click;
             // 
+            // UpdateBtn
+            // 
+            UpdateBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            UpdateBtn.BackColor = Color.PaleGoldenrod;
+            UpdateBtn.ForeColor = SystemColors.ActiveCaptionText;
+            UpdateBtn.Location = new Point(1171, 25);
+            UpdateBtn.Name = "UpdateBtn";
+            UpdateBtn.Size = new Size(121, 47);
+            UpdateBtn.TabIndex = 7;
+            UpdateBtn.Text = "Cập Nhật";
+            UpdateBtn.UseVisualStyleBackColor = false;
+            UpdateBtn.Click += UpdateBtn_Click;
+            // 
             // Emp_NhanSuTab
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(UpdateBtn);
             Controls.Add(DeleteBtn);
             Controls.Add(InsertBtn);
             Controls.Add(ViewBtn);
@@ -157,5 +172,6 @@
         private Button ViewBtn;
         private Button InsertBtn;
         private Button DeleteBtn;
+        private Button UpdateBtn;
     }
 }

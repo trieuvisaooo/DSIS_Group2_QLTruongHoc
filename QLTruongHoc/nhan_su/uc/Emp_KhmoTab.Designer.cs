@@ -38,7 +38,7 @@
             SearchBtn = new Button();
             panel1 = new Panel();
             InsertBtn = new Button();
-            UpdateBtn = new Button();
+            DeleteBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -63,6 +63,7 @@
             dataGridView1.Location = new Point(14, 132);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(1404, 580);
             dataGridView1.TabIndex = 1;
             // 
@@ -152,7 +153,7 @@
             // InsertBtn
             // 
             InsertBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            InsertBtn.BackColor = Color.MediumAquamarine;
+            InsertBtn.BackColor = Color.MediumSeaGreen;
             InsertBtn.ForeColor = SystemColors.ActiveCaptionText;
             InsertBtn.Location = new Point(1297, 732);
             InsertBtn.Name = "InsertBtn";
@@ -163,25 +164,25 @@
             InsertBtn.Visible = false;
             InsertBtn.Click += InsertBtn_Click;
             // 
-            // UpdateBtn
+            // DeleteBtn
             // 
-            UpdateBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            UpdateBtn.BackColor = Color.PaleGoldenrod;
-            UpdateBtn.ForeColor = SystemColors.ActiveCaptionText;
-            UpdateBtn.Location = new Point(1142, 732);
-            UpdateBtn.Name = "UpdateBtn";
-            UpdateBtn.Size = new Size(121, 47);
-            UpdateBtn.TabIndex = 11;
-            UpdateBtn.Text = "Cập nhật";
-            UpdateBtn.UseVisualStyleBackColor = false;
-            UpdateBtn.Visible = false;
-            UpdateBtn.Click += UpdateBtn_Click;
+            DeleteBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            DeleteBtn.BackColor = Color.Crimson;
+            DeleteBtn.ForeColor = SystemColors.ActiveCaptionText;
+            DeleteBtn.Location = new Point(1142, 732);
+            DeleteBtn.Name = "DeleteBtn";
+            DeleteBtn.Size = new Size(121, 47);
+            DeleteBtn.TabIndex = 11;
+            DeleteBtn.Text = "Xóa";
+            DeleteBtn.UseVisualStyleBackColor = false;
+            DeleteBtn.Visible = false;
+            DeleteBtn.Click += DeleteBtn_Click;
             // 
             // Emp_KhmoTab
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(UpdateBtn);
+            Controls.Add(DeleteBtn);
             Controls.Add(InsertBtn);
             Controls.Add(panel1);
             Controls.Add(dataGridView1);
@@ -211,6 +212,6 @@
         private Button SearchBtn;
         private Panel panel1;
         private Button InsertBtn;
-        private Button UpdateBtn;
+        private Button DeleteBtn;
     }
 }

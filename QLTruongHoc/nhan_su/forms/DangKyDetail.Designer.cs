@@ -463,9 +463,9 @@
             // 
             // button1
             // 
-            button1.BackColor = SystemColors.MenuHighlight;
+            button1.BackColor = Color.MediumSeaGreen;
             button1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ButtonHighlight;
+            button1.ForeColor = SystemColors.ActiveCaptionText;
             button1.Location = new Point(840, 323);
             button1.Name = "button1";
             button1.Size = new Size(121, 47);

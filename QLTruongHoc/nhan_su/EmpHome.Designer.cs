@@ -46,6 +46,10 @@
             dangKyTab1 = new uc.Emp_DangKyTab();
             sinhVienTab = new TabPage();
             sinhVienTab1 = new uc.Emp_SinhVienTab();
+            xemCSDLTabpage = new TabPage();
+            emp_XemqlthTab1 = new uc.Emp_XemQLTHTab();
+            thongBaoTabpage = new TabPage();
+            emp_ThongBaoTab1 = new uc.Emp_ThongBaoTab();
             button1 = new Button();
             LogoutBtn = new Button();
             NhanSuTabControl.SuspendLayout();
@@ -57,6 +61,8 @@
             phanCongTab.SuspendLayout();
             dangKyTabPage.SuspendLayout();
             sinhVienTab.SuspendLayout();
+            xemCSDLTabpage.SuspendLayout();
+            thongBaoTabpage.SuspendLayout();
             SuspendLayout();
             // 
             // NhanSuTabControl
@@ -70,6 +76,8 @@
             NhanSuTabControl.Controls.Add(phanCongTab);
             NhanSuTabControl.Controls.Add(dangKyTabPage);
             NhanSuTabControl.Controls.Add(sinhVienTab);
+            NhanSuTabControl.Controls.Add(thongBaoTabpage);
+            NhanSuTabControl.Controls.Add(xemCSDLTabpage);
             NhanSuTabControl.Location = new Point(2, 1);
             NhanSuTabControl.Margin = new Padding(4, 5, 4, 5);
             NhanSuTabControl.Name = "NhanSuTabControl";
@@ -255,6 +263,42 @@
             sinhVienTab1.Size = new Size(1788, 933);
             sinhVienTab1.TabIndex = 0;
             // 
+            // xemCSDLTabpage
+            // 
+            xemCSDLTabpage.Controls.Add(emp_XemqlthTab1);
+            xemCSDLTabpage.Location = new Point(4, 34);
+            xemCSDLTabpage.Name = "xemCSDLTabpage";
+            xemCSDLTabpage.Size = new Size(1796, 941);
+            xemCSDLTabpage.TabIndex = 8;
+            xemCSDLTabpage.Text = "Xem CSDL";
+            xemCSDLTabpage.UseVisualStyleBackColor = true;
+            // 
+            // emp_XemqlthTab1
+            // 
+            emp_XemqlthTab1.Location = new Point(0, 0);
+            emp_XemqlthTab1.MinimumSize = new Size(1432, 800);
+            emp_XemqlthTab1.Name = "emp_XemqlthTab1";
+            emp_XemqlthTab1.Size = new Size(1788, 900);
+            emp_XemqlthTab1.TabIndex = 0;
+            // 
+            // thongBaoTabpage
+            // 
+            thongBaoTabpage.Controls.Add(emp_ThongBaoTab1);
+            thongBaoTabpage.Location = new Point(4, 34);
+            thongBaoTabpage.Name = "thongBaoTabpage";
+            thongBaoTabpage.Size = new Size(1796, 941);
+            thongBaoTabpage.TabIndex = 9;
+            thongBaoTabpage.Text = "Thông báo";
+            thongBaoTabpage.UseVisualStyleBackColor = true;
+            // 
+            // emp_ThongBaoTab1
+            // 
+            emp_ThongBaoTab1.Location = new Point(0, 0);
+            emp_ThongBaoTab1.MinimumSize = new Size(1432, 800);
+            emp_ThongBaoTab1.Name = "emp_ThongBaoTab1";
+            emp_ThongBaoTab1.Size = new Size(1788, 900);
+            emp_ThongBaoTab1.TabIndex = 0;
+            // 
             // button1
             // 
             button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
@@ -307,6 +351,8 @@
             phanCongTab.ResumeLayout(false);
             dangKyTabPage.ResumeLayout(false);
             sinhVienTab.ResumeLayout(false);
+            xemCSDLTabpage.ResumeLayout(false);
+            thongBaoTabpage.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -331,5 +377,10 @@
         private TabPage TTCNTabpage;
         private uc.Emp_TTCNTab emp_ttcnTab1;
         private Button LogoutBtn;
+        private TabPage xemCSDLTabpage;
+        private uc.Emp_XemQLTHTab emp_Xemqlth1;
+        private TabPage thongBaoTabpage;
+        private uc.Emp_ThongBaoTab emp_ThongBaoTab1;
+        private uc.Emp_XemQLTHTab emp_XemqlthTab1;
     }
 }

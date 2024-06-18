@@ -92,16 +92,16 @@
             textBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox2.Location = new Point(183, 53);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(312, 31);
+            textBox2.Size = new Size(312, 36);
             textBox2.TabIndex = 10;
             // 
             // label1
             // 
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label1.AutoSize = true;
-            label1.Location = new Point(59, 0);
+            label1.Location = new Point(35, 0);
             label1.Name = "label1";
-            label1.Size = new Size(118, 25);
+            label1.Size = new Size(142, 30);
             label1.TabIndex = 0;
             label1.Text = "Mã Học Phần";
             // 
@@ -109,9 +109,9 @@
             // 
             label7.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label7.AutoSize = true;
-            label7.Location = new Point(111, 300);
+            label7.Location = new Point(99, 300);
             label7.Name = "label7";
-            label7.Size = new Size(66, 25);
+            label7.Size = new Size(78, 30);
             label7.TabIndex = 6;
             label7.Text = "Đơn Vị";
             // 
@@ -119,9 +119,9 @@
             // 
             label6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label6.AutoSize = true;
-            label6.Location = new Point(62, 250);
+            label6.Location = new Point(39, 250);
             label6.Name = "label6";
-            label6.Size = new Size(115, 25);
+            label6.Size = new Size(138, 30);
             label6.TabIndex = 5;
             label6.Text = "Số SV Tối Đa";
             // 
@@ -129,9 +129,9 @@
             // 
             label5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label5.AutoSize = true;
-            label5.Location = new Point(21, 200);
+            label5.Location = new Point(38, 200);
             label5.Name = "label5";
-            label5.Size = new Size(156, 25);
+            label5.Size = new Size(139, 50);
             label5.TabIndex = 4;
             label5.Text = "Số Tiết Thực Hành";
             // 
@@ -139,9 +139,9 @@
             // 
             label4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label4.AutoSize = true;
-            label4.Location = new Point(32, 150);
+            label4.Location = new Point(65, 150);
             label4.Name = "label4";
-            label4.Size = new Size(145, 25);
+            label4.Size = new Size(112, 50);
             label4.TabIndex = 3;
             label4.Text = "Số Tiết Lý Thuyết";
             // 
@@ -149,9 +149,9 @@
             // 
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label3.AutoSize = true;
-            label3.Location = new Point(86, 100);
+            label3.Location = new Point(67, 100);
             label3.Name = "label3";
-            label3.Size = new Size(91, 25);
+            label3.Size = new Size(110, 30);
             label3.TabIndex = 2;
             label3.Text = "Số Tín Chỉ";
             // 
@@ -159,18 +159,18 @@
             // 
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label2.AutoSize = true;
-            label2.Location = new Point(58, 50);
+            label2.Location = new Point(32, 50);
             label2.Name = "label2";
-            label2.Size = new Size(119, 25);
+            label2.Size = new Size(145, 30);
             label2.TabIndex = 1;
             label2.Text = "Tên Học Phần";
             // 
             // button1
             // 
-            button1.BackColor = Color.Tomato;
+            button1.BackColor = Color.MediumSeaGreen;
             button1.Location = new Point(183, 353);
             button1.Name = "button1";
-            button1.Size = new Size(90, 47);
+            button1.Size = new Size(121, 47);
             button1.TabIndex = 7;
             button1.Text = "Tạo Mới";
             button1.UseVisualStyleBackColor = false;
@@ -182,7 +182,7 @@
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(183, 303);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(312, 33);
+            comboBox1.Size = new Size(312, 38);
             comboBox1.TabIndex = 8;
             // 
             // textBox1
@@ -190,40 +190,40 @@
             textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox1.Location = new Point(183, 3);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(312, 31);
+            textBox1.Size = new Size(312, 36);
             textBox1.TabIndex = 9;
             // 
             // numericUpDown1
             // 
             numericUpDown1.Location = new Point(183, 103);
             numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(115, 31);
+            numericUpDown1.Size = new Size(115, 36);
             numericUpDown1.TabIndex = 11;
             // 
             // numericUpDown2
             // 
             numericUpDown2.Location = new Point(183, 153);
             numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(115, 31);
+            numericUpDown2.Size = new Size(115, 36);
             numericUpDown2.TabIndex = 12;
             // 
             // numericUpDown3
             // 
             numericUpDown3.Location = new Point(183, 203);
             numericUpDown3.Name = "numericUpDown3";
-            numericUpDown3.Size = new Size(115, 31);
+            numericUpDown3.Size = new Size(115, 36);
             numericUpDown3.TabIndex = 13;
             // 
             // numericUpDown4
             // 
             numericUpDown4.Location = new Point(183, 253);
             numericUpDown4.Name = "numericUpDown4";
-            numericUpDown4.Size = new Size(115, 31);
+            numericUpDown4.Size = new Size(115, 36);
             numericUpDown4.TabIndex = 14;
             // 
             // InsertHocPhan
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(528, 502);
             Controls.Add(tableLayoutPanel1);

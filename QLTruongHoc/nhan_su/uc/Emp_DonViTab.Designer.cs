@@ -82,7 +82,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(4, 22);
+            label2.Location = new Point(16, 22);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(137, 45);
@@ -107,7 +107,7 @@
             // InsertBtn
             // 
             InsertBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            InsertBtn.BackColor = Color.SeaGreen;
+            InsertBtn.BackColor = Color.MediumSeaGreen;
             InsertBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             InsertBtn.ForeColor = SystemColors.ActiveCaptionText;
             InsertBtn.Location = new Point(1665, 86);

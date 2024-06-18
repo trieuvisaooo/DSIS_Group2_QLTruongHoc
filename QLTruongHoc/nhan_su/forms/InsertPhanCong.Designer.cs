@@ -35,12 +35,12 @@
             label2 = new Label();
             label3 = new Label();
             panel1 = new Panel();
+            comboBox4 = new ComboBox();
+            comboBox3 = new ComboBox();
             label5 = new Label();
             label4 = new Label();
             panel2 = new Panel();
             comboBox2 = new ComboBox();
-            comboBox3 = new ComboBox();
-            comboBox4 = new ComboBox();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -53,7 +53,7 @@
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(164, 3);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(936, 31);
+            comboBox1.Size = new Size(936, 36);
             comboBox1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -84,18 +84,18 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10.8F);
-            label1.Location = new Point(70, 0);
+            label1.Location = new Point(53, 0);
             label1.Name = "label1";
-            label1.Size = new Size(88, 25);
+            label1.Size = new Size(105, 30);
             label1.TabIndex = 2;
             label1.Text = "Học Phần";
             // 
             // saveBtn
             // 
-            saveBtn.BackColor = Color.Chocolate;
+            saveBtn.BackColor = Color.MediumSeaGreen;
             saveBtn.Location = new Point(164, 176);
             saveBtn.Name = "saveBtn";
-            saveBtn.Size = new Size(128, 39);
+            saveBtn.Size = new Size(121, 47);
             saveBtn.TabIndex = 4;
             saveBtn.Text = "Thêm";
             saveBtn.UseVisualStyleBackColor = false;
@@ -106,9 +106,9 @@
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10.8F);
-            label2.Location = new Point(61, 100);
+            label2.Location = new Point(40, 100);
             label2.Name = "label2";
-            label2.Size = new Size(97, 25);
+            label2.Size = new Size(118, 30);
             label2.TabIndex = 3;
             label2.Text = "Giảng Viên";
             // 
@@ -117,9 +117,9 @@
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 10.8F);
-            label3.Location = new Point(79, 50);
+            label3.Location = new Point(63, 50);
             label3.Name = "label3";
-            label3.Size = new Size(79, 25);
+            label3.Size = new Size(95, 30);
             label3.TabIndex = 5;
             label3.Text = "Lịch Học";
             // 
@@ -135,13 +135,35 @@
             panel1.Size = new Size(936, 44);
             panel1.TabIndex = 6;
             // 
+            // comboBox4
+            // 
+            comboBox4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            comboBox4.Font = new Font("Segoe UI", 10.8F);
+            comboBox4.FormattingEnabled = true;
+            comboBox4.Items.AddRange(new object[] { "1-4", "6-9", "1-2", "1-3", "3-4", "3-5", "6-7", "6-8", "8-9", "8-10" });
+            comboBox4.Location = new Point(398, 0);
+            comboBox4.Name = "comboBox4";
+            comboBox4.Size = new Size(125, 38);
+            comboBox4.TabIndex = 5;
+            // 
+            // comboBox3
+            // 
+            comboBox3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            comboBox3.Font = new Font("Segoe UI", 10.8F);
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Items.AddRange(new object[] { "T2", "T3", "T4", "T5", "T6", "T7" });
+            comboBox3.Location = new Point(144, -2);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(125, 38);
+            comboBox3.TabIndex = 4;
+            // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.Location = new Point(339, 0);
             label5.Name = "label5";
-            label5.Size = new Size(40, 25);
+            label5.Size = new Size(49, 30);
             label5.TabIndex = 3;
             label5.Text = "Tiết";
             // 
@@ -151,7 +173,7 @@
             label4.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.Location = new Point(33, 0);
             label4.Name = "label4";
-            label4.Size = new Size(91, 25);
+            label4.Size = new Size(109, 30);
             label4.TabIndex = 2;
             label4.Text = "Ngày Học";
             // 
@@ -171,34 +193,12 @@
             comboBox2.FormattingEnabled = true;
             comboBox2.Location = new Point(0, -3);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(933, 33);
+            comboBox2.Size = new Size(933, 38);
             comboBox2.TabIndex = 1;
-            // 
-            // comboBox3
-            // 
-            comboBox3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            comboBox3.Font = new Font("Segoe UI", 10.8F);
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Items.AddRange(new object[] { "T2", "T3", "T4", "T5", "T6", "T7" });
-            comboBox3.Location = new Point(144, -2);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(125, 33);
-            comboBox3.TabIndex = 4;
-            // 
-            // comboBox4
-            // 
-            comboBox4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            comboBox4.Font = new Font("Segoe UI", 10.8F);
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Items.AddRange(new object[] { "1-4", "6-9", "1-2", "1-3", "3-4", "3-5", "6-7", "6-8", "8-9", "8-10" });
-            comboBox4.Location = new Point(398, 0);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(125, 33);
-            comboBox4.TabIndex = 5;
             // 
             // InsertPhanCong
             // 
-            AutoScaleDimensions = new SizeF(11F, 28F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1127, 398);
             Controls.Add(tableLayoutPanel1);

@@ -43,9 +43,11 @@
             textBox4 = new TextBox();
             comboBox1 = new ComboBox();
             dateTimePicker1 = new DateTimePicker();
-            SaveBtn = new Button();
             label8 = new Label();
             comboBox3 = new ComboBox();
+            SaveBtn = new Button();
+            label9 = new Label();
+            comboBox4 = new ComboBox();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -68,13 +70,15 @@
             tableLayoutPanel1.Controls.Add(textBox4, 1, 5);
             tableLayoutPanel1.Controls.Add(comboBox1, 1, 2);
             tableLayoutPanel1.Controls.Add(dateTimePicker1, 1, 3);
-            tableLayoutPanel1.Controls.Add(SaveBtn, 1, 8);
             tableLayoutPanel1.Controls.Add(label8, 0, 7);
             tableLayoutPanel1.Controls.Add(comboBox3, 1, 7);
+            tableLayoutPanel1.Controls.Add(SaveBtn, 1, 9);
+            tableLayoutPanel1.Controls.Add(label9, 0, 8);
+            tableLayoutPanel1.Controls.Add(comboBox4, 1, 8);
             tableLayoutPanel1.Location = new Point(38, 41);
             tableLayoutPanel1.Margin = new Padding(4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 9;
+            tableLayoutPanel1.RowCount = 10;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 62F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 62F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 62F));
@@ -83,8 +87,9 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 62F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 62F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 53F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 52F));
-            tableLayoutPanel1.Size = new Size(576, 552);
+            tableLayoutPanel1.Size = new Size(576, 591);
             tableLayoutPanel1.TabIndex = 2;
             // 
             // comboBox2
@@ -236,18 +241,6 @@
             dateTimePicker1.Size = new Size(362, 31);
             dateTimePicker1.TabIndex = 12;
             // 
-            // SaveBtn
-            // 
-            SaveBtn.BackColor = Color.Orange;
-            SaveBtn.Location = new Point(210, 504);
-            SaveBtn.Margin = new Padding(4);
-            SaveBtn.Name = "SaveBtn";
-            SaveBtn.Size = new Size(118, 44);
-            SaveBtn.TabIndex = 14;
-            SaveBtn.Text = "Lưu";
-            SaveBtn.UseVisualStyleBackColor = false;
-            SaveBtn.Click += SaveBtn_Click;
-            // 
             // label8
             // 
             label8.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
@@ -255,7 +248,7 @@
             label8.Location = new Point(138, 434);
             label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
-            label8.Size = new Size(64, 66);
+            label8.Size = new Size(64, 52);
             label8.TabIndex = 15;
             label8.Text = "Đơn vị";
             label8.TextAlign = ContentAlignment.TopRight;
@@ -269,6 +262,40 @@
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(162, 33);
             comboBox3.TabIndex = 16;
+            // 
+            // SaveBtn
+            // 
+            SaveBtn.BackColor = Color.MediumSeaGreen;
+            SaveBtn.Location = new Point(210, 543);
+            SaveBtn.Margin = new Padding(4);
+            SaveBtn.Name = "SaveBtn";
+            SaveBtn.Size = new Size(118, 44);
+            SaveBtn.TabIndex = 14;
+            SaveBtn.Text = "Lưu";
+            SaveBtn.UseVisualStyleBackColor = false;
+            SaveBtn.Click += SaveBtn_Click;
+            // 
+            // label9
+            // 
+            label9.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            label9.AutoSize = true;
+            label9.Location = new Point(144, 486);
+            label9.Margin = new Padding(4, 0, 4, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(58, 53);
+            label9.TabIndex = 17;
+            label9.Text = "Cơ sở";
+            label9.TextAlign = ContentAlignment.TopRight;
+            // 
+            // comboBox4
+            // 
+            comboBox4.FormattingEnabled = true;
+            comboBox4.Items.AddRange(new object[] { "CS1", "CS2" });
+            comboBox4.Location = new Point(210, 490);
+            comboBox4.Margin = new Padding(4);
+            comboBox4.Name = "comboBox4";
+            comboBox4.Size = new Size(162, 33);
+            comboBox4.TabIndex = 18;
             // 
             // InsertNhanSu
             // 
@@ -303,5 +330,7 @@
         private Button SaveBtn;
         private Label label8;
         private ComboBox comboBox3;
+        private Label label9;
+        private ComboBox comboBox4;
     }
 }

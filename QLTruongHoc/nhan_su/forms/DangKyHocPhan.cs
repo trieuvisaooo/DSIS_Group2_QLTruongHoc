@@ -1,27 +1,50 @@
 ﻿using Oracle.ManagedDataAccess.Client;
+using QLTruongHoc.sinh_vien;
 using QLTruongHoc.utils;
 using System.Data;
 
-namespace QLTruongHoc.sinh_vien.uc
+
+namespace QLTruongHoc.nhan_su.forms
 {
-    public partial class Stu_DANGKYTab : UserControl
+    public partial class DangKyHocPhan : Form
     {
         DateTime curtime = DateTime.Now;
         ThoiGianDK tgdk = new ThoiGianDK();
-        SinhVien sv = new SinhVien();
+        //SinhVien sv = new SinhVien();
 
-        public Stu_DANGKYTab()
+        public DangKyHocPhan()
         {
             InitializeComponent();
+            getSinhVienList();
         }
 
-        private void getRegisterCourse()
+        private void getSinhVienList()
+        {
+            string sql = @"SELECT TO_CHAR(MASV), HOTEN AS SV FROM QLTH.QLTH_SINHVIEN";
+            OracleCommand cmd = new OracleCommand(sql, Session.Instance.OracleConnection);
+            OracleDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                string masv = dr.GetString(0);
+                string ten = dr.GetString(1);
+
+                if (!string.IsNullOrEmpty(ten))
+                {
+                    masv += " - " + ten;
+                }
+                //MessageBox.Show(masv.Split(' ')[0]); // debug line
+                SinhVienCombox.Items.Add(masv);
+            }
+
+        }
+
+        private void getRegisterCourse(int masv)
         {
             try
             {
                 string sql = "SELECT MAHP, TENHP, NAM||'/'||HK AS \"NAM/HK\", NGAYHOC, TIET, SOTC, SOSVTD, SOSVDK, MADV FROM QLTH.UV_QLTH_KEHOACHMOHP " +
                              "\r\nWHERE NAM = '" + tgdk.getYear() + "' AND HK = " + tgdk.getSem() +
-                             "\r\n AND MAHP NOT IN (SELECT MAHP FROM QLTH.QLTH_DANGKY WHERE NAM = '" + tgdk.getYear() + "' AND HK = " + tgdk.getSem() + ")";
+                             "\r\n AND MAHP NOT IN (SELECT MAHP FROM QLTH.QLTH_DANGKY WHERE NAM = '" + tgdk.getYear() + "' AND HK = " + tgdk.getSem() + " AND MASV = " + masv + ")";
                 OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -34,7 +57,7 @@ namespace QLTruongHoc.sinh_vien.uc
             }
         }
 
-        private void getResult()
+        private void getResult(int masv)
         {
             try
             {
@@ -43,7 +66,7 @@ namespace QLTruongHoc.sinh_vien.uc
                 //             "\r\nWHERE NAM = '" + tgdk.getYear() + "' AND HK = " + tgdk.getSem();
                 string sql = "SELECT KHMO.MAHP, KHMO.TENHP, KHMO.NAM||'/'||KHMO.HK AS \"NAM/HK\", KHMO.NGAYHOC, KHMO.TIET, KHMO.SOTC, KHMO.SOSVTD, KHMO.SOSVDK, KHMO.MADV FROM QLTH.UV_QLTH_KEHOACHMOHP KHMO" +
                             "\r\nWHERE NAM = '" + tgdk.getYear() + "' AND HK = " + tgdk.getSem() +
-                            "\r\n AND MAHP IN (SELECT MAHP FROM QLTH.QLTH_DANGKY DK WHERE DK.NAM = '" + tgdk.getYear() + "' AND DK.HK = " + tgdk.getSem() + " AND DK.NGAYHOC = KHMO.NGAYHOC AND DK.TIET = KHMO.TIET)";
+                            "\r\n AND MAHP IN (SELECT MAHP FROM QLTH.QLTH_DANGKY DK WHERE DK.MASV = " + masv + " AND DK.NAM = '" + tgdk.getYear() + "' AND DK.HK = " + tgdk.getSem() + " AND DK.NGAYHOC = KHMO.NGAYHOC AND DK.TIET = KHMO.TIET)";
                 OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -58,7 +81,12 @@ namespace QLTruongHoc.sinh_vien.uc
 
         private void ViewBtn_Click(object sender, EventArgs e)
         {
-            sv.getStuInfo();
+            if (SinhVienCombox.Text.Length == 0)
+            {
+                MessageBox.Show("Vui lòng chọn sinh viên.");
+                return;
+            }
+            int masv = int.Parse(SinhVienCombox.Text.Split(' ')[0]);
             tgdk.getSemeterToRegister();
             if (curtime < tgdk.getStartTime())
             {
@@ -74,8 +102,8 @@ namespace QLTruongHoc.sinh_vien.uc
             {
                 NotiLabel.Text = "(*) Đang trong thời gian đăng ký (" + tgdk.getStartTime().ToString("HH:mm:ss dd/MM/yyyy") + "-" + tgdk.getEndTime().ToString("HH:mm:ss dd/MM/yyyy") + "), chọn những học phần muốn đăng ký!";
                 MessageBox.Show("(*) Đang trong thời gian đăng ký, bạn có thể đăng ký học phần!");
-                getRegisterCourse();
-                getResult();
+                getRegisterCourse(masv);
+                getResult(masv);
             }
         }
 
@@ -139,6 +167,7 @@ namespace QLTruongHoc.sinh_vien.uc
 
         private void RegisterBtn_Click(object sender, EventArgs e)
         {
+            int masv = int.Parse(SinhVienCombox.Text.Split(' ')[0]);
             // Get the checked rows
             List<DataGridViewRow> checkedRows = new List<DataGridViewRow>();
             foreach (DataGridViewRow row in RegisterDataGridView.Rows)
@@ -155,7 +184,7 @@ namespace QLTruongHoc.sinh_vien.uc
             {
                 foreach (DataGridViewRow row in checkedRows)
                 {
-                    int masv = int.Parse(sv.id);
+                    //int masv = int.Parse(sv.id);
                     string mahp = row.Cells["MAHP"].Value.ToString();
                     int hk = tgdk.getSem();
                     string nam = tgdk.getYear();
@@ -184,12 +213,13 @@ namespace QLTruongHoc.sinh_vien.uc
                 MessageBox.Show("Lỗi đăng ký học phần: " + ex.Message);
             }
 
-            getRegisterCourse();
-            getResult();
+            getRegisterCourse(masv);
+            getResult(masv);
         }
 
         private void CancelBtn_Click(object sender, EventArgs e)
         {
+            int masv = int.Parse(SinhVienCombox.Text.Split(' ')[0]);
             // Get the checked rows
             List<DataGridViewRow> checkedRows = new List<DataGridViewRow>();
             foreach (DataGridViewRow row in ResultGridView.Rows)
@@ -214,9 +244,9 @@ namespace QLTruongHoc.sinh_vien.uc
                     string ngayhoc = row.Cells["NGAYHOC"].Value.ToString();
                     string tiet = row.Cells["TIET"].Value.ToString();
 
-                    string sql = "DELETE FROM QLTH.QLTH_DANGKY WHERE MAHP = :MAHP AND HK = :HK AND NAM = :NAM AND MACT = :MACT AND NGAYHOC = :NGAYHOC AND TIET = :TIET";
+                    string sql = "DELETE FROM QLTH.QLTH_DANGKY WHERE MASV = :MASV AND MAHP = :MAHP AND HK = :HK AND NAM = :NAM AND MACT = :MACT AND NGAYHOC = :NGAYHOC AND TIET = :TIET";
                     OracleCommand cmd = new OracleCommand(sql, Session.Instance.OracleConnection);
-                    //cmd.Parameters.Add("MASV", masv);
+                    cmd.Parameters.Add("MASV", masv);
                     cmd.Parameters.Add("MAHP", mahp);
                     cmd.Parameters.Add("HK", hk);
                     cmd.Parameters.Add("NAM", nam);
@@ -235,8 +265,8 @@ namespace QLTruongHoc.sinh_vien.uc
                 MessageBox.Show("Lỗi hủy đăng ký học phần: " + ex.Message);
             }
 
-            getRegisterCourse();
-            getResult();
+            getRegisterCourse(masv);
+            getResult(masv);
         }
     }
 }

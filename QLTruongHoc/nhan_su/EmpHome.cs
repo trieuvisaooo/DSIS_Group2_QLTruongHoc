@@ -17,9 +17,12 @@ namespace QLTruongHoc.nhan_su
                 NhanSuTabControl.TabPages.Remove(dangKyTabPage);
                 NhanSuTabControl.TabPages.Remove(phanCongTab);
                 NhanSuTabControl.TabPages.Remove(nhanSuTabpage);
-            } else if (Session.Instance.Role == "Giảng viên" ||  Session.Instance.Role == "Giáo vụ" || Session.Instance.Role == "Trưởng đơn vị")
+                NhanSuTabControl.TabPages.Remove(xemCSDLTabpage);
+            }
+            else if (Session.Instance.Role == "Giảng viên" || Session.Instance.Role == "Giáo vụ" || Session.Instance.Role == "Trưởng đơn vị")
             {
                 NhanSuTabControl.TabPages.Remove(nhanSuTabpage);
+                NhanSuTabControl.TabPages.Remove(xemCSDLTabpage);
             }
         }
 
@@ -66,5 +69,6 @@ namespace QLTruongHoc.nhan_su
                 Application.Exit();
             }
         }
+
     }
 }

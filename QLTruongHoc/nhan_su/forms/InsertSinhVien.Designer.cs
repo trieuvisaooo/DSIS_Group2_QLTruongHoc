@@ -67,44 +67,48 @@
             tableLayoutPanel1.Controls.Add(comboBox1, 1, 2);
             tableLayoutPanel1.Controls.Add(dateTimePicker1, 1, 3);
             tableLayoutPanel1.Controls.Add(button1, 1, 7);
-            tableLayoutPanel1.Location = new Point(35, 52);
+            tableLayoutPanel1.Location = new Point(44, 65);
+            tableLayoutPanel1.Margin = new Padding(4, 4, 4, 4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 8;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 62F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 62F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 62F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 62F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 62F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 62F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 62F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(461, 449);
+            tableLayoutPanel1.Size = new Size(576, 561);
             tableLayoutPanel1.TabIndex = 1;
             // 
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
             comboBox2.Items.AddRange(new object[] { "CQ", "CLC" });
-            comboBox2.Location = new Point(168, 303);
+            comboBox2.Location = new Point(210, 376);
+            comboBox2.Margin = new Padding(4, 4, 4, 4);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(98, 28);
+            comboBox2.Size = new Size(122, 33);
             comboBox2.TabIndex = 13;
             // 
             // textBox2
             // 
             textBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox2.Location = new Point(168, 53);
+            textBox2.Location = new Point(210, 66);
+            textBox2.Margin = new Padding(4, 4, 4, 4);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(290, 27);
+            textBox2.Size = new Size(362, 31);
             textBox2.TabIndex = 8;
             // 
             // label2
             // 
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label2.AutoSize = true;
-            label2.Location = new Point(87, 50);
+            label2.Location = new Point(112, 62);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(75, 50);
+            label2.Size = new Size(90, 62);
             label2.TabIndex = 2;
             label2.Text = "Họ và Tên";
             label2.TextAlign = ContentAlignment.TopRight;
@@ -113,9 +117,10 @@
             // 
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label1.AutoSize = true;
-            label1.Location = new Point(115, 0);
+            label1.Location = new Point(143, 0);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(47, 50);
+            label1.Size = new Size(59, 62);
             label1.TabIndex = 0;
             label1.Text = "MSSV";
             label1.TextAlign = ContentAlignment.TopRight;
@@ -124,9 +129,10 @@
             // 
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label3.AutoSize = true;
-            label3.Location = new Point(94, 100);
+            label3.Location = new Point(121, 124);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(68, 50);
+            label3.Size = new Size(81, 62);
             label3.TabIndex = 3;
             label3.Text = "Giới Tính";
             label3.TextAlign = ContentAlignment.TopRight;
@@ -135,9 +141,10 @@
             // 
             label4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label4.AutoSize = true;
-            label4.Location = new Point(86, 150);
+            label4.Location = new Point(109, 186);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(76, 50);
+            label4.Size = new Size(93, 62);
             label4.TabIndex = 4;
             label4.Text = "Ngày Sinh";
             label4.TextAlign = ContentAlignment.TopRight;
@@ -146,9 +153,10 @@
             // 
             label5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label5.AutoSize = true;
-            label5.Location = new Point(105, 200);
+            label5.Location = new Point(134, 248);
+            label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
-            label5.Size = new Size(57, 50);
+            label5.Size = new Size(68, 62);
             label5.TabIndex = 5;
             label5.Text = "Địa Chỉ";
             label5.TextAlign = ContentAlignment.TopRight;
@@ -157,9 +165,10 @@
             // 
             label6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label6.AutoSize = true;
-            label6.Location = new Point(81, 250);
+            label6.Location = new Point(106, 310);
+            label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
-            label6.Size = new Size(81, 50);
+            label6.Size = new Size(96, 62);
             label6.TabIndex = 6;
             label6.Text = "Điện Thoại";
             label6.TextAlign = ContentAlignment.TopRight;
@@ -168,9 +177,10 @@
             // 
             label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label7.AutoSize = true;
-            label7.Location = new Point(65, 300);
+            label7.Location = new Point(84, 372);
+            label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
-            label7.Size = new Size(97, 50);
+            label7.Size = new Size(118, 62);
             label7.TabIndex = 7;
             label7.Text = "Chương Trình";
             label7.TextAlign = ContentAlignment.TopRight;
@@ -178,50 +188,56 @@
             // textBox1
             // 
             textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox1.Location = new Point(168, 3);
+            textBox1.Location = new Point(210, 4);
+            textBox1.Margin = new Padding(4, 4, 4, 4);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(290, 27);
+            textBox1.Size = new Size(362, 31);
             textBox1.TabIndex = 1;
             // 
             // textBox3
             // 
             textBox3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox3.Location = new Point(168, 203);
+            textBox3.Location = new Point(210, 252);
+            textBox3.Margin = new Padding(4, 4, 4, 4);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(290, 27);
+            textBox3.Size = new Size(362, 31);
             textBox3.TabIndex = 9;
             // 
             // textBox4
             // 
             textBox4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox4.Location = new Point(168, 253);
+            textBox4.Location = new Point(210, 314);
+            textBox4.Margin = new Padding(4, 4, 4, 4);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(290, 27);
+            textBox4.Size = new Size(362, 31);
             textBox4.TabIndex = 10;
             // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Nam", "Nữ" });
-            comboBox1.Location = new Point(168, 103);
+            comboBox1.Location = new Point(210, 128);
+            comboBox1.Margin = new Padding(4, 4, 4, 4);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(98, 28);
+            comboBox1.Size = new Size(122, 33);
             comboBox1.TabIndex = 11;
             // 
             // dateTimePicker1
             // 
             dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(168, 153);
+            dateTimePicker1.Location = new Point(210, 190);
+            dateTimePicker1.Margin = new Padding(4, 4, 4, 4);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(290, 27);
+            dateTimePicker1.Size = new Size(362, 31);
             dateTimePicker1.TabIndex = 12;
             // 
             // button1
             // 
-            button1.BackColor = Color.Orange;
-            button1.Location = new Point(168, 353);
+            button1.BackColor = Color.MediumSeaGreen;
+            button1.Location = new Point(210, 438);
+            button1.Margin = new Padding(4, 4, 4, 4);
             button1.Name = "button1";
-            button1.Size = new Size(94, 39);
+            button1.Size = new Size(118, 49);
             button1.TabIndex = 14;
             button1.Text = "Lưu";
             button1.UseVisualStyleBackColor = false;
@@ -229,12 +245,13 @@
             // 
             // InsertSinhVien
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(530, 552);
+            ClientSize = new Size(662, 690);
             Controls.Add(tableLayoutPanel1);
+            Margin = new Padding(4, 4, 4, 4);
             MaximizeBox = false;
-            MinimumSize = new Size(548, 599);
+            MinimumSize = new Size(680, 735);
             Name = "InsertSinhVien";
             Text = "Tạo Mới Sinh Viên";
             tableLayoutPanel1.ResumeLayout(false);

@@ -36,7 +36,15 @@ namespace QLTruongHoc.nhan_su.uc
             IdTxtBox.Text = ns.id;
             NameTxtBox.Text = ns.name;
             GenderTxtBox.Text = ns.gender;
-            BirthDayTxtBox.Text = ns.birthday;
+            DateTime birthday;
+            if (DateTime.TryParse(ns.birthday, out birthday))
+            {
+                BirthDayTxtBox.Text = birthday.ToString("dd/MM/yyyy");
+            }
+            else
+            {
+                BirthDayTxtBox.Text = "";
+            }
             AddrTxtBox.Text = ns.addr;
             PhoneNumTxtBox.Text = ns.phonenum;
             AllowanceTxtBox.Text = ns.allowance;

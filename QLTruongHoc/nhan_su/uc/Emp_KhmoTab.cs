@@ -1,4 +1,5 @@
 ﻿using Oracle.ManagedDataAccess.Client;
+using QLTruongHoc.nhan_su.forms;
 using QLTruongHoc.utils;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace QLTruongHoc.nhan_su.uc
             if (Session.Instance.Role == "Giáo vụ")
             {
                 InsertBtn.Visible = true;
-                UpdateBtn.Visible = true;
+                DeleteBtn.Visible = true;
             }
         }
 
@@ -178,14 +179,53 @@ namespace QLTruongHoc.nhan_su.uc
             CustomizeColumnHeaders();
         }
 
-        private void UpdateBtn_Click(object sender, EventArgs e)
+        private void DeleteBtn_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn khóa học mở muốn xóa.");
+                return;
+            }
 
+            try
+            {
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa khóa học mở này?", "Xóa KH mở", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                switch (result)
+                {
+                    case DialogResult.Yes:
+                        DataGridViewRow row = dataGridView1.SelectedRows[0];
+                        string mahp = row.Cells["MAHP"].Value as string;
+                        string tenhp = row.Cells["TENHP"].Value as string;
+                        string hp = mahp + " - " + tenhp;
+                        string nam = row.Cells["NAM"].Value as string;
+                        decimal hk = (decimal)row.Cells["HK"].Value;
+                        string mact = row.Cells["MACT"].Value as string;
+
+                        string sql = $"delete from qlth.qlth_khmo " +
+                                       $"where mahp = '{hp}' AND nam = '{nam}' AND hk = {hk} AND mact = '{mact}'";
+
+                        OracleCommand cmd = new OracleCommand(sql, Session.Instance.OracleConnection);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Xóa Thành Công");
+                        break;
+                    default:
+                        break;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không thể xóa khóa học mở này!");
+                return;
+                //MessageBox.Show(ex.Message);
+            }
         }
 
         private void InsertBtn_Click(object sender, EventArgs e)
         {
-
+            InsertKHMO insertKHMO = new InsertKHMO();
+            insertKHMO.Show();
         }
     }
 }

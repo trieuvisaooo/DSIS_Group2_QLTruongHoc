@@ -14,9 +14,9 @@ namespace QLTruongHoc.nhan_su.uc
 
             if (Session.Instance.Role == "Giáo vụ")
             {
-                InsertBtn.Visible = true;
-                DeleteBtn.Visible = true;
-            } else if (Session.Instance.Role == "Giảng viên" || Session.Instance.Role == "Trưởng đơn vị" || Session.Instance.Role == "Trưởng khoa")
+                DKHPBtn.Visible = true;
+            }
+            else if (Session.Instance.Role == "Giảng viên" || Session.Instance.Role == "Trưởng đơn vị" || Session.Instance.Role == "Trưởng khoa")
             {
                 UpdateBtn.Visible = true;
             }
@@ -183,6 +183,12 @@ namespace QLTruongHoc.nhan_su.uc
             dangKyDetail.Show();
 
             dataGridView1.DataSource = new DataTable();
+        }
+
+        private void DKHPBtn_Click(object sender, EventArgs e)
+        {
+            DangKyHocPhan dkhp = new DangKyHocPhan();
+            dkhp.Show();
         }
     }
 }

@@ -103,7 +103,7 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.Salmon;
+            button1.BackColor = Color.MediumSeaGreen;
             button1.Location = new Point(144, 189);
             button1.Name = "button1";
             button1.Size = new Size(121, 47);
