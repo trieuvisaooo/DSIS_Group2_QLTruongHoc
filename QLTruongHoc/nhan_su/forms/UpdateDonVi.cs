@@ -99,7 +99,7 @@ namespace QLTruongHoc.nhan_su.forms
                 {
                     tdv = str[0];
                 }
-                MessageBox.Show(tdv);
+                //MessageBox.Show(tdv);
                 string sql = $"update qlth.qlth_donvi set trgdv = {tdv} where madv = '{this.Madv}'";
                 OracleCommand cmd = new OracleCommand(sql, Session.Instance.OracleConnection);
                 cmd.ExecuteNonQuery();

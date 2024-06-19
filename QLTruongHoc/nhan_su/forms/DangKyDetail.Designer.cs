@@ -91,8 +91,8 @@
             // 
             tableLayoutPanel1.ColumnCount = 4;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25.8064518F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 24.1935482F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.Controls.Add(panel14, 0, 2);
             tableLayoutPanel1.Controls.Add(panel7, 2, 1);
@@ -132,10 +132,10 @@
             // textBox9
             // 
             textBox9.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox9.Location = new Point(68, 3);
+            textBox9.Location = new Point(74, 3);
             textBox9.Name = "textBox9";
             textBox9.ReadOnly = true;
-            textBox9.Size = new Size(202, 36);
+            textBox9.Size = new Size(196, 36);
             textBox9.TabIndex = 2;
             // 
             // label13
@@ -152,9 +152,9 @@
             panel7.Controls.Add(textBox7);
             panel7.Controls.Add(label7);
             panel7.Dock = DockStyle.Fill;
-            panel7.Location = new Point(561, 83);
+            panel7.Location = new Point(570, 83);
             panel7.Name = "panel7";
-            panel7.Size = new Size(273, 74);
+            panel7.Size = new Size(264, 74);
             panel7.TabIndex = 6;
             // 
             // textBox7
@@ -163,7 +163,7 @@
             textBox7.Location = new Point(49, 3);
             textBox7.Name = "textBox7";
             textBox7.ReadOnly = true;
-            textBox7.Size = new Size(221, 36);
+            textBox7.Size = new Size(212, 36);
             textBox7.TabIndex = 2;
             // 
             // label7
@@ -182,16 +182,16 @@
             panel6.Dock = DockStyle.Fill;
             panel6.Location = new Point(282, 83);
             panel6.Name = "panel6";
-            panel6.Size = new Size(273, 74);
+            panel6.Size = new Size(282, 74);
             panel6.TabIndex = 5;
             // 
             // textBox6
             // 
             textBox6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox6.Location = new Point(88, 3);
+            textBox6.Location = new Point(104, 3);
             textBox6.Name = "textBox6";
             textBox6.ReadOnly = true;
-            textBox6.Size = new Size(182, 36);
+            textBox6.Size = new Size(175, 36);
             textBox6.TabIndex = 2;
             // 
             // label6
@@ -239,16 +239,16 @@
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(282, 3);
             panel2.Name = "panel2";
-            panel2.Size = new Size(273, 74);
+            panel2.Size = new Size(282, 74);
             panel2.TabIndex = 1;
             // 
             // textBox2
             // 
             textBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox2.Location = new Point(75, 3);
+            textBox2.Location = new Point(81, 3);
             textBox2.Name = "textBox2";
             textBox2.ReadOnly = true;
-            textBox2.Size = new Size(195, 36);
+            textBox2.Size = new Size(198, 36);
             textBox2.TabIndex = 1;
             // 
             // label2
@@ -265,9 +265,9 @@
             panel3.Controls.Add(textBox3);
             panel3.Controls.Add(label3);
             panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(561, 3);
+            panel3.Location = new Point(570, 3);
             panel3.Name = "panel3";
-            panel3.Size = new Size(273, 74);
+            panel3.Size = new Size(264, 74);
             panel3.TabIndex = 2;
             // 
             // textBox3
@@ -276,7 +276,7 @@
             textBox3.Location = new Point(59, 3);
             textBox3.Name = "textBox3";
             textBox3.ReadOnly = true;
-            textBox3.Size = new Size(211, 36);
+            textBox3.Size = new Size(202, 36);
             textBox3.TabIndex = 2;
             // 
             // label3
@@ -301,10 +301,10 @@
             // textBox4
             // 
             textBox4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox4.Location = new Point(76, 0);
+            textBox4.Location = new Point(90, 0);
             textBox4.Name = "textBox4";
             textBox4.ReadOnly = true;
-            textBox4.Size = new Size(194, 36);
+            textBox4.Size = new Size(180, 36);
             textBox4.TabIndex = 2;
             // 
             // label4
@@ -329,10 +329,10 @@
             // textBox5
             // 
             textBox5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox5.Location = new Point(127, 3);
+            textBox5.Location = new Point(141, 3);
             textBox5.Name = "textBox5";
             textBox5.ReadOnly = true;
-            textBox5.Size = new Size(143, 36);
+            textBox5.Size = new Size(129, 36);
             textBox5.TabIndex = 2;
             // 
             // label5
@@ -366,9 +366,9 @@
             // diemTkTextBox
             // 
             diemTkTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            diemTkTextBox.Location = new Point(139, 3);
+            diemTkTextBox.Location = new Point(161, 3);
             diemTkTextBox.Name = "diemTkTextBox";
-            diemTkTextBox.Size = new Size(131, 36);
+            diemTkTextBox.Size = new Size(109, 36);
             diemTkTextBox.TabIndex = 2;
             // 
             // label12
@@ -393,9 +393,9 @@
             // diemQtTextBox
             // 
             diemQtTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            diemQtTextBox.Location = new Point(143, 3);
+            diemQtTextBox.Location = new Point(172, 0);
             diemQtTextBox.Name = "diemQtTextBox";
-            diemQtTextBox.Size = new Size(127, 36);
+            diemQtTextBox.Size = new Size(98, 36);
             diemQtTextBox.TabIndex = 2;
             // 
             // label8
@@ -414,15 +414,15 @@
             panel10.Dock = DockStyle.Fill;
             panel10.Location = new Point(282, 243);
             panel10.Name = "panel10";
-            panel10.Size = new Size(273, 74);
+            panel10.Size = new Size(282, 74);
             panel10.TabIndex = 9;
             // 
             // diemThiTextBox
             // 
             diemThiTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            diemThiTextBox.Location = new Point(91, 3);
+            diemThiTextBox.Location = new Point(108, 3);
             diemThiTextBox.Name = "diemThiTextBox";
-            diemThiTextBox.Size = new Size(179, 36);
+            diemThiTextBox.Size = new Size(174, 36);
             diemThiTextBox.TabIndex = 2;
             // 
             // label10
@@ -439,17 +439,17 @@
             panel11.Controls.Add(diemCkTextBox);
             panel11.Controls.Add(label11);
             panel11.Dock = DockStyle.Fill;
-            panel11.Location = new Point(561, 243);
+            panel11.Location = new Point(570, 243);
             panel11.Name = "panel11";
-            panel11.Size = new Size(273, 74);
+            panel11.Size = new Size(264, 74);
             panel11.TabIndex = 10;
             // 
             // diemCkTextBox
             // 
             diemCkTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            diemCkTextBox.Location = new Point(127, 3);
+            diemCkTextBox.Location = new Point(140, 3);
             diemCkTextBox.Name = "diemCkTextBox";
-            diemCkTextBox.Size = new Size(143, 36);
+            diemCkTextBox.Size = new Size(121, 36);
             diemCkTextBox.TabIndex = 2;
             // 
             // label11
@@ -481,16 +481,17 @@
             panel13.Dock = DockStyle.Fill;
             panel13.Location = new Point(282, 163);
             panel13.Name = "panel13";
-            panel13.Size = new Size(273, 74);
+            panel13.Size = new Size(282, 74);
             panel13.TabIndex = 13;
             // 
             // textBox8
             // 
             textBox8.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox8.Location = new Point(67, 3);
+            textBox8.Location = new Point(104, 3);
+            textBox8.Multiline = true;
             textBox8.Name = "textBox8";
             textBox8.ReadOnly = true;
-            textBox8.Size = new Size(203, 36);
+            textBox8.Size = new Size(178, 68);
             textBox8.TabIndex = 2;
             // 
             // label9

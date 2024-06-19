@@ -19,10 +19,16 @@ namespace QLTruongHoc.nhan_su
                 NhanSuTabControl.TabPages.Remove(nhanSuTabpage);
                 NhanSuTabControl.TabPages.Remove(xemCSDLTabpage);
             }
-            else if (Session.Instance.Role == "Giảng viên" || Session.Instance.Role == "Giáo vụ" || Session.Instance.Role == "Trưởng đơn vị")
+            else if (Session.Instance.Role == "Giảng viên" || Session.Instance.Role == "Trưởng đơn vị")
             {
                 NhanSuTabControl.TabPages.Remove(nhanSuTabpage);
                 NhanSuTabControl.TabPages.Remove(xemCSDLTabpage);
+            }
+            else if (Session.Instance.Role == "Giáo vụ")
+            {
+                NhanSuTabControl.TabPages.Remove(nhanSuTabpage);
+                NhanSuTabControl.TabPages.Remove(xemCSDLTabpage);
+                NhanSuTabControl.TabPages.Remove(dangKyTabPage);
             }
         }
 

@@ -11,10 +11,10 @@ namespace QLTruongHoc.nhan_su.uc
         public Emp_DangKyTab()
         {
             InitializeComponent();
-
             if (Session.Instance.Role == "Giáo vụ")
             {
-                DKHPBtn.Visible = true;
+                refreshBtn.Visible = false;
+                button1.Visible = false;
             }
             else if (Session.Instance.Role == "Giảng viên" || Session.Instance.Role == "Trưởng đơn vị" || Session.Instance.Role == "Trưởng khoa")
             {
@@ -183,12 +183,6 @@ namespace QLTruongHoc.nhan_su.uc
             dangKyDetail.Show();
 
             dataGridView1.DataSource = new DataTable();
-        }
-
-        private void DKHPBtn_Click(object sender, EventArgs e)
-        {
-            DangKyHocPhan dkhp = new DangKyHocPhan();
-            dkhp.Show();
         }
     }
 }

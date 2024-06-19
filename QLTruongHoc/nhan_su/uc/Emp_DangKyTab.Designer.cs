@@ -31,13 +31,12 @@
             label1 = new Label();
             panel1 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
-            button1 = new Button();
             dataGridView1 = new DataGridView();
             listView1 = new ListView();
+            button1 = new Button();
             panel2 = new Panel();
             refreshBtn = new Button();
             UpdateBtn = new Button();
-            DKHPBtn = new Button();
             panel1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -81,19 +80,6 @@
             tableLayoutPanel1.Size = new Size(1429, 725);
             tableLayoutPanel1.TabIndex = 0;
             // 
-            // button1
-            // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            button1.BackColor = Color.DarkOliveGreen;
-            button1.ForeColor = SystemColors.ButtonFace;
-            button1.Location = new Point(245, -1);
-            button1.Name = "button1";
-            button1.Size = new Size(121, 47);
-            button1.TabIndex = 4;
-            button1.Text = "Refresh";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
             // dataGridView1
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -123,12 +109,25 @@
             listView1.SelectedIndexChanged += listView1_SelectedIndexChanged;
             listView1.MouseMove += listView1_MouseMove;
             // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            button1.BackColor = Color.DarkOliveGreen;
+            button1.ForeColor = SystemColors.ButtonFace;
+            button1.Location = new Point(245, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(121, 39);
+            button1.TabIndex = 4;
+            button1.Text = "Refresh";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            panel2.AutoScroll = true;
             panel2.Controls.Add(refreshBtn);
             panel2.Controls.Add(UpdateBtn);
-            panel2.Controls.Add(DKHPBtn);
             panel2.Location = new Point(375, 68);
             panel2.Name = "panel2";
             panel2.Size = new Size(1054, 54);
@@ -152,7 +151,7 @@
             UpdateBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             UpdateBtn.BackColor = Color.PaleGoldenrod;
             UpdateBtn.ForeColor = SystemColors.ActiveCaptionText;
-            UpdateBtn.Location = new Point(551, 4);
+            UpdateBtn.Location = new Point(716, 6);
             UpdateBtn.Name = "UpdateBtn";
             UpdateBtn.Size = new Size(121, 47);
             UpdateBtn.TabIndex = 6;
@@ -160,20 +159,6 @@
             UpdateBtn.UseVisualStyleBackColor = false;
             UpdateBtn.Visible = false;
             UpdateBtn.Click += UpdateBtn_Click;
-            // 
-            // DKHPBtn
-            // 
-            DKHPBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            DKHPBtn.BackColor = Color.MediumSeaGreen;
-            DKHPBtn.ForeColor = SystemColors.ActiveCaptionText;
-            DKHPBtn.Location = new Point(687, 4);
-            DKHPBtn.Name = "DKHPBtn";
-            DKHPBtn.Size = new Size(140, 47);
-            DKHPBtn.TabIndex = 5;
-            DKHPBtn.Text = "Đăng Ký HP";
-            DKHPBtn.UseVisualStyleBackColor = false;
-            DKHPBtn.Visible = false;
-            DKHPBtn.Click += DKHPBtn_Click;
             // 
             // Emp_DangKyTab
             // 
@@ -208,6 +193,5 @@
         private Button refreshBtn;
         private Button DeleteBtn;
         private Button UpdateBtn;
-        private Button DKHPBtn;
     }
 }

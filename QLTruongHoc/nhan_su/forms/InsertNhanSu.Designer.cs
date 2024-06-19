@@ -304,7 +304,7 @@
             ClientSize = new Size(662, 690);
             Controls.Add(tableLayoutPanel1);
             Name = "InsertNhanSu";
-            Text = "Thêm nhân sự";
+            Text = "Thêm Nhân Sự";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);

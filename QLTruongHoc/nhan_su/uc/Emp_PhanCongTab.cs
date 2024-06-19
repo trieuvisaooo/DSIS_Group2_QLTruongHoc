@@ -1,16 +1,8 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using QLTruongHoc.nhan_su.forms;
 using QLTruongHoc.utils;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace QLTruongHoc.nhan_su.uc
 {
@@ -25,6 +17,7 @@ namespace QLTruongHoc.nhan_su.uc
                 InsertBtn.Visible = false;
                 UpdateBtn.Visible = false;
                 DeleteBtn.Visible = false;
+                FilterBtn.Visible = false;
             }
         }
 
@@ -48,7 +41,7 @@ namespace QLTruongHoc.nhan_su.uc
             {
                 MessageBox.Show("Không thể tải dữ liệu phân công");
             }
-            
+
         }
 
         private void CustomizeColumnHeaders()
@@ -66,7 +59,7 @@ namespace QLTruongHoc.nhan_su.uc
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void InsertBtn_Click(object sender, EventArgs e)
@@ -123,11 +116,12 @@ namespace QLTruongHoc.nhan_su.uc
                     default:
                         break;
                 }
-                
-            }   
+
+            }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Không thể xóa phân công này.");
+                //MessageBox.Show(ex.Message);
             }
 
         }
@@ -140,7 +134,7 @@ namespace QLTruongHoc.nhan_su.uc
                 return;
             }
             //DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-            DataGridViewRow row = dataGridView1.SelectedRows[0];   
+            DataGridViewRow row = dataGridView1.SelectedRows[0];
             string chuongTrinh = row.Cells["TENCT"].Value as string;
             string mahp = row.Cells["MAHP"].Value as string;
             decimal hk = (decimal)row.Cells["HK"].Value;
@@ -150,6 +144,35 @@ namespace QLTruongHoc.nhan_su.uc
 
             UpdatePhanCong updatePhanCong = new UpdatePhanCong(mahp, hk, nam, ngayHoc, tiet, chuongTrinh);
             updatePhanCong.Show();
+        }
+
+        private void FilterBtn_Click(object sender, EventArgs e)
+        {
+            string sql = "";
+            if (Session.Instance.Role == "Giáo vụ")
+            {
+                sql = "select PC.MAGV, PC.MAHP, HP.TENHP, PC.HK, PC.NAM, CT.TENCT, PC.NGAYHOC, PC.TIET\r\nfrom qlth.QLTH_PHANCONG PC JOIN QLTH.qlth_hocphan HP ON PC.MAHP = HP.MAHP\r\nJOIN QLTH.QLTH_CHUONGTRINH CT ON CT.MACT = PC.MACT"
+                        + " where PC.MAHP in (select mahp from qlth.qlth_hocphan where madv = 'VPK')";
+            }
+            else if (Session.Instance.Role == "Trưởng đơn vị")
+            {
+                sql = "select PC.MAGV, PC.MAHP, HP.TENHP, PC.HK, PC.NAM, CT.TENCT, PC.NGAYHOC, PC.TIET\r\nfrom qlth.QLTH_PHANCONG PC JOIN QLTH.qlth_hocphan HP ON PC.MAHP = HP.MAHP\r\nJOIN QLTH.QLTH_CHUONGTRINH CT ON CT.MACT = PC.MACT"
+                       + " where PC.MAHP in (select mahp from qlth.qlth_hocphan where madv in (select madv from qlth.qlth_donvi where TO_CHAR(trgdv) = " + Session.Instance.Username + " ))";
+            }
+
+            try
+            {
+                OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+                CustomizeColumnHeaders();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không thể tải dữ liệu phân công");
+                //MessageBox.Show(ex.Message);
+            }
         }
     }
 }

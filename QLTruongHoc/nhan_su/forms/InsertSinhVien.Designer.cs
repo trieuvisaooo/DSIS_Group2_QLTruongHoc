@@ -68,7 +68,7 @@
             tableLayoutPanel1.Controls.Add(dateTimePicker1, 1, 3);
             tableLayoutPanel1.Controls.Add(button1, 1, 7);
             tableLayoutPanel1.Location = new Point(44, 65);
-            tableLayoutPanel1.Margin = new Padding(4, 4, 4, 4);
+            tableLayoutPanel1.Margin = new Padding(4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 8;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 62F));
@@ -85,9 +85,9 @@
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "CQ", "CLC" });
+            comboBox2.Items.AddRange(new object[] { "CQ", "CLC", "TT", "VP" });
             comboBox2.Location = new Point(210, 376);
-            comboBox2.Margin = new Padding(4, 4, 4, 4);
+            comboBox2.Margin = new Padding(4);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(122, 33);
             comboBox2.TabIndex = 13;
@@ -96,7 +96,7 @@
             // 
             textBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox2.Location = new Point(210, 66);
-            textBox2.Margin = new Padding(4, 4, 4, 4);
+            textBox2.Margin = new Padding(4);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(362, 31);
             textBox2.TabIndex = 8;
@@ -189,7 +189,7 @@
             // 
             textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox1.Location = new Point(210, 4);
-            textBox1.Margin = new Padding(4, 4, 4, 4);
+            textBox1.Margin = new Padding(4);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(362, 31);
             textBox1.TabIndex = 1;
@@ -198,7 +198,7 @@
             // 
             textBox3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox3.Location = new Point(210, 252);
-            textBox3.Margin = new Padding(4, 4, 4, 4);
+            textBox3.Margin = new Padding(4);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(362, 31);
             textBox3.TabIndex = 9;
@@ -207,7 +207,7 @@
             // 
             textBox4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox4.Location = new Point(210, 314);
-            textBox4.Margin = new Padding(4, 4, 4, 4);
+            textBox4.Margin = new Padding(4);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(362, 31);
             textBox4.TabIndex = 10;
@@ -217,7 +217,7 @@
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Nam", "Nữ" });
             comboBox1.Location = new Point(210, 128);
-            comboBox1.Margin = new Padding(4, 4, 4, 4);
+            comboBox1.Margin = new Padding(4);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(122, 33);
             comboBox1.TabIndex = 11;
@@ -226,7 +226,7 @@
             // 
             dateTimePicker1.Format = DateTimePickerFormat.Short;
             dateTimePicker1.Location = new Point(210, 190);
-            dateTimePicker1.Margin = new Padding(4, 4, 4, 4);
+            dateTimePicker1.Margin = new Padding(4);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(362, 31);
             dateTimePicker1.TabIndex = 12;
@@ -235,7 +235,7 @@
             // 
             button1.BackColor = Color.MediumSeaGreen;
             button1.Location = new Point(210, 438);
-            button1.Margin = new Padding(4, 4, 4, 4);
+            button1.Margin = new Padding(4);
             button1.Name = "button1";
             button1.Size = new Size(118, 49);
             button1.TabIndex = 14;
@@ -249,7 +249,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(662, 690);
             Controls.Add(tableLayoutPanel1);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             MaximizeBox = false;
             MinimumSize = new Size(680, 735);
             Name = "InsertSinhVien";

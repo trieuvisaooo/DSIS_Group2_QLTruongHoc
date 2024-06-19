@@ -142,7 +142,7 @@
             Margin = new Padding(4);
             MaximizeBox = false;
             Name = "UpdateDonVi";
-            Text = "UpdateDonVi";
+            Text = "Cập Nhật Đơn Vị";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);

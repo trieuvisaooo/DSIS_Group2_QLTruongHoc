@@ -22,6 +22,7 @@ namespace QLTruongHoc.nhan_su.uc
             if (Session.Instance.Role == "Giáo vụ")
             {
                 InsertBtn.Visible = true;
+                DKHPBtn.Visible = true;
             }
         }
 
@@ -73,6 +74,12 @@ namespace QLTruongHoc.nhan_su.uc
         {
             InsertSinhVien insertSinhVien = new();
             insertSinhVien.Show();
+        }
+
+        private void DKHPBtn_Click(object sender, EventArgs e)
+        {
+            DangKyHocPhan dkhp = new DangKyHocPhan();
+            dkhp.Show();
         }
     }
 }

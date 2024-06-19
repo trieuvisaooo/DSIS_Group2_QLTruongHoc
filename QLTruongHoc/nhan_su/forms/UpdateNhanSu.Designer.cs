@@ -331,7 +331,7 @@
             ClientSize = new Size(662, 707);
             Controls.Add(tableLayoutPanel1);
             Name = "UpdateNhanSu";
-            Text = "Cập nhật nhân sự";
+            Text = "Cập Nhật Nhân Sự";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)AllowanceNumericUpDown).EndInit();

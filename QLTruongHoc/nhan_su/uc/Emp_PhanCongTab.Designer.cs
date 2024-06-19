@@ -34,6 +34,8 @@
             InsertBtn = new Button();
             DeleteBtn = new Button();
             UpdateBtn = new Button();
+            FilterBtn = new Button();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -65,7 +67,7 @@
             // 
             ViewBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             ViewBtn.BackColor = Color.DarkSlateBlue;
-            ViewBtn.ForeColor = SystemColors.ButtonHighlight;
+            ViewBtn.ForeColor = SystemColors.HighlightText;
             ViewBtn.Location = new Point(1291, 34);
             ViewBtn.Name = "ViewBtn";
             ViewBtn.Size = new Size(121, 47);
@@ -113,10 +115,36 @@
             UpdateBtn.UseVisualStyleBackColor = false;
             UpdateBtn.Click += UpdateBtn_Click;
             // 
+            // FilterBtn
+            // 
+            FilterBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            FilterBtn.BackColor = Color.DarkSlateBlue;
+            FilterBtn.ForeColor = SystemColors.HighlightText;
+            FilterBtn.Location = new Point(599, 34);
+            FilterBtn.Name = "FilterBtn";
+            FilterBtn.Size = new Size(121, 47);
+            FilterBtn.TabIndex = 6;
+            FilterBtn.Text = "Lọc";
+            FilterBtn.UseVisualStyleBackColor = false;
+            FilterBtn.Click += FilterBtn_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 163);
+            label2.ForeColor = Color.Red;
+            label2.Location = new Point(16, 56);
+            label2.Name = "label2";
+            label2.Size = new Size(452, 25);
+            label2.TabIndex = 7;
+            label2.Text = "(*) Bấm \"Lọc\" để xem những phân công có thể chỉnh sửa";
+            // 
             // Emp_PhanCongTab
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(label2);
+            Controls.Add(FilterBtn);
             Controls.Add(UpdateBtn);
             Controls.Add(DeleteBtn);
             Controls.Add(InsertBtn);
@@ -141,5 +169,7 @@
         private Button InsertBtn;
         private Button DeleteBtn;
         private Button UpdateBtn;
+        private Button FilterBtn;
+        private Label label2;
     }
 }

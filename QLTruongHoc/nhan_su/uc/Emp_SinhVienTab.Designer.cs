@@ -32,6 +32,7 @@
             label1 = new Label();
             ViewBtn = new Button();
             InsertBtn = new Button();
+            DKHPBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -84,10 +85,24 @@
             InsertBtn.Visible = false;
             InsertBtn.Click += InsertBtn_Click;
             // 
+            // DKHPBtn
+            // 
+            DKHPBtn.BackColor = Color.MediumSeaGreen;
+            DKHPBtn.ForeColor = SystemColors.ActiveCaptionText;
+            DKHPBtn.Location = new Point(144, 50);
+            DKHPBtn.Name = "DKHPBtn";
+            DKHPBtn.Size = new Size(140, 47);
+            DKHPBtn.TabIndex = 6;
+            DKHPBtn.Text = "Đăng Ký HP";
+            DKHPBtn.UseVisualStyleBackColor = false;
+            DKHPBtn.Visible = false;
+            DKHPBtn.Click += DKHPBtn_Click;
+            // 
             // Emp_SinhVienTab
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(DKHPBtn);
             Controls.Add(InsertBtn);
             Controls.Add(ViewBtn);
             Controls.Add(label1);
@@ -108,5 +123,6 @@
         private Label label1;
         private Button ViewBtn;
         private Button InsertBtn;
+        private Button DKHPBtn;
     }
 }
