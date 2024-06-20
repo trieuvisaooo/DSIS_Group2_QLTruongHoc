@@ -18,6 +18,7 @@ namespace QLTruongHoc.nhan_su.uc
                 UpdateBtn.Visible = false;
                 DeleteBtn.Visible = false;
                 FilterBtn.Visible = false;
+                NotiLabel.Visible = false;
             }
         }
 
@@ -65,6 +66,10 @@ namespace QLTruongHoc.nhan_su.uc
         private void InsertBtn_Click(object sender, EventArgs e)
         {
             string dv = DbCommand.getUserDv();
+            if (Session.Instance.Role == "Giáo vụ")
+            {
+                dv = "VPK";
+            }
             MessageBox.Show(dv);
             if (dv != "")
             {
@@ -149,7 +154,7 @@ namespace QLTruongHoc.nhan_su.uc
         private void FilterBtn_Click(object sender, EventArgs e)
         {
             string sql = "";
-            if (Session.Instance.Role == "Giáo vụ")
+            if (Session.Instance.Role == "Giáo vụ" || Session.Instance.Role == "Trưởng khoa")
             {
                 sql = "select PC.MAGV, PC.MAHP, HP.TENHP, PC.HK, PC.NAM, CT.TENCT, PC.NGAYHOC, PC.TIET\r\nfrom qlth.QLTH_PHANCONG PC JOIN QLTH.qlth_hocphan HP ON PC.MAHP = HP.MAHP\r\nJOIN QLTH.QLTH_CHUONGTRINH CT ON CT.MACT = PC.MACT"
                         + " where PC.MAHP in (select mahp from qlth.qlth_hocphan where madv = 'VPK')";

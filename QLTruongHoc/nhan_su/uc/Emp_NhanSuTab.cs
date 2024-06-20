@@ -20,7 +20,7 @@ namespace QLTruongHoc.nhan_su.uc
             string search = searchTextBox.Text;
             if (search.Length > 0)
             {
-                string sql = $"SELECT * FROM QLTH.qlth_nhansu WHERE HOTEN LIKE '%{search}%'";
+                string sql = $"SELECT * FROM QLTH.qlth_nhansu WHERE HOTEN LIKE N'%{search}%' OR TO_CHAR(MANS) LIKE '%{search}%' ";
                 OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
                 DataTable dt = new DataTable();
                 da.Fill(dt);

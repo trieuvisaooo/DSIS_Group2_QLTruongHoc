@@ -62,6 +62,7 @@ namespace QLTruongHoc.nhan_su.forms
                 string sql = $"insert into qlth.qlth_hocphan (mahp,tenhp,sotc,stlt,stth,sosvtd,madv) values ('{mahp}',N'{tenhp}',{sotc},{stlt},{stth},{sosv},'{madv}')";
                 OracleCommand cmd = new OracleCommand(sql, Session.Instance.OracleConnection);
                 cmd.ExecuteNonQuery();
+                MessageBox.Show("Tạo mới học phần thành công");
                 this.Close();
             }
             catch (Exception ex)

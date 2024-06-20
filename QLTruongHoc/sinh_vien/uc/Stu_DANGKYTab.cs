@@ -181,7 +181,7 @@ namespace QLTruongHoc.sinh_vien.uc
             catch (Exception ex)
             {
                 trans.Rollback();
-                MessageBox.Show("Lỗi đăng ký học phần: " + ex.Message);
+                MessageBox.Show("Lỗi đăng ký học phần.");
             }
 
             getRegisterCourse();

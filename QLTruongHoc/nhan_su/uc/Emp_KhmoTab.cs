@@ -196,7 +196,7 @@ namespace QLTruongHoc.nhan_su.uc
                         string mact = row.Cells["MACT"].Value as string;
 
                         string sql = $"delete from qlth.qlth_khmo " +
-                                       $"where mahp = '{hp}' AND nam = '{nam}' AND hk = {hk} AND mact = '{mact}'";
+                                       $"where mahp = '{mahp}' AND nam = '{nam}' AND hk = {hk} AND mact = '{mact}'";
 
                         OracleCommand cmd = new OracleCommand(sql, Session.Instance.OracleConnection);
                         cmd.ExecuteNonQuery();

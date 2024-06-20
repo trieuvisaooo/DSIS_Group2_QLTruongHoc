@@ -144,6 +144,7 @@ namespace QLTruongHoc.dba.forms
                             if (recover_res == "0")
                             {
                                 MessageBox.Show("Khôi phục thành công!");
+                                this.Close();
                                 return;
                             }
                             else

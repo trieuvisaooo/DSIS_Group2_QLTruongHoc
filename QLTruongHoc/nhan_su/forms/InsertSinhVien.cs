@@ -41,9 +41,9 @@ namespace QLTruongHoc.nhan_su.forms
             //MessageBox.Show(sql);
             OracleCommand command = new OracleCommand(sql, Session.Instance.OracleConnection);
             command.ExecuteNonQuery();
-            MessageBox.Show("Data Updated Successfully");
+            MessageBox.Show("Tạo mới sinh viên thành công.");
 
-            this.Hide();
+            this.Close();
         }
     }
 }

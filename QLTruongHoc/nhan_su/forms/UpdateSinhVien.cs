@@ -96,7 +96,7 @@ namespace QLTruongHoc.nhan_su.forms
             command.ExecuteNonQuery();
             MessageBox.Show("Cập nhật thông tin thành công.");
 
-            this.Hide();
+            this.Close();
         }
     }
 }

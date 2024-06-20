@@ -129,21 +129,21 @@
             // 
             label5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label5.AutoSize = true;
-            label5.Location = new Point(47, 200);
+            label5.Location = new Point(72, 200);
             label5.Name = "label5";
-            label5.Size = new Size(139, 50);
+            label5.Size = new Size(114, 30);
             label5.TabIndex = 4;
-            label5.Text = "Số Tiết Thực Hành";
+            label5.Text = "Số Tiết TH";
             // 
             // label4
             // 
             label4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label4.AutoSize = true;
-            label4.Location = new Point(8, 150);
+            label4.Location = new Point(80, 150);
             label4.Name = "label4";
-            label4.Size = new Size(178, 30);
+            label4.Size = new Size(106, 30);
             label4.TabIndex = 3;
-            label4.Text = "Số Tiết Lý Thuyết";
+            label4.Text = "Số Tiết LT";
             // 
             // label3
             // 

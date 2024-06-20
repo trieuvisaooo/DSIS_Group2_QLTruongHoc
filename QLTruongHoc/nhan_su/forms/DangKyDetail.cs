@@ -77,6 +77,7 @@ namespace QLTruongHoc.nhan_su.forms
                 OracleCommand command = new OracleCommand(sql, Session.Instance.OracleConnection);
                 command.ExecuteNonQuery();
                 MessageBox.Show("Cập nhật điểm thành công.");
+                this.Close();
             }
             catch (Exception ex)
             {

@@ -31,6 +31,7 @@ namespace QLTruongHoc.nhan_su.forms
             cmd.ExecuteNonQuery();
 
             MessageBox.Show($"Tạo đơn vị {tendv} thành công");
+            this.Close();
         }
     }
 }

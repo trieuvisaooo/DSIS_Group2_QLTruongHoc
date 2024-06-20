@@ -35,7 +35,7 @@
             DeleteBtn = new Button();
             UpdateBtn = new Button();
             FilterBtn = new Button();
-            label2 = new Label();
+            NotiLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -128,22 +128,22 @@
             FilterBtn.UseVisualStyleBackColor = false;
             FilterBtn.Click += FilterBtn_Click;
             // 
-            // label2
+            // NotiLabel
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 163);
-            label2.ForeColor = Color.Red;
-            label2.Location = new Point(16, 56);
-            label2.Name = "label2";
-            label2.Size = new Size(452, 25);
-            label2.TabIndex = 7;
-            label2.Text = "(*) Bấm \"Lọc\" để xem những phân công có thể chỉnh sửa";
+            NotiLabel.AutoSize = true;
+            NotiLabel.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 163);
+            NotiLabel.ForeColor = Color.Red;
+            NotiLabel.Location = new Point(16, 56);
+            NotiLabel.Name = "NotiLabel";
+            NotiLabel.Size = new Size(452, 25);
+            NotiLabel.TabIndex = 7;
+            NotiLabel.Text = "(*) Bấm \"Lọc\" để xem những phân công có thể chỉnh sửa";
             // 
             // Emp_PhanCongTab
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(label2);
+            Controls.Add(NotiLabel);
             Controls.Add(FilterBtn);
             Controls.Add(UpdateBtn);
             Controls.Add(DeleteBtn);
@@ -170,6 +170,6 @@
         private Button DeleteBtn;
         private Button UpdateBtn;
         private Button FilterBtn;
-        private Label label2;
+        private Label NotiLabel;
     }
 }

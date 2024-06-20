@@ -104,6 +104,7 @@ namespace QLTruongHoc.nhan_su.forms
                 OracleCommand cmd = new OracleCommand(sql, Session.Instance.OracleConnection);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Cập nhật thành công");
+                this.Close();
             } 
             catch(Exception ex)
             {

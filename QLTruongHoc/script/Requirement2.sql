@@ -1,3 +1,25 @@
+----------------------------------------------------------------------------------
+---- YÊU CẦU 2: CÁC ĐẶT CÁC CHÍNH SÁCH OLS CHO BẢNG THÔNG BÁO
+----------------------------------------------------------------------------------
+--
+----------------------------------------------------------------------------------
+---- BƯỚC 1: TẠO CHÍNH SÁCH OLS 
+----------------------------------------------------------------------------------
+--EXECUTE SA_SYSDBA.DROP_POLICY('notification_olspolicy');
+--/
+--
+--BEGIN 
+--     SA_SYSDBA.CREATE_POLICY( 
+--     policy_name => 'notification_olspolicy', 
+--     column_name => 'notification_label'
+--); 
+--END; 
+--/
+-----------------------------------------------------
+---- ENABLE POLICY VỪA TẠO -> KHỞI ĐỘNG LẠI SQLDEV --
+-----------------------------------------------------
+--EXEC SA_SYSDBA.ENABLE_POLICY ('notification_olspolicy'); 
+--/
 --------------------------------------------------------------------------------
 -- BƯỚC 2: ĐỊNH NGHĨA CÁC THÀNH PHẦN CỦA LABEL
 --------------------------------------------------------------------------------
@@ -158,6 +180,15 @@ BEGIN
     );
 END;
 /
+-- Gán nhãn cho trưởng đơn vị khoa học máy tính 
+BEGIN
+    SA_USER_ADMIN.SET_USER_LABELS(
+        policy_name => 'notification_olspolicy',
+        user_name => '"400003"',
+        max_read_label => 'TDV:KHMT:CS1,CS2'
+    );
+END;
+/
 
 -- Gán nhãn cho giáo vụ ngành hệ thống thông tin
 BEGIN
@@ -189,13 +220,11 @@ BEGIN
 END;
 /
 
-
-
 --------------------------------------------------------------------------------
 -- BƯỚC 6:GÁN LẠI CHÍNH SÁCH OLS VÀO BẢNG (VỚI OPTION LÀ READ_CONTROL, WRITE_CONTROL, CHECK_CONTROL)
 --------------------------------------------------------------------------------
 BEGIN
---    SA_SYSDBA.ALTER_POLICY(policy_name => 'OLS_QLTH', default_options => 'read_control, label_default');
+--  SA_SYSDBA.ALTER_POLICY(policy_name => 'OLS_QLTH', default_options => 'read_control, label_default');
     SA_POLICY_ADMIN.REMOVE_TABLE_POLICY( policy_name => 'notification_olspolicy', schema_name => 'QLTH', table_name => 'QLTH_THONGBAO', drop_column => FALSE);
     SA_POLICY_ADMIN.APPLY_TABLE_POLICY( policy_name => 'notification_olspolicy', schema_name => 'QLTH', table_name => 'QLTH_THONGBAO', table_options => 'READ_CONTROL, WRITE_CONTROL, CHECK_CONTROL');
 END;

@@ -339,7 +339,7 @@
             // 
             ResultGridView.AllowUserToAddRows = false;
             ResultGridView.AllowUserToDeleteRows = false;
-            ResultGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            ResultGridView.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             ResultGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             ResultGridView.BackgroundColor = SystemColors.Control;
             ResultGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -351,7 +351,7 @@
             // 
             // label7
             // 
-            label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label7.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 163);
             label7.Location = new Point(14, 450);
