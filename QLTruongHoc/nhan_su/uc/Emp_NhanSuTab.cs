@@ -17,26 +17,41 @@ namespace QLTruongHoc.nhan_su.uc
 
         private void SearchBtn_Click(object sender, EventArgs e)
         {
-            string search = searchTextBox.Text;
-            if (search.Length > 0)
+            try
             {
-                string sql = $"SELECT * FROM QLTH.qlth_nhansu WHERE HOTEN LIKE N'%{search}%' OR TO_CHAR(MANS) LIKE '%{search}%' ";
+                string search = searchTextBox.Text;
+                if (search.Length > 0)
+                {
+                    string sql = $"SELECT * FROM QLTH.qlth_nhansu WHERE HOTEN LIKE N'%{search}%' OR TO_CHAR(MANS) LIKE '%{search}%' ";
+                    OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    NhanSu_Table.DataSource = dt;
+                    CustomizeColumnHeaders();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi tải dữ liệu!");
+            }
+        }
+
+        private void ViewBtn_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                string sql = "SELECT * FROM QLTH.qlth_nhansu";
                 OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 NhanSu_Table.DataSource = dt;
                 CustomizeColumnHeaders();
             }
-        }
-
-        private void ViewBtn_Click(object sender, EventArgs e)
-        {
-            string sql = "SELECT * FROM QLTH.qlth_nhansu";
-            OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            NhanSu_Table.DataSource = dt;
-            CustomizeColumnHeaders();
+            catch
+            {
+                MessageBox.Show("Lỗi tải dữ liệu!");
+            }
         }
 
         private void CustomizeColumnHeaders()
@@ -118,7 +133,7 @@ namespace QLTruongHoc.nhan_su.uc
 
             } catch (Exception ex)
             {
-                MessageBox.Show("Loi open update");
+                //MessageBox.Show("Loi open update");
                 MessageBox.Show(ex.Message);
             }
         }

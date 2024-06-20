@@ -32,7 +32,8 @@ namespace QLTruongHoc.nhan_su.uc
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Lỗi tải dữ liệu!");
+                //MessageBox.Show(ex.Message);
             }
         }
     }

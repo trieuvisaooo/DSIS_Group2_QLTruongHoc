@@ -21,34 +21,50 @@ namespace QLTruongHoc
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string sql;
-            if (textBox1.Text.Length == 0)
-                sql = "select * from dba_role_privs";
-            else
-                sql = "select * from dba_role_privs where GRANTEE LIKE \'%" + textBox1.Text + "%\'";
+            try
+            {
+                string sql;
+                if (textBox1.Text.Length == 0)
+                    sql = "select * from dba_role_privs";
+                else
+                    sql = "select * from dba_role_privs where GRANTEE LIKE \'%" + textBox1.Text + "%\'";
 
-            //MessageBox.Show(sql); // debug line
-            OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
-            roleUserGrid = dataGridView1;
+                //MessageBox.Show(sql); // debug line
+                OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+                roleUserGrid = dataGridView1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string sql;
-            if (textBox2.Text.Length == 0)
-                sql = "select * from dba_role_privs";
-            else
-                sql = "select * from dba_role_privs where GRANTED_ROLE LIKE \'%" + textBox2.Text + "%\'";
 
-            //MessageBox.Show(sql); // debug line
-            OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
-            roleUserGrid = dataGridView1;
+            try
+            {
+                string sql;
+                if (textBox2.Text.Length == 0)
+                    sql = "select * from dba_role_privs";
+                else
+                    sql = "select * from dba_role_privs where GRANTED_ROLE LIKE \'%" + textBox2.Text + "%\'";
+
+                //MessageBox.Show(sql); // debug line
+                OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+                roleUserGrid = dataGridView1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -59,13 +75,22 @@ namespace QLTruongHoc
 
         private void button5_Click(object sender, EventArgs e)
         {
-            string sql = "select * from dba_role_privs";
 
-            OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
-            roleUserGrid = dataGridView1;
+
+            try
+            {
+                string sql = "select * from dba_role_privs";
+
+                OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+                roleUserGrid = dataGridView1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -42,7 +42,8 @@ namespace QLTruongHoc.sinh_vien.uc
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Lỗi tải dữ liệu!");
+                //MessageBox.Show(ex.Message);
             }
 
         }
@@ -72,7 +73,8 @@ namespace QLTruongHoc.sinh_vien.uc
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Lỗi tải dữ liệu!");
+                //MessageBox.Show(ex.Message);
             }
 
         }
@@ -114,6 +116,7 @@ namespace QLTruongHoc.sinh_vien.uc
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Lỗi tải dữ liệu!");
                 MessageBox.Show(ex.Message);
             }
         }

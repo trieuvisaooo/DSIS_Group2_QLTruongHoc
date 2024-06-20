@@ -57,7 +57,8 @@ namespace QLTruongHoc.nhan_su
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Không thể tải thông tin!");
+                //MessageBox.Show(ex.Message);
                 return;
             }
         }
@@ -91,7 +92,8 @@ namespace QLTruongHoc.nhan_su
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Không thể tải thông tin!");
+                //MessageBox.Show(ex.Message);
                 return;
             }
         }

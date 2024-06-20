@@ -62,12 +62,20 @@ namespace QLTruongHoc.nhan_su.uc
 
         private void ViewBtn_Click(object sender, EventArgs e)
         {
-            string sql = "select * from qlth.qlth_sinhvien";
-            OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
-            CustomizeColumnHeaders();
+
+            try
+            {
+                string sql = "select * from qlth.qlth_sinhvien";
+                OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+                CustomizeColumnHeaders();
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi tải dữ liệu!");
+            }
         }
 
         private void InsertBtn_Click(object sender, EventArgs e)

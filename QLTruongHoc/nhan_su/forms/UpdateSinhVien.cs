@@ -65,38 +65,47 @@ namespace QLTruongHoc.nhan_su.forms
             cmd.ExecuteNonQuery();
         }
         private void button1_Click(object sender, EventArgs e)
-        { 
-            setDateFormatDb();
-            string mssv = textBox1.Text;
-            string hoten = textBox2.Text;
-            string phai = comboBox1.SelectedItem.ToString();
-            DateTime birthDate = dateTimePicker1.Value;
-            string day = birthDate.Day.ToString();
-            if (day.Length== 1)
+        {
+            try
             {
-                day = '0' + day;
+                setDateFormatDb();
+                string mssv = textBox1.Text;
+                string hoten = textBox2.Text;
+                string phai = comboBox1.SelectedItem.ToString();
+                DateTime birthDate = dateTimePicker1.Value;
+                string day = birthDate.Day.ToString();
+                if (day.Length == 1)
+                {
+                    day = '0' + day;
+                }
+
+                string month = birthDate.Month.ToString();
+                if (month.Length == 1)
+                {
+                    month = "0" + month;
+                }
+                string year = birthDate.Year.ToString();
+
+                string diaChi = textBox3.Text;
+                string dt = textBox4.Text;
+                string mact = comboBox2.SelectedItem.ToString();
+
+                string sql = $"update qlth.qlth_sinhvien  " +
+                    $"set hoten = N'{hoten}', phai = N'{phai}', ngsinh = '{year}-{month}-{day}', diachi = N'{diaChi}', dt = '{dt}', mact = '{mact}' " +
+                    $"where masv = {this.Mssv}";
+                //MessageBox.Show(sql);
+                OracleCommand command = new OracleCommand(sql, Session.Instance.OracleConnection);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Cập nhật thông tin thành công.");
+
+                this.Close();
             }
-    
-            string month = birthDate.Month.ToString();
-            if (month.Length == 1)
+            catch (Exception ex)
             {
-                month = "0" + month;
+                MessageBox.Show(ex.Message);
             }
-            string year = birthDate.Year.ToString();
 
-            string diaChi = textBox3.Text;
-            string dt = textBox4.Text;
-            string mact = comboBox2.SelectedItem.ToString();
 
-            string sql = $"update qlth.qlth_sinhvien  " +
-                $"set hoten = N'{hoten}', phai = N'{phai}', ngsinh = '{year}-{month}-{day}', diachi = N'{diaChi}', dt = '{dt}', mact = '{mact}' " +
-                $"where masv = {this.Mssv}";
-            //MessageBox.Show(sql);
-            OracleCommand command = new OracleCommand(sql, Session.Instance.OracleConnection);
-            command.ExecuteNonQuery();
-            MessageBox.Show("Cập nhật thông tin thành công.");
-
-            this.Close();
         }
     }
 }

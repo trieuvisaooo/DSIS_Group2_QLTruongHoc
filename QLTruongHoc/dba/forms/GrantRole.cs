@@ -52,7 +52,7 @@ namespace QLTruongHoc
                     else if (result_roleuser == "3")
                     {
                         MessageBox.Show("Cấp role " + role + " cho user/role " + userOrRole + " thành công");
-                        this.Hide();
+                        this.Close();
 
                         string sql = "select * from dba_role_privs";
 

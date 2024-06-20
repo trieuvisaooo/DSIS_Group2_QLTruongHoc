@@ -28,12 +28,20 @@ namespace QLTruongHoc.nhan_su.uc
 
         private void ViewBtn_Click(object sender, EventArgs e)
         {
-            string sql = "SELECT hp.mahp, hp.tenhp, hp.sotc, hp.stlt, hp.stth, hp.sosvtd, dv.tendv \r\nFROM QLTH.QLTH_HOCPHAN hp JOIN QLTH.QLTH_DONVI dv on hp.madv = dv.madv";
-            OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
-            //CustomizeColumnHeaders();
+            try
+            {
+                string sql = "SELECT hp.mahp, hp.tenhp, hp.sotc, hp.stlt, hp.stth, hp.sosvtd, dv.tendv \r\nFROM QLTH.QLTH_HOCPHAN hp JOIN QLTH.QLTH_DONVI dv on hp.madv = dv.madv";
+                OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+                //CustomizeColumnHeaders();
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi tải dữ liệu!");
+            }
+
         }
 
         private void CustomizeColumnHeaders()
@@ -61,16 +69,23 @@ namespace QLTruongHoc.nhan_su.uc
 
         private void SearchBtn_Click(object sender, EventArgs e)
         {
-            string search = searchTextBox.Text;
-            search = search.ToLower();
-            if (search.Length > 0)
+            try
             {
-                string sql = $"SELECT hp.mahp, hp.tenhp, hp.sotc, hp.stlt, hp.stth, hp.sosvtd, dv.tendv \r\nFROM QLTH.QLTH_HOCPHAN hp JOIN QLTH.QLTH_DONVI dv on hp.madv = dv.madv WHERE LOWER(hp.mahp) LIKE LOWER('%{search}%') or LOWER(hp.tenhp) LIKE LOWER(N'%{search}%')";
-                OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dataGridView1.DataSource = dt;
-                CustomizeColumnHeaders();
+                string search = searchTextBox.Text;
+                search = search.ToLower();
+                if (search.Length > 0)
+                {
+                    string sql = $"SELECT hp.mahp, hp.tenhp, hp.sotc, hp.stlt, hp.stth, hp.sosvtd, dv.tendv \r\nFROM QLTH.QLTH_HOCPHAN hp JOIN QLTH.QLTH_DONVI dv on hp.madv = dv.madv WHERE LOWER(hp.mahp) LIKE LOWER('%{search}%') or LOWER(hp.tenhp) LIKE LOWER(N'%{search}%')";
+                    OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                    CustomizeColumnHeaders();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi tải dữ liệu!");
             }
         }
 

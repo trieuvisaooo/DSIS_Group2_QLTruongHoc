@@ -21,17 +21,24 @@ namespace QLTruongHoc.nhan_su.forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string madv = textBox1.Text;
-            string tendv = textBox2.Text;
+            try
+            {
+                string madv = textBox1.Text;
+                string tendv = textBox2.Text;
 
-            string sql = $"insert into qlth.qlth_donvi (madv, tendv) " +
-                $"values('{madv}', N'{tendv}')";
+                string sql = $"insert into qlth.qlth_donvi (madv, tendv) " +
+                    $"values('{madv}', N'{tendv}')";
 
-            OracleCommand cmd = new OracleCommand(sql, Session.Instance.OracleConnection);
-            cmd.ExecuteNonQuery();
+                OracleCommand cmd = new OracleCommand(sql, Session.Instance.OracleConnection);
+                cmd.ExecuteNonQuery();
 
-            MessageBox.Show($"Tạo đơn vị {tendv} thành công");
-            this.Close();
+                MessageBox.Show($"Tạo đơn vị {tendv} thành công");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

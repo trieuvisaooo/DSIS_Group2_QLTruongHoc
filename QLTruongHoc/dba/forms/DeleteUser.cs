@@ -61,7 +61,8 @@ namespace QLTruongHoc
                             this.Close();
                         } catch (OracleException ex)
                         {
-                            MessageBox.Show(ex.Message);
+                            MessageBox.Show("Xóa user thất bại!");
+                            //MessageBox.Show(ex.Message);
                         }
 
                     }
@@ -71,7 +72,9 @@ namespace QLTruongHoc
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Xóa user thất bại!");
+
+                //MessageBox.Show(ex.Message);
             }
         }
 

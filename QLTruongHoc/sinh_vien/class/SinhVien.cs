@@ -54,6 +54,7 @@ namespace QLTruongHoc.sinh_vien
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Lỗi tải dữ liệu!");
                 MessageBox.Show(ex.Message);
                 return;
             }

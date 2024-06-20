@@ -58,7 +58,7 @@ namespace QLTruongHoc
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("Tạo user thất bại.");
                 }
             }
         }

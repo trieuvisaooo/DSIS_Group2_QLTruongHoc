@@ -99,21 +99,30 @@ namespace QLTruongHoc.nhan_su.forms
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            string hocPhanText = comboBox1.SelectedItem.ToString();
-            string[] info = hocPhanText.Split('/');
-            string ngayHoc = comboBox3.SelectedItem.ToString();
-            string tiet = comboBox4.SelectedItem.ToString();
-            string giangVien = comboBox2.SelectedItem.ToString();
-            string magv = giangVien.Substring(0, 6);
 
-            string sql = $"insert into qlth.qlth_phancong(magv, mahp, hk, nam, mact, ngayhoc, tiet) " +
-                $"values ({magv}, '{info[0]}' , {info[2]}, '{info[3]}', '{info[4]}', '{ngayHoc}', '{tiet}')";
-            //MessageBox.Show(sql);
+            try
+            {
+                string hocPhanText = comboBox1.SelectedItem.ToString();
+                string[] info = hocPhanText.Split('/');
+                string ngayHoc = comboBox3.SelectedItem.ToString();
+                string tiet = comboBox4.SelectedItem.ToString();
+                string giangVien = comboBox2.SelectedItem.ToString();
+                string magv = giangVien.Substring(0, 6);
 
-            OracleCommand cmd = new OracleCommand(sql, Session.Instance.OracleConnection);
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Tạo mới phân công thành công");
-            this.Close();
+                string sql = $"insert into qlth.qlth_phancong(magv, mahp, hk, nam, mact, ngayhoc, tiet) " +
+                    $"values ({magv}, '{info[0]}' , {info[2]}, '{info[3]}', '{info[4]}', '{ngayHoc}', '{tiet}')";
+                //MessageBox.Show(sql);
+
+                OracleCommand cmd = new OracleCommand(sql, Session.Instance.OracleConnection);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Tạo mới phân công thành công");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
 
         }
     }

@@ -24,14 +24,21 @@ namespace QLTruongHoc.nhan_su.uc
 
         private void refreshBtn_Click(object sender, EventArgs e)
         {
-            string sql = "select dk.mahp, hp.tenhp,dk.hk, dk.nam, dk.mact, dk.ngayhoc, dk.tiet,sv.masv, sv.hoten, dk.diemthi, dk.diemqt, dk.diemck, dk.diemtk\r\nfrom qlth.qlth_dangky dk join qlth.qlth_sinhvien sv on dk.masv = sv.masv\r\njoin qlth.qlth_hocphan hp on dk.mahp = hp.mahp";
-            //MessageBox.Show(sql);
-            OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
+            try
+            {
+                string sql = "select dk.mahp, hp.tenhp,dk.hk, dk.nam, dk.mact, dk.ngayhoc, dk.tiet,sv.masv, sv.hoten, dk.diemthi, dk.diemqt, dk.diemck, dk.diemtk\r\nfrom qlth.qlth_dangky dk join qlth.qlth_sinhvien sv on dk.masv = sv.masv\r\njoin qlth.qlth_hocphan hp on dk.mahp = hp.mahp";
+                //MessageBox.Show(sql);
+                OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
 
-            CustomizeColumnHeaders();
+                CustomizeColumnHeaders();
+            } catch (Exception ex)
+            {
+                MessageBox.Show("Không thể tải dữ liệu!");
+            }
+
         }
 
         private void CustomizeColumnHeaders()
@@ -140,49 +147,63 @@ namespace QLTruongHoc.nhan_su.uc
 
         private void refreshBtn_Click_1(object sender, EventArgs e)
         {
-            if (Session.Instance.Role == "Giáo vụ")
+            try
             {
-                string sql = "select dk.mahp, hp.tenhp,dk.hk, dk.nam, dk.mact, dk.ngayhoc, dk.tiet,sv.masv, sv.hoten, dk.diemthi, dk.diemqt, dk.diemck, dk.diemtk\r\nfrom qlth.qlth_dangky dk join qlth.qlth_sinhvien sv on dk.masv = sv.masv\r\njoin qlth.qlth_hocphan hp on dk.mahp = hp.mahp";
-                //MessageBox.Show(sql);
-                OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dataGridView1.DataSource = dt;
+                if (Session.Instance.Role == "Giáo vụ")
+                {
+                    string sql = "select dk.mahp, hp.tenhp,dk.hk, dk.nam, dk.mact, dk.ngayhoc, dk.tiet,sv.masv, sv.hoten, dk.diemthi, dk.diemqt, dk.diemck, dk.diemtk\r\nfrom qlth.qlth_dangky dk join qlth.qlth_sinhvien sv on dk.masv = sv.masv\r\njoin qlth.qlth_hocphan hp on dk.mahp = hp.mahp";
+                    //MessageBox.Show(sql);
+                    OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dataGridView1.DataSource = dt;
 
-                CustomizeColumnHeaders();
+                    CustomizeColumnHeaders();
+                }
+            } catch
+            {
+                MessageBox.Show("Không thể tải dữ liệu!");
             }
+
 
         }
 
         private void UpdateBtn_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 0)
+            try
             {
-                MessageBox.Show("Vui lòng chọn sinh viên để cập nhật điểm.");
-                return;
+                if (dataGridView1.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Vui lòng chọn sinh viên để cập nhật điểm.");
+                    return;
+                }
+
+                DataGridViewRow row = dataGridView1.SelectedRows[0];
+                decimal? diemthi = row.Cells["DIEMTHI"].Value == DBNull.Value ? null : (decimal)row.Cells["DIEMTHI"].Value;
+
+                DangKyDetail dangKyDetail = new DangKyDetail(
+                    mahp: row.Cells["MAHP"].Value.ToString(),
+                    tenhp: row.Cells["TENHP"].Value.ToString(),
+                    nam: row.Cells["NAM"].Value.ToString(),
+                    hocky: row.Cells["HK"].Value == DBNull.Value ? null : (decimal)row.Cells["HK"].Value,
+                    chuongtrinh: row.Cells["MACT"].Value.ToString(),
+                    ngayhoc: row.Cells["NGAYHOC"].Value.ToString(),
+                    tiet: row.Cells["TIET"].Value.ToString(),
+                    mssv: row.Cells["MASV"].Value == DBNull.Value ? null : (int)row.Cells["MASV"].Value,
+                    hoten: row.Cells["HOTEN"].Value.ToString(),
+                    diemqt: row.Cells["DIEMQT"].Value == DBNull.Value ? null : (decimal)row.Cells["DIEMQT"].Value,
+                    diemthi: row.Cells["DIEMTHI"].Value == DBNull.Value ? null : (decimal)row.Cells["DIEMTHI"].Value,
+                    diemck: row.Cells["DIEMCK"].Value == DBNull.Value ? null : (decimal)row.Cells["DIEMCK"].Value,
+                    diemtk: row.Cells["DIEMTK"].Value == DBNull.Value ? null : (decimal)row.Cells["DIEMTK"].Value);
+
+                dangKyDetail.Show();
+
+                dataGridView1.DataSource = new DataTable();
+            } catch
+            {
+                MessageBox.Show("Lỗi");
             }
-
-            DataGridViewRow row = dataGridView1.SelectedRows[0];
-            decimal? diemthi = row.Cells["DIEMTHI"].Value == DBNull.Value ? null : (decimal)row.Cells["DIEMTHI"].Value;
-
-            DangKyDetail dangKyDetail = new DangKyDetail(
-                mahp: row.Cells["MAHP"].Value.ToString(),
-                tenhp: row.Cells["TENHP"].Value.ToString(),
-                nam: row.Cells["NAM"].Value.ToString(),
-                hocky: row.Cells["HK"].Value == DBNull.Value ? null : (decimal)row.Cells["HK"].Value,
-                chuongtrinh: row.Cells["MACT"].Value.ToString(),
-                ngayhoc: row.Cells["NGAYHOC"].Value.ToString(),
-                tiet: row.Cells["TIET"].Value.ToString(),
-                mssv: row.Cells["MASV"].Value == DBNull.Value ? null : (int)row.Cells["MASV"].Value,
-                hoten: row.Cells["HOTEN"].Value.ToString(),
-                diemqt: row.Cells["DIEMQT"].Value == DBNull.Value ? null : (decimal)row.Cells["DIEMQT"].Value,
-                diemthi: row.Cells["DIEMTHI"].Value == DBNull.Value ? null : (decimal)row.Cells["DIEMTHI"].Value,
-                diemck: row.Cells["DIEMCK"].Value == DBNull.Value ? null : (decimal)row.Cells["DIEMCK"].Value,
-                diemtk: row.Cells["DIEMTK"].Value == DBNull.Value ? null : (decimal)row.Cells["DIEMTK"].Value);
-
-            dangKyDetail.Show();
-
-            dataGridView1.DataSource = new DataTable();
+ 
         }
     }
 }

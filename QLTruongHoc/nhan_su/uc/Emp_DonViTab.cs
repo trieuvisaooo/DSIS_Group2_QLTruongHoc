@@ -21,12 +21,18 @@ namespace QLTruongHoc.nhan_su.uc
 
         private void refreshBtn_Click(object sender, EventArgs e)
         {
-            string sql = "SELECT * FROM QLTH.QLTH_DONVI";
-            OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
-            CustomizeColumnHeaders();
+            try
+            {
+                string sql = "SELECT * FROM QLTH.QLTH_DONVI";
+                OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+                CustomizeColumnHeaders();
+            } catch
+            {
+                MessageBox.Show("Không thể tải dữ liệu!");
+            }
         }
 
         private void CustomizeColumnHeaders()
@@ -40,16 +46,23 @@ namespace QLTruongHoc.nhan_su.uc
 
         private void SearchBtn_Click(object sender, EventArgs e)
         {
-            string search = searchTextBox.Text;
-            search = search.ToLower();
-            if (search.Length > 0)
+            try
             {
-                string sql = $"SELECT * FROM QLTH.QLTH_DONVI WHERE LOWER(TENDV) LIKE LOWER('%{search}%')";
-                OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dataGridView1.DataSource = dt;
-                CustomizeColumnHeaders();
+                string search = searchTextBox.Text;
+                search = search.ToLower();
+                if (search.Length > 0)
+                {
+                    string sql = $"SELECT * FROM QLTH.QLTH_DONVI WHERE LOWER(TENDV) LIKE LOWER('%{search}%')";
+                    OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                    CustomizeColumnHeaders();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Không thể tải dữ liệu!");
             }
         }
 

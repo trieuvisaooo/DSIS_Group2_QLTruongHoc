@@ -210,7 +210,7 @@ namespace QLTruongHoc.nhan_su.forms
             catch (Exception ex)
             {
                 trans.Rollback();
-                MessageBox.Show("Lỗi đăng ký học phần: " + ex.Message);
+                MessageBox.Show("Lỗi đăng ký học phần!");
             }
 
             getRegisterCourse(masv);
@@ -262,7 +262,7 @@ namespace QLTruongHoc.nhan_su.forms
             catch (Exception ex)
             {
                 trans.Rollback();
-                MessageBox.Show("Lỗi hủy đăng ký học phần: " + ex.Message);
+                MessageBox.Show("Lỗi hủy đăng ký học phần!");
             }
 
             getRegisterCourse(masv);

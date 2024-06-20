@@ -198,6 +198,7 @@ namespace QLTruongHoc
                     OracleCommand cmd = new OracleCommand(revokeStetament, Session.Instance.OracleConnection);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Thực hiện thu hồi quyền " + privs_combox.Text + " trên " + table_view_combox.Text + " từ " + user_role_txtbox.Text + " thành công!");
+                    this.Close();
 
                 } catch (OracleException ex)
                 {

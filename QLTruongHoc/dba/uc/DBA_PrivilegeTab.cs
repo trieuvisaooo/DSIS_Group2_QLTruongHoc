@@ -23,22 +23,37 @@ namespace QLTruongHoc
 
         public void view_table_privil()
         {
-            string sql = "select * from DBA_TAB_PRIVS dba_tab_privs where owner =  \'QLTH\' order by grantee asc";
+            try
+            {
+                string sql = "select * from DBA_TAB_PRIVS dba_tab_privs where owner =  \'QLTH\' order by grantee asc";
 
-            OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
-            DataTable dt1 = new DataTable();
-            da.Fill(dt1);
-            TableDataGridView.DataSource = dt1;
+                OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
+                DataTable dt1 = new DataTable();
+                da.Fill(dt1);
+                TableDataGridView.DataSource = dt1;
+            } catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tải dữ liệu: " +  ex.Message);
+            }
+
         }
 
         public void view_col_privil()
         {
-            string sql = "select * from dba_col_privs where owner =  \'QLTH\' order by grantee asc";
 
-            OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
-            DataTable dt2 = new DataTable();
-            da.Fill(dt2);
-            ColDataGridView.DataSource = dt2;
+            try
+            {
+                string sql = "select * from dba_col_privs where owner =  \'QLTH\' order by grantee asc";
+
+                OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
+                DataTable dt2 = new DataTable();
+                da.Fill(dt2);
+                ColDataGridView.DataSource = dt2;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tải dữ liệu: " + ex.Message);
+            }
         }
 
         private void grantBtn_Click(object sender, EventArgs e)
@@ -55,20 +70,27 @@ namespace QLTruongHoc
 
         private void search_btn_Click(object sender, EventArgs e)
         {
-            string sql1 = "select * from DBA_TAB_PRIVS dba_tab_privs where owner =  \'QLTH\' and grantee like " + "\'" + search_txtbox.Text + "\' order by grantee asc";
 
-            OracleDataAdapter da1 = new OracleDataAdapter(sql1, Session.Instance.OracleConnection);
-            DataTable dt1 = new DataTable();
-            da1.Fill(dt1);
-            TableDataGridView.DataSource = dt1;
+            try
+            {
+                string sql1 = "select * from DBA_TAB_PRIVS dba_tab_privs where owner =  \'QLTH\' and grantee like " + "\'" + search_txtbox.Text + "\' order by grantee asc";
 
-            string sql2 = "select * from dba_col_privs where owner =  \'QLTH\' and grantee like " + "\'" + search_txtbox.Text + "\'";
+                OracleDataAdapter da1 = new OracleDataAdapter(sql1, Session.Instance.OracleConnection);
+                DataTable dt1 = new DataTable();
+                da1.Fill(dt1);
+                TableDataGridView.DataSource = dt1;
 
-            OracleDataAdapter da2 = new OracleDataAdapter(sql2, Session.Instance.OracleConnection);
-            DataTable dt2 = new DataTable();
-            da2.Fill(dt2);
-            ColDataGridView.DataSource = dt2;
+                string sql2 = "select * from dba_col_privs where owner =  \'QLTH\' and grantee like " + "\'" + search_txtbox.Text + "\'";
 
+                OracleDataAdapter da2 = new OracleDataAdapter(sql2, Session.Instance.OracleConnection);
+                DataTable dt2 = new DataTable();
+                da2.Fill(dt2);
+                ColDataGridView.DataSource = dt2;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tải dữ liệu: " + ex.Message);
+            }
         }
 
         private void Privilege_Load(object sender, EventArgs e)

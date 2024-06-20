@@ -161,7 +161,8 @@ namespace QLTruongHoc.nhan_su.uc
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("Cập nhật thông tin thất bại!");
+                    //MessageBox.Show(ex.Message);
                 }
             } else
             {
@@ -178,7 +179,8 @@ namespace QLTruongHoc.nhan_su.uc
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("Cập nhật thông tin thất bại!");
+                    //MessageBox.Show(ex.Message);
                 }
             }
         }

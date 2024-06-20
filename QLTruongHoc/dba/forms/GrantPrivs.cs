@@ -13,18 +13,24 @@ namespace QLTruongHoc
 
         private void DBA_GrantPrivs_Load(object sender, EventArgs e)
         {
-            string selectTableStatement = "select object_name from all_objects where (object_type = \'VIEW\' or object_type = \'TABLE\') and owner = \'QLTH\'";
-            OracleCommand cmd = new OracleCommand(selectTableStatement, Session.Instance.OracleConnection);
-            OracleDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                table_view_combox.Items.Add(reader[0]);
-            }
-            reader.Close();
+                string selectTableStatement = "select object_name from all_objects where (object_type = \'VIEW\' or object_type = \'TABLE\') and owner = \'QLTH\'";
+                OracleCommand cmd = new OracleCommand(selectTableStatement, Session.Instance.OracleConnection);
+                OracleDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    table_view_combox.Items.Add(reader[0]);
+                }
+                reader.Close();
 
-            table_view_combox.Enabled = false;
-            ColumnName_list.Enabled = false;
-            withgrantoption_chkbox.Enabled = false;
+                table_view_combox.Enabled = false;
+                ColumnName_list.Enabled = false;
+                withgrantoption_chkbox.Enabled = false;
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void check_btn_Click(object sender, EventArgs e)
@@ -226,11 +232,13 @@ namespace QLTruongHoc
                                 //MessageBox.Show(grantSelectCmd.CommandText); // debug line
                                 grantSelectCmd.ExecuteNonQuery();
                                 MessageBox.Show("Thực hiện cấp quyền thành công!");
+                                this.Close();
                                 return;
                             }
                             catch (OracleException ex)
                             {
-                                MessageBox.Show(ex.Message);
+                                MessageBox.Show("Cấp quyền thất bại");
+                                //MessageBox.Show(ex.Message);
                                 return;
                             }
                         }
@@ -250,7 +258,8 @@ namespace QLTruongHoc
                 }
                 catch (OracleException ex)
                 {
-                    MessageBox.Show($"Error: {ex.Message}");
+                    MessageBox.Show("Cấp quyền thất bại");
+                    //MessageBox.Show($"Error: {ex.Message}");
                     return;
                 }
             }

@@ -51,8 +51,8 @@ namespace QLTruongHoc
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                this.Close();
+                MessageBox.Show("Tạo role thất bại!");
+                //this.Close();
 
             }
         }

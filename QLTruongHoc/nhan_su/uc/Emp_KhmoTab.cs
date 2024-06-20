@@ -20,13 +20,20 @@ namespace QLTruongHoc.nhan_su.uc
 
         private void ViewBtn_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string sql = "select * from QLTH.UV_QLTH_KHMO_FORM";
+                OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+                CustomizeColumnHeaders();
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi tải dữ liệu!");
+            }
 
-            string sql = "select * from QLTH.UV_QLTH_KHMO_FORM";
-            OracleDataAdapter da = new OracleDataAdapter(sql, Session.Instance.OracleConnection);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
-            CustomizeColumnHeaders();
         }
 
         private void CustomizeColumnHeaders()
