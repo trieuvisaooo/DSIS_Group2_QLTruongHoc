@@ -33,6 +33,7 @@
             ViewBtn = new Button();
             InsertBtn = new Button();
             DKHPBtn = new Button();
+            EditTimeBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -98,10 +99,24 @@
             DKHPBtn.Visible = false;
             DKHPBtn.Click += DKHPBtn_Click;
             // 
+            // EditTimeBtn
+            // 
+            EditTimeBtn.BackColor = Color.PaleGoldenrod;
+            EditTimeBtn.ForeColor = SystemColors.ActiveCaptionText;
+            EditTimeBtn.Location = new Point(290, 50);
+            EditTimeBtn.Name = "EditTimeBtn";
+            EditTimeBtn.Size = new Size(168, 47);
+            EditTimeBtn.TabIndex = 7;
+            EditTimeBtn.Text = "Chỉnh sử TGDK";
+            EditTimeBtn.UseVisualStyleBackColor = false;
+            EditTimeBtn.Visible = false;
+            EditTimeBtn.Click += EditTimeBtn_Click;
+            // 
             // Emp_SinhVienTab
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(EditTimeBtn);
             Controls.Add(DKHPBtn);
             Controls.Add(InsertBtn);
             Controls.Add(ViewBtn);
@@ -124,5 +139,6 @@
         private Button ViewBtn;
         private Button InsertBtn;
         private Button DKHPBtn;
+        private Button EditTimeBtn;
     }
 }

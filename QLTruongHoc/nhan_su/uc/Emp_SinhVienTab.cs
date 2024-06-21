@@ -24,6 +24,11 @@ namespace QLTruongHoc.nhan_su.uc
                 InsertBtn.Visible = true;
                 DKHPBtn.Visible = true;
             }
+
+            if (Session.Instance.Role == "Trưởng khoa")
+            {
+                EditTimeBtn.Visible = true;
+            }
         }
 
         private void CustomizeColumnHeaders()
@@ -88,6 +93,12 @@ namespace QLTruongHoc.nhan_su.uc
         {
             DangKyHocPhan dkhp = new DangKyHocPhan();
             dkhp.Show();
+        }
+
+        private void EditTimeBtn_Click(object sender, EventArgs e)
+        {
+            ThoiGianDK tgdkForm = new ThoiGianDK();
+            tgdkForm.Show();
         }
     }
 }

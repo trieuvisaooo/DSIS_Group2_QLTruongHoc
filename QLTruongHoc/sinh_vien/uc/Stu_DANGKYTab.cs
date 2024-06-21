@@ -64,11 +64,15 @@ namespace QLTruongHoc.sinh_vien.uc
             {
                 NotiLabel.Text = "(*) Chưa đến thời gian đăng ký học phần!";
                 MessageBox.Show("(*) Chưa đến thời gian đăng ký học phần!");
+                RegisterBtn.Enabled = false;
+                CancelBtn.Enabled = false;
             }
             else if (curtime > tgdk.getEndTime())
             {
                 NotiLabel.Text = "(*) Thời gian đăng ký học phần đã kết thúc từ " + tgdk.getEndTime().ToString("HH:mm:ss dd/MM/yyyy");
                 MessageBox.Show("(*) Thời gian đăng ký học phần đã kết thúc từ " + tgdk.getEndTime().ToString("HH:mm:ss dd/MM/yyyy"));
+                RegisterBtn.Enabled = false;
+                CancelBtn.Enabled = false;
             }
             else if (curtime >= tgdk.getStartTime() && curtime <= tgdk.getEndTime())
             {

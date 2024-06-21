@@ -9,7 +9,7 @@ namespace QLTruongHoc.nhan_su.forms
     public partial class DangKyHocPhan : Form
     {
         DateTime curtime = DateTime.Now;
-        ThoiGianDK tgdk = new ThoiGianDK();
+        sinh_vien.ThoiGianDK tgdk = new sinh_vien.ThoiGianDK();
         //SinhVien sv = new SinhVien();
 
         public DangKyHocPhan()
@@ -92,11 +92,15 @@ namespace QLTruongHoc.nhan_su.forms
             {
                 NotiLabel.Text = "(*) Chưa đến thời gian đăng ký học phần!";
                 MessageBox.Show("(*) Chưa đến thời gian đăng ký học phần!");
+                RegisterBtn.Enabled = false;
+                CancelBtn.Enabled = false;
             }
             else if (curtime > tgdk.getEndTime())
             {
                 NotiLabel.Text = "(*) Thời gian đăng ký học phần đã kết thúc từ " + tgdk.getEndTime().ToString("HH:mm:ss dd/MM/yyyy");
                 MessageBox.Show("(*) Thời gian đăng ký học phần đã kết thúc từ " + tgdk.getEndTime().ToString("HH:mm:ss dd/MM/yyyy"));
+                RegisterBtn.Enabled = false;
+                CancelBtn.Enabled = false;
             }
             else if (curtime >= tgdk.getStartTime() && curtime <= tgdk.getEndTime())
             {
