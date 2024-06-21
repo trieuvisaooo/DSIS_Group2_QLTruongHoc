@@ -115,7 +115,7 @@
             Controls.Add(label1);
             Margin = new Padding(4, 5, 4, 5);
             Name = "RevokeRole";
-            Text = "RevokeRole";
+            Text = "THU HỒI ROLE";
             ResumeLayout(false);
             PerformLayout();
         }

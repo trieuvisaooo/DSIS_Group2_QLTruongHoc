@@ -145,7 +145,7 @@
             Controls.Add(RecoveryType_combox);
             Controls.Add(grant_revoke_txt);
             Name = "Recovery";
-            Text = "Recovery";
+            Text = "RECOVERY";
             Load += Recovery_Load;
             ResumeLayout(false);
             PerformLayout();

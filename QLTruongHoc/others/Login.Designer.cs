@@ -37,6 +37,7 @@
             role_label = new Label();
             login_btn = new Button();
             role_combox = new ComboBox();
+            linkLabel1 = new LinkLabel();
             SuspendLayout();
             // 
             // title_label
@@ -126,11 +127,23 @@
             role_combox.TabIndex = 9;
             role_combox.SelectedIndexChanged += role_combox_SelectedIndexChanged;
             // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.Location = new Point(584, 419);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(200, 25);
+            linkLabel1.TabIndex = 11;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Database Configuration";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(784, 450);
+            Controls.Add(linkLabel1);
             Controls.Add(role_combox);
             Controls.Add(login_btn);
             Controls.Add(role_label);
@@ -160,5 +173,6 @@
         private Label role_label;
         private Button login_btn;
         private ComboBox role_combox;
+        private LinkLabel linkLabel1;
     }
 }

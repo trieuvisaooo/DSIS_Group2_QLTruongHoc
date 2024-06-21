@@ -1,6 +1,7 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using Oracle.ManagedDataAccess.Types;
 using QLTruongHoc.nhan_su;
+using QLTruongHoc.others;
 using QLTruongHoc.sinh_vien;
 using QLTruongHoc.utils;
 using System.Configuration;
@@ -24,7 +25,7 @@ namespace QLTruongHoc
         {
 
         }
-        
+
         private void login_btn_Click(object sender, EventArgs e)
         {
             if (username_txtbox.Text.Length == 0)
@@ -45,7 +46,7 @@ namespace QLTruongHoc
             username = username_txtbox.Text;
             if (username == "SYS" || username == "sys")
             {
-                MessageBox.Show("TÊN ĐĂNG NHẬP hoặc MẬT KHẨU không hợp lệ!"); 
+                MessageBox.Show("TÊN ĐĂNG NHẬP hoặc MẬT KHẨU không hợp lệ!");
                 return;
             }
             //Check username, password and role
@@ -88,11 +89,11 @@ namespace QLTruongHoc
                     outputParam.Direction = System.Data.ParameterDirection.Output;
 
                     cmd.ExecuteNonQuery();
-                    
+
                     OracleDecimal oracleDecimal = (OracleDecimal)cmd.Parameters["CNT"].Value;
                     int result = oracleDecimal.ToInt32();
 
-                    qlthOracleConnection.Close();  
+                    qlthOracleConnection.Close();
 
                     if (result == 0)
                     {
@@ -112,7 +113,7 @@ namespace QLTruongHoc
                         EmpHome empHome = new EmpHome(this);
                         empHome.Show();
                         this.Hide();
-                    } 
+                    }
                     else if (result == 2)
                     {
                         con.ConnectionString = connectionString;
@@ -135,7 +136,7 @@ namespace QLTruongHoc
             }
             catch (OracleException ex)
             {
-                MessageBox.Show("TÊN ĐĂNG NHẬP hoặc MẬT KHẨU không hợp lệ!"); 
+                MessageBox.Show("TÊN ĐĂNG NHẬP hoặc MẬT KHẨU không hợp lệ!");
                 //MessageBox.Show(ex.Message);
                 return;
             }
@@ -144,6 +145,12 @@ namespace QLTruongHoc
         private void role_combox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ConfigForm configForm = new ConfigForm();
+            configForm.ShowDialog();
         }
     }
 }

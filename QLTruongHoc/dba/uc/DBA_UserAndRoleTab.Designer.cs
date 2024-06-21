@@ -117,7 +117,7 @@
             button2.Name = "button2";
             button2.Size = new Size(166, 53);
             button2.TabIndex = 5;
-            button2.Text = "Create User";
+            button2.Text = "Tạo User";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
@@ -131,7 +131,7 @@
             button3.Name = "button3";
             button3.Size = new Size(166, 53);
             button3.TabIndex = 6;
-            button3.Text = "Delete User";
+            button3.Text = "Xóa User";
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
@@ -145,7 +145,7 @@
             button4.Name = "button4";
             button4.Size = new Size(166, 53);
             button4.TabIndex = 7;
-            button4.Text = "Update User";
+            button4.Text = "Cập Nhật User";
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
             // 
@@ -159,7 +159,7 @@
             button5.Name = "button5";
             button5.Size = new Size(166, 53);
             button5.TabIndex = 10;
-            button5.Text = "Update Role";
+            button5.Text = "Cập Nhật Role";
             button5.UseVisualStyleBackColor = false;
             button5.Click += button5_Click;
             // 
@@ -173,7 +173,7 @@
             button6.Name = "button6";
             button6.Size = new Size(166, 53);
             button6.TabIndex = 9;
-            button6.Text = "Delete Role";
+            button6.Text = "Xóa Role";
             button6.UseVisualStyleBackColor = false;
             button6.Click += button6_Click;
             // 
@@ -187,7 +187,7 @@
             button7.Name = "button7";
             button7.Size = new Size(166, 53);
             button7.TabIndex = 8;
-            button7.Text = "Create Role";
+            button7.Text = "Tạo Role";
             button7.UseVisualStyleBackColor = false;
             button7.Click += button7_Click;
             // 
@@ -352,14 +352,14 @@
             panel4.Size = new Size(408, 390);
             panel4.TabIndex = 3;
             // 
-            // UserAndRoleTab
+            // DBA_UserAndRoleTab
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(tableLayoutPanel1);
             Margin = new Padding(4, 3, 4, 3);
             MinimumSize = new Size(1432, 800);
-            Name = "UserAndRoleTab";
+            Name = "DBA_UserAndRoleTab";
             Size = new Size(1432, 800);
             ((System.ComponentModel.ISupportInitialize)userGrid).EndInit();
             ((System.ComponentModel.ISupportInitialize)roleGrid).EndInit();
