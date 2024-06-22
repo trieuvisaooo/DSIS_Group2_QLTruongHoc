@@ -27,7 +27,7 @@ namespace QLTruongHoc.nhan_su.uc
             try
             {
                 string sql = "select PC.MAGV, PC.MAHP, HP.TENHP, PC.HK, PC.NAM, CT.TENCT, PC.NGAYHOC, PC.TIET\r\nfrom qlth.uv_qlth_xemphanconggiangday PC JOIN QLTH.qlth_hocphan HP ON PC.MAHP = HP.MAHP\r\nJOIN QLTH.QLTH_CHUONGTRINH CT ON CT.MACT = PC.MACT";
-                if (Session.Instance.Role == "Giáo vụ" || Session.Instance.Role == "Trưởng đơn vị")
+                if (Session.Instance.Role == "Giáo vụ" || Session.Instance.Role == "Trưởng đơn vị" || Session.Instance.Role == "Trưởng khoa")
                 {
                     sql = "select PC.MAGV, PC.MAHP, HP.TENHP, PC.HK, PC.NAM, CT.TENCT, PC.NGAYHOC, PC.TIET\r\nfrom qlth.QLTH_PHANCONG PC JOIN QLTH.qlth_hocphan HP ON PC.MAHP = HP.MAHP\r\nJOIN QLTH.QLTH_CHUONGTRINH CT ON CT.MACT = PC.MACT";
                 }
