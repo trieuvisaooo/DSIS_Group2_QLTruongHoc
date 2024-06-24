@@ -106,7 +106,7 @@ namespace QLTruongHoc.dba.uc
                 {
                     sql_statement = "SELECT AUDIT_TYPE, FGA_POLICY_NAME, DBUSERNAME, EVENT_TIMESTAMP, ACTION_NAME, OBJECT_NAME, SQL_TEXT, RETURN_CODE" +
                                     "\r\nFROM UNIFIED_AUDIT_TRAIL" +
-                                    "\r\nWHERE FGA_POLICY_NAME = 'UPDATE_DANGKY_DIEM'" +
+                                    "\r\nWHERE FGA_POLICY_NAME = 'UPDATE_DIEM_DANGKY'" +
                                     "\r\nORDER BY EVENT_TIMESTAMP DESC";
                     OracleDataAdapter da = new OracleDataAdapter(sql_statement, Session.Instance.OracleConnection);
                     DataTable dt1 = new DataTable();
